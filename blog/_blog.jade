@@ -1,0 +1,38 @@
+//- if current.source === "index"
+//-     .Container
+//-         summary
+//-             != partial("../_shared/site-summary")
+        
+main.Content(role='content')
+    if current.source !== "index"
+        for article, slug in public.blog._data
+            if article.hero === true
+                .FlexEmbed
+                    .FlexEmbed-ratio.FlexEmbed-ratio--2by1
+                    .FlexEmbed-content
+                        .CoverImage(style="background-image: url(/img/hero-#{ slug }.jpg)")
+
+    .Container.Rule
+        if current.source !== "index"
+            article.Article
+                h2= title 
+                time= date
+                != yield
+                
+        else
+            for article, slug in public.blog._data
+                if article.ispublished
+                    article.Article
+                        //- h2 a(href="#{ post.url ? post.url : '/blog/' + slug }")= title
+                        h2 #[a(href="#{ '/blog/' + slug }")= article.title]
+                        time= article.date
+                        if article.description
+                            p= article.description
+                                a.Text--inlineAnchor(href="/blog/#{ slug }") Read more
+        
+        //- h1.back
+            //- span #[a(href="/blog")(style="text-decoration: none") Blog]
+//- section.Section
+//-     .Container
+//-         h3.Headline Receive new posts by email
+//-         != partial("../_shared/newsletter-signup")

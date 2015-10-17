@@ -1,0 +1,135 @@
+main.Content(role="main")
+    .Container
+        section.Section
+
+            nav.MetaNav.MetaNav--top(role="navigation")
+                a(href="/work") work #[span →]
+                a(href="/blog") blog #[span →]
+                
+            h1.SectionTitle
+                //- a(href="/work", style="width:100%") Recent work
+                a(href="/work") Recently
+
+
+
+
+            .Project-block.Project-block--lg
+                a.Project-pictureContainer(href="../work/bellflower")
+                    .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                .Project-caption
+                    .Project-data
+                        time.Project-time 2015
+                        span &nbsp;•&nbsp;
+                        | Website, identity
+                    h4.Project-title
+                        a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                        span A legible, performant, mobile-first marketing blog.
+
+            .Project-block.Project-block--lg
+                a.Project-pictureContainer(href="../work/bellflower")
+                    .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                .Project-caption
+                    .Project-data
+                        time.Project-time 2015
+                        span &nbsp;•&nbsp;
+                        | Website, identity
+                    h4.Project-title
+                        a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                        span A legible, performant, mobile-first marketing blog.
+
+            .Project-block.Project-block--lg
+                a.Project-pictureContainer(href="../work/bellflower")
+                    .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                .Project-caption
+                    .Project-data
+                        time.Project-time 2015
+                        span &nbsp;•&nbsp;
+                        | Website, identity
+                    h4.Project-title
+                        a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                        span A legible, performant, mobile-first marketing blog.
+
+
+
+
+            //- .Project-block.Grid.Grid--1of2.Grid--gutters
+            //-     .Project.Grid-cell
+            //-         a.Project-pictureContainer(href="../work/bellflower")
+            //-             .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+            //-         .Project-caption
+            //-             .Project-data
+            //-                 time.Project-time 2015
+            //-                 span &nbsp;•&nbsp;
+            //-                 | Website, identity
+            //-             h4.Project-title
+            //-                 a(href="../work/bellflower") Bellflower Chinese Medicine. 
+            //-                 span A legible, performant, mobile-first marketing blog.
+            //- 
+            //-     .Project.Grid-cell
+            //-         a.Project-pictureContainer(href="../work/bellflower")
+            //-             .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+            //-         .Project-caption
+            //-             .Project-data
+            //-                 time.Project-time 2015
+            //-                 span &nbsp;•&nbsp;
+            //-                 | Website, identity
+            //-             h4.Project-title
+            //-                 a(href="../work/bellflower") Bellflower Chinese Medicine. 
+            //-                 span A legible, performant, mobile-first marketing blog.
+
+
+
+
+            .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
+                .Project.Grid-cell
+                    a.Project-pictureContainer(href="../work/bellflower")
+                        .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                    .Project-caption
+                        .Project-data
+                            time.Project-time 2015
+                            span &nbsp;•&nbsp;
+                            | Website, identity
+                        h4.Project-title
+                            a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                            span A legible, performant, mobile-first marketing blog.
+
+                .Project.Grid-cell
+                    a.Project-pictureContainer(href="../work/bellflower")
+                        .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                    .Project-caption
+                        .Project-data
+                            time.Project-time 2015
+                            span &nbsp;•&nbsp;
+                            | Website, identity
+                        h4.Project-title
+                            a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                            span A legible, performant, mobile-first marketing blog.
+
+                .Project.Grid-cell
+                    a.Project-pictureContainer(href="../work/bellflower")
+                        .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                    .Project-caption
+                        .Project-data
+                            time.Project-time 2015
+                            span &nbsp;•&nbsp;
+                            | Website, identity
+                        h4.Project-title
+                            a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                            span A legible, performant, mobile-first marketing blog.
+
+
+
+            
+            //- each article, slug in public.work._data
+            //-     if article.published === true || article.ishome === true
+            //-     .Project
+            //-         .Grid.Grid--withGutter
+            //-             .Grid-cell.u-sm-size5of12
+            //-                 a.Project-pictureContainer(href="../work/#{ slug }")
+            //-                     .Project-picture(style="background-image: url(/img/thumb-#{ slug }.jpg)")
+            //-             .Grid-cell.u-sm-size7of12
+            //-                 .Project-caption
+            //-                     time= article.date
+            //-                     h4
+            //-                         a(href="../work/#{ slug }")= article.title
+            //-                     p= article.description

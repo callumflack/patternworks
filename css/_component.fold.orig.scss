@@ -1,0 +1,77 @@
+
+/**
+ * Article fold states
+ * Uses '[data-toggle="fold"]' to trigger JS.
+ * See: http://codepen.io/absolutholz/blog/transitions-on-elements-of-unknown-sizes
+ */
+
+.Fold {
+    p {
+        margin-bottom: $space--D3;
+    }
+
+    a[data-fold] {
+        /* @include RuleTransition(); */
+        @extend .RuleTransition;
+        width: 100%;
+    }
+}
+
+.Fold-item {
+    margin-bottom: 0;
+    max-height: 0;
+    opacity: 0;
+    /* overflow: hidden; */
+    transform: translateY(-2%);
+    transition: all 150ms ease;
+
+    p {
+        color: $color-grey;
+    }
+
+    &.is-open {
+        margin-bottom: $space--D3;
+        max-height: 100%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Fold-item--smGrey {
+    p,
+    ul {
+        @include TextSm();
+        color: $color-grey;
+        margin: 0;
+    }
+
+    p {
+        margin: $space--D3 0 $space--D6 0;
+    }
+}
+
+
+// Toggle the fold-outs (JQuery version)
+// See: http://toddmotto.com/simple-html5-data-attribute-jquery-tabs-markup-free-and-relative-to-their-container-for-ultimate-reuse/
+// =================================================================================================================================
+
+// $('[data-fold]').on('click',
+//     function(e) {
+//         e.preventDefault();
+//         // console.log($(this).data('fold'))
+//         console.log($(this).parents('.Fold').siblings().find('[data-fold]') )
+//
+//         $(this)
+//             .toggleClass('is-open')
+//             .children().toggleClass('is-active')
+//         $(this)
+//             .parent().siblings('[data-content=' + $(this).data('fold') + ']').toggleClass('is-open')
+//         $(this)
+//             .parents('.Fold').siblings().find('[data-fold]').removeClass('is-open')
+//             // .parents('.Fold').siblings().find('[data-content]').removeClass('is-active')
+//             // .siblings('[data-fold]').removeClass('is-open')
+//             // .siblings('[data-fold]').children().removeClass('is-active')
+//             // .siblings('[data-content=' + $(this).data('fold') + ']').toggleClass('is-open')
+//             // .siblings('[data-content]').removeClass('is-open')
+//     }
+// );

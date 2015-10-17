@@ -1,0 +1,10 @@
+for article, slug in public.blog._data
+    if article.ispublished
+        article
+            .SectionRule
+                time= article.date
+            h3.ArticleTitle
+                a(href="/blog/#{ slug }")= article.title
+            if article.description
+                p= article.description
+                    a.Text--inlineAnchor(href="/blog/#{ slug }") NO more

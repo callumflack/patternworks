@@ -1,0 +1,64 @@
+
+
+// --------------------------------------------------------------------------
+// FLEXBOX!
+// @url: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+// --------------------------------------------------------------------------
+
+
+.Flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.Flex--centerItemsVertical {
+    align-items: center;
+}
+
+
+// Responsive flex grid
+// Requires width for '.FlexGrid-item'
+
+.FlexGrid {
+    align-items: flex-start;
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 -#{$space--D2};
+
+    // &.FlexGrid--withGutter {
+    //     justify-content: space-between;
+    //
+    //     > .FlexGrid-item,
+    //     > .FlexGrid-listItem {
+    //         flex-basis: 23%;
+    //     }
+    // }
+
+    @include respond-to(sm) {
+        flex-wrap: nowrap;
+    }
+}
+
+.FlexGrid-item {
+    flex-grow: 1;
+    padding: 0 $space--D2;
+    // width: 100%;
+
+    @include bp(sm) {
+        // width: 50%;
+    }
+}
+
+.FlexGrid-listItem {
+    flex-grow: 0;
+    // padding: 0 $space--D2;
+    width: calc(100% * 1 / 3);
+
+    @include bp(sm) {
+        // width: 50%;
+    }
+}

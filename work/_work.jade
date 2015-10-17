@@ -1,0 +1,65 @@
+if current.source === "index"
+            
+    main.Content(role='content')
+        .Container
+            .Project-block.Project-block--lg
+                a.Project-pictureContainer(href="../work/bellflower")
+                    .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                .Project-caption
+                    .Project-data
+                        time.Project-time 2015
+                        span &nbsp;•&nbsp;
+                        | Website, identity
+                    h4.Project-title
+                        a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                        span A legible, performant, mobile-first marketing blog.
+
+            .Project-block.Project-block--lg
+                a.Project-pictureContainer(href="../work/bellflower")
+                    .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
+                .Project-caption.test
+                    .Project-data
+                        time.Project-time 2015
+                        span &nbsp;•&nbsp;
+                        | Website, identity
+                    h4.Project-title
+                        a(href="../work/bellflower") Bellflower Chinese Medicine. 
+                        span A legible, performant, mobile-first marketing blog.
+
+
+
+
+
+            .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of2.Grid--gutters
+                for article, slug in public.work._data
+                    if article.ispublished && article.islisted
+                        .Project.Grid-cell
+                            a.Project-pictureContainer(href="../work/#{ slug }")
+                                .Project-picture(style="background-image: url(/img/thumb-#{ slug }.jpg)")
+                            .Project-caption
+                                .Project-data
+                                    time.Project-time= article.date
+                                    span &nbsp;•&nbsp;
+                                    #[= article.tags]
+                                h4.Project-title
+                                    a(href="../work/#{ slug }")= article.title
+                                    span .&nbsp;
+                                    span= article.description
+
+else
+    main.Content(role='content')
+        article.Article
+            .Container2
+                h1.Article-title= title
+                .Article-data
+                    time.Article-time= date
+                    span &nbsp;•&nbsp;
+                    #[= tags]
+
+                != yield
+                    
+                .Article-footer
+                    .Article-authorImage
+                        img(src="../img/avatar.jpg", alt="")
+                    != partial("../shared/article-data")
+                    p Patternworks is the solo digital product workshop of Callum Flack, located in Cairns, Australia. Callum is a writer and designer splitting his time between New York and Tokyo. He is a MacDowell Colony writing fellow and TechFellow. His writing has appeared in/on Aeon, New Scientist, Virgina Quarterly Review, The New Yorker, The New York Times, CNN.com, The Morning News, Codex: Journal of Typography, and elsewhere. #[a(href="/approach") Learn more].

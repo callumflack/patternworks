@@ -1,0 +1,54 @@
+
+
+// --------------------------------------------------------------------------
+// TYPOGRAPHY ANCHORS
+// --------------------------------------------------------------------------
+
+
+$linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-text-rule 50%);
+
+@mixin u-link(
+    $rule: $linkRuleBlack,
+    $hover-rule: none,
+    $color: $color-text,
+    $hover-color: $color-text
+
+) {
+
+    @if $rule == 'none' {
+        background-image: none;
+        color: transparent;
+        padding-bottom: 0;
+        text-decoration: none;
+    }
+
+    @else {
+        background-image: $rule;
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+        // background-position: 0 92%;
+        background-position: 0 100%;
+        color: $color;
+        // padding-bottom: 0;
+        padding-bottom: 0.2%;
+        text-decoration: none;
+    }
+
+    @include on-event($self: true) {
+        color: currentColor;
+    }
+
+    @include on-event() {
+        background-image: $hover-rule;
+        color: $hover-color;
+        text-decoration: none;
+    }
+}
+
+@mixin u-childLink() {
+    a { @include u-link(); }
+}
+
+a,
+.u-link        { @include u-link(); }
+.u-childLink   { @include u-childLink(); }

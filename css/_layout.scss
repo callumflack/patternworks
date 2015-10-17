@@ -1,0 +1,66 @@
+
+
+// --------------------------------------------------------------------------
+// LAYOUT
+// --------------------------------------------------------------------------
+
+
+body {
+    padding: 0 $space;
+
+    // test
+    // border: 1px solid rgba(salmon,0.3);
+
+    @include respond-to(sm) {
+        @include clearfix();
+        max-width: $columnPicture;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+.Header,
+.Section,
+.Footer {
+    position: relative;
+}
+
+.Header {
+    padding-top: $m-spaceTitle;
+    @include respond-to(sm) { padding-top: $spaceTitle; }
+}
+
+.Content {
+    margin-bottom: $m-spaceSection;
+    @include respond-to(sm) { margin-bottom: $spaceSection; }
+}
+
+.Summary {
+    margin-bottom: $m-spaceTitle;
+    @include respond-to(sm) { margin-bottom: $spaceTitle; }
+
+    @include when-inside(".index") {
+        margin-bottom: $m-spaceSection;
+        @include respond-to(sm) { margin-bottom: $spaceSection; }
+    }
+}
+
+.Footer {
+    margin-bottom: $m-spaceTitle * 0.5;
+    @include respond-to(sm) { margin-bottom: $spaceTitle * 0.5; }
+}
+
+
+// The .Article column container
+// --------------------------------------------------------------------------
+
+.Container2 {
+    @include clearfix();
+    position: relative;
+
+    @include respond-to(sm) {
+        max-width: $columnText;
+        margin: 0 auto 0 $spaceTitle;
+        margin: 0 auto;
+    }
+}

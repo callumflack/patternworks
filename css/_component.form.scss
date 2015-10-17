@@ -1,0 +1,104 @@
+
+/* ==================================================================
+
+    FORM
+
+   ================================================================== */
+
+
+.Contact {
+    margin-top: $space--X15;
+}
+
+.Form-grid {
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+input,
+textarea,
+select {
+    // @include TextSm();
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $color-text-rule;
+    border-radius: 0;
+    display: inline-block;
+    padding: 0 0 2px 0;
+    resize: none;
+    -webkit-appearance: none;
+    width: 100%;
+
+    &::-webkit-input-placeholder { color: $color-text; }
+    &:-moz-placeholder { color: $color-text; }
+    &::-moz-placeholder { color: $color-text; }
+    &:-ms-input-placeholder { color: $color-text; }
+
+    @include on-event(){
+        outline: 0;
+    }
+}
+
+/* ::-webkit-input-placeholder,
+input
+input:-ms-input-placeholder {
+    color: $color-text;
+} */
+
+.Contact-selectInput {
+    position: relative;
+
+    > select {
+        cursor: pointer;
+    }
+
+    :after {
+        @include remFallback($sizeText);
+        content: "›";
+        margin: 0;
+        position: absolute;
+        right: 7%;
+        top: -3px;
+        transform: rotate(90deg);
+        z-index: -1;
+    }
+}
+
+.Contact-tellUs textarea {
+    margin-bottom: $space;
+}
+
+.Contact .Button {
+    // @include TextSm();
+    border: 1px solid $color-text-rule;
+    margin-left: $space;
+    margin-bottom: 0;
+    padding: 13px 0 11px;
+    transition: color 250ms ease-out;
+    width: 22%;
+
+    @include bp(sm) {
+        margin-left: $space--D2;
+        width: 35%;
+    }
+
+    &:hover {
+        color: $color-white;
+    }
+}
+
+.Contact-justEmail {
+    // @include TextSm(
+    //     $color-grey,
+    //     $text-med
+    // );
+    // display: inline-block;
+    // /* position: relative; */
+    // /* top: 3px; */
+    //
+    // a {
+    //     background-image: $linkRuleGrey;
+    //     color: $color-grey;
+    // }
+}

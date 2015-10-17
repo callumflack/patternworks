@@ -1,0 +1,20 @@
+p Roundtable Records say something here that goes over a few lines to introduce the project.
+
+figure
+    img(sizes='(max-width: 320px) 100vw,\
+               (min-width: 767px) 50vw',
+        srcset='/img/votary-375.jpg 1500w,\
+                /img/votary.jpg 6400w', 
+        src='/img/votary-100.jpg',
+        width='100%', 
+        data-action='zoom', 
+        alt='Votary Records 45')
+    
+    picture
+        source(media='(min-width: 1200px)', srcset='/img/votary.jpg')
+        source(media='(min-width: 767px)', srcset='/img/votary-375.jpg')
+        source(media='(min-width: 320px)', srcset='/img/votary-100.jpg')
+        img(src='/img/votary.jpg', width='100%', data-action='zoom', alt='The president giving an award.')
+
+    img(src='/img/votary.jpg', data-action='zoom')
+        

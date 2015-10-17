@@ -1,0 +1,46 @@
+header.Header#top(role="banner")
+    .Container
+        .Header-title
+            if current.path[0] === "index" && current.source === 'index'
+                span #[a(href="/") Patternworks]
+            
+            if current.path[0] === "approach"
+                span #[a(href="/") Patternworks]
+                span :
+                span #[a(href="/approach") approach]
+                            
+            if current.path[0] === "work"
+                span #[a(href="/") Patternworks]
+                span :
+                span #[a(href="/work") Work]
+         
+        if current.path[0] === "index" && current.source === 'index'
+            summary.Summary
+                p Do people listen to your story?
+                //- p Patternworks is the solo digital product workshop of Callum Flack, in Cairns, Australia.
+                //- p Patternworks is the digital communications workshop of Callum Flack, in Cairns, Australia.
+                //- p I plan, design and build identities and websites that resonate by a focussing on outcomes and executing with detail. #[a(href="/approach") Read about my approach]. 
+                //- p.Text
+                    != partial("contact-points")
+
+                //- p Patternworks creates digital identities and communications that resonate by focussing on outcomes and executing with detail. #[a(href="/approach") Read about my approach].
+                
+                p Patternworks creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
+                
+                p
+                    //- | Patternworks is the solo workshop of Callum Flack, based in Cairns, Australia. 
+                    | Read about my #[a(href="/approach") approach], or get in touch: 
+                    a(href="mailto:callumflack@gmail.com") email
+                    span &nbsp;• 
+                    a(href="https://twitter.com/callumflack") twitter
+                    span &nbsp;• 
+                    a(href="tel:+610-408-767-540") +61(0)408 767 540
+
+        if current.path[0] === "work" && current.source === 'index'
+            //- summary.Summary
+            //-     //- p Telling brand stories online.
+            //-     p I'll help you make digital communications your customers will want to spent their time with.
+
+        if current.path[0] === "approach"
+            summary.Summary
+                p With fifteen years experience creating visual identities and communications, Patternworks is the solo digital product workshop of Callum Flack, located in Cairns, Australia.
