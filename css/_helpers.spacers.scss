@@ -186,4 +186,6 @@ $space--XL             : $space-unit * 10;       // 390px */
 
 @include bp(sm) {
     .u-sm-marginTX2     { margin-top     : ($space--X2) !important; }
+
+    .u-sm-marginRD3     { margin-right   : ($space--D3) !important; }
 }

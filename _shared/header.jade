@@ -1,44 +1,49 @@
 header.Header#top(role="banner")
-    .Container
-        .Header-title
-            if current.path[0] === "index" && current.source === 'index'
-                span #[a(href="/") Patternworks]
-            
-            if current.path[0] === "approach"
-                span #[a(href="/") Patternworks]
-                span :
-                span #[a(href="/approach") approach]
-                            
-            if current.path[0] === "work"
-                span #[a(href="/") Patternworks]
-                span :
-                span #[a(href="/work") Work]
-         
-        if current.path[0] === "index" && current.source === 'index'
-            summary.Summary
-                p Do people listen to your story?
-                //- p Patternworks is the solo digital product workshop of Callum Flack, in Cairns, Australia.
-                //- p Patternworks is the digital communications workshop of Callum Flack, in Cairns, Australia.
-                //- p I plan, design and build identities and websites that resonate by a focussing on outcomes and executing with detail. #[a(href="/approach") Read about my approach]. 
-                //- p.Text
-                    != partial("contact-points")
+    .Header-title
+        span #[a(href="/") Patternworks]
 
-                //- p Patternworks creates digital identities and communications that resonate by focussing on outcomes and executing with detail. #[a(href="/approach") Read about my approach].
-                
-                p Patternworks creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
-                
-                p
+        //- if current.path[0] !== "index" || current.path[0] !== "404"
+        
+        if current.path[0] !== "index"
+            span :
+
+        if current.path[0] === "approach"
+            span #[a(href="/approach") approach]
+                        
+        if current.path[0] === "work"
+            span #[a(href="/work") Work]
+     
+        if current.path[0] === "blog"
+            span #[a(href="/blog") Blog]
+    
+    if current.source === "index"
+        if current.path[0] === "index"
+            summary.Summary
+                //- p 
+                    //- span.Emphasis When it's so easy to be online, how can you stand out in a crowd?
+                    span.Emphasis How can you stand out in a crowd?
+                //- p Patternworks creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
+                //- p.Em Brands, products, campaigns and interactive experiences for every screen. 
+                p.Em The difference is the sum of small details.
+                //- p.Em creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
+                //- p
                     //- | Patternworks is the solo workshop of Callum Flack, based in Cairns, Australia. 
-                    | Read about my #[a(href="/approach") approach], or get in touch: 
+                    | Read about my #[a(href="/approach") approach], or get in touch via: 
                     a(href="mailto:callumflack@gmail.com") email
                     span &nbsp;• 
                     a(href="https://twitter.com/callumflack") twitter
                     span &nbsp;• 
                     a(href="tel:+610-408-767-540") +61(0)408 767 540
+                    
+                p.Tint
+                    | To know more, read about my #[a(href="/approach") approach], get in touch by 
+                    a(href="mailto:callumflack@gmail.com") email
+                    span &nbsp;or 
+                    a(href="https://twitter.com/callumflack") twitter
+                    | &nbsp;. Or just keep scrolling.
 
-        if current.path[0] === "work" && current.source === 'index'
+        if current.path[0] === "work"
             //- summary.Summary
-            //-     //- p Telling brand stories online.
             //-     p I'll help you make digital communications your customers will want to spent their time with.
 
         if current.path[0] === "approach"

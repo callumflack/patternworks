@@ -9,6 +9,7 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    display: block;
     height: 100%; // 1
     // max-height: rem(600);
     margin: 0 auto;
@@ -34,6 +35,13 @@
 
     } @else {
         content: none;
+    }
+
+    // in case the .coverImage is itself a link
+    @include u-link(none);
+
+    a {
+        @include u-link(none);
     }
 }
 

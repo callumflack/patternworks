@@ -8,24 +8,19 @@
 // Each project block is gridded differently
 .Project-block + .Project-block {
     margin-top: $spaceTitle;
-
-    @include when-inside(".Project-block--lg") {
-        margin-bottom: 0;
-    }
 }
 
 
 // A single project
 .Project {
-    margin-bottom: $spaceGutter * 2;
-
-    @include when-inside(".Project-block--lg") {
-        margin-bottom: 0;
+    &:not(:first-child) {
+        margin-bottom: $spaceGutter * 2;
     }
 }
 
 
 // Project-pictures have background-images set by the Harp slug.
+// OBSOLETE: use FlexEmbed to manage dimensions instead.
 .Project-pictureContainer {
     display: block;
     overflow: hidden;
@@ -34,10 +29,6 @@
     background-color: $color-text;
     height: 20vh;
     position: relative;
-
-    a {
-        @include u-link(none);
-    }
 
     @include when-inside(".Project-block--lg") {
         height: rem(400);
@@ -51,31 +42,34 @@
 
     @include respond-to(sm) {
         @include when-inside(".Project-block--lg") {
-            // margin: 0 -#{$space--X2};
-            margin: 0 -#{$spaceTitle};
+            margin: 0 -#{$space--X2};
+            // margin: 0 -#{$spaceTitle};
         }
     }
 }
 
-
 // The markup holds the content, which in this case,
 // is a background-image.
-.Project-picture {
-    @include u-absoluteCover();
-    @include smoothTransition();
-    background-size: cover !important;
-    margin: auto;
-    opacity: 0.85;
+// OBSOLETE: unless wrapped in .Project-pictureContainer
+// .Project-picture {
+//     @include u-absoluteCover();
+//     @include smoothTransition();
+//     background-size: cover !important;
+//     margin: auto;
+// }
+
+
+
+// Subtle hover interaction
+// TODO
+// =============================================================================================================
+.Project-pictureInteraction {
+    opacity: 0.95;
     transition: all 350ms ease;
 
     @include when-inside('a:hover') {
         opacity: 1;
         transform: scale(1.01);
-    }
-
-    @include when-inside(".Project-block--lg") {
-        // padding: 0 $space--X2;
-        // padding: 0 $spaceTitle;
     }
 }
 
@@ -83,19 +77,19 @@
 // Project details
 .Project-caption {
     margin-top: $spaceGutter;
-    width: calc(100% * 9 / 12);
+}
 
-    @include when-inside(".Project-block--lg") { width: calc(100% * 11 / 12); }
-    @include when-inside(".Project-block--sm") { width: calc(100% * 23 / 24); }
+.Project-data { @extend .Article-data; }
+.Project-time { @extend .Article-time; }
+// .Project-tags { @extend .Article-tags; }
+.Project-separator { @extend .Article-separator; }
 
-    @include respond-to(sm) {
-        width: calc(100% * 9 / 12);
-        @include when-inside(".Project-block--lg") { width: calc(100% * 9 / 24); }
-        // @include when-inside(".Project-block--sm") { width: calc(100% * 23 / 24); }
-    }
+.Project-description {
+    @include TextRg();
 }
 
 .Project-title {
+    display: inline-block;
     margin: 0;
 
     a {
@@ -104,5 +98,17 @@
     }
 }
 
-.Project-data { @extend .Article-data; }
-.Project-time { @extend .Article-time; }
+.Project-cta {
+    @include u-link();
+    font-family: $font-text-i;
+}
+
+
+// Use this with .FlexEmbed to outset a feature imgage outside the .Container
+.OutsetBlock {
+    margin: 0 -#{$space};
+
+    @include respond-to(sm) {
+        margin: 0 -#{$space--X2};
+    }
+}

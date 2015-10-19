@@ -5,16 +5,18 @@
 // --------------------------------------------------------------------------
 
 
-// Headlines
+// Section mixin
 // --------------------------------------------------------------------------
 
 @mixin SectionTitle() {
     @include TypeReset();
+    // color: $color-ink;
     display: inline-block;
     font-family: $font-section-title;
     font-size: rem(18);
     letter-spacing: 0.19em;
-    margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
+    // margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
+    margin: 0 0 $m-spaceTitle 0;
     text-align: left;
     text-transform: uppercase;
 
@@ -29,14 +31,15 @@
 
     a {
         @include u-link(none);
-        @include RuleTransition($color-black, true);
+        @include RuleTransition($color-text, true);
+        // color: $color-ink;
         line-height: inherit;
         width: calc(100% - .25rem); // align bottom border to text length
     }
 
     @include respond-to(sm) {
-        font-size: rem(21);
-        margin-bottom: $spaceTitle;
+        font-size: rem(19);
+        margin-bottom: $spaceTitle + 1rem;
     }
 }
 
@@ -44,28 +47,126 @@
 .Header-title { @include SectionTitle(); }
 
 
+// Summary
+// --------------------------------------------------------------------------
+
+@mixin Summary() {
+    @include TypeReset();
+    // color: $color-hi2;
+    // color: $color-ink;
+    font-family: $font-display-i;
+    font-family: $font-display;
+    font-size: rem(33);
+    letter-spacing: 0.012em;
+    letter-spacing: 0.018em;
+    line-height: 1.35;
+    margin: 0 0 ($space * 1) 0;
+    margin: 0;
+    text-align: left;
+
+    a {
+        @include u-link();
+        // font-family: $font-display-i;
+        padding-bottom: 0.1%;
+        padding-bottom: 0;
+    }
+
+    .Emphasis {
+        // color: $color-hi4;
+        // font-family: $font-display-em;
+        // font-size: rem(44);
+        // letter-spacing: 0.009em;
+        // text-transform: uppercase;
+
+        border-bottom: 1px solid $color-text;
+        display: block;
+        font-family: $font-display-i;
+        // margin-left: calc( (#{$columnText} - (#{$columnPicture} + #{$space--X4})) * 0.5  );
+        // margin-right: calc( (#{$columnText} - (#{$columnPicture} + #{$space--X4})) * 0.5  );
+        margin-bottom: $space + 0.5rem;
+        padding-bottom: $space;
+
+        > span {
+            margin: 0 auto;
+            max-width: $columnText;
+        }
+    }
+
+    @include respond-to(sm) {
+        font-size: rem(40);
+        font-size: rem(50);
+        // line-height: 1.3;
+    }
+}
+
+.Summary {
+    margin: 0;
+
+    @include respond-to(sm) {
+        max-width: $columnText;
+        margin-left: calc( (#{$columnPicture} - #{$columnText}) * 0.25 );
+    }
+
+    > p {
+        @include Summary();
+        width: 100%;
+
+        &.Em {
+            // color: $color-hi4;
+            // font-family: $font-display-i;
+            // font-size: rem(44);
+        }
+
+        &.Tint {
+            // color: rgba($color-text,0.25);
+            opacity: 0.3;
+
+        }
+
+        @include respond-to(sm) {
+            // width: 107%;
+            width: 116%;
+        }
+    }
+}
+
+
+// Meta mixin
+// --------------------------------------------------------------------------
+
 @mixin Meta(
     $color: $color-text,
     $display: inline-block
 ) {
     @include TypeReset();
     display: $display;
-    font-family: $font-text;
+    font-family: $font-text-i;
     // font-feature-settings: 'tnum';
     font-size: rem(14);
-    letter-spacing: 0.012em;
+    letter-spacing: 0.022em;
     line-height: calc(#{$r-sizeText} * 1.5);
     margin-bottom: 0;
-
-    @include when-inside(".Project-caption") {
-        // margin-bottom: $space * 0.25;
-    }
 }
 
 .Meta { @include Meta(); }
 
 
-// Headlines (for markdown)
+// Meta mono mixin
+// --------------------------------------------------------------------------
+
+@mixin Mono() {
+    @include TypeReset();
+    font-family: $font-mono;
+    font-size: rem(15);
+    letter-spacing: -0.025em;
+    margin-bottom: 0;
+}
+
+.Mono { @include Mono(); }
+
+
+// Lower headlines
+// TODO: will I use for markdown for the blog?
 // --------------------------------------------------------------------------
 
 h2 {
@@ -91,72 +192,24 @@ h4 {
 }
 
 
-// Summary
-// --------------------------------------------------------------------------
-
-@mixin Summary() {
-    @include TypeReset();
-    // color: $color-hi3;
-    font-family: $font-display;
-    font-size: rem(33);
-    letter-spacing: 0.018em; //.015 light
-    line-height: 1.35;
-    margin: 0 0 ($space * 0.75) 0;
-    text-align: left;
-
-    a {
-        @include u-link(none);
-        font-family: $font-display-i;
-        padding-bottom: 0;
-    }
-
-    @include respond-to(sm) {
-        font-size: rem(48);
-        line-height: 1.3;
-    }
-}
-
-.Summary {
-    margin: 0;
-    // width: 95%;
-
-    @include respond-to(sm) {
-        // margin: 0 auto 0 $spaceTitle;
-        // margin: 0 ($spaceTitle * 1.5) 0 $spaceTitle;
-        // margin: 0 auto 0 $spaceTitle;
-        // margin: 0 auto;
-        // max-width: 77%;
-        max-width: $columnText;
-        margin-left: calc( (#{$columnPicture} - #{$columnText}) * 0.25 );
-    }
-
-    > p {
-        @include Summary();
-        width: 100%;
-        @include respond-to(sm) {
-            width: 107%;
-            width: 120%;
-        }
-    }
-
-    @include when-inside(".approach") {
-        // margin-bottom: $space * 1.25;
-        // max-width: $columnText + $spaceTitle;
-    }
-}
-
-
 // Footer
 // --------------------------------------------------------------------------
 
 .Footer {
     p {
+        // @include Meta();
+        // @include Mono();
         margin: 0;
-        width: 77%;
 
         @include respond-to(sm) {
-            width: 40%;
+            // width: 40%;
+            // width: 95%;
         }
+    }
+
+    em {
+        // font-family: $font-mono-i;
+        font-family: $font-text-i;
     }
 }
 
@@ -188,6 +241,10 @@ h4 {
         right: 0;
     }
 
+    &.sm-MetaNav--block {
+        position: relative;
+    }
+
     @include respond-to(sm) {
         &.lg-MetaNav--top {
             top: rem(3);
@@ -197,6 +254,10 @@ h4 {
         &.lg-MetaNav--bottom {
             bottom: 0;
             right: 0;
+        }
+
+        &.sm-MetaNav--block {
+            position: absolute;
         }
     }
 
@@ -212,128 +273,5 @@ h4 {
         &:not(:last-child) {
             margin-right: 1.5rem;
         }
-    }
-}
-
-
-// Articles
-// --------------------------------------------------------------------------
-
-.Article + .Article {
-    margin-top: $space * 1.5;
-}
-
-blockquote {
-    margin: $VertRhythmSpace auto;
-    max-width: 80%;
-}
-
-.Article-title {
-    @include Summary();
-    margin-bottom: $space * 0.1;
-
-    + .Article-data {
-        // transform: translateY(-($space * 0.75));
-        margin-bottom: 0;
-    }
-}
-
-.Article-data,
-.Article-time {
-    @include Meta();
-}
-
-.Article-data {
-    margin-bottom: rem(2);
-
-    // data separator
-    > span {
-        letter-spacing: 0.1em;
-    }
-
-    + p {
-        margin-top: $m-space * 1.25;
-        @include respond-to(sm) { margin-top: $space * 1.25; }
-    }
-}
-
-.Article-tags {}
-
-
-// Article author
-// --------------------------------------------------------------------------
-
-.Article-footer {
-    border-top: 1px solid rgba($color-grey,0.25);
-    margin-top: $spaceTitle !important;
-    padding-top: $space * 0.75;
-
-    p {
-        color: $color-grey;
-    }
-}
-
-.Article-authorImage {
-    // border-radius: 50%;
-    filter: grayscale(100%);
-    float: left;
-    margin-right: $space * 0.75;
-    width: rem(100);
-
-    > img {
-        border-radius: 50%;
-    }
-}
-
-
-
-// Figure
-// --------------------------------------------------------------------------
-
-$realignGridRight: calc( ((#{$columnText} + #{$spaceTitle}) - #{$columnPicture} - #{$space--X2}) );
-$realignGridLeft:  calc(  -#{$spaceTitle} - #{$space--X2}  );
-$realignGridAuto:  calc( (#{$columnText} - (#{$columnPicture} + #{$space--X2})) * 0.5  );
-
-figure {
-
-    &:not(:first-child) { margin-top: $space--X2; }
-    &:not(:last-child) { margin-bottom: $space--X2; }
-
-    &.lg {
-        // margin: 0 calc((#{$columnText} - #{$columnWidePicture}) / 2);
-        margin: 0 -$space 0 -$space;
-        &:not(:first-child) { margin-top: $space--X2; }
-        &:not(:last-child) { margin-bottom: $space--X2; }
-
-        @include respond-to(sm) {
-            // margin: 0 $realignGridRight 0 $realignGridLeft;
-            margin: 0 $realignGridAuto;
-        }
-    }
-
-    @include respond-to(sm) {
-        &.sm {
-            margin: 0 $space * 2;
-            &:not(:first-child) { margin-top: $space--X2; }
-            &:not(:last-child) { margin-bottom: $space--X2; }
-        }
-    }
-
-    &.stroked {
-        img,
-        video {
-            border: 1px solid rgba($color-text,0.15);
-            // overflow: hidden;
-        }
-    }
-}
-
-figcaption {
-    max-width: $columnText;
-    margin: $space--D3 auto 0;
-
-    > p {
-        @include Meta();
-        max-width: $columnText * 0.75;
     }
 }

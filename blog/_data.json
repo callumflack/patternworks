@@ -8,6 +8,7 @@
         "author": "callum-flack",
         "description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
         "ispublished": true,
+        "isfeatured": true,
         "ishome": true
     },
     "design-is-not-art": {
@@ -18,6 +19,7 @@
         "author": "callum-flack",
         "description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
         "ispublished": true,
+        "isfeatured": false,
         "ishome": false
     }
 }

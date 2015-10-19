@@ -6,7 +6,7 @@
         "description": "A record label for record collectors.",
         "tags": "Identity",
         "ispublished": true,
-        "islisted": true,
+        "isfeatured": true,
         "ishome": true
     },
     "bellflower": {
@@ -16,7 +16,7 @@
         "description": "A legible, performant, mobile-first marketing blog.",
         "tags": "Identity, website",
         "ispublished": true,
-        "islisted": true,
+        "isfeatured": true,
         "ishome": true
     },
     "box+dice": {
@@ -26,7 +26,7 @@
         "description": "Rebranding a Real Estate software start-up.",
         "tags": "Identity, website",
         "ispublished": true,
-        "islisted": true,
+        "isfeatured": true,
         "ishome": true
     },
     "ward6": {
@@ -37,7 +37,7 @@
         "description": "B2B iPad apps for Ward6",
         "tags": "Design, code",
         "ispublished": true,
-        "islisted": true,
+        "isfeatured": false,
         "ishome": true
     }
 }

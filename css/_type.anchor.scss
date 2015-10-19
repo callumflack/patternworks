@@ -5,19 +5,19 @@
 // --------------------------------------------------------------------------
 
 
-$linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-text-rule 50%);
+$linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-black 50%);
+$linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey,0) 50%, $color-grey 50%);
 
 @mixin u-link(
     $rule: $linkRuleBlack,
     $hover-rule: none,
-    $color: $color-text,
-    $hover-color: $color-text
+    $color: currentColor,
+    $hover-color: currentColor
 
 ) {
 
     @if $rule == 'none' {
         background-image: none;
-        color: transparent;
         padding-bottom: 0;
         text-decoration: none;
     }
@@ -32,10 +32,6 @@ $linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-text
         // padding-bottom: 0;
         padding-bottom: 0.2%;
         text-decoration: none;
-    }
-
-    @include on-event($self: true) {
-        color: currentColor;
     }
 
     @include on-event() {

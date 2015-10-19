@@ -114,7 +114,8 @@
   }
 }
 
-@media (--break-lg) {
+// @media (--break-lg) {
+@include respond-to(sm) {
   .large-Grid--fit > .Grid-cell {
     flex: 1;
   }

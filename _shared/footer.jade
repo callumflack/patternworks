@@ -1,24 +1,28 @@
 footer.Footer(role="contentinfo")
-    .Container
-        .MetaNav.MetaNav--bottom.lg-MetaNav--top
-            a(href="#top") Back to top #[span ↑]
-            
-        nav.Nav(role="navigation")
-            ul
-                li 
-                    a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") Home
-                li 
-                    a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
-                li 
-                    a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") Approach
-                li 
-                    a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
+    nav.Nav(role="navigation")
+        ul
+            li 
+                a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") Home
+            li 
+                a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") Approach
+            li 
+                a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
+            li 
+                a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
 
-        p 
-            //- em Patternworks is a digital identity & communications workshop.#[br]
-            em Patternworks creates digital identities & communications. 
-            != partial("contact-points")
-            | #[br]
-            | 16 Ponticello Street, Edge Hill 4870, Cairns, Australia.
-        p.Meta 
-            | ABN 18 827 101 933. © 2015 Patternworks
+    .MetaNav.MetaNav--block.lg-MetaNav--top
+        a(href="#top") Back to top #[span ↑]
+                    
+    .Grid.large-Grid--1of2.Grid--gutters
+        .Grid-cell
+            p
+                //- em Patternworks is a digital identity & communications workshop.#[br]
+                //- em Patternworks. Digital identities & communications that resonate.#[br]
+                em Patternworks. Digital identities that resonate.#[br]
+                != partial("contact-points")
+                | #[br]
+                //- | 16 Ponticello Street, Edge Hill 4870, Cairns, Australia.#[br]
+                | PO Box 910, Edge Hill 4870, Cairns, Australia.#[br]
+                | ABN 18 827 101 933. © 2015 Patternworks
+            //- p.Meta 
+                | ABN 18 827 101 933. © 2015 Patternworks

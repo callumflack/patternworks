@@ -13,6 +13,7 @@ $color-text            : #303030;
 $color-text-rule       : rgba($color-text,0.7);
 $color-white           : white;
 $color-grey            : #a19a8f;
+$color-grey            : rgba($color-text,0.5);
 $color-grey-rule       : rgba($color-grey,0.7);
 $color-link            : $color-text;
 $color-link-rule       : rgba($color-link,0.7);
@@ -21,7 +22,9 @@ $color-bg-neutral      : #EAEBEC;
 $color-hi              : #6EBE70;
 $color-hi2             : #F56F24; //dirty orange
 $color-hi3             : #29CFEF; //cyanish
+$color-hi4             : #46DA2F; //green neon 40D229
 $color-hi-alt          : #246168;
+$color-ink             : #1454D6;
 
 // medium green rgba(97,255,160,0.8)
 
@@ -107,19 +110,42 @@ $transitionType     : ease-out;
 @include font-face('LyonText-Regular', '/fonts/LyonText-Regular');
 @include font-face('LyonText-RegularItalic', '/fonts/LyonText-RegularItalic');
 @include font-face('LyonText-Semibold', '/fonts/LyonText-Semibold');
+@include font-face('LyonText-SemiboldItalic', '/fonts/LyonText-SemiboldItalic');
 @include font-face('LyonText-Bold', '/fonts/LyonText-Bold');
+
 @include font-face('LyonDisplay-Light', '/fonts/LyonDisplay-Light');
 @include font-face('LyonDisplay-LightItalic', '/fonts/LyonDisplay-LightItalic');
 @include font-face('LyonDisplay-Regular', '/fonts/LyonDisplay-Regular');
 @include font-face('LyonDisplay-RegularItalic', '/fonts/LyonDisplay-RegularItalic');
 @include font-face('LyonDisplay-Medium', '/fonts/LyonDisplay-Medium');
 @include font-face('LyonDisplay-MediumItalic', '/fonts/LyonDisplay-MediumItalic');
-
-@include font-face('InputSansCompressed-Bold', '/fonts/InputSansCompressed-Bold');
-@include font-face('FoundersGroteskCond-Bold', '/fonts/FoundersGroteskCond-Bold');
-@include font-face('Pitch-Bold', '/fonts/Pitch-Bold');
-@include font-face('Gothic-Thirteen', '/fonts/Gothic-Thirteen');
+@include font-face('LyonDisplay-Medium', '/fonts/LyonDisplay-Medium');
 @include font-face('LyonDisplay-Bold', '/fonts/LyonDisplay-Bold');
+@include font-face('LyonDisplay-Black', '/fonts/LyonDisplay-Black');
+
+@include font-face('Pitch-Light', '/fonts/Pitch-Light');
+@include font-face('Pitch-Regular', '/fonts/Pitch-Regular');
+@include font-face('Pitch-Medium', '/fonts/Pitch-Medium');
+@include font-face('Pitch-Semibold', '/fonts/Pitch-Semibold');
+@include font-face('Pitch-SemiboldItalic', '/fonts/Pitch-SemiboldItalic');
+@include font-face('Pitch-Bold', '/fonts/Pitch-Bold');
+@include font-face('Pitch-BoldItalic', '/fonts/Pitch-BoldItalic');
+
+@include font-face('FoundersGroteskCond-Bold', '/fonts/FoundersGroteskCond-Bold');
+@include font-face('Gothic-Thirteen', '/fonts/Gothic-Thirteen');
+
+@include font-face('InputSansCompressed-ExtraLight', '/fonts/InputSansCompressed-ExtraLight');
+@include font-face('InputSansCompressed-ExtraLightItalic', '/fonts/InputSansCompressed-ExtraLightItalic');
+@include font-face('InputSansCompressed-Light', '/fonts/InputSansCompressed-Light');
+@include font-face('InputSansCompressed-LightItalic', '/fonts/InputSansCompressed-LightItalic');
+@include font-face('InputSansCompressed-Bold', '/fonts/InputSansCompressed-Bold');
+
+@include font-face('InputMonoCompressed-Bold', '/fonts/InputMonoCompressed-Bold');
+@include font-face('InputMonoCompressed-Medium', '/fonts/InputMonoCompressed-Medium');
+
+
+
+
 
 $sans        : 'LyonText-Regular';
 $sans-i      : "LyonText-RegularItalic";
@@ -132,18 +158,29 @@ $sans-bold-i : $sans;
 $sans-black  : $sans;
 $serif-disp  : $sans;
 
-$font-section-title       : 'InputSansCompressed-Bold';
-$font-section-title       : 'Gothic-Thirteen';
+// $font-section-title       : 'InputSansCompressed-Bold';
+// $font-section-title       : 'Gothic-Thirteen';
 $font-section-title       : 'Pitch-Bold';
+// $font-section-title       : 'InputMonoCompressed-Medium';
 
 $font-display             : 'LyonDisplay-Light';
 $font-display-i           : 'LyonDisplay-LightItalic';
+$font-display-em          : 'LyonDisplay-Regular';
 // $font-display             : 'LyonDisplay-Regular';
 // $font-display-i           : 'LyonDisplay-RegularItalic';
+// $font-display             : 'InputSansCompressed-ExtraLight';
+// $font-display-i           : 'InputSansCompressed-ExtraLightItalic';
 $font-display-sub         : $font-display;
 
+$font-mono                : 'Pitch-Semibold';
+$font-mono-i              : 'Pitch-SemiboldItalic';
+// $font-mono                : 'Pitch-Bold';
+// $font-mono-i              : 'Pitch-BoldItalic';
+
 $font-text                : 'LyonText-Regular';
+$font-text-i              : 'LyonText-RegularItalic';
 $font-text-med            : 'LyonText-Semibold';
+$font-text-med-i          : 'LyonText-SemiboldItalic';
 $font-text-bold           : "LyonText-Bold";
 
 $sans-font-stack       : "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
