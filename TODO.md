@@ -1,6 +1,30 @@
 TO DO
 =========================================
 
+- write approach
+- finish B&D
+- 3 x case studies (go thru old PDF folio)
+- aspect ratio thumbnails
+- avatar
+
+~
+
+- MQs: desk > tablet > mobile
+- IE compatibility: oldie.js?
+- turn off blog til written
+- project-pictureInteraction
+- next/prev on work & blog
+- merge work + blog on home list
+- repsonsive images
+- main nav links to have lg touchpoints?
+- recently scroll link JS
+
+
+
+
+
+
+
 - Pure fluid type: http://artequalswork.com/posts/fluid-type/
 - IE: https://github.com/jonathantneal/oldie
 - FONT_FACE PERFORMANCE: https://helloanselm.com/2015/using-webfonts-in-2015/
@@ -8,28 +32,8 @@ TO DO
 - FLEXBOX: https://philipwalton.github.io/solved-by-flexbox/demos/grids/
 - RESP IMGS: http://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
 - RESP IMGS: http://jonyablonski.com/2015/responsive-image-workflow/
-
-- Shopify does this for SEO: https://blog.kissmetrics.com/get-started-using-schema/
-- OG: http://ogp.me/
-
-- http://webdesign.tutsplus.com/tutorials/create-a-parallax-scrolling-website-using-stellarjs--webdesign-7307
-- http://codepen.io/ashleynolan/pen/djpCG raise on hover
-- http://codepen.io/andreasstorm/pen/pyjEh medium…
-- http://codepen.io/codyhouse/pen/jqomk bring down work over 300px high page?
-- http://tympanus.net/Development/TextInputEffects/
-
-// ideas
-- https://ui8.net/
-- http://persona2demo.tumblr.com/
-- http://themeforest.net/user/Understandable_co
-- http://imaginedbyandrew.github.io
-
-
-- http://chriswrightdesign.com/
-- http://tympanus.net/codrops2014/
-- https://github.com/IanLunn/Hover
-- http://www.owlcarousel.owlgraphic.com/demos/autoplay.html
-
+- SEO Shopify does this: https://blog.kissmetrics.com/get-started-using-schema/
+- SEO OG: http://ogp.me/
 
 # To add a Heroku app as a Git remote, you need to:
 $ heroku git:remote -a yourapp.

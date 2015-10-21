@@ -26,7 +26,7 @@
 
     &:not(:last-child),
     span:not(:last-child) {
-        margin-right: $space * 0.5;
+        margin-right: $space;
     }
 
     a {
@@ -38,8 +38,9 @@
     }
 
     @include respond-to(sm) {
-        font-size: rem(19);
-        margin-bottom: $spaceTitle + 1rem;
+        font-size: rem(18);
+        // font-size: rem(16); // bau
+        margin-bottom: $spaceTitle;
     }
 }
 
@@ -59,43 +60,20 @@
     font-size: rem(33);
     letter-spacing: 0.012em;
     letter-spacing: 0.018em;
-    line-height: 1.35;
+    line-height: 1.4;
     margin: 0 0 ($space * 1) 0;
     margin: 0;
     text-align: left;
 
     a {
-        @include u-link();
+        @include u-link(none);
         // font-family: $font-display-i;
-        padding-bottom: 0.1%;
         padding-bottom: 0;
-    }
-
-    .Emphasis {
-        // color: $color-hi4;
-        // font-family: $font-display-em;
-        // font-size: rem(44);
-        // letter-spacing: 0.009em;
-        // text-transform: uppercase;
-
-        border-bottom: 1px solid $color-text;
-        display: block;
-        font-family: $font-display-i;
-        // margin-left: calc( (#{$columnText} - (#{$columnPicture} + #{$space--X4})) * 0.5  );
-        // margin-right: calc( (#{$columnText} - (#{$columnPicture} + #{$space--X4})) * 0.5  );
-        margin-bottom: $space + 0.5rem;
-        padding-bottom: $space;
-
-        > span {
-            margin: 0 auto;
-            max-width: $columnText;
-        }
     }
 
     @include respond-to(sm) {
         font-size: rem(40);
         font-size: rem(50);
-        // line-height: 1.3;
     }
 }
 
@@ -115,17 +93,48 @@
             // color: $color-hi4;
             // font-family: $font-display-i;
             // font-size: rem(44);
+
+            color: $color-grey;
+            font-family: $font-display-i;
+            margin-bottom: $space;
+            margin-bottom: 0;
+
+            // border-bottom: 2px solid $color-text;
+            // border-bottom: 2px solid $color-grey;
+            // padding-bottom: $space - 0.25rem;
+
+            > span {
+                // color: $color-text;
+                font-family: $font-display;
+            }
         }
 
-        &.Tint {
-            // color: rgba($color-text,0.25);
-            opacity: 0.3;
 
+
+
+
+        //  testing 151021
+        // --------------------------------------------------------------------
+        &.Amp {
+            // color: $color-grey;
+            font-family: $font-display-i;
+            margin-bottom: 0;
+
+            > span {
+                // color: $color-text;
+                font-family: $font-display;
+            }
+        }
+
+        &.AmpLight {
+            color: $color-grey-base;
+            color: $color-grey;
         }
 
         @include respond-to(sm) {
             // width: 107%;
             width: 116%;
+            // width: 125%;
         }
     }
 }
@@ -156,7 +165,7 @@
 
 @mixin Mono() {
     @include TypeReset();
-    font-family: $font-mono;
+    // font-family: $font-mono;
     font-size: rem(15);
     letter-spacing: -0.025em;
     margin-bottom: 0;
@@ -179,16 +188,19 @@ h2 {
 
 h3 {
     @include TextRg();
-    font-family: $font-text-bold;
+    font-family: $font-text-med;
     letter-spacing: 0.005em;
 
     p + & {
         margin-top: $space * 1.25;
+        // margin-top: $space * 1.75;
     }
 }
 
 h4 {
     @include TextRg();
+    font-family: $font-text-med-i;
+    letter-spacing: 0.005em;
 }
 
 
@@ -199,12 +211,17 @@ h4 {
     p {
         // @include Meta();
         // @include Mono();
+        color: $color-grey-base;
         margin: 0;
 
         @include respond-to(sm) {
             // width: 40%;
             // width: 95%;
         }
+    }
+
+    a {
+        @include u-link($linkRuleGrey);
     }
 
     em {
@@ -225,6 +242,10 @@ h4 {
 
     li {
         @include SectionTitle();
+    }
+
+    a span {
+        margin-left: rem(4);
     }
 }
 
@@ -271,7 +292,7 @@ h4 {
         text-transform: uppercase;
 
         &:not(:last-child) {
-            margin-right: 1.5rem;
+            margin-right: 2rem;
         }
     }
 }

@@ -13,7 +13,10 @@ $color-text            : #303030;
 $color-text-rule       : rgba($color-text,0.7);
 $color-white           : white;
 $color-grey            : #a19a8f;
-$color-grey            : rgba($color-text,0.5);
+$color-grey-base       : rgba($color-text,0.5);
+$color-grey-alt        : adjust-hue($color-grey, 6%);
+$color-grey            : #000EFF; //#4FC724; //#65D53C; //green
+$color-grey            : #0060FF;
 $color-grey-rule       : rgba($color-grey,0.7);
 $color-link            : $color-text;
 $color-link-rule       : rgba($color-link,0.7);
@@ -133,15 +136,17 @@ $transitionType     : ease-out;
 
 @include font-face('FoundersGroteskCond-Bold', '/fonts/FoundersGroteskCond-Bold');
 @include font-face('Gothic-Thirteen', '/fonts/Gothic-Thirteen');
+@include font-face('bau-regular', '/fonts/bau-regular');
+@include font-face('bau-bold', '/fonts/bau-bold');
 
-@include font-face('InputSansCompressed-ExtraLight', '/fonts/InputSansCompressed-ExtraLight');
-@include font-face('InputSansCompressed-ExtraLightItalic', '/fonts/InputSansCompressed-ExtraLightItalic');
-@include font-face('InputSansCompressed-Light', '/fonts/InputSansCompressed-Light');
-@include font-face('InputSansCompressed-LightItalic', '/fonts/InputSansCompressed-LightItalic');
-@include font-face('InputSansCompressed-Bold', '/fonts/InputSansCompressed-Bold');
-
-@include font-face('InputMonoCompressed-Bold', '/fonts/InputMonoCompressed-Bold');
-@include font-face('InputMonoCompressed-Medium', '/fonts/InputMonoCompressed-Medium');
+// @include font-face('InputSansCompressed-ExtraLight', '/fonts/InputSansCompressed-ExtraLight');
+// @include font-face('InputSansCompressed-ExtraLightItalic', '/fonts/InputSansCompressed-ExtraLightItalic');
+// @include font-face('InputSansCompressed-Light', '/fonts/InputSansCompressed-Light');
+// @include font-face('InputSansCompressed-LightItalic', '/fonts/InputSansCompressed-LightItalic');
+// @include font-face('InputSansCompressed-Bold', '/fonts/InputSansCompressed-Bold');
+//
+// @include font-face('InputMonoCompressed-Bold', '/fonts/InputMonoCompressed-Bold');
+// @include font-face('InputMonoCompressed-Medium', '/fonts/InputMonoCompressed-Medium');
 
 
 
@@ -158,22 +163,25 @@ $sans-bold-i : $sans;
 $sans-black  : $sans;
 $serif-disp  : $sans;
 
-// $font-section-title       : 'InputSansCompressed-Bold';
 // $font-section-title       : 'Gothic-Thirteen';
-$font-section-title       : 'Pitch-Bold';
 // $font-section-title       : 'InputMonoCompressed-Medium';
+// $font-section-title       : 'FoundersGroteskCond-Bold';
+$font-section-title       : 'Pitch-Bold';
+// $font-section-title       : 'LyonText-Semibold';
+// $font-section-title       : 'bau-bold';
 
 $font-display             : 'LyonDisplay-Light';
 $font-display-i           : 'LyonDisplay-LightItalic';
-$font-display-em          : 'LyonDisplay-Regular';
+// $font-display             : 'bau-regular';
+// $font-display-i           : 'bau-regular';
 // $font-display             : 'LyonDisplay-Regular';
 // $font-display-i           : 'LyonDisplay-RegularItalic';
 // $font-display             : 'InputSansCompressed-ExtraLight';
 // $font-display-i           : 'InputSansCompressed-ExtraLightItalic';
 $font-display-sub         : $font-display;
 
-$font-mono                : 'Pitch-Semibold';
-$font-mono-i              : 'Pitch-SemiboldItalic';
+// $font-mono                : 'Pitch-Semibold';
+// $font-mono-i              : 'Pitch-SemiboldItalic';
 // $font-mono                : 'Pitch-Bold';
 // $font-mono-i              : 'Pitch-BoldItalic';
 

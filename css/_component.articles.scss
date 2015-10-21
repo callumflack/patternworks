@@ -61,13 +61,17 @@ blockquote {
 // --------------------------------------------------------------------------
 
 .Article-footer {
-    border-top: 1px solid rgba($color-grey,0.15);
+    // background-color: rgba($color-grey,0.08);
+    // padding: $space * 0.5;
+
+    border-top: 1px solid rgba($color-grey-base,0.25);
+    // border-top: 1px solid $color-grey;
     margin-top: $spaceTitle !important;
     padding-top: $space * 0.75;
 
     p {
-        color: $color-grey;
         // color: $color-grey;
+        color: $color-grey-base;
     }
 
     a {
@@ -138,4 +142,39 @@ figcaption {
         @include Meta();
         max-width: $columnText * 0.75;
     }
+}
+
+
+// Checklist (Approach page)
+// --------------------------------------------------------------------------
+
+.Checklist {
+    margin-left: $space * 2;
+
+    + p,
+    + h3,
+    + h4 {
+        margin-top: $space * 1.25;
+        margin-top: $space * 1.75;
+    }
+}
+
+.Checklist ul {
+    // list-style-type: none;
+}
+
+.Checklist p,
+.Checklist li {
+    @include TextRg();
+    font-size: rem(17);
+    line-height: calc(#{$r-sizeText} * 1.5);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.Checklist p {
+    // border-bottom: 1px solid rgba($color-text,0.7);
+    font-family: $font-text-i;
+    margin-bottom: $space * 0.25;
+    // padding-bottom: rem(2);
 }

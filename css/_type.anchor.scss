@@ -6,7 +6,7 @@
 
 
 $linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-black 50%);
-$linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey,0) 50%, $color-grey 50%);
+$linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey-base,0) 50%, $color-grey-base 50%);
 
 @mixin u-link(
     $rule: $linkRuleBlack,

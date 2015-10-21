@@ -43,7 +43,10 @@ body {
         // margin-bottom: $m-spaceSection * 1.5;
         margin-bottom: 40vh;
         // @include respond-to(sm) { margin-bottom: $spaceSection * 2; }
-        @include respond-to(sm) { margin-bottom: 30vh; }
+        @include respond-to(sm) {
+            margin-bottom: 20vh;
+            margin-bottom: 25vh;
+        }
     }
 }
 

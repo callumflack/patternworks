@@ -12,9 +12,6 @@ html
         meta(name="google-site-verification" content="Vinlr0TWN4pYrfQZcYlwmFuj-ry5CMS_2sZhqs6O4SE")
         link(rel="stylesheet" href="/css/styles.css")
         link(rel="stylesheet", href="/css/zoom.css")
-        //- link(rel="stylesheet", href="/css/flexgrid.css")
-
-
 
     body(class="#{ current.path[0] }")
         
@@ -23,29 +20,26 @@ html
         if current.path[0] === "index"
             != yield
         
-        else
-            if current.path[0] === "work"
-                != partial("/work/_work")
-            
-            if current.path[0] === "approach"
-                != yield
-            
-            if current.path[0] === "blog"
-                != partial("/blog/_blog")
-            
-            else if ["404"].indexOf(current.path[0]) !== -1
-                != yield
+        if current.path[0] === "approach"
+            != yield
+        
+        if current.path[0] === "work"
+            != partial("/work/_work")
+        
+        if current.path[0] === "blog"
+            != partial("/blog/_blog")
+        
+        else if ["404"].indexOf(current.path[0]) !== -1
+            != yield
 
         != partial("_shared/footer")
-
-
 
         script(src="/js/jquery.js")
         script(src="/js/application.js")
         script(src="/js/jquery.unveil.js")
         script(src="/js/transition.js")
         script(src="/js/zoom.js")
-        script(src="/js/modernizr.js")
+        //- script(src="/js/modernizr.js")
         script(type='text/javascript').
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', '#{ locals.analytics_account }']);

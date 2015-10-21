@@ -8,13 +8,14 @@ header.Header#top(role="banner")
             span :
 
         if current.path[0] === "approach"
-            span #[a(href="/approach") approach]
+            span #[a(href="/approach") about]
                         
         if current.path[0] === "work"
             span #[a(href="/work") Work]
      
         if current.path[0] === "blog"
             span #[a(href="/blog") Blog]
+    
     
     if current.source === "index"
         if current.path[0] === "index"
@@ -24,7 +25,8 @@ header.Header#top(role="banner")
                     span.Emphasis How can you stand out in a crowd?
                 //- p Patternworks creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
                 //- p.Em Brands, products, campaigns and interactive experiences for every screen. 
-                p.Em The difference is the sum of small details.
+                //- p.Em The difference is the sum of small details.
+                //- p.Em Delightful, considered experiences for every screen.
                 //- p.Em creates digital identities and communications that resonate by focussing on outcomes and stacking up details. 
                 //- p
                     //- | Patternworks is the solo workshop of Callum Flack, based in Cairns, Australia. 
@@ -34,18 +36,32 @@ header.Header#top(role="banner")
                     a(href="https://twitter.com/callumflack") twitter
                     span &nbsp;• 
                     a(href="tel:+610-408-767-540") +61(0)408 767 540
-                    
-                p.Tint
-                    | To know more, read about my #[a(href="/approach") approach], get in touch by 
-                    a(href="mailto:callumflack@gmail.com") email
-                    span &nbsp;or 
-                    a(href="https://twitter.com/callumflack") twitter
-                    | &nbsp;. Or just keep scrolling.
+                
+                //- p.Em Delightful. Clear. Useful. Augmentative. #[span Considered experiences for every screen.]
+                //- p.Tint
+                //-     | To know more, read about my #[a(href="/approach") approach], get in touch by 
+                //-     a(href="mailto:callumflack@gmail.com") email
+                //-     span &nbsp;or 
+                //-     a(href="https://twitter.com/callumflack") twitter
+                //-     //- | &nbsp;. Or just keep scrolling #[span.Icon ↓]
+                //-     | &nbsp;. Or scroll.
 
+                p.Amp Delightful. Clear. Useful. Augmentative. #[span Considered experiences for every screen.]
+                p.AmpLight
+                    //- | It begins with conversation: 
+                    a(href="mailto:callumflack@gmail.com") Get in touch.
+                    
         if current.path[0] === "work"
             //- summary.Summary
-            //-     p I'll help you make digital communications your customers will want to spent their time with.
+                p I'll help you make digital communications your customers will want to spent their time with.
 
         if current.path[0] === "approach"
             summary.Summary
-                p With fifteen years experience creating visual identities and communications, Patternworks is the solo digital product workshop of Callum Flack, located in Cairns, Australia.
+                //- p Eliminate the unnecessary so that the necessary may speak.
+                //- p.Em Fifteen years of visual communication knowhow.
+                //- p.Em Fifteen years of creating customers through problem-solving.
+                //- p.Em Fifteen years of creative problem-solving to get the story out.
+                //- p.Em Fifteen years of creative problem-solving to tell stories that customers care for.
+                //- p.Em Fifteen years of making the complex simple.
+                //- p.Tint Patternworks is the independent digital communications workshop of Callum Flack, located in Cairns, Australia.
+                p.Tint An independent digital creative workshop in Cairns, Australia.

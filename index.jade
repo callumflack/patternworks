@@ -1,14 +1,23 @@
 main.Content(role="main")
     section.Section
 
-        nav.MetaNav.MetaNav--top(role="navigation")
-            a(href="/work") work #[span →]
-            a(href="/blog") blog #[span →]
+        //- nav.MetaNav.MetaNav--top(role="navigation")
+        //-     a(href="/work") work #[span →]
+        //-     a(href="/blog") blog #[span →]
             
-        h1.SectionTitle
-            //- a(href="/work", style="width:100%") Recent work
-            a(href="/work") Recently
+        //- h1.SectionTitle
+        //-     //- a(href="/work", style="width:100%") Recent work
+        //-     a(href="/work") Recently
 
+
+        nav.Nav(role="navigation")
+            ul
+                li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/", style="width:100%") Recently#[span ↓]]
+                li #[a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") About]
+                li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work]
+                li #[a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog]
+                    
+                    
         //- This is, somehow, to spit out both work & blog on the home page
         //- h2 a(href="#{ post.url ? post.url : '/blog/' + slug }")= title
         
@@ -35,39 +44,19 @@ main.Content(role="main")
                                                 | .&nbsp;
                                                 #[= article.description]
 
-                    .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
-                        if article.isfeatured !== true
-                            .Project.Grid-cell
-                                .FlexEmbed
-                                    .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                                    .FlexEmbed-content
-                                        a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-                                .Project-caption
-                                    .Project-data
-                                        time.Project-time= article.date
-                                        span.Project-separator &nbsp;•&nbsp;
-                                        span= article.tags
-                                    .Project-description
-                                        h4.Project-title #[a(href="../work/#{ slug }")= article.title]
-                                        | .&nbsp;
-                                        #[= article.description]
-
-        
-        //- .Project-block.Project-block--lg
-        //-     .Project
-        //-         .FlexEmbed.OutsetBlock
-        //-             .FlexEmbed-ratio.FlexEmbed-ratio--3by1
-        //-             a.FlexEmbed-content(href="../work/bellflower")
-        //-                 .CoverImage(style="background-image: url(/img/thumb-bellflower.jpg)")
-        //-         //- a.Project-pictureContainer(href="../work/bellflower")
-        //-             .Project-picture(style="background-image: url(/img/thumb-roundtable-records.jpg)")
-        //-         .Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
-        //-             .Grid-cell
-        //-                 .Project-caption
-        //-                     .Project-data
-        //-                         time.Project-time 2015
-        //-                         span &nbsp;•&nbsp;
-        //-                         | Website, identity
-        //-                     h4.Project-title
-        //-                         a(href="../work/bellflower") Bellflower Chinese Medicine. 
-        //-                         span A legible, performant, mobile-first marketing blog.
+                    //- .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
+                    //-     if article.isfeatured !== true
+                    //-         .Project.Grid-cell
+                    //-             .FlexEmbed
+                    //-                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
+                    //-                 .FlexEmbed-content
+                    //-                     a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+                    //-             .Project-caption
+                    //-                 .Project-data
+                    //-                     time.Project-time= article.date
+                    //-                     span.Project-separator &nbsp;•&nbsp;
+                    //-                     span= article.tags
+                    //-                 .Project-description
+                    //-                     h4.Project-title #[a(href="../work/#{ slug }")= article.title]
+                    //-                     | .&nbsp;
+                    //-                     #[= article.description]
