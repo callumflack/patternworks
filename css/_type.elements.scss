@@ -15,8 +15,9 @@
     font-family: $font-section-title;
     font-size: rem(18);
     letter-spacing: 0.19em;
-    // margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
-    margin: 0 0 $m-spaceTitle 0;
+    letter-spacing: 0.07em;
+    margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
+    // margin: 0 0 $m-spaceTitle 0;
     text-align: left;
     text-transform: uppercase;
 
@@ -30,17 +31,23 @@
     }
 
     a {
-        @include u-link(none);
-        @include RuleTransition($color-text, true);
+        @include u-link();
+        // @include RuleTransition($color-text, true);
         // color: $color-ink;
         line-height: inherit;
         width: calc(100% - .25rem); // align bottom border to text length
+
+        > span {
+            margin: rem(-40) rem(-20);
+            padding: rem(40) rem(20);
+            // border: 1px solid salmon;
+        }
     }
 
     @include respond-to(sm) {
-        font-size: rem(18);
+        font-size: rem(16);
         // font-size: rem(16); // bau
-        margin-bottom: $spaceTitle;
+        margin-bottom: $spaceTitle - 0.75rem;
     }
 }
 
@@ -65,6 +72,10 @@
     margin: 0;
     text-align: left;
 
+    // bold sans test 151021
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+
     a {
         @include u-link(none);
         // font-family: $font-display-i;
@@ -74,6 +85,7 @@
     @include respond-to(sm) {
         font-size: rem(40);
         font-size: rem(50);
+        font-size: rem(80);
     }
 }
 
@@ -151,7 +163,7 @@
     display: $display;
     font-family: $font-text-i;
     // font-feature-settings: 'tnum';
-    font-size: rem(14);
+    font-size: rem(16);
     letter-spacing: 0.022em;
     line-height: calc(#{$r-sizeText} * 1.5);
     margin-bottom: 0;
@@ -283,13 +295,14 @@ h4 {
     }
 
     a {
+        @include SectionTitle();
         @include u-link(none);
-        @include Meta();
-
-        font-family: $font-section-title;
-        font-size: rem(14);
-        letter-spacing: 0.075em;
-        text-transform: uppercase;
+        // @include Meta();
+        //
+        // font-family: $font-section-title;
+        // font-size: rem(14);
+        // letter-spacing: 0.075em;
+        // text-transform: uppercase;
 
         &:not(:last-child) {
             margin-right: 2rem;

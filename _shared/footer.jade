@@ -2,13 +2,13 @@ footer.Footer(role="contentinfo")
     nav.Nav(role="navigation")
         ul
             li 
-                a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") Home
+                a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") #[span Home]
             li 
-                a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") Approach
+                a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") #[span Work]
             li 
-                a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
+                a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") #[span Approach]
             li 
-                a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
+                a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") #[span Blog]
 
     .MetaNav.MetaNav--block.lg-MetaNav--top
         a(href="#top") Back to top #[span ↑]

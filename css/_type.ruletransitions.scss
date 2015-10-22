@@ -36,6 +36,7 @@
 
         @include respond-to(sm) {
             height: 2px; //Pitch
+            // height: 0.1rem; //Lyon
         }
     }
 
