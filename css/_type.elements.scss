@@ -15,7 +15,7 @@
     font-family: $font-section-title;
     font-size: rem(18);
     letter-spacing: 0.19em;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.1em;
     margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
     // margin: 0 0 $m-spaceTitle 0;
     text-align: left;
@@ -31,8 +31,8 @@
     }
 
     a {
-        @include u-link();
-        // @include RuleTransition($color-text, true);
+        @include u-link(none);
+        @include RuleTransition($color-text, true);
         // color: $color-ink;
         line-height: inherit;
         width: calc(100% - .25rem); // align bottom border to text length
@@ -46,7 +46,7 @@
 
     @include respond-to(sm) {
         font-size: rem(16);
-        // font-size: rem(16); // bau
+        font-size: rem(21);
         margin-bottom: $spaceTitle - 0.75rem;
     }
 }
@@ -66,14 +66,14 @@
     font-family: $font-display;
     font-size: rem(33);
     letter-spacing: 0.012em;
-    letter-spacing: 0.018em;
+    letter-spacing: -0.02em;
     line-height: 1.4;
     margin: 0 0 ($space * 1) 0;
     margin: 0;
     text-align: left;
 
     // bold sans test 151021
-    letter-spacing: -0.045em;
+    // letter-spacing: -0.045em;
     line-height: 1.15;
 
     a {
@@ -85,7 +85,7 @@
     @include respond-to(sm) {
         font-size: rem(40);
         font-size: rem(50);
-        font-size: rem(80);
+        font-size: rem(69);
     }
 }
 

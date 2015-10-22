@@ -36,7 +36,7 @@ $color-ink             : #1454D6;
 // Base sizes
 // --------------------------------------------------------------------------
 
-$base-font-size-unit   : 21;
+$base-font-size-unit   : 20;
 $base-font-size        : $base-font-size-unit * 1px;
 $base-line-height-unit : 1.5;
 $base-line-height      : ($base-font-size-unit * $base-line-height-unit) * 1px;
@@ -141,6 +141,12 @@ $transitionType     : ease-out;
 @include font-face('Unna-Bold', '/fonts/Unna-Bold');
 @include font-face('Unna-BoldItalic', '/fonts/Unna-BoldItalic');
 
+@include font-face('Chivo-Regular', '/fonts/Chivo-Regular');
+@include font-face('Chivo-RegularItalic', '/fonts/Chivo-RegularItalic');
+@include font-face('Chivo-Bold', '/fonts/Chivo-Bold');
+@include font-face('Chivo-BoldItalic', '/fonts/Chivo-BoldItalic');
+@include font-face('Chivo-Black', '/fonts/Chivo-Black');
+
 // @include font-face('FoundersGroteskCond-Bold', '/fonts/FoundersGroteskCond-Bold');
 // @include font-face('Gothic-Thirteen', '/fonts/Gothic-Thirteen');
 // @include font-face('bau-regular', '/fonts/bau-regular');
@@ -180,15 +186,17 @@ $serif-disp  : $sans;
 // $font-section-title       : 'Pitch-Bold';
 // $font-section-title       : 'LyonText-Black';
 // $font-section-title       : 'bau-bold';
-$font-section-title       : 'GrotesqueMT-Bold';
-// $font-section-title       : 'Reglo-Bold';
+// $font-section-title       : 'GrotesqueMT-Bold';
+$font-section-title       : 'Reglo-Bold';
 
 // $font-display             : 'LyonDisplay-Light';
 // $font-display-i           : 'LyonDisplay-LightItalic';
-$font-display             : 'GrotesqueMT-Condensed';
-$font-display-i           : 'GrotesqueMT-Condensed';
+// $font-display             : 'GrotesqueMT-Condensed';
+// $font-display-i           : 'GrotesqueMT-Condensed';
 // $font-display             : 'Reglo-Bold';
 // $font-display-i           : 'Reglo-Bold';
+$font-display             : 'Chivo-Light';
+$font-display-i           : 'Chivo-Light';
 // $font-display             : 'bau-regular';
 // $font-display-i           : 'bau-regular';
 // $font-display             : 'LyonDisplay-Regular';
@@ -207,6 +215,12 @@ $font-text-i              : 'LyonText-RegularItalic';
 $font-text-med            : 'LyonText-Semibold';
 $font-text-med-i          : 'LyonText-SemiboldItalic';
 $font-text-bold           : "LyonText-Bold";
+
+$font-text                : 'Chivo-Regular';
+$font-text-i              : 'Chivo-RegularItalic';
+$font-text-med            : 'Chivo-Bold';
+$font-text-med-i          : 'Chivo-BoldItalic';
+$font-text-bold           : "Chivo-Black";
 
 $sans-font-stack       : "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $serif-font-stack      : Georgia, Times, serif;
