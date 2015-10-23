@@ -36,18 +36,21 @@ body {
 }
 
 .Summary {
-    margin-bottom: $m-spaceTitle;
-    @include respond-to(sm) { margin-bottom: $spaceTitle + 1rem; }
+    // margin-bottom: $m-spaceTitle;
+    // @include respond-to(sm) { margin-bottom: $spaceTitle + 1rem; }
 
-    @include when-inside(".index") {
-        // margin-bottom: $m-spaceSection * 1.5;
-        margin-bottom: 40vh;
-        // @include respond-to(sm) { margin-bottom: $spaceSection * 2; }
-        @include respond-to(sm) {
-            margin-bottom: 20vh;
-            margin-bottom: 25vh;
-        }
-    }
+    margin-bottom: 40vh;
+    @include respond-to(sm) { margin-bottom: 25vh; }
+
+    // @include when-inside(".work") {
+    //     // margin-bottom: $m-spaceSection * 1.5;
+    //     margin-bottom: 40vh;
+    //     // @include respond-to(sm) { margin-bottom: $spaceSection * 2; }
+    //     @include respond-to(sm) {
+    //         margin-bottom: 20vh;
+    //         margin-bottom: 25vh;
+    //     }
+    // }
 }
 
 .Footer {

@@ -9,50 +9,65 @@
 // --------------------------------------------------------------------------
 
 @mixin SectionTitle() {
-    @include TypeReset();
-    // color: $color-ink;
+    // @include TypeReset();
     display: inline-block;
-    font-family: $font-section-title;
-    font-size: rem(18);
-    letter-spacing: 0.19em;
-    letter-spacing: 0.1em;
+    // font-family: $font-section-title;
+    // font-size: rem(18);
+    // letter-spacing: 0.19em;
+    letter-spacing: 0.025em;
     margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
-    // margin: 0 0 $m-spaceTitle 0;
-    text-align: left;
-    text-transform: uppercase;
-
-    span {
-        display: inline-block;
-    }
-
+    // text-align: left;
+    // text-transform: uppercase;
+    //
+    // span {
+    //     display: inline-block;
+    // }
+    //
     &:not(:last-child),
     span:not(:last-child) {
-        margin-right: $space;
+        margin-right: $space * 0.75;
+    }
+
+    span.NoSpace {
+        margin-right: $space * 0.25;
     }
 
     a {
         @include u-link(none);
-        @include RuleTransition($color-text, true);
-        // color: $color-ink;
-        line-height: inherit;
-        width: calc(100% - .25rem); // align bottom border to text length
-
-        > span {
-            margin: rem(-40) rem(-20);
-            padding: rem(40) rem(20);
-            // border: 1px solid salmon;
-        }
+        // @include RuleTransition($color-text, true);
+        // line-height: inherit;
+        text-decoration: none;
+        // width: calc(100% - .25rem); // align bottom border to text length
+    //
+    //     > span {
+    //         margin: rem(-40) rem(-20);
+    //         padding: rem(40) rem(20);
+    //         // border: 1px solid salmon;
+    //     }
     }
+    //
+    // @include respond-to(sm) {
+    //     font-size: rem(16);
+    //     font-size: rem(21);
+    //     margin-bottom: $spaceTitle - 0.75rem;
+    // }
 
-    @include respond-to(sm) {
-        font-size: rem(16);
-        font-size: rem(21);
-        margin-bottom: $spaceTitle - 0.75rem;
-    }
+    @include TextRg();
+    display: inline-block;
+    font-family: $font-text-med;
+    font-size: calc(#{$r-sizeText} - 1px);
+    letter-spacing: 0.012em;
+    margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
+
 }
 
 .SectionTitle,
-.Header-title { @include SectionTitle(); }
+.Header-title,
+.Project-title { @include SectionTitle(); }
+
+.Header-title {
+    // font-family: $font-text-bold-i;
+}
 
 
 // Summary
@@ -64,9 +79,10 @@
     // color: $color-ink;
     font-family: $font-display-i;
     font-family: $font-display;
-    font-size: rem(33);
-    letter-spacing: 0.012em;
-    letter-spacing: -0.02em;
+    font-size: rem(48);
+    letter-spacing: 0.0em;
+    letter-spacing: -0.005em;
+    letter-spacing: -0.015em;
     line-height: 1.4;
     margin: 0 0 ($space * 1) 0;
     margin: 0;
@@ -74,18 +90,19 @@
 
     // bold sans test 151021
     // letter-spacing: -0.045em;
-    line-height: 1.15;
+    line-height: 1.25;
 
     a {
         @include u-link(none);
-        // font-family: $font-display-i;
+        color: $color-grey;
+        font-family: $font-display-i;
         padding-bottom: 0;
     }
 
     @include respond-to(sm) {
         font-size: rem(40);
-        font-size: rem(50);
-        font-size: rem(69);
+        font-size: rem(54);
+        font-size: rem(75);
     }
 }
 
@@ -93,67 +110,33 @@
     margin: 0;
 
     @include respond-to(sm) {
-        max-width: $columnText;
+        // max-width: $columnText;
         margin-left: calc( (#{$columnPicture} - #{$columnText}) * 0.25 );
     }
 
     > p {
         @include Summary();
-        width: 100%;
-
-        &.Em {
-            // color: $color-hi4;
-            // font-family: $font-display-i;
-            // font-size: rem(44);
-
-            color: $color-grey;
-            font-family: $font-display-i;
-            margin-bottom: $space;
-            margin-bottom: 0;
-
-            // border-bottom: 2px solid $color-text;
-            // border-bottom: 2px solid $color-grey;
-            // padding-bottom: $space - 0.25rem;
-
-            > span {
-                // color: $color-text;
-                font-family: $font-display;
-            }
-        }
-
-
-
-
-
-        //  testing 151021
-        // --------------------------------------------------------------------
-        &.Amp {
-            // color: $color-grey;
-            font-family: $font-display-i;
-            margin-bottom: 0;
-
-            > span {
-                // color: $color-text;
-                font-family: $font-display;
-            }
-        }
-
-        &.AmpLight {
-            color: $color-grey-base;
-            color: $color-grey;
-        }
+        width: 90%;
 
         @include respond-to(sm) {
-            // width: 107%;
-            width: 116%;
+            // width: 116%;
             // width: 125%;
         }
     }
 }
 
 
-// Meta mixin
+// Meta & lede mixins
 // --------------------------------------------------------------------------
+
+@mixin Lede() {
+    @include TextRg();
+    font-size: $r-sizeText * 1.1;
+    font-family: $font-text-med-plus;
+    font-family: $font-text-med;
+    letter-spacing: -0.002em;
+    line-height: 1.45;
+}
 
 @mixin Meta(
     $color: $color-text,
@@ -161,10 +144,10 @@
 ) {
     @include TypeReset();
     display: $display;
-    font-family: $font-text-i;
+    // font-family: $font-text-med-i;
     // font-feature-settings: 'tnum';
-    font-size: rem(16);
-    letter-spacing: 0.022em;
+    font-size: rem(15);
+    letter-spacing: -0.01em;
     line-height: calc(#{$r-sizeText} * 1.5);
     margin-bottom: 0;
 }
@@ -199,9 +182,12 @@ h2 {
 }
 
 h3 {
-    @include TextRg();
-    font-family: $font-text-med;
-    letter-spacing: 0.005em;
+    // @include TextRg();
+    // font-family: $font-text-med;
+    // letter-spacing: 0.005em;
+
+    @include SectionTitle();
+    margin-bottom: $VertRhythmSpace;
 
     p + & {
         margin-top: $space * 1.25;
@@ -265,7 +251,7 @@ h4 {
     position: absolute;
 
     &.MetaNav--top {
-        top: rem(3);
+        top: 0;
         right: 0;
     }
 
@@ -280,7 +266,7 @@ h4 {
 
     @include respond-to(sm) {
         &.lg-MetaNav--top {
-            top: rem(3);
+            top: 0;
             right: 0;
         }
 

@@ -1,14 +1,14 @@
 header.Header#top(role="banner")
     .Header-title
-        span #[a(href="/") Patternworks]
+        span.NoSpace #[a(href="/") Patternworks]
 
         //- if current.path[0] !== "index" || current.path[0] !== "404"
         
         if current.path[0] !== "index"
-            span :
+            span.NoSpace :
 
         if current.path[0] === "approach"
-            span #[a(href="/approach") about]
+            span #[a(href="/approach") About]
                         
         if current.path[0] === "work"
             span #[a(href="/work") Work]
@@ -47,14 +47,14 @@ header.Header#top(role="banner")
                 //-     | &nbsp;. Or scroll.
 
                 //- p.Amp Delightful. Clear. Useful. Augmentative. #[span Considered experiences for every screen.]
-                p.Amp Delightful, clear and considered experiences for every screen.
-                p.AmpLight
-                    //- | It begins with conversation: 
-                    a(href="mailto:callumflack@gmail.com") Get in touch.
+                //- p.Amp Delightful, clear and considered identities for every screen. 
+                p Delightful, clear and considered experiences for every screen. 
+                    != partial("contact-email")
                     
         if current.path[0] === "work"
             summary.Summary
-                p Creative problem-solving to get the story out.
+                p Creative problem-solving to get the story out. 
+                    a(href="#start") Starting with Why, not How.
 
         if current.path[0] === "approach"
             summary.Summary
@@ -65,4 +65,6 @@ header.Header#top(role="banner")
                 //- p.Em Fifteen years of creative problem-solving to tell stories that customers care for.
                 //- p.Em Fifteen years of making the complex simple.
                 //- p.Tint Patternworks is the independent digital communications workshop of Callum Flack, located in Cairns, Australia.
-                p.Tint An independent digital creative workshop in Cairns, &nbsp;Australia.
+                p An independent digital creative workshop in Cairns, Australia. 
+                    //- span.Em For the territory, not the map.
+                    a(href="#start") I plan, design & build for the web.

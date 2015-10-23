@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------
 
 $color-black           : #111;
-$color-text            : #303030;
+$color-text            : #222;
 $color-text-rule       : rgba($color-text,0.7);
 $color-white           : white;
 $color-grey            : #a19a8f;
@@ -36,7 +36,7 @@ $color-ink             : #1454D6;
 // Base sizes
 // --------------------------------------------------------------------------
 
-$base-font-size-unit   : 20;
+$base-font-size-unit   : 23;
 $base-font-size        : $base-font-size-unit * 1px;
 $base-line-height-unit : 1.5;
 $base-line-height      : ($base-font-size-unit * $base-line-height-unit) * 1px;
@@ -91,7 +91,7 @@ $space--X6             : $space-unit * 6;
 $space--XL             : $space-unit * 10;
 
 $spaceTitle            : $space * 2.5;    // 3
-$spaceSection          : $space * 8;    // 7.5
+$spaceSection          : $space * 7;    // 7.5
 $spaceGutter           : $space--D2;
 
 $m-spaceRatio            : 0.8;
@@ -116,6 +116,7 @@ $transitionType     : ease-out;
 @include font-face('LyonText-Semibold', '/fonts/LyonText-Semibold');
 @include font-face('LyonText-SemiboldItalic', '/fonts/LyonText-SemiboldItalic');
 @include font-face('LyonText-Bold', '/fonts/LyonText-Bold');
+@include font-face('LyonText-BoldItalic', '/fonts/LyonText-BoldItalic');
 @include font-face('LyonText-Black', '/fonts/LyonText-Black');
 
 @include font-face('LyonDisplay-Light', '/fonts/LyonDisplay-Light');
@@ -136,16 +137,25 @@ $transitionType     : ease-out;
 @include font-face('Pitch-Bold', '/fonts/Pitch-Bold');
 @include font-face('Pitch-BoldItalic', '/fonts/Pitch-BoldItalic');
 
-@include font-face('Unna-Regular', '/fonts/Unna-Regular');
-@include font-face('Unna-Italic', '/fonts/Unna-Italic');
-@include font-face('Unna-Bold', '/fonts/Unna-Bold');
-@include font-face('Unna-BoldItalic', '/fonts/Unna-BoldItalic');
-
 @include font-face('Chivo-Regular', '/fonts/Chivo-Regular');
 @include font-face('Chivo-RegularItalic', '/fonts/Chivo-RegularItalic');
 @include font-face('Chivo-Bold', '/fonts/Chivo-Bold');
 @include font-face('Chivo-BoldItalic', '/fonts/Chivo-BoldItalic');
 @include font-face('Chivo-Black', '/fonts/Chivo-Black');
+
+@include font-face('FaktPro-Light', '/fonts/FaktPro-Light');
+@include font-face('FaktPro-Blond', '/fonts/FaktPro-Blond');
+@include font-face('FaktPro-Semibold', '/fonts/FaktPro-Semibold');
+
+@include font-face('Aileron-Bold', '/fonts/Aileron-Bold');
+@include font-face('Aileron-Heavy', '/fonts/Aileron-Heavy');
+
+@include font-face('SourceSerifPro-Extralight', '/fonts/SourceSerifPro-Extralight');
+@include font-face('SourceSerifPro-Light', '/fonts/SourceSerifPro-Light');
+@include font-face('SourceSerifPro-Regular', '/fonts/SourceSerifPro-Regular');
+@include font-face('SourceSerifPro-Semibold', '/fonts/SourceSerifPro-Semibold');
+@include font-face('SourceSerifPro-Bold', '/fonts/SourceSerifPro-Bold');
+@include font-face('SourceSerifPro-Black', '/fonts/SourceSerifPro-Black');
 
 // @include font-face('FoundersGroteskCond-Bold', '/fonts/FoundersGroteskCond-Bold');
 // @include font-face('Gothic-Thirteen', '/fonts/Gothic-Thirteen');
@@ -189,20 +199,25 @@ $serif-disp  : $sans;
 // $font-section-title       : 'GrotesqueMT-Bold';
 $font-section-title       : 'Reglo-Bold';
 
-// $font-display             : 'LyonDisplay-Light';
-// $font-display-i           : 'LyonDisplay-LightItalic';
+$font-display             : 'LyonDisplay-Light';
+$font-display-i           : 'LyonDisplay-LightItalic';
+$font-display             : 'SourceSerifPro-Light';
+$font-display-i           : 'SourceSerifPro-Light';
 // $font-display             : 'GrotesqueMT-Condensed';
 // $font-display-i           : 'GrotesqueMT-Condensed';
 // $font-display             : 'Reglo-Bold';
 // $font-display-i           : 'Reglo-Bold';
-$font-display             : 'Chivo-Light';
-$font-display-i           : 'Chivo-Light';
 // $font-display             : 'bau-regular';
 // $font-display-i           : 'bau-regular';
 // $font-display             : 'LyonDisplay-Regular';
 // $font-display-i           : 'LyonDisplay-RegularItalic';
 // $font-display             : 'InputSansCompressed-ExtraLight';
 // $font-display-i           : 'InputSansCompressed-ExtraLightItalic';
+// $font-display             : 'Chivo-Light';
+// $font-display-i           : 'Chivo-Light';
+// $font-display             : 'FaktPro-Light';
+// $font-display-i           : 'FaktPro-Light';
+
 $font-display-sub         : $font-display;
 
 // $font-mono                : 'Pitch-Semibold';
@@ -215,12 +230,28 @@ $font-text-i              : 'LyonText-RegularItalic';
 $font-text-med            : 'LyonText-Semibold';
 $font-text-med-i          : 'LyonText-SemiboldItalic';
 $font-text-bold           : "LyonText-Bold";
+$font-text-bold-i         : "LyonText-BoldItalic";
 
-$font-text                : 'Chivo-Regular';
-$font-text-i              : 'Chivo-RegularItalic';
+$font-text                : 'SourceSerifPro-Regular';
+$font-text-i              : 'SourceSerifPro-Regular';
+$font-text-med-plus       : 'SourceSerifPro-Semibold';
+$font-text-med-i          : 'SourceSerifPro-Semibold';
+
+// $font-text                : 'Chivo-Regular';
+// $font-text-i              : 'Chivo-RegularItalic';
+// $font-text-med            : 'Chivo-Bold';
+// $font-text-med-i          : 'Chivo-BoldItalic';
+// $font-text-bold           : "Chivo-Black";
+
+// $font-text                : 'FaktPro-Blond';
+// $font-text-i              : 'FaktPro-Blond';
+// $font-text-med            : 'FaktPro-Semibold';
+// $font-text-med-i          : 'FaktPro-Semibold';
+// $font-text-bold           : "FaktPro-Semibold";
+
 $font-text-med            : 'Chivo-Bold';
-$font-text-med-i          : 'Chivo-BoldItalic';
-$font-text-bold           : "Chivo-Black";
+// $font-text-med            : 'Aileron-Heavy';
+$font-text-med            : 'SourceSerifPro-Bold';
 
 $sans-font-stack       : "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $serif-font-stack      : Georgia, Times, serif;
@@ -231,8 +262,8 @@ $text-med              : join($sans-med, $sans-font-stack);
 $text-med-i            : join($sans-med-i, $sans-font-stack);
 $text-plus             : join($sans-plus, $sans-font-stack);
 $text-plus-i           : join($sans-plus-i, $sans-font-stack);
-// $font-text-bold             : join($sans-bold, $sans-font-stack);
-$font-text-bold-i           : join($sans-bold-i, $sans-font-stack);
+// $text-bold             : join($sans-bold, $sans-font-stack);
+$text-bold-i           : join($sans-bold-i, $sans-font-stack);
 $display               : join($serif-disp, $serif-font-stack);
 
 

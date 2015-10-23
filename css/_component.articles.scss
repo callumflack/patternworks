@@ -56,6 +56,10 @@ blockquote {
     // letter-spacing: 0;
 }
 
+.Article-lede {
+    @include Lede();
+}
+
 
 // Article author
 // --------------------------------------------------------------------------
@@ -64,14 +68,15 @@ blockquote {
     // background-color: rgba($color-grey,0.08);
     // padding: $space * 0.5;
 
-    border-top: 1px solid rgba($color-grey-base,0.25);
-    // border-top: 1px solid $color-grey;
-    margin-top: $spaceTitle !important;
-    padding-top: $space * 0.75;
+    // border-top: 1px solid rgba($color-grey-base,0.25);
+    border-top: 1px solid $color-grey;
+    border-bottom: 1px solid $color-grey;
+    margin-top: $spaceTitle * 0.5;
+    padding: $space * 0.75 0;
 
     p {
-        // color: $color-grey;
-        color: $color-grey-base;
+        color: $color-grey;
+        // color: $color-grey-base;
     }
 
     a {
@@ -84,7 +89,7 @@ blockquote {
     filter: grayscale(100%);
     float: left;
     margin-right: $space * 0.75;
-    width: rem(115);
+    width: rem(130);
 
     > img {
         border-radius: 50%;
@@ -138,10 +143,8 @@ figcaption {
     max-width: $columnText;
     margin: $space--D3 auto 0;
 
-    > p {
-        @include Meta();
-        max-width: $columnText * 0.75;
-    }
+    @include Meta($display: block);
+    // max-width: $columnText * 0.75;
 }
 
 
@@ -149,7 +152,8 @@ figcaption {
 // --------------------------------------------------------------------------
 
 .Checklist {
-    margin-left: $space * 2;
+    // margin-left: $space * 0.5;
+    // margin-top: $space;
 
     + p,
     + h3,
@@ -161,20 +165,22 @@ figcaption {
 
 .Checklist ul {
     // list-style-type: none;
+    margin-left: $space * 0.5;
 }
 
 .Checklist p,
 .Checklist li {
     @include TextRg();
-    font-size: rem(17);
+    // font-size: 90%;
+    font-size: $r-sizeText * 0.8;
     line-height: calc(#{$r-sizeText} * 1.5);
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
 }
 
 .Checklist p {
     // border-bottom: 1px solid rgba($color-text,0.7);
     font-family: $font-text-i;
-    margin-bottom: $space * 0.25;
+    margin-bottom: $space * 0.5;
     // padding-bottom: rem(2);
 }
