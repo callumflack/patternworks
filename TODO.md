@@ -9,6 +9,9 @@ TO DO
 
 ~
 
+------------------------------------------------------------
+- styles cleanup: lots of shit, it's now difficult to update
+------------------------------------------------------------
 - MQs: desk > tablet > mobile
 - IE compatibility: oldie.js?
 - turn off blog til written

@@ -36,7 +36,7 @@ $color-ink             : #1454D6;
 // Base sizes
 // --------------------------------------------------------------------------
 
-$base-font-size-unit   : 23;
+$base-font-size-unit   : 22;
 $base-font-size        : $base-font-size-unit * 1px;
 $base-line-height-unit : 1.5;
 $base-line-height      : ($base-font-size-unit * $base-line-height-unit) * 1px;
@@ -90,7 +90,7 @@ $space--X5             : $space-unit * 5;
 $space--X6             : $space-unit * 6;
 $space--XL             : $space-unit * 10;
 
-$spaceTitle            : $space * 2.5;    // 3
+$spaceTitle            : $space * 3;    // 3
 $spaceSection          : $space * 7;    // 7.5
 $spaceGutter           : $space--D2;
 
@@ -137,6 +137,7 @@ $transitionType     : ease-out;
 @include font-face('Pitch-Bold', '/fonts/Pitch-Bold');
 @include font-face('Pitch-BoldItalic', '/fonts/Pitch-BoldItalic');
 
+@include font-face('Chivo-Light', '/fonts/Chivo-Light');
 @include font-face('Chivo-Regular', '/fonts/Chivo-Regular');
 @include font-face('Chivo-RegularItalic', '/fonts/Chivo-RegularItalic');
 @include font-face('Chivo-Bold', '/fonts/Chivo-Bold');
@@ -201,8 +202,8 @@ $font-section-title       : 'Reglo-Bold';
 
 $font-display             : 'LyonDisplay-Light';
 $font-display-i           : 'LyonDisplay-LightItalic';
-$font-display             : 'SourceSerifPro-Light';
-$font-display-i           : 'SourceSerifPro-Light';
+// $font-display             : 'SourceSerifPro-Light';
+// $font-display-i           : 'SourceSerifPro-Light';
 // $font-display             : 'GrotesqueMT-Condensed';
 // $font-display-i           : 'GrotesqueMT-Condensed';
 // $font-display             : 'Reglo-Bold';
@@ -232,10 +233,10 @@ $font-text-med-i          : 'LyonText-SemiboldItalic';
 $font-text-bold           : "LyonText-Bold";
 $font-text-bold-i         : "LyonText-BoldItalic";
 
-$font-text                : 'SourceSerifPro-Regular';
-$font-text-i              : 'SourceSerifPro-Regular';
-$font-text-med-plus       : 'SourceSerifPro-Semibold';
-$font-text-med-i          : 'SourceSerifPro-Semibold';
+// $font-text                : 'SourceSerifPro-Regular';
+// $font-text-i              : 'SourceSerifPro-Regular';
+// .Article-checklist       : 'SourceSerifPro-Semibold';
+// $font-text-med-i          : 'SourceSerifPro-Semibold';
 
 // $font-text                : 'Chivo-Regular';
 // $font-text-i              : 'Chivo-RegularItalic';
@@ -249,9 +250,11 @@ $font-text-med-i          : 'SourceSerifPro-Semibold';
 // $font-text-med-i          : 'FaktPro-Semibold';
 // $font-text-bold           : "FaktPro-Semibold";
 
-$font-text-med            : 'Chivo-Bold';
+$font-footer              : 'Chivo-Regular';
+$font-subtitle            : 'Chivo-Bold';
+$font-subtitle-lite       : 'Chivo-Regular';
 // $font-text-med            : 'Aileron-Heavy';
-$font-text-med            : 'SourceSerifPro-Bold';
+// $font-text-med            : 'SourceSerifPro-Bold';
 
 $sans-font-stack       : "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $serif-font-stack      : Georgia, Times, serif;

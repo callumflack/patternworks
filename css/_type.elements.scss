@@ -14,7 +14,7 @@
     // font-family: $font-section-title;
     // font-size: rem(18);
     // letter-spacing: 0.19em;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.02em;
     margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
     // text-align: left;
     // text-transform: uppercase;
@@ -34,16 +34,16 @@
 
     a {
         @include u-link(none);
-        // @include RuleTransition($color-text, true);
-        // line-height: inherit;
+        @include RuleTransition($color-text, true);
+        line-height: inherit;
         text-decoration: none;
         // width: calc(100% - .25rem); // align bottom border to text length
-    //
-    //     > span {
-    //         margin: rem(-40) rem(-20);
-    //         padding: rem(40) rem(20);
-    //         // border: 1px solid salmon;
-    //     }
+
+        > span {
+            margin: rem(-40) rem(-20);
+            padding: rem(40) rem(20);
+            // border: 1px solid salmon;
+        }
     }
     //
     // @include respond-to(sm) {
@@ -54,19 +54,32 @@
 
     @include TextRg();
     display: inline-block;
-    font-family: $font-text-med;
-    font-size: calc(#{$r-sizeText} - 1px);
-    letter-spacing: 0.012em;
+    font-family: $font-subtitle;
+    // font-size: calc(#{$r-sizeText} * 1.1);
+    // font-size: calc(#{$r-sizeText} * 1);
+    font-size: calc(#{$r-sizeText} * 0.85);
+    letter-spacing: 0.15em;
     margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
-
+    text-transform: uppercase;
 }
 
 .SectionTitle,
 .Header-title,
 .Project-title { @include SectionTitle(); }
 
-.Header-title {
-    // font-family: $font-text-bold-i;
+@mixin SectionTitleLess() {
+    font-family: $font-subtitle;
+    font-size: calc(#{$r-sizeText} - 1px);
+    margin-bottom: $VertRhythmSpace;
+    letter-spacing: 0.012em;
+    text-transform: none;
+
+    a:before { background-color: transparent; }
+}
+
+.Project-title,
+h3 {
+    @include SectionTitleLess();
 }
 
 
@@ -77,12 +90,11 @@
     @include TypeReset();
     // color: $color-hi2;
     // color: $color-ink;
-    font-family: $font-display-i;
     font-family: $font-display;
     font-size: rem(48);
-    letter-spacing: 0.0em;
-    letter-spacing: -0.005em;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.01em;
+    // letter-spacing: -0.005em;
+    // letter-spacing: -0.015em;
     line-height: 1.4;
     margin: 0 0 ($space * 1) 0;
     margin: 0;
@@ -102,7 +114,7 @@
     @include respond-to(sm) {
         font-size: rem(40);
         font-size: rem(54);
-        font-size: rem(75);
+        font-size: rem(69);
     }
 }
 
@@ -116,7 +128,7 @@
 
     > p {
         @include Summary();
-        width: 90%;
+        width: 87%;
 
         @include respond-to(sm) {
             // width: 116%;
@@ -126,16 +138,24 @@
 }
 
 
-// Meta & lede mixins
+// Meta, sm & lede mixins
 // --------------------------------------------------------------------------
 
 @mixin Lede() {
     @include TextRg();
-    font-size: $r-sizeText * 1.1;
-    font-family: $font-text-med-plus;
-    font-family: $font-text-med;
+    font-size: $r-sizeText * 1.4;
+    // font-family: $font-text-med;
     letter-spacing: -0.002em;
     line-height: 1.45;
+    // margin-bottom: $space * 1.25;
+}
+
+@mixin TextSm() {
+    @include TextRg();
+    font-size: $r-sizeText * 0.8;
+    letter-spacing: 0.002em;
+    // line-height: calc(#{$r-sizeText} * 1.5);
+    line-height: 1.6;
 }
 
 @mixin Meta(
@@ -144,29 +164,15 @@
 ) {
     @include TypeReset();
     display: $display;
-    // font-family: $font-text-med-i;
+    font-family: $font-text-i;
     // font-feature-settings: 'tnum';
     font-size: rem(15);
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
     line-height: calc(#{$r-sizeText} * 1.5);
     margin-bottom: 0;
 }
 
 .Meta { @include Meta(); }
-
-
-// Meta mono mixin
-// --------------------------------------------------------------------------
-
-@mixin Mono() {
-    @include TypeReset();
-    // font-family: $font-mono;
-    font-size: rem(15);
-    letter-spacing: -0.025em;
-    margin-bottom: 0;
-}
-
-.Mono { @include Mono(); }
 
 
 // Lower headlines
@@ -186,11 +192,13 @@ h3 {
     // font-family: $font-text-med;
     // letter-spacing: 0.005em;
 
+    // Markdown? This ain't working. Make it a class.
+    // ===================================================================================================================
     @include SectionTitle();
-    margin-bottom: $VertRhythmSpace;
+    @include SectionTitleLess();
 
     p + & {
-        margin-top: $space * 1.25;
+        margin-top: $space;
         // margin-top: $space * 1.75;
     }
 }
@@ -208,8 +216,10 @@ h4 {
 .Footer {
     p {
         // @include Meta();
-        // @include Mono();
-        color: $color-grey-base;
+        @include Meta();
+        // color: $color-grey-base;
+        font-family: $font-footer;
+        line-height: $base-line-height-unit;
         margin: 0;
 
         @include respond-to(sm) {
@@ -219,7 +229,8 @@ h4 {
     }
 
     a {
-        @include u-link($linkRuleGrey);
+        // @include u-link($linkRuleGrey);
+        @include u-link();
     }
 
     em {
@@ -243,7 +254,7 @@ h4 {
     }
 
     a span {
-        margin-left: rem(4);
+        // margin-left: rem(4);
     }
 }
 

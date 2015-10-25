@@ -49,12 +49,14 @@ header.Header#top(role="banner")
                 //- p.Amp Delightful. Clear. Useful. Augmentative. #[span Considered experiences for every screen.]
                 //- p.Amp Delightful, clear and considered identities for every screen. 
                 p Delightful, clear and considered experiences for every screen. 
-                    != partial("contact-email")
+                    //- != partial("contact-email")
+                    a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") Design is a conversation. Start one.
+
                     
         if current.path[0] === "work"
             summary.Summary
                 p Creative problem-solving to get the story out. 
-                    a(href="#start") Starting with Why, not How.
+                    a(href="#start") Starting with Why, ending with rememberance.
 
         if current.path[0] === "approach"
             summary.Summary
@@ -65,6 +67,6 @@ header.Header#top(role="banner")
                 //- p.Em Fifteen years of creative problem-solving to tell stories that customers care for.
                 //- p.Em Fifteen years of making the complex simple.
                 //- p.Tint Patternworks is the independent digital communications workshop of Callum Flack, located in Cairns, Australia.
-                p An independent digital creative workshop in Cairns, Australia. 
+                p An independent digital creative workshop in Cairns, Australia. #[br]
                     //- span.Em For the territory, not the map.
                     a(href="#start") I plan, design & build for the web.

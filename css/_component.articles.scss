@@ -140,18 +140,16 @@ figure {
 }
 
 figcaption {
-    max-width: $columnText;
-    margin: $space--D3 auto 0;
-
     @include Meta($display: block);
-    // max-width: $columnText * 0.75;
+    max-width: $columnText;
+    margin: $space * 0.5 auto 0;
 }
 
 
 // Checklist (Approach page)
 // --------------------------------------------------------------------------
 
-.Checklist {
+.Article-checklist {
     // margin-left: $space * 0.5;
     // margin-top: $space;
 
@@ -163,24 +161,21 @@ figcaption {
     }
 }
 
-.Checklist ul {
+.Article-checklist ul {
     // list-style-type: none;
     margin-left: $space * 0.5;
 }
 
-.Checklist p,
-.Checklist li {
-    @include TextRg();
-    // font-size: 90%;
-    font-size: $r-sizeText * 0.8;
-    line-height: calc(#{$r-sizeText} * 1.5);
-    line-height: 1.6;
+.Article-checklist p,
+.Article-checklist li {
+    @include TextSm();
     margin: 0;
 }
 
-.Checklist p {
+.Article-checklist p {
     // border-bottom: 1px solid rgba($color-text,0.7);
     font-family: $font-text-i;
-    margin-bottom: $space * 0.5;
+    // margin-bottom: $space * 0.5;
+    margin-bottom: $space * 0.125;
     // padding-bottom: rem(2);
 }
