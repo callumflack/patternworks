@@ -12,17 +12,18 @@
 
 // :root,
 html {
-    background-color: $color-bg;
     color: $color-text;
     font-family: $font-text;
     font-size: 80%;
-    // font-size: 100%;
-    line-height: $base-line-height-unit; /* 1 */
+    line-height: $base-line-height-unit;
     text-align: left;
     text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 
     @include respond-to(md) {
-        // font-size: 90%;
+        font-size: 90%;
     }
 
     @include respond-to(sm) {
@@ -31,27 +32,8 @@ html {
 }
 
 
-// Text style
+// Text styles
 // --------------------------------------------------------------------------
-
-@mixin TypeReset() {
-    font-style: normal;
-    font-weight: normal;
-}
-
-@mixin TextRg(
-    $color: $color-text,
-    $font: $font-text
-) {
-    @include TypeReset();
-    color: $color;
-    font-family: $font-text;
-    font-size: $r-sizeText;
-    letter-spacing: -0.005em;
-    line-height: $base-line-height-unit;
-    text-align: left;
-    text-transform: none;
-}
 
 // h1, h2, h3, h4, h5, h6,
 ul, ol, li, dl,
@@ -63,10 +45,6 @@ pre,
     @include TextRg();
 }
 
-
-// Basics
-// --------------------------------------------------------------------------
-
 ul {
     list-style-type: disc;
 }
@@ -77,14 +55,12 @@ ol {
 
 em,
 .u-textEm {
+    @include TypeReset();
     font-family: $text-reg-i;
-    // font-family: $font-text;
-    font-style: normal;
 }
 
 b,
 .u-textBold {
+    @include TypeReset();
     font-family: $font-text-med;
-    font-style: normal;
-    font-weight: normal;
 }

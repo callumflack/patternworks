@@ -1,62 +1,116 @@
-main.Content(role="main")
-    section.Section
-
-        //- nav.MetaNav.MetaNav--top(role="navigation")
-        //-     a(href="/work") work #[span →]
-        //-     a(href="/blog") blog #[span →]
+.Hero(role="banner")
+    .Gallery
+        .Gallery-cell.CoverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+        .Gallery-cell.CoverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+        //- .Gallery-cell.CoverImage(style="background-image: url(/img/section-approach.jpg)", data-caption="Conference")
+        //- .Gallery-cell.CoverImage(style="background-image: url(/img/votary.jpg)", data-caption="Votary")
+        //- .Gallery-cell.CoverImage(style="background-image: url(/img/section-blog.jpg)", data-caption="Hikers")
+        //- .Gallery-cell
+            img(src="/img/votary.jpg", alt="BLAH")
+    .Hero-layer
+        .Hero-info
+            h1 #[a(href="/")= site_title]
+            p
+                span= site_description
+                | Learn more #[a(href="#Content") about us]. Get in touch by #[a(href="mailto:hi@pattern.works?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email].
             
-        //- h1.SectionTitle
-        //-     //- a(href="/work", style="width:100%") Recent work
-        //-     a(href="/work") Recently
+            //- .Caption
+            //-     button.button.button--previous ←
+            //-     p.Caption-line &nbsp;
+            //-     button.button.button--next →
 
-
-        nav.Nav(role="navigation")
-            ul
-                li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/", style="width:100%") Recently#[span ↓]]
-                li #[a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") About]
-                li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work]
-                li #[a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog]
+main#Content(role="main")
+    article.Article
+        .Container
+            //- h2 Creating for the territory, not the map.
+            //- figure.contained
+                img(src="/img/16x9-03.jpg", alt="Callum Flack", height='')
+                
+            //- figure.lg
+                img(src='/img/16x9-03.jpg')
+                figcaption Yeah, this is me.
                     
-                    
-        //- This is, somehow, to spit out both work & blog on the home page
-        //- h2 a(href="#{ post.url ? post.url : '/blog/' + slug }")= title
-        
-        if current.source === "index"
-            for article, slug in public.work._data
-                if article.ispublished && article.ishome === true
-                    if article.isfeatured === true
-                        .Project-block.Project-block--lg
-                            .Project
-                                .FlexEmbed.OutsetBlock
-                                    .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                                    .FlexEmbed-content
-                                        a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-                                        //- .CoverImage(style="background-image: url(/img/thumb-lg-#{ slug }.jpg)")
-                                .Grid.large-Grid--1of3.Grid--gutters
-                                    .Grid-cell
-                                        .Project-caption
-                                            .Project-data
-                                                time.Project-time= article.date
-                                                span.Project-separator &nbsp;•&nbsp;
-                                                span= article.tags
-                                            .Project-description
-                                                h4.Project-title #[a(href="../work/#{ slug }")= article.title]
-                                                | .&nbsp;
-                                                #[= article.description]
+            p Patternworks is the independent digital creative studio of Callum Flack and collaborators, located in Cairns, Australia. We plan, design & build for the web.
+            
+            h3 Our works are outcome focussed
+            p Patternworks offers a wholistic approach to creating or updating digital businesses that is measurably successful and always looks good. We do this by understanding your business goals and your user's needs, planning for specific outcomes and executing detail upon detail. We believe digital products that are great user experiences are a better means of persuasion than any form of advertising. 
+            
+            //- h3 Our process is collaborative
+            //- p The process is divided into logical steps and is done iteratively, in collaboration with you, the business owner. We will audit your current communications, clearly define your current user's interests and your business goals, then roadmap a measurable plan together. The resulting mix of market, technology, and business requirements are weighed against time and budget to obtain an agreed scope of work. 
+            
+            p We love making mobile-first, responsive websites for all device types. We specialise in ecommerce and blogging systems. We also partner with writers, photographers, videographers, content marketers and platform engineers. 
 
-                    //- .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
-                    //-     if article.isfeatured !== true
-                    //-         .Project.Grid-cell
-                    //-             .FlexEmbed
-                    //-                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                    //-                 .FlexEmbed-content
-                    //-                     a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-                    //-             .Project-caption
-                    //-                 .Project-data
-                    //-                     time.Project-time= article.date
-                    //-                     span.Project-separator &nbsp;•&nbsp;
-                    //-                     span= article.tags
-                    //-                 .Project-description
-                    //-                     h4.Project-title #[a(href="../work/#{ slug }")= article.title]
-                    //-                     | .&nbsp;
-                    //-                     #[= article.description]
+            //- figure
+                //- img(src='/img/16x9-03A.jpg')
+                //- figcaption Yeah, this is me.
+
+            //- p My work is about taking things that are complex and making them simple, understandable and actionable. Whether through graphics, typography, copywriting, interaction or technology—the work is done in whatever mode will resonate. 
+            
+            h3 About Callum
+            p I have fifteen years experience in creative problem-solving: taking complex concepts and making them into simple, understandable and actionable stories. Whether through graphics, typography, copywriting, interaction or technology—the work is done in whatever mode will resonate. 
+            
+            p I live with my wife and young family in the tropics of Cairns, far northern Australia, where I dehumidify my record collection weekly.
+
+            //- figure
+            //-     img(src='/img/16x9-03A.jpg')
+            //-     figcaption Yeah, this is me.
+            
+            h3 Experienced
+            p 
+                | Since starting in 2000, I've worked in design studios 
+                | (#[a(href="http://www.saatchi-design.co.uk/sagatiba") Saatchi & Saatchi Design, London]), 
+                | inhouse startup teams (#[a(href="http://www.boxdice.com.au/") Box+Dice, Melbourne] and 
+                | #[a(href="http://www.welend.hk/") WeLend, Hong Kong]), 
+                | and advertising (#[a(href="hhttp://www.gpyr.com.au/") GPYR, Brisbane] and #[a(href="http://www.ward6.com.au/") Ward 6, Sydney]). 
+                | I've also co-run a record label (#[a(href="http://www.thee-roundtable.com/") Roundtable Records]). 
+                | Lots of people have said nice things about working with me. You can read a few of them on #[a(href="https://au.linkedin.com/in/callumflack") LinkedIn].
+            
+            h3 If I was already a designer, why code?
+            p By being able to build what I plan and design, I deeply understand how brand, usability and technical domains work together. This helps me to think in systems instead of web pages, turn blind spots into opportunity and stack up the small details that make big differences when creating great user experiences.
+            
+            //- p  
+            //- p Here's a quick list of things I can do:
+            
+            //- .Article-checklist
+            //-     .Grid.large-Grid--1of3.Grid--gutters
+            //-         .Grid-cell
+            //-             p Strategy
+            //-             ul
+            //-                 li naming
+            //-                 li brand positioning
+            //-                 li brand architecture
+            //-                 //- li brand guardianship
+            //-                 li competitor and communications audits
+            //-                 li tone of voice
+            //-                 li interviews and customer journeys
+            //- 
+            //-         .Grid-cell
+            //-             p Design
+            //-             ul
+            //-                 li brand identity
+            //-                 li brand styleguides
+            //-                 li responsive websites
+            //-                 li iOS & Android apps
+            //-                 li web apps
+            //-                 li app prototyping
+            //-                 li MVPs
+            //-                 li ecommerce
+            //-                 li literature
+            //-                 li packaging
+            //- 
+            //-         .Grid-cell
+            //-             p Development
+            //-             ul
+            //-                 li HTML5 & CSS3
+            //-                 li javascript & jquery
+            //-                 li enough Ruby on Rails & PHP
+            //-                 li I love HarpJS
+            //-                 li Gulp & Grunt
+            //-                 li CMS (Statamic, Wordpress, Craft, Harp)
+            //-                 li ecommerce (Shopify)
+            //-                 li Mailchimp
+                        
+                        
+            //- h3 How can I help product teams to breakthrough?
+            //- p With my broad skillset, I can help at almost any stage of the digital project lifecycle. Clients commonly come to me to improve existing brands or products—whether auditing or redesigning brand identities, interfaces, and user journeys, or adding, updating and fixing features in development. Or to help create new, best-in-class sites and apps from scratch.
+                

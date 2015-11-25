@@ -5,7 +5,6 @@
 // --------------------------------------------------------------------------
 
 
-
 // Ye ole clearfix
 @mixin clearfix() {
     &:before,
@@ -22,7 +21,7 @@
 
 // Absolute center
 // Req's a parent w/ 'position: relative'
-@mixin u-absoluteCover() {
+@mixin absoluteCover() {
     bottom: 0;
     left: 0;
     position: absolute;

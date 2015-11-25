@@ -5,39 +5,82 @@
 // --------------------------------------------------------------------------
 
 
-// Section mixin
+// Nav & Section headlines
 // --------------------------------------------------------------------------
 
-@mixin SectionTitle() {
-    // @include TypeReset();
-    display: inline-block;
-    // font-family: $font-section-title;
-    // font-size: rem(18);
-    // letter-spacing: 0.19em;
-    letter-spacing: 0.02em;
-    margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
-    // text-align: left;
-    // text-transform: uppercase;
-    //
-    // span {
-    //     display: inline-block;
-    // }
-    //
-    &:not(:last-child),
-    span:not(:last-child) {
-        margin-right: $space * 0.75;
+.Header-title {
+    @include DisplaySub();
+    @include DisplaySubSpace();
+
+    &:after {
+        // background-color: currentColor;
+        // content: " ";
+        // display: block;
+        // height: rem(2);
+        // margin: $space * 0.8 auto;
+        // max-width: $columnText;
+    }
+}
+
+
+// Page titles
+// --------------------------------------------------------------------------
+
+.Display {
+    @include Display();
+}
+
+
+// Nav
+// --------------------------------------------------------------------------
+
+.Nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        text-align: center;
     }
 
-    span.NoSpace {
-        margin-right: $space * 0.25;
+    li {
+        @include Display();
+        display: inline-block;
+        // margin: 0;
+    }
+
+    li:not(:last-child) {
+        margin-right: $space * 1.5;
     }
 
     a {
-        @include u-link(none);
-        @include RuleTransition($color-text, true);
-        line-height: inherit;
-        text-decoration: none;
+        border: 0;
+    }
+}
+
+.Nav--hidden {
+    @include absoluteCover();
+    background-color: $color-bg;
+    opacity: 0;
+    transition: all 250ms ease-out;
+
+    @include on-event() {
+        opacity: 1;
+    }
+}
+
+.Nav--main {
+    li {
+        @include DisplaySub();
+        margin: 0 auto;
+        width: auto !important;
         // width: calc(100% - .25rem); // align bottom border to text length
+    }
+
+    li:not(:last-child) {
+        margin-right: $space * 1.5;
+    }
+
+    a {
+        @include RuleTransition($color-text);
 
         > span {
             margin: rem(-40) rem(-20);
@@ -45,138 +88,23 @@
             // border: 1px solid salmon;
         }
     }
-    //
-    // @include respond-to(sm) {
-    //     font-size: rem(16);
-    //     font-size: rem(21);
-    //     margin-bottom: $spaceTitle - 0.75rem;
-    // }
+}
 
-    @include TextRg();
+.Nav--under {
+    margin: 0 auto $spaceTitle;
+}
+
+
+.Nav-pointer {
     display: inline-block;
-    font-family: $font-subtitle;
-    // font-size: calc(#{$r-sizeText} * 1.1);
-    // font-size: calc(#{$r-sizeText} * 1);
-    font-size: calc(#{$r-sizeText} * 0.85);
-    letter-spacing: 0.15em;
-    margin: 0 0 ($m-spaceTitle - 0.25rem) 0;
-    text-transform: uppercase;
-}
-
-.SectionTitle,
-.Header-title,
-.Project-title { @include SectionTitle(); }
-
-@mixin SectionTitleLess() {
-    font-family: $font-subtitle;
-    font-size: calc(#{$r-sizeText} - 1px);
-    margin-bottom: $VertRhythmSpace;
-    letter-spacing: 0.012em;
-    text-transform: none;
-
-    a:before { background-color: transparent; }
-}
-
-.Project-title,
-h3 {
-    @include SectionTitleLess();
+    font-size: 68%;
+    margin: 0 0 0 rem(3) !important;
+    padding: 0 !important;
+    transform: translateY(rem(-1));
 }
 
 
-// Summary
-// --------------------------------------------------------------------------
-
-@mixin Summary() {
-    @include TypeReset();
-    // color: $color-hi2;
-    // color: $color-ink;
-    font-family: $font-display;
-    font-size: rem(48);
-    letter-spacing: 0.01em;
-    // letter-spacing: -0.005em;
-    // letter-spacing: -0.015em;
-    line-height: 1.4;
-    margin: 0 0 ($space * 1) 0;
-    margin: 0;
-    text-align: left;
-
-    // bold sans test 151021
-    // letter-spacing: -0.045em;
-    line-height: 1.25;
-
-    a {
-        @include u-link(none);
-        color: $color-grey;
-        font-family: $font-display-i;
-        padding-bottom: 0;
-    }
-
-    @include respond-to(sm) {
-        font-size: rem(40);
-        font-size: rem(54);
-        font-size: rem(69);
-    }
-}
-
-.Summary {
-    margin: 0;
-
-    @include respond-to(sm) {
-        // max-width: $columnText;
-        margin-left: calc( (#{$columnPicture} - #{$columnText}) * 0.25 );
-    }
-
-    > p {
-        @include Summary();
-        width: 87%;
-
-        @include respond-to(sm) {
-            // width: 116%;
-            // width: 125%;
-        }
-    }
-}
-
-
-// Meta, sm & lede mixins
-// --------------------------------------------------------------------------
-
-@mixin Lede() {
-    @include TextRg();
-    font-size: $r-sizeText * 1.4;
-    // font-family: $font-text-med;
-    letter-spacing: -0.002em;
-    line-height: 1.45;
-    // margin-bottom: $space * 1.25;
-}
-
-@mixin TextSm() {
-    @include TextRg();
-    font-size: $r-sizeText * 0.8;
-    letter-spacing: 0.002em;
-    // line-height: calc(#{$r-sizeText} * 1.5);
-    line-height: 1.6;
-}
-
-@mixin Meta(
-    $color: $color-text,
-    $display: inline-block
-) {
-    @include TypeReset();
-    display: $display;
-    font-family: $font-text-i;
-    // font-feature-settings: 'tnum';
-    font-size: rem(15);
-    letter-spacing: 0.01em;
-    line-height: calc(#{$r-sizeText} * 1.5);
-    margin-bottom: 0;
-}
-
-.Meta { @include Meta(); }
-
-
-// Lower headlines
-// TODO: will I use for markdown for the blog?
+// Text headlines
 // --------------------------------------------------------------------------
 
 h2 {
@@ -187,19 +115,17 @@ h2 {
     }
 }
 
+.Project-title,
 h3 {
-    // @include TextRg();
-    // font-family: $font-text-med;
-    // letter-spacing: 0.005em;
+    @include SectionSub();
+}
 
-    // Markdown? This ain't working. Make it a class.
-    // ===================================================================================================================
-    @include SectionTitle();
-    @include SectionTitleLess();
+h3 {
+    line-height: calc(#{$r-sizeText} * #{$base-line-height-unit});
+    margin-bottom: 0;
 
     p + & {
-        margin-top: $space;
-        // margin-top: $space * 1.75;
+        // margin-top: $space * 1.5;
     }
 }
 
@@ -214,95 +140,32 @@ h4 {
 // --------------------------------------------------------------------------
 
 .Footer {
+    margin: $spaceTitle 0;
+    // @include respond-to(sm) { margin-bottom: $space; }
+
     p {
-        // @include Meta();
-        @include Meta();
-        // color: $color-grey-base;
-        font-family: $font-footer;
-        line-height: $base-line-height-unit;
-        margin: 0;
+
+        &:last-child {
+            margin: 0;
+            text-align: center;
+        }
 
         @include respond-to(sm) {
-            // width: 40%;
-            // width: 95%;
         }
     }
 
     a {
-        // @include u-link($linkRuleGrey);
-        @include u-link();
+        border: 0;
     }
 
-    em {
-        // font-family: $font-mono-i;
-        font-family: $font-text-i;
-    }
-}
-
-
-// Nav
-// --------------------------------------------------------------------------
-
-.Nav {
-    ul {
-        list-style: none;
-        margin: 0;
-    }
-
-    li {
-        @include SectionTitle();
-    }
-
-    a span {
-        // margin-left: rem(4);
-    }
-}
-
-.MetaNav {
-    position: absolute;
-
-    &.MetaNav--top {
-        top: 0;
-        right: 0;
-    }
-
-    &.MetaNav--bottom {
-        bottom: 0;
-        right: 0;
-    }
-
-    &.sm-MetaNav--block {
-        position: relative;
-    }
-
-    @include respond-to(sm) {
-        &.lg-MetaNav--top {
-            top: 0;
-            right: 0;
-        }
-
-        &.lg-MetaNav--bottom {
-            bottom: 0;
-            right: 0;
-        }
-
-        &.sm-MetaNav--block {
-            position: absolute;
-        }
-    }
-
-    a {
-        @include SectionTitle();
-        @include u-link(none);
-        // @include Meta();
-        //
-        // font-family: $font-section-title;
-        // font-size: rem(14);
-        // letter-spacing: 0.075em;
-        // text-transform: uppercase;
-
-        &:not(:last-child) {
-            margin-right: 2rem;
+    @include when-inside (".index") {
+        &:before {
+            background: url(/img/tilde.svg) 50% 0 no-repeat;
+            content: "";
+            display: block;
+            height: rem(5);
+            margin: 0 auto $spaceTitle;
+            text-align: center;
         }
     }
 }

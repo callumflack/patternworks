@@ -5,7 +5,7 @@ main.Content(role='content')
                 if article.isfeatured === true
                     .Project-block.Project-block--lg
                         .Project
-                            .FlexEmbed.OutsetBlock
+                            .FlexEmbed.Outset
                                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
                                 .FlexEmbed-content
                                     a.CoverImage(href="../blog/#{ slug }", style="background-image: url(/img/hero-#{ slug }.jpg)")
@@ -39,7 +39,7 @@ main.Content(role='content')
     else
         for article, slug in public.blog._data
             if article.hero === true
-                .FlexEmbed.OutsetBlock
+                .FlexEmbed.Outset
                     .FlexEmbed-ratio.FlexEmbed-ratio--2by1
                     .FlexEmbed-content
                         .CoverImage(style="background-image: url(/img/hero-#{ slug }.jpg)")

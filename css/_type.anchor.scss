@@ -7,6 +7,7 @@
 
 $linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-black 50%);
 $linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey-base,0) 50%, $color-grey-base 50%);
+$linkRuleWhite: linear-gradient(to bottom, rgba($color-white,0) 50%, $color-white 50%);
 
 @mixin u-link(
     $rule: $linkRuleBlack,
@@ -18,7 +19,7 @@ $linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey-base,0) 50%, $color-
 
     @if $rule == 'none' {
         background-image: none;
-        padding-bottom: 0;
+        // padding-bottom: 0;
         text-decoration: none;
     }
 
@@ -41,10 +42,24 @@ $linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey-base,0) 50%, $color-
     }
 }
 
-@mixin u-childLink() {
-    a { @include u-link(); }
+// @mixin u-childLink() { a { @include u-link(); } }
+//
+// a,
+// .u-link        { @include u-link(); }
+// .u-childLink   { @include u-childLink(); }
+
+a {
+    @include on-event(true) {
+        @include u-link;
+        color: currentColor;
+        text-decoration: none;
+    }
 }
 
-a,
-.u-link        { @include u-link(); }
-.u-childLink   { @include u-childLink(); }
+.Article,
+.Article-footer,
+.Footer {
+    a {
+        // border-bottom: 1px solid $color-text;
+    }
+}

@@ -5,29 +5,35 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1")
         title= locals.title ? title + " | " + site_title : site_title
         if current.path[0] === "index"
-            meta(name='description', content=description)
+            meta(name='description', content=site_description)
         else
             if current.path[0] === "blog"
-                meta(name='description', content=description)
-        meta(name="google-site-verification" content="Vinlr0TWN4pYrfQZcYlwmFuj-ry5CMS_2sZhqs6O4SE")
+                meta(name='description', content=site_description)
+        meta(name="google-site-verification" content="iZsPnaDXzzpBi3N7y_QWKk_b0AIxqRWwuZghwvn4Ls0")
         link(rel="stylesheet" href="/css/styles.css")
-        link(rel="stylesheet", href="/css/zoom.css")
+        //- link(rel="stylesheet", href="/css/zoom.css")
+        link(rel="stylesheet", href="/css/flickity.css")
 
     body(class="#{ current.path[0] }")
         
-        != partial("_shared/header")
+        if current.path[0] !== "index"
+            != partial("_shared/header")
 
         if current.path[0] === "index"
             != yield
+            //- .Container.u-marginTX2
+            //-     .Article-footer.Media
+            //-         .Article-authorImage.Media-figure
+            //-             img(src="../img/avatar.jpg", alt="")
+            //-         .Media-body
+            //-             != partial("../shared/article-data")
+            //-             p Patternworks is a digital creative workshop in Cairns, Australia, run by Callum Flack. We make the complex simple. Got a need, a problem, an idea? #[a(href="/about") Learn more] or get in touch via #[a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email] or #[a(href="https://twitter.com/callumflack") twitter].
         
-        if current.path[0] === "approach"
+        if current.path[0] === "about"
             != yield
         
         if current.path[0] === "work"
             != partial("/work/_work")
-        
-        if current.path[0] === "blog"
-            != partial("/blog/_blog")
         
         else if ["404"].indexOf(current.path[0]) !== -1
             != yield
@@ -36,9 +42,10 @@ html
 
         script(src="/js/jquery.js")
         script(src="/js/application.js")
-        script(src="/js/jquery.unveil.js")
-        script(src="/js/transition.js")
-        script(src="/js/zoom.js")
+        script(src="/js/flickity.pkgd.min.js")
+        //- script(src="/js/jquery.unveil.js")
+        //- script(src="/js/transition.js")
+        //- script(src="/js/zoom.js")
         //- script(src="/js/modernizr.js")
         script(type='text/javascript').
             var _gaq = _gaq || [];

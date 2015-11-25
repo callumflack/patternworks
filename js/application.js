@@ -1,44 +1,60 @@
 $(document).ready(function() {
 
-    // Page slider (home<>work)
-    // http://frankchimero.com/writing/other-halves/
-    // =============================================
+    // Flickity
+    // custom nav UI: http://codepen.io/desandro/pen/jEZwxb
+    // captioning: http://codepen.io/desandro/pen/dPdVNM
+    // ====================================================
 
-    $('[data-slide="open"]').click(function() {
-        var txt = $('body').hasClass('is-work') ? 'View work' : 'Close';
-        $(this).children('span').text(txt);
-        $('body').toggleClass("is-work", 500);
+    // external js: flickity.pkgd.js
+    var $gallery = $('.Gallery').flickity({
+        prevNextButtons: false,
+        pageDots: false,
+        autoPlay: 9000,
+        selectedAttraction: 0.05,
+        friction: 0.8,
+        cellSelector: '.Gallery-cell',
+        imagesLoaded: true,
+        percentPosition: false,
+        setGallerySize: false,
+        wrapAround: true,
+        freeScroll: true,
+        // contain: true
     });
 
-    $('[data-slide="close"]').click(function() {
-        var txt = $("body").hasClass('is-work') ? 'View work' : 'Close';
-        $('[data-slide="open"] span').text(txt);
-        $("body").removeClass( "is-work", 500 );
-    });
+    // Gallery-cell caption with data attributes?
+    // https://github.com/metafizzy/flickity/issues/290#issuecomment-157717618
+    // ===> $( flkty.selectedElement ).attr('data-attribute')
+
+    // Flickity instance
+    // var flkty = $gallery.data('flickity');
+    // // elements
+    // var $caption = $('.Caption-line');
+
+    // console.log( flkty.selectedElement.attr("data-caption") );
+    // console.log( $(this).data("caption") );
+    // console.log( selectedCaption );
+
+    // set image caption using img's alt
+    // https://github.com/metafizzy/flickity/issues/222
+    // $gallery.on( 'cellSelect', function() {
+    //     var element = flkty.selectedElement;
+    //     var selectedCaption = $(element).children().data("caption");
+    //
+    //     $caption.text( selectedCaption );
+    //     // $caption.text( flkty.selectedElement.alt )
+    // });
+
+    // select cell on button click
+    // $('.button--previous').on( 'click', function() {
+    //     $gallery.flickity('previous');
+    // });
+    // $('.button--next').on( 'click', function() {
+    //     $gallery.flickity('next');
+    // });
 
 
-    // Toggle the fold-outs (JQuery version)
-    // See: http://toddmotto.com/simple-html5-data-attribute-jquery-tabs-markup-free-and-relative-to-their-container-for-ultimate-reuse/
-    // =================================================================================================================================
 
-    $('[data-toggle]').on('click',
-        function(e) {
-            e.preventDefault();
-            // console.log($(this).data('toggle'))
-            // console.log($(this).parents('.Fold').siblings().find('[data-fold]') )
-            console.log($(this).siblings('[data-content=' + $(this).data('toggle') + ']'))
 
-            $(this)
-                .toggleClass('is-active').siblings('[data-toggle]').removeClass('is-active')
-            $(this)
-                .siblings('[data-content=' + $(this).data('toggle') + ']').toggleClass('is-open')
-                .siblings('[data-content]').removeClass('is-open')
-
-            // For a nested link vars
-            $(this)
-                .parent().siblings().find('[data-content]').toggleClass('is-open')
-        }
-    );
 
     // Inject background-images from a data-attr
     // =========================================
@@ -50,9 +66,24 @@ $(document).ready(function() {
     //     }
     // );
 
+
     // Unveil (lazy load)
     // http://luis-almeida.github.io/unveil/
     // =====================================
     $("img").unveil();
+
+
+    // On Windows, detect & hide root element overflow
+    // @url: https://web-design-weekly.com/2014/11/18/viewport-units-vw-vh-vmin-vmax/
+    // =====================================
+    var element = document.documentElement;
+
+    if(element.scrollHeight > element.clientHeight) {
+        // Overflow detected; force scroll bar
+        element.style.overflow = 'scrollbar';
+    } else {
+        // No overflow detected; prevent scroll bar
+        element.style.overflow = 'hidden';
+    }
 
 });

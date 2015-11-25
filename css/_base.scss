@@ -1,12 +1,11 @@
 
 
-
-    // BASE
-
+// --------------------------------------------------------------------------
+// BASE
+// --------------------------------------------------------------------------
 
 
 // Set the global `box-sizing` state to `border-box`.
-
 html {
     box-sizing: border-box;
 }
@@ -22,38 +21,14 @@ html {
 
 // Page-level styling from InuitCSS.
 // Type bits moved to 'type.settings' cause I keep fiddling w/ them.
-
 html {
     background-color: $color-bg;
-    color: $color-text;
-    font-size: 100%; /* 1 */
-    line-height: $base-line-height-unit; /* 1 */
+    // color: $color-text;
+    // font-size: 100%; /* 1 */
+    // line-height: $base-line-height-unit; /* 1 */
     min-height: 100%; /* 3 */
     overflow-y: scroll; /* 2 */
-    text-size-adjust: 100%; /* 4 */
-    -moz-osx-font-smoothing: grayscale; /* 5 */
-    -webkit-font-smoothing: antialiased; /* 5 */
+    // text-size-adjust: 100%; /* 4 */
+    // -moz-osx-font-smoothing: grayscale; /* 5 */
+    // -webkit-font-smoothing: antialiased; /* 5 */
 }
-
-// is this required?
-body {
-    // height: 100%;
-    // overflow-y: scroll;
-}
-
-// html {
-//     background-color: $color-bg;
-//     color: $color-text;
-//     font-family: $font-display;
-//     font-size: 100%; /* 1 */
-//     font-style: normal;
-//     font-weight: normal;
-//     line-height: $base-line-height-unit; /* 1 */
-//     min-height: 100%; /* 3 */
-//     overflow-y: scroll; /* 2 */
-//     text-align: left;
-//     text-rendering: optimizeLegibility;
-//     text-size-adjust: 100%; /* 4 */
-//     -moz-osx-font-smoothing: grayscale; /* 5 */
-//     -webkit-font-smoothing: antialiased; /* 5 */
-// }

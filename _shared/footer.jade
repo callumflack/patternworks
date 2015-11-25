@@ -1,31 +1,12 @@
 footer.Footer(role="contentinfo")
-    nav.Nav(role="navigation")
-        ul
-            li 
-                a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") #[span Home]
-            li 
-                a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") #[span Work]
-            li 
-                a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/approach") #[span Approach]
-            li 
-                a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") #[span Blog]
-
-    .MetaNav.MetaNav--block.lg-MetaNav--top
-        a(href="#top") Back to top #[span ↑]
-                    
-    .Grid.large-Grid--1of2Plus.Grid--gutters
-        .Grid-cell
-            p
-                //- em Patternworks is a digital identity & communications workshop.#[br]
-                //- em Patternworks. Digital identities & communications that resonate.#[br]
-                //- em Patternworks. Digital identities that resonate.#[br]
-                //- em Patternworks. Considered experiences for every screen.#[br]
-                //- b Patternworks. Considered experiences for every screen.#[br]
-                | Patternworks. Considered experiences for every screen.#[br]
-                != partial("contact-points")
-                | #[br]
-                //- | 16 Ponticello Street, Edge Hill 4870, Cairns, Australia.#[br]
-                | PO Box 910, Edge Hill 4870, Cairns, Australia.#[br]
-                | ABN 18 827 101 933. © 2015 Patternworks.
-            //- p.Meta 
-                | ABN 18 827 101 933. © 2015 Patternworks
+    .Container
+        p
+            //- | Patternworks. Considered experiences for every screen.#[br]
+            //- | Got a need, a problem, an idea? Get in touch by #[a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email], #[a(href="https://twitter.com/callumflack") twitter] or call #[a(href="tel:+610-408-767-540") +61(0) 408 767 540].
+            | Got a need, a problem, an idea? Get in touch by #[a(href="mailto:hi@pattern.works?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email] or call #[a(href="tel:+610-408-767-540") +61(0) 408 767 540].
+        
+        //- != partial("nav-footer")
+        
+        p 
+            //- | Whitfield, Cairns, Australia#[br]
+            | © 2015 Patternworks

@@ -1,9 +1,9 @@
 {
   "globals": {
-    "site_title": "Flack Design + Development. Cairns, Australia",
+    "site_title": "Patternworks",
     "site_tagline": "Creating digital brands that resonate.",
-    "description": "Flack Design + Development plans, designs and builds websites and apps for small business, startups, creative individuals and fellow agencies in Cairns, Australia",
-    "site_url": "http://getflack.co",
+    "site_description": "Patternworks is a digital creative studio in Cairns, Australia. We plan, design and build identities and websites that resonate by focussing on outcomes and executing with detail. ",
+    "site_url": "http://www.pattern.works",
     "logo": "/images/logo.png",
     "analytics_account": "UA-59062441-1"
   }

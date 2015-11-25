@@ -6,14 +6,11 @@
 
 
 body {
-    padding: 0 $space;
-
-    // test
-    // border: 1px solid rgba(salmon,0.3);
+    padding: 0;
 
     @include respond-to(sm) {
         @include clearfix();
-        max-width: $columnPicture;
+        // max-width: $columnPicture;
         margin: 0 auto;
         padding: 0;
     }
@@ -26,36 +23,7 @@ body {
 }
 
 .Header {
-    padding-top: $m-spaceTitle;
-    @include respond-to(sm) { padding-top: $spaceTitle; }
-}
-
-.Content {
-    margin-bottom: $m-spaceSection;
-    @include respond-to(sm) { margin-bottom: $spaceSection; }
-}
-
-.Summary {
-    // margin-bottom: $m-spaceTitle;
-    // @include respond-to(sm) { margin-bottom: $spaceTitle + 1rem; }
-
-    margin-bottom: 40vh;
-    @include respond-to(sm) { margin-bottom: 25vh; }
-
-    // @include when-inside(".work") {
-    //     // margin-bottom: $m-spaceSection * 1.5;
-    //     margin-bottom: 40vh;
-    //     // @include respond-to(sm) { margin-bottom: $spaceSection * 2; }
-    //     @include respond-to(sm) {
-    //         margin-bottom: 20vh;
-    //         margin-bottom: 25vh;
-    //     }
-    // }
-}
-
-.Footer {
-    margin-bottom: $m-spaceTitle * 0.5;
-    @include respond-to(sm) { margin-bottom: $spaceTitle * 0.5; }
+    margin: $space * 2 0;
 }
 
 
@@ -64,11 +32,14 @@ body {
 
 .Container {
     @include clearfix();
+    width: 100%;
+    padding: 0 $space;
     position: relative;
 
     @include respond-to(sm) {
+        padding: 0;
         max-width: $columnText;
-        margin: 0 auto 0 $spaceTitle;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

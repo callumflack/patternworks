@@ -11,19 +11,21 @@
 
 @import "type.ruletransitions";
 @import "type.anchor";
+@import "type.mixins";
 @import "type.settings";
 @import "type.verticalrhythm";
 @import "type.elements";
+@import "type.projects";
+@import "type.articles";
 
 @import "buttons";
 @import "layout";
-// @import "layout.flex";
 @import "layout.flexgrid";
+@import "layout.flexmedia";
 
 @import "component.coverimage";
-@import "component.form";
-@import "component.projects";
-@import "component.articles";
+@import "component.gallery";
+// @import "component.form";
 // @import "component.fold";
 // @import "component.page-slider";
 // @import "component.carousel";
