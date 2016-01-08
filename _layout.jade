@@ -21,13 +21,6 @@ html
 
         if current.path[0] === "index"
             != yield
-            //- .Container.u-marginTX2
-            //-     .Article-footer.Media
-            //-         .Article-authorImage.Media-figure
-            //-             img(src="../img/avatar.jpg", alt="")
-            //-         .Media-body
-            //-             != partial("../shared/article-data")
-            //-             p Patternworks is a digital creative workshop in Cairns, Australia, run by Callum Flack. We make the complex simple. Got a need, a problem, an idea? #[a(href="/about") Learn more] or get in touch via #[a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email] or #[a(href="https://twitter.com/callumflack") twitter].
         
         if current.path[0] === "about"
             != yield
@@ -41,12 +34,9 @@ html
         != partial("_shared/footer")
 
         script(src="/js/jquery.js")
-        script(src="/js/application.js")
+        script(src="/js/jquery.arbitrary-anchor.js")
         script(src="/js/flickity.pkgd.min.js")
-        //- script(src="/js/jquery.unveil.js")
-        //- script(src="/js/transition.js")
-        //- script(src="/js/zoom.js")
-        //- script(src="/js/modernizr.js")
+        script(src="/js/application.js")
         script(type='text/javascript').
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', '#{ locals.analytics_account }']);

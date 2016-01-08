@@ -8,9 +8,10 @@
 $linkRuleBlack: linear-gradient(to bottom, rgba($color-black,0) 50%, $color-black 50%);
 $linkRuleGrey:  linear-gradient(to bottom, rgba($color-grey-base,0) 50%, $color-grey-base 50%);
 $linkRuleWhite: linear-gradient(to bottom, rgba($color-white,0) 50%, $color-white 50%);
+$linkRuleCyan:  linear-gradient(to bottom, rgba($color-hi3,0) 50%, $color-hi3 50%);
 
 @mixin u-link(
-    $rule: $linkRuleBlack,
+    $rule: $linkRuleCyan,
     $hover-rule: none,
     $color: currentColor,
     $hover-color: currentColor
@@ -26,11 +27,9 @@ $linkRuleWhite: linear-gradient(to bottom, rgba($color-white,0) 50%, $color-whit
     @else {
         background-image: $rule;
         background-repeat: repeat-x;
-        background-size: 2px 2px;
-        // background-position: 0 92%;
+        background-size: rem(1) rem(3);
         background-position: 0 100%;
         color: $color;
-        // padding-bottom: 0;
         padding-bottom: 0.2%;
         text-decoration: none;
     }

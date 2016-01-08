@@ -42,7 +42,7 @@ TO DO
 
 
 
-
+- i still dig arbitrary-anchor: http://arbitrary-anchor.briangonzalez.org/#.about
 - Pure fluid type: http://artequalswork.com/posts/fluid-type/
 - IE: https://github.com/jonathantneal/oldie
 - FONT_FACE PERFORMANCE: https://helloanselm.com/2015/using-webfonts-in-2015/

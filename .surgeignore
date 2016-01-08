@@ -1,2 +1,7 @@
 fonts-ignore
 img/-notInUse
+about
+blog
+index-bits.jade
+*.md
+work

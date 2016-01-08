@@ -1,5 +1,15 @@
 h3.Headline Receive new posts by email
-form(action='http://callumflackdesign.createsend.com/t/r/s/xjrurh/', method='post')
-    label(for="fieldEmail") Email
-    input#fieldEmail(name='cm-xjrurh-xjrurh', type='email', required='required' placeholder='Subscribe to Flack')
-    a.Button.Button--submit(type='submit', role='button') Stay in touch
+//- form(action='http://callumflackdesign.createsend.com/t/r/s/xjrurh/', method='post')
+//-     label(for="fieldEmail") Email
+//-     input#fieldEmail(name='cm-xjrurh-xjrurh', type='email', required='required' placeholder='Subscribe to Flack')
+//-     a.Button.Button--submit(type='submit', role='button') Stay in touch
+
+form(style='border:1px solid #ccc;padding:3px;text-align:center;', action='https://tinyletter.com/patternworks', method='post', target='popupwindow', onsubmit="window.open('https://tinyletter.com/patternworks', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true")
+    p
+        label(for='tlemail') Enter your email address
+      p
+        input#tlemail(type='text', style='width:140px', name='email')
+      input(type='hidden', value='1', name='embed')
+      input(type='submit', value='Subscribe')
+      p
+        a(href='https://tinyletter.com', target='_blank') powered by TinyLetter
