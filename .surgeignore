@@ -1,7 +1,9 @@
-fonts-ignore
-img/-notInUse
-about
-blog
-index-bits.jade
+.gitignore
+.surgeignore
 *.md
-work
+public/about
+public/blog
+public/index-bits.jade
+public/work
+public/fontsIgnore
+public/img/-imgIgnore
