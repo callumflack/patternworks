@@ -2,8 +2,8 @@ node_modules
 npm-debug.log
 www
 
-*.md
 .gitignore
 .surgeignore
+TODO.md
 public/fontsIgnore
 public/img/-imgIgnore
