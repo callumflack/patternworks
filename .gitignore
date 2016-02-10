@@ -4,6 +4,6 @@ www
 
 .gitignore
 .surgeignore
-TODO.md
+*.md
 public/fontsIgnore
 public/img/-imgIgnore
