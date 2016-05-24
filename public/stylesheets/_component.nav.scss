@@ -1,0 +1,28 @@
+
+
+// --------------------------------------------------------------------------
+//   NAV COMPONENT
+// --------------------------------------------------------------------------
+
+
+.Nav {
+	// display: flex;
+	// height: rem(80);
+	// padding: space(0.9);
+	// position: relative;
+
+	display: inline-block;
+	left: 0;
+	padding: space(3);
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+
+	a {
+		@include headlineRg();
+		border: none;
+	}
+
+	@include respond-to(xs) {
+	}
+}

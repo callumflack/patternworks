@@ -1,0 +1,53 @@
+
+
+// --------------------------------------------------------------------------
+// COMPONENT: CONTAINER
+// --------------------------------------------------------------------------
+
+
+// .Content {
+// 	margin: space(1.5) auto 0;
+//
+// 	@include respond-to(sm) {
+// 		margin: space(7) auto 0;
+// 	}
+// }
+
+@mixin Container {
+	@include clearfix();
+	margin: 0 auto;
+	max-width: size(container, default);
+	padding: 0 space(1);
+	position: relative;
+
+	@include respond-to(xs) {
+		max-width: size(container, default);
+		padding: 0;
+	}
+}
+
+.Container {
+	@include Container();
+
+	&--lg {
+		max-width: size(container, picture);
+
+		@include respond-to(xs) {
+			// max-width: size(container, small);
+		}
+	}
+
+	&--insetText {
+		max-width: size(container, picture);
+
+		> p,
+		> ul {
+			@include Container();
+		}
+
+		@include respond-to(xs) {
+			// max-width: size(container, small);
+		}
+	}
+
+}

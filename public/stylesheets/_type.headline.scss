@@ -1,0 +1,78 @@
+
+
+// --------------------------------------------------------------------------
+//   HEADLINE TYPOGRAPHY
+// --------------------------------------------------------------------------
+
+
+@mixin headlineTemplate() {
+	@include typeReset();
+	color: palette(text);
+	font-family: $font-display;
+	font-weight: 900;
+	letter-spacing: 0.3em;
+	text-align: center;
+	text-transform: uppercase;	line-height: $base-line-height-unit;
+
+	// if the headline is a link
+	// https://css-tricks.com/the-sass-ampersand/
+	// &#{a} {
+	//     @include on-event() {
+	//         opacity: 0.4;
+	//         transition: opacity 500ms ease;
+	//     }
+	// }
+
+	a {
+
+	}
+
+	@include respond-to(xs) {
+		// margin-bottom: space(1.75);
+	}
+}
+
+@mixin headlineSm() {
+	@include headlineTemplate();
+	font-size: fontsize(headerSm, xs);
+	letter-spacing: 0.1em;
+
+	@include respond-to(xs) {
+		font-size: fontsize(headerSm, base);
+	}
+}
+
+@mixin headlineRg() {
+	@include headlineTemplate();
+	font-size: fontsize(headerRg, xs);
+
+	@include respond-to(xs) {
+		font-size: fontsize(headerRg, base);
+	}
+}
+
+
+
+
+
+// Vax Initiate.
+// Hierarchy: primary, secondary, tertiary, quaternary, quinary, senary,
+// septenary, octonary, nonary, denary… and super.
+// --------------------------------------------------------------------------
+
+// .u-headline            { @include headlineRg(); }
+// .u-headlineEm          { @include headlineRg($mixinFont: $font-text-medium-i); }
+// .u-headline--light     { @include headlineRg($mixinColor: palette(brand-counter)); }
+// .u-headlineSm          { @include headlineSm(); }
+// .u-headlineSm--light   { @include headlineSm($mixinColor: palette(brand-counter)); }
+
+// .Headline--sm        { @include headlineSm(); }
+// .Headline--secondary { @include headlineSecondary(); }
+// .Headline--tertiary  { @include headlineTertiary(); }
+
+
+
+// In a markdown world…
+// --------------------------------------------------------------------------
+
+h1                     { @include headlineRg(); }

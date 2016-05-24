@@ -1,2 +1,11 @@
 header.Header#top(role="banner")
-    h1 #[a(href="/")= site_title]
+	.Container
+		a(href="/") #[h1.u-marginBD1 Patternworks]
+		p.u-textMd.u-textEmRg.u-textCenter.u-paddingB.DivRule--bottom Plan, design and build for better user experiences.
+
+		//- if current.path[0] === "index"
+			a(href="/") #[h1.u-marginBD1= site_title]
+			p.u-textMd.u-textEmRg.u-textCenter.u-paddingB.DivRule--bottom= site_description
+		//- if current.path[0] !== "index"
+			//- a(href="/") #[h1 Say something else]
+			//- p.u-marginT2.u-sm-marginT4 This is also something else.

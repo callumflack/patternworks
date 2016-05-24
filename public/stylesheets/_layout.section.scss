@@ -1,0 +1,36 @@
+
+
+// --------------------------------------------------------------------------
+//   LAYOUT: SECTION
+// --------------------------------------------------------------------------
+
+
+.Section {
+	padding: space(1.5) 0;
+	// padding: 2.5% 0;
+
+	@include respond-to(sm) {
+		padding: space(9) 0;
+		// padding: 10% 0;
+	}
+
+	&.Section--neutral { background-color: palette(neutral); }
+
+	&.Section--black {
+		background-color: palette(black);
+
+		h1,
+		p,
+		ul {
+			color: palette(white);
+		}
+	}
+}
+
+.Footer {
+	margin: space(1.5) auto;
+
+	@include respond-to(sm) {
+		margin: space(2.5) auto space(2);
+	}
+}

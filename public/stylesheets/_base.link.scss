@@ -1,0 +1,27 @@
+
+
+// --------------------------------------------------------------------------
+//   BASE: LINK
+// --------------------------------------------------------------------------
+
+
+a {
+	@include baseTransition();
+	border-bottom: 1px solid palette(text);
+	color: palette(text);
+	text-decoration: none;
+
+	@include on-event() {
+		@include baseTransition();
+		color: palette(black);
+	}
+}
+
+p a,
+li a {
+	color: currentColor;
+
+	@include on-event() {
+		background-color: palette(black);
+	}
+}

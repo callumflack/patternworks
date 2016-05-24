@@ -1,0 +1,358 @@
+
+
+// --------------------------------------------------------------------------
+//   VARIABLE SETTINGS
+// --------------------------------------------------------------------------
+
+
+// Namespace for themeing & testing
+// Apply: .#{$namespace}textarea
+// --------------------------------------------------------------------------
+
+$namespace             : '';
+
+
+// Colours
+// --------------------------------------------------------------------------
+
+// These are to be replaced
+$color-grey            : #a19a8f;
+$color-grey-rule       : rgba($color-grey,0.4);
+$color-grey-lite       : rgba($color-grey,0.25);
+
+// Do not use these values directly in your Sass files. Use the more
+// specifically named variables below that use these root values.
+
+// Also, sass-maps debugging:
+// http://www.sitepoint.com/debugging-sass-maps/
+// I can't get this to work, but it'd be very handy…
+// .Debug { @include debug-map($color); }
+
+$base-black                    : #000;
+$base-white                    : #FFF;
+
+$palette: (
+	black                      : $base-black,
+	dark                       : tint($base-black, 15%),
+	ash                        : tint($base-black, 22%),
+	charcoal                   : tint($base-black, 39%),
+	medium                     : tint($base-black, 50%),
+	muted                      : tint($base-black, 70%),
+	base                       : tint($base-black, 86%),
+	light                      : tint($base-black, 94%),
+	faint                      : tint($base-black, 97%),
+	white                      : $base-white,
+	text                       : #151515,
+	background                 : #fdfdfd,
+	neutral                    : #F3F2F1,
+	neutral-dark               : darken(#f0eeeb, 9%),
+	neutral-light              : lighten(#f0eeeb, 4%),
+	brand                      : #04152B,
+	brand-complement           : #6EBE44,
+	brand-counter              : #887E73,
+	warning                    : #FFD40C,
+	bad-news                   : #C60C0C,
+	good-news                  : brand-complement
+
+);
+
+$root-color: (
+	grey-85                    : tint($base-black, 15%),
+	grey-78                    : tint($base-black, 22%),
+	grey-66                    : tint($base-black, 34%),
+	grey-50                    : tint($base-black, 50%),
+	grey-40                    : tint($base-black, 60%),
+	grey-35                    : tint($base-black, 65%),
+	grey-25                    : tint($base-black, 75%),
+	grey-12                    : tint($base-black, 88%),
+	grey-06                    : tint($base-black, 94%),
+	grey-03                    : tint($base-black, 97%),
+	background                 : #fdfdfd,
+	neutral                    : #f0eeeb,
+	neutral-light              : lighten(#f0eeeb, 4%),
+	brand                      : #ffe93b,
+	brand-faint                : lighten(#0071bc, 56%),
+	brand-light                : lighten(#0071bc, 59%),
+	brand-muted                : #E5F0F8,
+	brand-dark                 : darken(#0071bc, 15%),
+	brand-alt                  : #f15a24,
+	brand-alt-dark             : darken(#f15a24, 10%),
+	brand-alt-muted            : desaturate(#f15a24, 20%),
+	brand-alt-muted-dark       : darken(#f15a24, 20%),
+	warning                    : #FFD40C,
+	bad-news                   : #C60C0C,
+	good-news                  : #97C70A
+);
+
+$color: (
+
+	ui: (
+		white                    : $base-white,
+		faint                    : map-fetch($root-color, grey-03),
+		light                    : map-fetch($root-color, grey-06),
+		base                     : map-fetch($root-color, grey-12),
+		muted                    : map-fetch($root-color, grey-25),
+		medium                   : map-fetch($root-color, grey-40),
+		charcoal                 : map-fetch($root-color, grey-78),
+		dark                     : map-fetch($root-color, grey-85),
+		background               : map-fetch($root-color, background),
+		neutral                  : map-fetch($root-color, neutral),
+		neutral-light            : map-fetch($root-color, neutral-light),
+		brand                    : map-fetch($root-color, brand),
+		brand-light              : map-fetch($root-color, brand-light),
+		brand-faint              : map-fetch($root-color, brand-faint),
+		brand-muted              : map-fetch($root-color, brand-muted),
+		brand-dark               : map-fetch($root-color, brand-dark),
+		brand-alt                : map-fetch($root-color, brand-alt),
+		brand-alt-dark           : map-fetch($root-color, brand-alt-dark),
+		brand-alt-muted          : map-fetch($root-color, brand-alt-muted),
+		brand-alt-muted-dark     : map-fetch($root-color, brand-alt-muted-dark),
+		warning                  : map-fetch($root-color, warning)
+	),
+
+	text: (
+		base                     : map-fetch($root-color, grey-85),
+		background               : map-fetch($root-color, background),
+		white                    : $base-white,
+		faint                    : map-fetch($root-color, grey-12),
+		light                    : map-fetch($root-color, grey-25),
+		muted                    : map-fetch($root-color, grey-35),
+		medium                   : map-fetch($root-color, grey-50),
+		charcoal                 : map-fetch($root-color, grey-66),
+		dark                     : map-fetch($root-color, grey-85),
+		brand                    : map-fetch($root-color, brand),
+		brand-dark               : map-fetch($root-color, brand-dark),
+		brand-alt                : map-fetch($root-color, brand-alt),
+		brand-alt-dark           : map-fetch($root-color, brand-alt-dark),
+		warning                  : map-fetch($root-color, warning)
+	)
+
+);
+
+
+// Sizes map
+// --------------------------------------------------------------------------
+
+$base-font-size-unit      : 16;
+$base-line-height-unit    : 1.428571429;
+$base-font-size           : $base-font-size-unit * 1px;
+$base-line-height         : ($base-font-size-unit * $base-line-height-unit) * 1px; //25.5
+$space-unit               : rem($base-line-height);
+$space                    : $space-unit * 1;
+
+$size: (
+
+	border-radius: (
+		small             : rem(3),
+		base              : rem(4),
+		large             : rem(6)
+	),
+
+	breakpoint: (
+		'max-xs'          : ( max-width:  600px ),
+		'max-sm'          : ( max-width:  767px ),
+		'ip6'             : ( min-width:  374px ),
+		'xs'              : ( min-width:  600px ),
+		'sm'              : ( min-width:  767px ),
+		'md'              : ( min-width: 1025px ),
+		'lg'              : ( min-width: 1200px ),
+		'xl'              : ( min-width: 1700px ),
+		'xxl'             : ( min-width: 1920px )
+	),
+
+	button-height: (
+		concise           : rem(36),
+		base              : rem(44),
+		large             : rem(48)
+	),
+
+	container: (
+		modal-form        : rem(740),
+		modal-form-sm     : 80%,
+		default           : rem(660),
+		small             : rem(345),
+		text-column       : rem(1040),
+		picture           : rem(1170),
+		wide-picture      : rem(1240)
+	),
+
+	font: (
+		textXs: (
+			xs            : rem(11),
+			base          : rem(13)
+		),
+		textSm: (
+			xs            : rem(13),
+			base          : rem(16)
+		),
+		textRg: (
+			xs            : rem($base-font-size-unit * 1.0625),
+			base          : rem($base-font-size-unit * 1.3125)
+		),
+		textMd: (
+			xs            : rem(21),
+			base          : rem(25)
+		),
+		textLg: (
+			xs            : rem(17),
+			base          : rem(21)
+		),
+		headerSm: (
+			xs            : rem(14),
+			base          : rem(15)
+		),
+		headerRg: (
+			xs            : rem(18),
+			base          : rem(22)
+		),
+
+
+
+
+
+		headerMd: (
+			xs            : rem(21),
+			base          : rem(28)
+		),
+		headerLg: (
+			xs            : rem(21),
+			base          : rem(28)
+		),
+		headerXl: (
+			xs            : rem(36),
+			base          : rem(41)
+		),
+		close: (
+			xs            : rem(33),
+			base          : rem(66)
+		),
+		super: (
+			xs            : rem(50),
+			base          : rem(100)
+		),
+	),
+
+	list-inset: (
+		margin            : space(1.5),
+		padding           : 0
+	),
+);
+
+
+// Transitions maps
+// --------------------------------------------------------------------------
+
+$transition: (
+	duration: (
+		fast         : 50ms,
+		short        : 150ms,
+		long         : 500ms
+	),
+	type: (
+		thisalso     : cubic-bezier(0.19, 1, 0.22, 1),
+		cubic-static : cubic-bezier(0, -0.1, 1, -0.1),
+		cubic-state  : cubic-bezier(0, 1.1, 1, 1.1),
+		base         : ease-out,
+		fine         : ease-in-out
+	)
+);
+
+
+// Z-indexes map
+// --------------------------------------------------------------------------
+
+$z-index: (
+	'modal'     : 8001,
+	'overlay'   : 8000,
+	'dropdown'  : 7000,
+	'second'    : 2000,
+	'first'     : 1000,
+	'default'   : 1,
+	'below'     : -1,
+);
+
+
+// Fonts
+// --------------------------------------------------------------------------
+
+// LEGACY: easy google-fonts implementation
+// $sans: 'Source Sans Pro';
+// $font: join($sans, $font-sans-stack);
+
+$fonts-path           : '/fonts/';
+
+$font-sans-name       : 'Theinhardt';
+$font-sans-stack      : -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Cantarell","Open Sans","Helvetica Neue","Ubuntu",sans-serif;
+
+$font-serif-name      : 'LyonText';
+$font-serif-stack     : 'Georgia', 'Times', serif;
+
+$font-display-name    : '-apple-system,BlinkMacSystemFont'; // font-weight: 900;
+// $font-display-name    : 'Theinhardt-Heavy';
+// $font-display-name    : 'LarishNeue';
+$font-display-stack   : 'Courier New', 'Consolas', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', mono-spaced;
+
+// Create font-file variables
+
+$text-thin            : #{$font-serif-name}-Thin;
+$text-light           : #{$font-serif-name}-Light;
+$text-book            : #{$font-serif-name}-Regular;
+$text-regular         : #{$font-serif-name}-Regular;
+// $text-medium          : #{$font-serif-name}-Medium;
+$text-medium          : #{$font-serif-name}-Semibold;
+$text-bold            : #{$font-serif-name}-Bold;
+$text-xbold           : #{$font-serif-name}-Extrabold;
+$text-black           : #{$font-serif-name}-Black;
+
+$text-regular-italic  : #{$font-serif-name}-RegularItalic;
+// $text-medium-italic   : #{$font-serif-name}-MediumItalic;
+$text-medium-italic   : #{$font-serif-name}-SemiboldItalic;
+$text-bold-italic     : #{$font-serif-name}-BoldItalic;
+
+$display              : #{$font-display-name};
+
+// Make all font files available
+// Mixin options: $font-family, $file-path, $weight, $style, $formats
+// Ps. This below prints an unwanted space between the path var and the font var:
+// @include font-face($text-thin, join($fonts-path,$text-thin) );
+
+@include font-face($text-thin,    '#{$fonts-path}#{$text-thin}' );
+@include font-face($text-light,   '#{$fonts-path}#{$text-light}' );
+@include font-face($text-book,    '#{$fonts-path}#{$text-book}' );
+@include font-face($text-regular, '#{$fonts-path}#{$text-regular}' );
+@include font-face($text-medium,  '#{$fonts-path}#{$text-medium}' );
+@include font-face($text-bold,    '#{$fonts-path}#{$text-bold}' );
+@include font-face($text-xbold,   '#{$fonts-path}#{$text-xbold}' );
+@include font-face($text-black,   '#{$fonts-path}#{$text-black}' );
+@include font-face($text-regular-italic, '#{$fonts-path}#{$text-regular-italic}' );
+@include font-face($display, '#{$fonts-path}#{$display}' );
+
+// Apply font-file variables to a font-stack
+// Only use these variables in our classes.
+
+$font-text-thin       : join($text-thin, $font-serif-stack);
+$font-text-light      : join($text-light, $font-serif-stack);
+$font-text-book       : join($text-book, $font-serif-stack);
+$font-text-regular    : join($text-regular, $font-serif-stack);
+$font-text-regular-i  : join($text-regular-italic, $font-serif-stack);
+$font-text-medium     : join($text-medium, $font-serif-stack);
+$font-text-medium-i   : join($text-medium-italic, $font-serif-stack);
+$font-text-bold       : join($text-bold, $font-serif-stack);
+$font-text-bold-i     : join($text-bold-italic, $font-serif-stack);
+$font-text-xbold      : join($text-xbold, $font-serif-stack);
+$font-text-black      : join($text-black, $font-serif-stack);
+$font-text-regular-i  : join($text-regular-italic, $font-serif-stack);
+// $font-display         : join($display, $font-display-stack);
+$font-display         : join($display, $font-serif-stack);
+
+// if using @fontface via a cloud service, eg. Google fonts.
+
+$font-weight: (
+	'thin'      : 100,
+	'light'     : 200,
+	'book'      : 400,
+	'regular'   : 500,
+	'medium'    : 600,
+	'bold'      : 700,
+	'black'     : 900
+);

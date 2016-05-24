@@ -1,10 +1,12 @@
 {
-  "globals": {
-    "site_title": "Patternworks",
-    "site_tagline": "Creating digital brands that resonate.",
-    "site_description": "Patternworks is a digital creative studio in Cairns, Australia. We plan, design and build identities and websites that resonate by focussing on outcomes and executing with detail. ",
-    "site_url": "http://www.patternworks.com.au",
-    "logo": "/images/logo.png",
-    "analytics_account": "UA-59062441-1"
-  }
+	"globals": {
+		"site_title": "Patternworks",
+		"site_tagline": "Creating digital brands that resonate.",
+		"site_description": "Plan, design and build for better user experiences.",
+		"site_url": "http://www.patternworks.com.au",
+		"twitter": "https://twitter.com/patternworks_",
+		"logo": "/images/logo.png",
+		"analytics_account": "UA-59062441-1",
+		"google_site_verification": "ifWumnWk5DISF1SS1MIj5MTsGLpBrixB0KJP4OH-MKo"
+	}
 }

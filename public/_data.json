@@ -1,10 +1,10 @@
 {
-    "index": {
-        "tagline": "Creating digital brands that resonate.",
-        "description": "Text"
-    },
-    "blog": {
-        "tagline": "Writing because I can't.",
-        "description": "Text"
-    }
+	"index": {
+		"tagline": "Creating digital brands that resonate.",
+		"description": "Text"
+	},
+	"blog": {
+		"tagline": "Writing because I can't.",
+		"description": "Text"
+	}
 }

@@ -1,3 +1,17 @@
+# Site
+- http://www.owlcarousel.owlgraphic.com/demos/animate.html
+- favicon
+
+# Resolutions
+- desktop: 2560x1440
+- ipad: 1024x768
+- iphone6: 375x667
+
+
+
+
+
+
 TO DO
 =========================================
 

@@ -1,48 +1,47 @@
 doctype
 html
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
-        title= locals.title ? title + " | " + site_title : site_title
-        if current.path[0] === "index"
-            meta(name='description', content=site_description)
-        else
-            if current.path[0] === "blog"
-                meta(name='description', content=site_description)
-        meta(name="google-site-verification" content="ifWumnWk5DISF1SS1MIj5MTsGLpBrixB0KJP4OH-MKo")
-        link(rel="stylesheet" href="/css/styles.css")
-        //- link(rel="stylesheet", href="/css/zoom.css")
-        link(rel="stylesheet", href="/css/flickity.css")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title= locals.title ? title + " | " + site_title : site_title
+		if current.path[0] === "index"
+			meta(name='description', content=site_description)
+		else
+			if current.path[0] === "blog"
+				meta(name='description', content=site_description)
+		meta(name="google-site-verification" content=google_site_verification)
+		link(rel="stylesheet" href="/stylesheets/application.css")
+		link(rel="stylesheet", href="/stylesheets/flickity.css")
 
-    body(class="#{ current.path[0] }")
-        
-        if current.path[0] !== "index"
-            != partial("_shared/header")
+	body(class="#{ current.path[0] }")
+		
+		//- if current.path[0] !== "index"
+			//- != partial("_shared/header")
 
-        if current.path[0] === "index"
-            != yield
-        
-        if current.path[0] === "about"
-            != yield
-        
-        if current.path[0] === "work"
-            != partial("/work/_work")
-        
-        else if ["404"].indexOf(current.path[0]) !== -1
-            != yield
+		if current.path[0] === "index"
+			!= yield
+		
+		if current.path[0] === "about"
+			!= yield
+		
+		if current.path[0] === "work"
+			!= partial("/work/_work")
+		
+		else if ["404"].indexOf(current.path[0]) !== -1
+			!= yield
 
-        != partial("_shared/footer")
+		//- != partial("_shared/footer")
 
-        script(src="/js/jquery.js")
-        script(src="/js/jquery.arbitrary-anchor.js")
-        script(src="/js/flickity.pkgd.min.js")
-        script(src="/js/application.js")
-        script(type='text/javascript').
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '#{ locals.analytics_account }']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		//- script(src="/javascripts/application.js")
+		script(src="/javascripts/lib.flickity.min.js")
+		script(src="/javascripts/component.flickity.js")
+		script(type='text/javascript').
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '#{ locals.analytics_account }']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
