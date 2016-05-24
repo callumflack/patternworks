@@ -1,0 +1,6 @@
+nav.Nav(role="navigation")
+    ul
+        li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") #[span Home]]
+        //- li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") #[span Work]]
+        //- li #[a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") #[span Blog]]
+        li #[a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/about") #[span About]]

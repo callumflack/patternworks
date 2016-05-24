@@ -1,0 +1,8 @@
+.gitignore
+*.md
+public/about
+public/blog
+public/index-bits.jade
+public/work
+public/fontsIgnore
+public/img/-imgIgnore

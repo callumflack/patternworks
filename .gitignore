@@ -1,5 +1,8 @@
 node_modules
 npm-debug.log
 www
-fonts-ignore
-img/-notInUse
+
+.surgeignore
+TODO.md
+public/fontsIgnore
+public/img/-imgIgnore

@@ -1,0 +1,45 @@
+
+
+// --------------------------------------------------------------------------
+// LAYOUT
+// --------------------------------------------------------------------------
+
+
+body {
+    padding: 0;
+
+    @include respond-to(sm) {
+        @include clearfix();
+        // max-width: $columnPicture;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+.Header,
+.Section,
+.Footer {
+    position: relative;
+}
+
+.Header {
+    margin: $space * 2 0;
+}
+
+
+// The .Article column container
+// --------------------------------------------------------------------------
+
+.Container {
+    @include clearfix();
+    width: 100%;
+    padding: 0 $space;
+    position: relative;
+
+    @include respond-to(sm) {
+        padding: 0;
+        max-width: $columnText;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

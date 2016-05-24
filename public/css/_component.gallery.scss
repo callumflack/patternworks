@@ -1,0 +1,134 @@
+
+/* ==========================================================================
+
+   GALLERY COMPONENT
+   Uses Flickity (http://flickity.metafizzy.co/)
+
+   ========================================================================== */
+
+
+$HeroHeight: 100vh;
+$HeroWidth: 100%;
+
+.Hero {
+    height: $HeroHeight;
+    position: relative;
+    width: 100%;
+}
+
+.Gallery {
+    background-color: rgba($color-text,0.7);
+    height: inherit;
+
+    &:after {
+        // @include absoluteCover;
+        // background-color: rgba($color-text,0.7);
+        // content: "";
+        // display: block;
+    }
+}
+
+.Gallery-cell {
+    height: 100%;
+    width: 100%;
+
+    img {
+        width: inherit;
+    }
+}
+
+.Hero-layer {
+    // @include absoluteCover;
+    height: auto; //if contained w/i 'centerVertically', must have a specific height
+    left: $space;
+    position: absolute;
+    top: 25vh;
+    right: $space;
+    width: auto;
+
+    @include respond-to(sm) {
+        left: calc((100% - #{$columnText}) / 2);
+        max-width: $columnText;
+        right: auto;
+        top: 35vh;
+    }
+}
+
+.Hero-aligner {
+    @include centerVertically;
+}
+
+.Hero-info {
+    // background-color: $color-bg;
+    // padding: 0 $space ($space - rem(2));
+
+    h1,
+    p,
+    a {
+        color: $color-white !important;
+    }
+
+    h1 {
+        // margin-top: $space - rem(20);
+        margin: 0;
+        padding: ($space * 2) 0 ($space * 1.5);
+
+        a {
+            @include RuleTransition($color: $color-white);
+        }
+    }
+
+    p {
+        // margin-bottom: 0;
+    }
+
+    p a {
+        @include u-link($rule: $linkRuleWhite);
+    }
+}
+
+.Content {
+    padding-top: $space * 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Caption {
+    border-top: 1px solid rgba($color-grey,0.4);
+    margin-top: $space * 0.5;
+    padding-top: $space * 0.5;
+
+    button,
+    p {
+        color: $color-grey;
+        font-size: $r-sizeText * 0.7;
+    }
+}
+
+.Caption-container {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+}
+
+.Caption-line {
+
+}
