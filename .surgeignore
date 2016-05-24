@@ -1,5 +1,4 @@
 .gitignore
-.surgeignore
 *.md
 public/about
 public/blog

@@ -2,7 +2,6 @@ node_modules
 npm-debug.log
 www
 
-.gitignore
 .surgeignore
 TODO.md
 public/fontsIgnore
