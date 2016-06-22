@@ -7,13 +7,13 @@
 
 a {
 	@include baseTransition();
-	border-bottom: 1px solid palette(text);
-	color: palette(text);
+	border-bottom: 1px solid rgba( palette(brand), 0.2 );
+	color: palette(brand);
 	text-decoration: none;
 
 	@include on-event() {
 		@include baseTransition();
-		color: palette(black);
+		color: palette(brand);
 	}
 }
 
@@ -22,6 +22,6 @@ li a {
 	color: currentColor;
 
 	@include on-event() {
-		background-color: palette(black);
+		background-color: palette(brand);
 	}
 }

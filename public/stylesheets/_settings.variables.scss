@@ -47,7 +47,7 @@ $palette: (
 	neutral                    : #F3F2F1,
 	neutral-dark               : darken(#f0eeeb, 9%),
 	neutral-light              : lighten(#f0eeeb, 4%),
-	brand                      : #04152B,
+	brand                      : #0c2f5d,
 	brand-complement           : #6EBE44,
 	brand-counter              : #887E73,
 	warning                    : #FFD40C,
@@ -134,7 +134,7 @@ $color: (
 // --------------------------------------------------------------------------
 
 $base-font-size-unit      : 16;
-$base-line-height-unit    : 1.428571429;
+$base-line-height-unit    : 1.35;
 $base-font-size           : $base-font-size-unit * 1px;
 $base-line-height         : ($base-font-size-unit * $base-line-height-unit) * 1px; //25.5
 $space-unit               : rem($base-line-height);
@@ -186,8 +186,8 @@ $size: (
 			base          : rem(16)
 		),
 		textRg: (
-			xs            : rem($base-font-size-unit * 1.0625),
-			base          : rem($base-font-size-unit * 1.3125)
+			xs            : rem(23),
+			base          : rem(30)
 		),
 		textMd: (
 			xs            : rem(21),
@@ -281,7 +281,7 @@ $z-index: (
 
 $fonts-path           : '/fonts/';
 
-$font-sans-name       : 'Theinhardt';
+$font-sans-name       : 'FaktPro';
 $font-sans-stack      : -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Cantarell","Open Sans","Helvetica Neue","Ubuntu",sans-serif;
 
 $font-serif-name      : 'LyonText';
@@ -294,20 +294,21 @@ $font-display-stack   : 'Courier New', 'Consolas', 'Andale Mono', 'Lucida San Ty
 
 // Create font-file variables
 
-$text-thin            : #{$font-serif-name}-Thin;
-$text-light           : #{$font-serif-name}-Light;
-$text-book            : #{$font-serif-name}-Regular;
-$text-regular         : #{$font-serif-name}-Regular;
-// $text-medium          : #{$font-serif-name}-Medium;
-$text-medium          : #{$font-serif-name}-Semibold;
-$text-bold            : #{$font-serif-name}-Bold;
-$text-xbold           : #{$font-serif-name}-Extrabold;
-$text-black           : #{$font-serif-name}-Black;
+$text-thin            : #{$font-sans-name}-Thin;
+$text-light           : #{$font-sans-name}-Light;
+$text-book            : #{$font-sans-name}-Regular;
+// $text-regular         : #{$font-sans-name}-Regular;
+$text-regular         : #{$font-sans-name}-SemiBold;
+// $text-medium          : #{$font-sans-name}-Medium;
+$text-medium          : #{$font-sans-name}-Semibold;
+$text-bold            : #{$font-sans-name}-Bold;
+$text-xbold           : #{$font-sans-name}-Extrabold;
+$text-black           : #{$font-sans-name}-Black;
 
-$text-regular-italic  : #{$font-serif-name}-RegularItalic;
-// $text-medium-italic   : #{$font-serif-name}-MediumItalic;
-$text-medium-italic   : #{$font-serif-name}-SemiboldItalic;
-$text-bold-italic     : #{$font-serif-name}-BoldItalic;
+$text-regular-italic  : #{$font-sans-name}-RegularItalic;
+// $text-medium-italic   : #{$font-sans-name}-MediumItalic;
+$text-medium-italic   : #{$font-sans-name}-SemiboldItalic;
+$text-bold-italic     : #{$font-sans-name}-BoldItalic;
 
 $display              : #{$font-display-name};
 

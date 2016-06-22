@@ -58,6 +58,7 @@
 	color: $mixinColor;
 	font-family: $mixinFont;
 	font-size: fontsize(textRg, xs);
+	letter-spacing: -0.005em;
 
 	@include respond-to(xs) {
 		font-size: fontsize(textRg, base);

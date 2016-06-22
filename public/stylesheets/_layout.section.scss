@@ -5,14 +5,15 @@
 // --------------------------------------------------------------------------
 
 
-.Section {
-	padding: space(1.5) 0;
-	// padding: 2.5% 0;
+.Header {
+	padding-top: space(3.5);
 
 	@include respond-to(sm) {
-		padding: space(9) 0;
-		// padding: 10% 0;
+		padding-top: space(6);
 	}
+}
+
+.Section {
 
 	&.Section--neutral { background-color: palette(neutral); }
 
@@ -28,9 +29,55 @@
 }
 
 .Footer {
-	margin: space(1.5) auto;
+	// margin: space(1.5) auto;
+	//
+	// @include respond-to(sm) {
+	// 	margin: space(2.5) auto space(2);
+	// }
+}
+
+
+
+
+@mixin sectionSpacer {
+	padding: 0 0 space(1.5);
 
 	@include respond-to(sm) {
-		margin: space(2.5) auto space(2);
+		padding: 0 0 space(9);
+	}
+}
+
+.Container--rule {
+	&:after {
+		content: "—";
+		display: table-cell;
+		height: space(7);
+		vertical-align: middle;
+
+		@include respond-to(sm) {
+			height: space(12);
+		}
+	}
+}
+
+.Container--slow p {
+	margin-bottom: space(3.5);
+
+	@include respond-to(sm) {
+		margin-bottom: space(6);
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.Container--light {
+	padding-bottom: space(7);
+
+	p, li, a { color: rgba( palette(brand), 0.4 ); }
+
+	@include respond-to(sm) {
+		padding-bottom: space(12);
 	}
 }
