@@ -5,24 +5,92 @@
 // --------------------------------------------------------------------------
 
 
-.Nav {
-	// display: flex;
-	// height: rem(80);
-	// padding: space(0.9);
-	// position: relative;
+// Nav toggle (in header)
+// --------------------------------------------------------------------------
 
-	display: inline-block;
-	left: 0;
-	padding: space(3);
+.NavToggle {
+	// @include baseTransition;
+	display: inline;
 	position: fixed;
-	top: 0;
-	z-index: 1000;
+	opacity: 1;
+	padding: space(3) 0;
+	transition:
+		// translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
+		opacity 500ms map-fetch($transition, type, fine);
+	z-index: 9;
 
-	a {
-		@include headlineRg();
-		border: none;
+	&--inverse {
+		h1, p { color: palette(background); }
 	}
 
-	@include respond-to(xs) {
+	@include media-breakpoint-up(sm) {
 	}
+
+	// Color the hamburger icon
+	@include when-inside(".Home") { color: palette(white); }
+	@include when-inside(".Blog") { color: palette(white); }
+}
+
+// Make the header nav fixed and animate down into view on scroll
+// Req's: component.fixedheaderanimation.js
+// See: http://codepen.io/Craig-Watson/pen/zGbNRL
+
+$FixedNavHeight: rem(220);
+
+.NavToggle--transition {
+	position: fixed;
+	opacity: 0;
+	transform: translateY( -#{$FixedNavHeight} );
+	transition:
+		translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
+		opacity 500ms map-fetch($transition, type, fine);
+}
+
+
+// Nav (in footer)
+// --------------------------------------------------------------------------
+
+.Nav {
+	background-color: palette(text);
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
+	width: 100%;
+	z-index: 2;
+	-webkit-tap-highlight-color: transparent;
+	// visibility: hidden;
+	// opacity: 0;
+
+
+	h1, p, li { color: palette(background) !important; }
+	.is-active { color: palette(medium) !important; }
+}
+
+
+// Allow nav to fix as a footer
+// --------------------------------------------------------------------------
+
+.NavSpace {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	min-width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+	padding-bottom: calc(100vh);
+	z-index: 1;
+}
+
+
+// Manage .Header and .Content layers to use with .Nav
+// --------------------------------------------------------------------------
+
+.Header,
+.Content {
+	position: relative;
+	z-index: 3;
+}
+
+.Content {
+	background-color: palette(background);
 }

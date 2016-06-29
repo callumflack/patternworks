@@ -5,79 +5,15 @@
 // --------------------------------------------------------------------------
 
 
-.Header {
-	padding-top: space(3.5);
-
-	@include respond-to(sm) {
-		padding-top: space(6);
-	}
+@mixin sectionSpacer {
+	// content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	padding: space(10) 0;
+	padding: calc(#{$sectionSpacer}) 0;
 }
 
 .Section {
+	@include sectionSpacer();
 
 	&.Section--neutral { background-color: palette(neutral); }
-
-	&.Section--black {
-		background-color: palette(black);
-
-		h1,
-		p,
-		ul {
-			color: palette(white);
-		}
-	}
-}
-
-.Footer {
-	// margin: space(1.5) auto;
-	//
-	// @include respond-to(sm) {
-	// 	margin: space(2.5) auto space(2);
-	// }
-}
-
-
-
-
-@mixin sectionSpacer {
-	padding: 0 0 space(1.5);
-
-	@include respond-to(sm) {
-		padding: 0 0 space(9);
-	}
-}
-
-.Container--rule {
-	&:after {
-		content: "—";
-		display: table-cell;
-		height: space(7);
-		vertical-align: middle;
-
-		@include respond-to(sm) {
-			height: space(12);
-		}
-	}
-}
-
-.Container--slow p {
-	margin-bottom: space(3.5);
-
-	@include respond-to(sm) {
-		margin-bottom: space(6);
-	}
-
-	&:last-of-type {
-		margin-bottom: 0;
-	}
-}
-
-.Container--light {
-	padding-bottom: space(7);
-
-	p, li, a { color: rgba( palette(brand), 0.4 ); }
-
-	@include respond-to(sm) {
-		padding-bottom: space(12);
-	}
+	&.Section--black   { @include reverseTextBlock(); background-color: palette(black); }
 }

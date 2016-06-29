@@ -1,0 +1,13 @@
+
+
+// --------------------------------------------------------------------------
+//   FOOTER
+// --------------------------------------------------------------------------
+
+
+.Footer {
+	@include sectionSpacer();
+	background-color: palette(text);
+
+	h1, p, li { color: palette(background) !important; }
+}

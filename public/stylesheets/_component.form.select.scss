@@ -9,7 +9,7 @@
 // http://red-team-design.com/making-html-dropdowns-not-suck/
 
 .t-selectInputs {
-	@include TextRg();
+	@include textRg();
 	background-color: rgba( palette(brand-counter), 0.05);
 	border: 1px solid rgba( palette(brand-counter), 0.7);
 	border-radius: size(border-radius, small);

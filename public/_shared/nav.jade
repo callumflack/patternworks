@@ -1,6 +1,18 @@
-nav.Nav.Nav--main.Nav--hidden(role="navigation")
-    ul
-        li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") #[span Home]]
-        li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") #[span Work]]
-        //- li #[a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") #[span Blog]]
-        li #[a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/about") #[span About]]
+nav.Nav(role="navigation")
+	.Aligner
+		.Aligner-item
+			.Container
+				.Column--text
+					//- h1.Headline--sm.u-marginB25 Patternworks
+					ul.Headline-block--footer
+						li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") Home]
+						li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/") Work]
+						li #[a(class="#{ current.path[0] == 'journal' ? 'is-active' : '' }" href="/") Journal]
+						li #[a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/") About]
+					ul.Text-block--footer
+						li #[a(href="/") hi@patternworks.com.au]
+						li #[a(href="/") +61(0) 408 767 540]
+					ul.Text-block--footer
+						li #[a(href="/") Twitter]
+						li #[a(href="/") Medium]
+						li #[a(href="/") Instagram]

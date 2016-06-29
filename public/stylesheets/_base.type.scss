@@ -29,7 +29,7 @@ em, b {
 
 body {
 	@include typeReset();
-	color: color(text, charcoal);
+	color: palette(text);
 	font-family: $font-text-regular;
 	font-size: 100%;
 	line-height: $base-line-height-unit;
@@ -45,7 +45,7 @@ body {
 // --------------------------------------------------------------------------
 
 /* uncss:ignore */
-h1, h2, h3, h4, h5, h6,
+// h1, h2, h3, h4, h5, h6,
 ul, ol, li, dl,
 blockquote, p, address,
 table, time,

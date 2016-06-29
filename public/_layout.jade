@@ -9,11 +9,12 @@ html
 		else
 			if current.path[0] === "blog"
 				meta(name='description', content=site_description)
-		//- meta(name="google-site-verification" content=google_site_verification)
 		link(rel="stylesheet" href="/stylesheets/application.css")
-		//- link(rel="stylesheet", href="/stylesheets/flickity.css")
+		link(rel="stylesheet", href="/stylesheets/owl.carousel.css")
 
-	body(class="#{ current.path[0] }")
+	body(class="#{ current.path[0] } NavSpace")
+		
+		!= partial("_shared/nav-toggle")
 		
 		//- if current.path[0] !== "index"
 			//- != partial("_shared/header")
@@ -30,11 +31,11 @@ html
 		else if ["404"].indexOf(current.path[0]) !== -1
 			!= yield
 
-		//- != partial("_shared/footer")
+		!= partial("_shared/nav")
 
-		//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-		//- script(src="/javascripts/application.js")
-		//- script(src="/javascripts/lib.flickity.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script(src="/javascripts/lib.owl.carousel.min.js")
+		script(src="/javascripts/application.js")
 		//- script(src="/javascripts/component.flickity.js")
 		script(type='text/javascript').
 			var _gaq = _gaq || [];

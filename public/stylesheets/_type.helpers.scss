@@ -1,0 +1,20 @@
+
+
+// --------------------------------------------------------------------------
+//   TYPE HELPERS
+// --------------------------------------------------------------------------
+
+
+@mixin reverseTextBlock {
+	h1,
+	p,
+	ul,
+	.Text--meta {
+		color: palette(light) !important;
+	}
+}
+
+@mixin headerTextBlock {
+	h1 { margin-bottom: space(0.2); }
+	p  { margin-bottom: space(0.35); }
+}

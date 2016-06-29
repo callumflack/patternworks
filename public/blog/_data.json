@@ -1,25 +1,25 @@
 {
-    "kata-and-code": {
-        "title": "Design is not art. It's communication.",
-        "title": "New ways of seeing",
-        "title": "Kata and code",
-        "date": "January 27, 2015",
-        "hero": true,
-        "author": "callum-flack",
-        "description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
-        "ispublished": true,
-        "isfeatured": true,
-        "ishome": true
-    },
-    "design-is-not-art": {
-        "title": "Design is not art. It's communication.",
-        "url": "https://ia.net/know-how/putting-thought-into-things",
-        "date": "October 6, 2015",
-        "hero": false,
-        "author": "callum-flack",
-        "description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
-        "ispublished": true,
-        "isfeatured": false,
-        "ishome": false
-    }
+	"kata-and-code": {
+		"title": "Design is not art. It's communication.",
+		"title": "New ways of seeing",
+		"title": "Kata and code",
+		"date": "January 27, 2015",
+		"hero": true,
+		"author": "callum-flack",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": false
+	},
+	"test": {
+		"title": "Designing for user needs first.",
+		"note": "How to design the right thing first.",
+		"date": "October 6, 2015",
+		"hero": false,
+		"author": "callum-flack",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	}
 }

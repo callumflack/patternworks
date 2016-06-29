@@ -15,12 +15,14 @@
 
 
 // Media queries
+// I love this version, but I need more flexibility. This will be deprecated
+// by BS4's breakpoints mixin. See: `tools.mixins.breakpoints`
 // --------------------------------------------------------------------------
 // @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
 // @link http://www.sitepoint.com/managing-responsive-breakpoints-sass/
 
 @mixin respond-to($breakpoint) {
-	// $raw-query: map-get($breakpoints, $breakpoint);
+	// $raw-query: map-get($grid-breakpoints, $breakpoint);
 	// $raw-query: map-fetch($size, breakpoint, $breakpoint);
 	$raw-query: size(breakpoint, $breakpoint);
 
@@ -116,8 +118,10 @@
 // --------------------------------------------------------------------------
 // Quick and easy. Could extend this…
 
-@mixin baseTransition {
-	transition-property: all;
+@mixin baseTransition(
+	$property: all
+) {
+	transition-property: $property;
 	transition-duration: map-fetch($transition, duration, long);
 	transition-timing-function: map-fetch($transition, type, base);
 }

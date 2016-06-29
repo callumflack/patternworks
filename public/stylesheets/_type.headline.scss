@@ -5,17 +5,17 @@
 // --------------------------------------------------------------------------
 
 
+// Common theme
+
 @mixin headlineTemplate() {
 	@include typeReset();
 	color: palette(text);
 	font-family: $font-display;
-	font-weight: 900;
-	letter-spacing: 0.3em;
-	text-align: center;
-	text-transform: uppercase;	line-height: $base-line-height-unit;
 
-	// if the headline is a link
+	// The interpolation brackets #{ } are needed as two touching ampersands are invalid Sass.
 	// https://css-tricks.com/the-sass-ampersand/
+	// http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375
+
 	// &#{a} {
 	//     @include on-event() {
 	//         opacity: 0.4;
@@ -23,22 +23,21 @@
 	//     }
 	// }
 
-	a {
-
-	}
-
-	@include respond-to(xs) {
-		// margin-bottom: space(1.75);
+	@include media-breakpoint-up(xs) {
 	}
 }
 
+
+// Loop thru sizes
+
 @mixin headlineSm() {
 	@include headlineTemplate();
-	font-size: fontsize(headerSm, xs);
-	letter-spacing: 0.1em;
+	font-size: fs(headlineSm, xs);
+	letter-spacing: 0.03em;
+	line-height: 1;
 
 	@include respond-to(xs) {
-		font-size: fontsize(headerSm, base);
+		font-size: fs(headlineSm, base);
 	}
 }
 
@@ -51,28 +50,44 @@
 	}
 }
 
+@mixin headlineDisplay() {
+	@include headlineTemplate();
+	font-size: fontsize(display, xs);
+	// letter-spacing: -0.01em;
+	line-height: 1.25;
+	margin-bottom: space(1.25);
+
+	@include respond-to(xs) {
+		font-size: fontsize(display, base);
+		width: 65%;
+	}
+}
 
 
-
-
-// Vax Initiate.
+// Initiate in classes.
 // Hierarchy: primary, secondary, tertiary, quaternary, quinary, senary,
-// septenary, octonary, nonary, denary… and super.
+// septenary, octonary, nonary, denary and super.
 // --------------------------------------------------------------------------
 
 // .u-headline            { @include headlineRg(); }
 // .u-headlineEm          { @include headlineRg($mixinFont: $font-text-medium-i); }
 // .u-headline--light     { @include headlineRg($mixinColor: palette(brand-counter)); }
-// .u-headlineSm          { @include headlineSm(); }
-// .u-headlineSm--light   { @include headlineSm($mixinColor: palette(brand-counter)); }
-
 // .Headline--sm        { @include headlineSm(); }
 // .Headline--secondary { @include headlineSecondary(); }
 // .Headline--tertiary  { @include headlineTertiary(); }
 
+.Headline       { @include headlineDisplay(); }
+.Headline--sm   { @include headlineSm(); }
 
+// Headline blocks
+.Headline-block { > * { @include headlineDisplay(); } }
 
-// In a markdown world…
-// --------------------------------------------------------------------------
+.Headline-block--footer {
+	@include listClean();
+	margin-bottom: 0;
 
-h1                     { @include headlineRg(); }
+	> * {
+		@include headlineDisplay();
+		margin-bottom: 0;
+	}
+}

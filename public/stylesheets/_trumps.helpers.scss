@@ -13,48 +13,52 @@
 .u-mxs-fullWidth    { @include respond-to(max-xs) { width: 100%; } }
 
 
+// basic hide for liquid conditionals
+// --------------------------------------------------------------------------
+.u-hide             { display: none; }
+
+
+// Custom flex components
+// --------------------------------------------------------------------------
+
+// .Flex--alignCenter {
+// 	align-items: center;
+// 	display: flex;
+// 	justify-content: center;
+// 	min-height: 100%;
+// }
+
+
+// Custom flexEmbeds
+// --------------------------------------------------------------------------
+
+.FlexEmbed-ratio--8by9 { padding-bottom: 25%; }
+.FlexEmbed-ratio--12by5 { padding-bottom: 42%; }
+
+
 // Colors
-// Alt: .u-colorBrand { color: palette($increment: brand) !important; }
 // --------------------------------------------------------------------------
 
 .u-colorWhite       { color: palette(background) !important; }
 .u-colorFaint       { color: palette(faint) !important; }
 .u-colorLight       { color: palette(light) !important; }
-.u-colorFaint       { color: palette(faint) !important; }
 .u-colorMuted       { color: palette(muted) !important; }
 .u-colorMedium      { color: palette(medium) !important; }
 .u-colorDark        { color: palette(charcoal) !important; }
 .u-colorBlack       { color: palette(black) !important; }
 .u-colorBrand       { color: palette(brand) !important; }
+.u-colorBrandMuted  { color: rgba( palette(brand), 0.5 ) !important; }
+.u-colorBrandLight  { color: rgba( palette(brand), 0.3 ) !important; }
 .u-colorBrandAlt    { color: palette(brand-complement) !important; }
 .u-colorBrandCount  { color: palette(brand-counter) !important; }
 
-.u-colorTextLight   { color: palette(light) !important; }
-.u-colorTextMuted   { color: palette(muted) !important; }
-.u-colorTextMedium  { color: palette(medium) !important; }
-
 .u-colorMutedBlock {
-	* {
-		color: palette(muted) !important;
-	}
-
-	a {
-		@include on-event() {
-			color: palette(black);
-		}
-	}
+	* { color: palette(muted) !important; }
+	a { @include on-event() { color: palette(black); } }
 }
 
 .u-colorBlackBlock {
-	* {
-		color: palette(black) !important;
-	}
-
-	// a {
-	//     @include on-event() {
-	//         color: palette(black);
-	//     }
-	// }
+	* { color: palette(black) !important; }
 }
 
 
@@ -75,40 +79,6 @@
 .u-sm-bgNeutral     { @include respond-to(sm) { background-color: palette(neutral) !important; } }
 
 
-// Font sizes
-// --------------------------------------------------------------------------
-
-.u-textSizeXs       { font-size: size(font, text-xs) !important; }
-.u-textSizeSm       { font-size: size(font, text-sm) !important; }
-.u-textSizeRg       { font-size: size(font, text) !important; }
-.u-textSizeLg       { font-size: size(font, text-lg) !important; }
-
-.u-sm-textSizeRg    { @include respond-to(sm) { font-size: size(font, text) !important; } }
-
-.u-headerSizeRg {
-	font-size: map-fetch($size, font, headerRg, xs) !important;
-	@include respond-to(xs) { font-size: map-fetch($size, font, headerRg, base) !important }
-}
-
-.u-textCenterBlock { > * { @extend .u-textCenter; } }
-.u-textRightBlock  { > * { @extend .u-textRight; } }
-
-.u-textXsBlock     { > *, a { @include TextXs(); } }
-.u-textSmBlock     { > *, a { @include TextSm(); } }
-
-
-// Font weights
-// --------------------------------------------------------------------------
-
-.u-weightRegular    { font-family: $font-text-regular !important; }
-.u-weightMedium     { font-family: $font-text-medium !important; }
-.u-weightBold       { font-family: $font-text-bold !important; }
-.u-weightBlack      { font-family: $font-text-black !important; }
-
-.u-sm-weightBold    { @include respond-to(sm) { font-family: $font-text-bold !important; } }
-.u-sm-weightBlack   { @include respond-to(sm) { font-family: $font-text-black !important; } }
-
-
 // Border colors
 // --------------------------------------------------------------------------
 
@@ -118,6 +88,39 @@
 .u-borderBrand      { border: 1px solid palette(brand) !important; }
 
 .u-sm-borderDark    { @include respond-to(sm) { border: 1px solid palette(dark) !important; } }
+
+
+// // Font sizes
+// // --------------------------------------------------------------------------
+//
+// .u-textSizeXs       { font-size: size(font, text-xs) !important; }
+// .u-textSizeSm       { font-size: size(font, text-sm) !important; }
+// .u-textSizeRg       { font-size: size(font, text) !important; }
+// .u-textSizeLg       { font-size: size(font, text-lg) !important; }
+//
+// .u-sm-textSizeRg    { @include respond-to(sm) { font-size: size(font, text) !important; } }
+//
+// .u-headerSizeRg {
+// 	font-size: map-fetch($size, font, headerRg, xs) !important;
+// 	@include respond-to(xs) { font-size: map-fetch($size, font, headerRg, base) !important }
+// }
+//
+// .u-textCenterBlock { > * { @extend .u-textCenter; } }
+// .u-textRightBlock  { > * { @extend .u-textRight; } }
+//
+// .u-textXsBlock     { > *, a { @include TextXs(); } }
+// .u-textSmBlock     { > *, a { @include TextSm(); } }
+
+
+// Weights & italics
+// --------------------------------------------------------------------------
+
+.u-textWtLt        { font-family: $font-text-light !important; }
+.u-textWtRg        { font-family: $font-text-regular !important; }
+.u-textWtMd        { font-family: $font-text-medium !important; }
+
+.u-textEmRg        { font-family: $font-text-regular-i !important; }
+.u-textEmMd        { font-family: $font-text-medium-i !important; }
 
 
 // Rounded wells. Usually require a background-color or a border.
