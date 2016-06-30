@@ -3,7 +3,7 @@
     time.Article-timestamp(datetime='2015-05-19') May 19, 2015
 
 footer.Footer(role='contentinfo')
-    .Container
+    .o-container
         .HzLine
         |
         iframe#twitter-widget-0.twitter-follow-button.twitter-follow-button(scrolling='no', frameborder='0', allowtransparency='true', src='http://platform.twitter.com/widgets/follow_button.0b0ceee8fa9e1bde648efd58520a750f.en.html#_=1434175056209&dnt=false&id=twitter-widget-0&lang=en&screen_name=necolas&show_count=false&show_screen_name=true&size=l', title='Twitter Follow Button', data-twttr-rendered='true', style='position: static; visibility: visible; width: 141px; height: 28px;')
@@ -49,7 +49,7 @@ footer.Footer(role='contentinfo')
             //- section.Section.CoverImage(style="background-image: url(/img/section-blog.jpg)")
             //-     .FlexEmbed-ratio.FlexEmbed-ratio--3by1
             //-     .FlexEmbed-content
-            //-         .Container
+            //-         .o-container
             //-             h1 #[a(href="/blog") blog]
             //-             for post, slug in public.blog._data
             //-                 if post.ishome === true
@@ -60,7 +60,7 @@ footer.Footer(role='contentinfo')
 
 
     //- footer.Footer(role="contentinfo")
-    //-     .Container
+    //-     .o-container
     //-         if current.path[0] === "about" || (current.path[0] == "work" && current.source !== 'index')
     //-             nav.Nav.u-paddingT0.u-marginBD2
     //-                 != partial("nav")

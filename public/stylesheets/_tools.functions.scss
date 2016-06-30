@@ -23,6 +23,37 @@
 	@return $value;
 }
 
+// Example:
+
+$config: (
+  themes: (
+	mist: (
+	  header: #dcfac0,
+	  content: #00968b,
+	  footer: #85c79c
+	),
+	spring: (
+	  header: #f4fac7,
+	  content: #c2454e,
+	  footer: #ffb158
+	)
+  )
+);
+
+// get the mist header color #dcfac0:
+// map-fetch($config, "themes", "mist", "header")
+
+// print each value from the map to a class:
+@each $theme in map-keys( map-get($config, "themes") ) {
+
+  .#{$theme} {
+	.header  { background-color: map-fetch($config, "themes", $theme, "header"  ); }
+	.content { background-color: map-fetch($config, "themes", $theme, "content" ); }
+	.footer  { background-color: map-fetch($config, "themes", $theme, "footer"  ); }
+  }
+
+}
+
 // OUI map-fetch
 // @function map-fetch($map, $keys) {
 //   $key: nth($keys, 1);

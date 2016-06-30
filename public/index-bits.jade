@@ -4,7 +4,7 @@
 		.Gallery-cell.CoverImage(style="background-image: url(/img/slide-patternworks.jpg)")
 
 	.Hero-layer
-		.Container
+		.o-container
 			a(href="/") #[h1= site_title]
 			p
 				span= site_description
@@ -39,7 +39,7 @@ main.Content(role="main")
 									.FlexEmbed-ratio.FlexEmbed-ratio--2by1
 									.FlexEmbed-content
 										a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-								.Container
+								.o-container
 									a.Project-caption(href="../work/#{ slug }")
 										#[= article.description]
 										.Project-data

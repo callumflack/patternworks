@@ -9,9 +9,9 @@ header.Header(role="banner")
 							img(src="images/hero-phn.png", alt="")
 					.Aligner
 						.Aligner-item
-							.Container
+							.o-container
 								.Column--text
-									h1.Headline Mapping the quality of life in FNQ
+									h1.Display Mapping the quality of life in FNQ
 									p Primary Health Network
 									p.Text--meta Read case study
 		.Slide.Slide--test
@@ -23,16 +23,16 @@ header.Header(role="banner")
 							img(src="images/hero-phn.png", alt="")
 					.Aligner
 						.Aligner-item
-							.Container
+							.o-container
 								.Column--text
-									h1.Headline This is another case study
+									h1.Display This is another case study
 									p Primary Health Network
 									p.Text--meta Read case study
 main.Content(role="main")
 	section.Section
-		.Container
+		.o-container
 			.Column--text
-				h2.Headline Your customers are now digital natives.
+				h2.Display Your customers are now digital natives.
 				:markdown
 					We create websites and apps that make it really easy for your customers to do business with you. 
 
@@ -41,7 +41,7 @@ main.Content(role="main")
 					We use interaction design, graphic design, copywriting, and code to execute the stack of details required. 
 
 					Patternworks is owned and lead by Callum Flack, working from Cairns, Australia, working alongside a band of cohorts Australia-wide. [Learn more](/about)
-
+					
 	for article, slug in public.blog._data
 		if article.ishome === true
 			article.Post
@@ -52,13 +52,13 @@ main.Content(role="main")
 							.u-posAbsoluteCenter.CoverImage--dark(style="background-image: url('images/post-hero-#{slug}.jpg')")
 							.Aligner
 								.Aligner-item
-									.Container
+									.o-container
 										.Column--text
-											h1.Headline= article.title
+											h1.Display= article.title
 											p= article.note
 											p.Text--meta= article.date
 				.Post-content
-					.Container
+					.o-container
 						.Column--text
 							:markdown
 								For the first time in memory, adults in the United States under age forty are now expected to be poorer than their parents. This is the kind of grim reality that in other times and places spurred young people to look abroad for opportunity. Indeed, it is similar to the factors that once pushed millions of people to emigrate from their home countries to make their home in America. Our nation of immigrants is, tautologically, a nation of emigrants.

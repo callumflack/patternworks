@@ -39,7 +39,7 @@
 }
 
 .Hero {
-	@include Container( container-width(xl) );
+	@include container( container-width(xl) );
 	text-align: right;
 
 	img {

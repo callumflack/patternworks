@@ -7,12 +7,28 @@
 
 // Common theme…
 
-@mixin textTemplate() {
-	@include typeReset();
-	// color: palette(brand);
-	// font-family: $font-text-regular;
-	line-height: $base-line-height-unit;
+@mixin textTemplate(
+	$mixinSize: Text,
+	$mixinColor: palette(text),
+	$mixinFont: $font-text-regular,
+	$mixinLetterSpacing: -0.008em,
+	$mixinLineHeight: $base-line-height-unit
+) {
+	// reset
+	// this may not be needed if we've styled the body
+	// so everything inherits it…
+	// @include typeReset();
 
+	// standards
+	color: $mixinColor;
+	font-family: $mixinFont;
+	line-height: $mixinLineHeight;
+
+	// sizes
+	font-size: fs($mixinSize, xs);
+	@include media-breakpoint-up(sm) { font-size: fs($mixinSize, sm); }
+
+	// children
 	> li,
 	> li a,
 	> a {
@@ -24,109 +40,36 @@
 }
 
 
-// Regular…
+// Components by size…
 
-@mixin textRg(
-	$mixinColor: palette(text),
-	$mixinFont: $font-text-regular
-) {
+@mixin textRg() {
 	@include textTemplate();
-	color: $mixinColor;
-	font-family: $mixinFont;
-	font-size: fontsize(textRg, xs);
-	letter-spacing: -0.008em;
+	// @include typeSize();
+}
 
-	@include media-breakpoint-up(xs) {
-		// font-size: fontsize(textRg, base);
-		font-size: fs(textRg, base);
-	}
+@mixin textSm() {
+	@include textTemplate(
+		$mixinSize: Text--sm,
+		$mixinLetterSpacing: 0.01em
+	);
 }
 
 
-// Loop thru sizes…
-
-@mixin TextXs(
-	$mixinColor: palette(brand),
-	$mixinFont: $font-text-regular
-) {
-	@include textTemplate();
-	color: $mixinColor;
-	font-family: $mixinFont;
-	font-size: fontsize(textXs, xs);
-	letter-spacing: 0.01em;
-
-	@include media-breakpoint-up(xs) {
-		font-size: fontsize(textXs, base);
-	}
-}
-
-@mixin TextSm(
-	$mixinColor: palette(brand),
-	$mixinFont: $font-text-regular
-) {
-	@include textTemplate();
-	color: $mixinColor;
-	font-family: $mixinFont;
-	font-size: fontsize(textSm, xs);
-	letter-spacing: 0.01em;
-
-	@include media-breakpoint-up(xs) {
-		font-size: fontsize(textSm, base);
-	}
-}
-
-@mixin TextMd(
-	$mixinColor: palette(brand),
-	$mixinFont: $font-text-regular
-) {
-	@include textTemplate();
-	color: $mixinColor;
-	font-family: $mixinFont;
-	font-size: fontsize(textMd, xs);
-
-	@include media-breakpoint-up(xs) {
-		font-size: fontsize(textMd, base);
-	}
-}
-
-@mixin TextLg() {
-	@include textTemplate();
-	font-size: fontsize(textLg, xs);
-	// line-height: 1.35;
-
-	@include media-breakpoint-up(sm) {
-		font-size: fontsize(textLg, base);
-	}
-}
-
-
-
-
-
-
-// Apply base text styles
+// Initiate mixins in classes.
 // --------------------------------------------------------------------------
 
-// [class*="Text"] {
-//     >  {
-//         inherit stuff…
-//     }
-// }
-
-.Text--sm       { @include TextSm(); }
-.Text--smLight  { @include TextSm( palette(brand-counter) ); }
-.Text--smMuted  { @include TextSm( palette(muted) ); }
-.Text--meta   { @include TextSm( palette(medium) ); }
-
+.Text--sm       { @include textSm(); }
+.Text--meta     { @include textSm(); color: palette(medium); }
 .Text           { @include textRg(); }
-.Text--Light    { @include textRg( palette(brand-counter) ); }
 
-// Text blocks
+
+// Initiate mixins in blocks.
+// --------------------------------------------------------------------------
+
 .Text-block     { > * { @include textRg(); } }
 
 .Text-block--footer {
 	@include listClean();
-	// margin: space(1.25) 0 0 0;
 	margin: 0;
 
 	&::before {
@@ -142,9 +85,7 @@
 		@include textRg();
 		margin-bottom: 0;
 	}
-
 }
-
 
 
 // HTML elements
@@ -174,61 +115,42 @@ strong,
 	font-family: $font-text-bold;
 }
 
-
-// Blockquote & lede
-// --------------------------------------------------------------------------
-
 blockquote,
 .Blockquote {
-	color: color(text, medium);
+	// is this req'd?
+	// @include typeReset();
+	color: palette(medium);
 	font-family: $font-text-book;
-	font-size: fontsize(headerMd, xs);
+	font-size: fs(Text, xs);
 	margin-bottom: space(0.75);
 
 	@include media-breakpoint-up(sm) {
-		font-size: fontsize(headerMd, base);
+		font-size: fs(Text, sm);
 		margin-bottom: space(1);
 	}
 }
 
-.Lede {
-	@include textRg();
-	color: color(text, brand) !important;
-	font-family: $font-text-regular;
-	font-size: map-fetch($size, font, headerRg, xs);
-	line-height: 1.45;
-	// margin-bottom: space(1);
-
-	@include media-breakpoint-up(sm) {
-		font-family: $font-text-bold;
-		font-size: map-fetch($size, font, headerRg, base);
-		line-height: $base-line-height-unit;
-	}
-}
+// .Lede {
+// 	@include textRg();
+// 	color: color(text, brand) !important;
+// 	font-family: $font-text-regular;
+// 	font-size: map-fetch($size, font, headerRg, xs);
+// 	line-height: 1.45;
+// 	// margin-bottom: space(1);
+//
+// 	@include media-breakpoint-up(sm) {
+// 		font-family: $font-text-bold;
+// 		font-size: map-fetch($size, font, headerRg, base);
+// 		line-height: $base-line-height-unit;
+// 	}
+// }
 
 
 // Component: list cell of fixed width, like a tabbed info element
 // --------------------------------------------------------------------------
 
 .ListItemTag {
-	@include TextSm( palette(brand-counter) );
+	@include textSm();
 	display: inline-block;
 	width: space(0.75);
-}
-
-
-// Base spacer rules
-// --------------------------------------------------------------------------
-
-// p + h2 { margin-top: $space * 1.75; }
-
-.Container {
-	p,
-	li,
-	ol {
-		&:last-child,
-		&:last-child a {
-			margin-bottom: 0;
-		}
-	}
 }

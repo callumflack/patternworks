@@ -11,7 +11,7 @@ main.Content(role='content')
                                 .FlexEmbed-content
                                     a.CoverImage(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
                                     //- .CoverImage(style="background-image: url(/img/thumb-lg-#{ slug }.jpg)")
-                            .Container
+                            .o-container
                                 a.Project-caption(href="../work/#{ slug }")
                                     #[= article.description]
                                     .Project-data
@@ -35,7 +35,7 @@ main.Content(role='content')
 
     else
         article.Article
-            .Container
+            .o-container
                 != partial("../_shared/article-header")
 
                 != yield

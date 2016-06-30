@@ -12,15 +12,8 @@
 $namespace             : '';
 
 
-// Sass-maps debugging
-// --------------------------------------------------------------------------
-// http://www.sitepoint.com/debugging-sass-maps/
-// I can't get this to work, but it'd be very handy…
-// .Debug { @include debug-map($color); }
-
-
 // Colours
-// -------------------------------------------------------     -------------------
+// --------------------------------------------------------------------------
 
 $base-black                    : #000;
 $base-white                    : #FFF;
@@ -108,23 +101,25 @@ $container-max-widths: (
 // --------------------------------------------------------------------------
 
 $fontsize: (
-	textSm: (
+	Text--sm: (
 		xs            : rem(12),
-		base          : rem(15)
+		sm            : rem(15),
 	),
-	textRg: (
+	Text: (
 		xs            : rem(18),
-		base          : $base-font-size
+		sm            : $base-font-size,
 	),
-	headlineSm: (
+	Headline--sm: (
 		xs            : rem(21),
-		base          : rem(25)
+		sm            : rem(25)
 	),
-	display: (
+	Display: (
 		xs            : rem(39),
-		base          : rem(45)
+		sm            : rem(45)
 	)
 );
+
+
 
 
 

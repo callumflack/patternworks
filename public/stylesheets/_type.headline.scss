@@ -5,81 +5,78 @@
 // --------------------------------------------------------------------------
 
 
-// Common theme
+// Common theme…
 
-@mixin headlineTemplate() {
-	@include typeReset();
-	color: palette(text);
-	font-family: $font-display;
+@mixin headlineTemplate(
+	$mixinSize: Display,
+	$mixinColor: palette(text),
+	$mixinFont: $font-display,
+	$mixinLetterSpacing: 0,
+	$mixinLineHeight: 1.25,
+	$mixinMarginBottom: space(1.25)
+) {
+	// reset
+	// this may not be needed if we've styled the body
+	// so everything inherits it…
+	// @include typeReset();
 
-	// The interpolation brackets #{ } are needed as two touching ampersands are invalid Sass.
-	// https://css-tricks.com/the-sass-ampersand/
-	// http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375
+	// standards
+	color: $mixinColor;
+	font-family: $mixinFont;
+	line-height: $mixinLineHeight;
+	margin-bottom: $mixinMarginBottom;
 
-	// &#{a} {
-	//     @include on-event() {
-	//         opacity: 0.4;
-	//         transition: opacity 500ms ease;
-	//     }
-	// }
+	// sizes
+	font-size: fs($mixinSize, xs);
+	@include media-breakpoint-up(sm) { font-size: fs($mixinSize, sm); }
 
-	@include media-breakpoint-up(xs) {
+	// children
+	> li,
+	> li a,
+	> a {
+		color: currentColor;
+		font-family: inherit;
+		font-size: inherit;
+		margin: 0;
 	}
 }
 
 
-// Loop thru sizes
+// Components by size…
 
 @mixin headlineSm() {
-	@include headlineTemplate();
-	font-size: fs(headlineSm, xs);
-	letter-spacing: 0.03em;
-	line-height: 1;
-
-	@include respond-to(xs) {
-		font-size: fs(headlineSm, base);
-	}
-}
-
-@mixin headlineRg() {
-	@include headlineTemplate();
-	font-size: fontsize(headerRg, xs);
-
-	@include respond-to(xs) {
-		font-size: fontsize(headerRg, base);
-	}
+	@include headlineTemplate(
+		$mixinSize: Headline--sm,
+		$mixinLetterSpacing: 0.03em,
+		$mixinLineHeight: 1,
+		$mixinMarginBottom: 0
+	);
 }
 
 @mixin headlineDisplay() {
 	@include headlineTemplate();
-	font-size: fontsize(display, xs);
-	// letter-spacing: -0.01em;
-	line-height: 1.25;
-	margin-bottom: space(1.25);
 
-	@include respond-to(xs) {
-		font-size: fontsize(display, base);
+	@include media-breakpoint-up(sm) {
 		width: 65%;
 	}
 }
 
 
-// Initiate in classes.
-// Hierarchy: primary, secondary, tertiary, quaternary, quinary, senary,
-// septenary, octonary, nonary, denary and super.
+
+
+
+// Initiate mixins in classes.
+// Hierarchy idea: primary, secondary, tertiary, quaternary, quinary,
+// senary, septenary, octonary, nonary, denary and super.
 // --------------------------------------------------------------------------
 
-// .u-headline            { @include headlineRg(); }
-// .u-headlineEm          { @include headlineRg($mixinFont: $font-text-medium-i); }
-// .u-headline--light     { @include headlineRg($mixinColor: palette(brand-counter)); }
-// .Headline--sm        { @include headlineSm(); }
-// .Headline--secondary { @include headlineSecondary(); }
-// .Headline--tertiary  { @include headlineTertiary(); }
-
-.Headline       { @include headlineDisplay(); }
+.Display        { @include headlineDisplay(); }
 .Headline--sm   { @include headlineSm(); }
 
-// Headline blocks
+
+// Initiate mixins in blocks.
+// --------------------------------------------------------------------------
+
 .Headline-block { > * { @include headlineDisplay(); } }
 
 .Headline-block--footer {

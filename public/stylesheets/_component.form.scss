@@ -9,7 +9,7 @@ input,
 textarea,
 select,
 label {
-	// @include TextSm();
+	// @include textSm();
 	// color: palette(medium);
 
 	@include on-event() {
@@ -22,7 +22,7 @@ input:not([type="submit"]),
 input:not(".Button"),
 input[type="text"], input[type="email"], input[type="tel"], 
 textarea {
-	@include TextSm();
+	@include textSm();
 	color: palette(medium);
 	background: transparent;
 	border: 1px solid transparent;
