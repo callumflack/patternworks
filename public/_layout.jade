@@ -28,10 +28,14 @@ html
 		if current.path[0] === "work"
 			!= partial("/work/_work")
 		
+		if current.path[0] === "blog"
+			!= partial("/blog/_blog")
+		
 		else if ["404"].indexOf(current.path[0]) !== -1
 			!= yield
 
 		!= partial("_shared/nav")
+		!= partial("_shared/nav-modal")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		script(src="/javascripts/lib.owl.carousel.min.js")

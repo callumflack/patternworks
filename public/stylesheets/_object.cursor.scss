@@ -12,9 +12,10 @@
 // [data-value*="dismiss"],
 // [data-*="toggle"],
 // [data-toggle],
+[data-modal-toggle],
 [data-toggle-fold],
 [data-dismiss]
 // [rel^="data-toggle"],
 {
-    cursor: pointer;
+	cursor: pointer;
 }

@@ -9,8 +9,6 @@ input,
 textarea,
 select,
 label {
-	// @include textSm();
-	// color: palette(medium);
 
 	@include on-event() {
 		outline: 0;
@@ -20,9 +18,9 @@ label {
 input:not([type="radio"]),
 input:not([type="submit"]),
 input:not(".Button"),
-input[type="text"], input[type="email"], input[type="tel"], 
+input[type="text"], input[type="email"], input[type="tel"],
 textarea {
-	@include textSm();
+	@include textRg();
 	color: palette(medium);
 	background: transparent;
 	border: 1px solid transparent;
@@ -75,7 +73,7 @@ textarea {
 // REFACTOR: text inputs only so I don't override radio btn component styles…
 
 input[type="text"], input[type="email"], input[type="tel"] {
-	@include TextMd();
+	@include textRg();
 	color: rgba( palette(brand-counter), 0.7 );
 	background: transparent;
 	border: 0;
@@ -127,7 +125,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 	}
 
 	label {
-		@include TextMd();
+		@include textRg();
 		color: rgba( palette(brand-counter), 0.7 );
 		cursor: text;
 		left: 0;
@@ -171,7 +169,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 .Form-group.is-active {
 	label {
-		font-size: fontsize(textXs, base);
+		font-size: fontsize(Text--sm, sm);
 		opacity: 1;
 		transform: translate(1px, -16px);
 	}

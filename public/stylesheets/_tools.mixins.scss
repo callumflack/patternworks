@@ -127,40 +127,6 @@
 }
 
 
-// Stick an element exactly over a relatively positioned element
-// --------------------------------------------------------------------------
-
-@mixin posAbsoluteCenter {
-	bottom: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-}
-
-
-// Stick an element exactly over a relatively positioned element
-// --------------------------------------------------------------------------
-
-@mixin posFixed {
-	bottom: 0;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-}
-
-
-// Centers an element vertically & horizontally using flexbox.
-// --------------------------------------------------------------------------
-
-@mixin flexCenter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-
 // Scut rem fallback
 // --------------------------------------------------------------------------
 // http://davidtheclark.github.io/scut/remFallback.html

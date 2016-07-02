@@ -1,7 +1,7 @@
 .Hero
 	.Gallery
-		.Gallery-cell.CoverImage(style="background-image: url(/img/slide-patternworks.jpg)")
-		.Gallery-cell.CoverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+		.Gallery-cell.o-coverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+		.Gallery-cell.o-coverImage(style="background-image: url(/img/slide-patternworks.jpg)")
 
 	.Hero-layer
 		.o-container
@@ -38,7 +38,7 @@ main.Content(role="main")
 								.FlexEmbed
 									.FlexEmbed-ratio.FlexEmbed-ratio--2by1
 									.FlexEmbed-content
-										a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+										a.o-coverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
 								.o-container
 									a.Project-caption(href="../work/#{ slug }")
 										#[= article.description]
@@ -54,7 +54,7 @@ main.Content(role="main")
 					//-             .FlexEmbed
 					//-                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
 					//-                 .FlexEmbed-content
-					//-                     a.CoverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+					//-                     a.o-coverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
 					//-             .Project-caption
 					//-                 .Project-data
 					//-                     time.Project-time= article.date

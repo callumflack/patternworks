@@ -1,18 +1,30 @@
-.Hero
-	.FlexEmbed
-		.FlexEmbed-ratio.FlexEmbed-ratio--versions
-		.FlexEmbed-content
-			.Slide(style="background-image: url('/images/hero-ward6.png')")
-				
-	.HeaderWrapper
-		header.Header#top(role="banner")
-			.o-container
-				a(href="/") #[h1= title]
-					//- p.u-marginT2.u-sm-marginT4= site_description
-					
-	nav.Nav
-		a.Arrow-left(href="/") &nbsp;
-
-section.Section
+main.Content.Section(role='content')
 	.o-container
-		!= yield
+		if current.source === "index"
+			for post, slug in public.blog._data
+				if post.ispublished 
+					a.Post--inList(href="/blog/#{ slug }")
+						figure.Post-image
+							.FlexEmbed
+								.FlexEmbed-ratio.FlexEmbed-ratio--16by9
+								.FlexEmbed-content
+									.o-coverImage(style="background-image: url('/images/blog-#{ slug }.jpg')")
+						h1.Display--halfSpace= post.title
+						p.Text--meta= post.date
+						!= yield
+		else
+			!= yield
+						
+	//- != partial("../_shared/article-footer")
+	//- != partial("../_shared/newsletter-signup")
+
+
+	.Grid.Grid--withGutterLg
+		.Grid-cell.u-xs-size1of2.u-sm-size1of3
+			a.Post--inList(href='#')
+			  .Post-contentAligner
+				figure.Post-image
+				  img(src='{{ post.list-image }}', alt='{{ post.title }}')
+				h1.Post-subtitle {{ post.title }}
+				.Post-meta
+				  span.Post-tag {{ tag | capitalize }}

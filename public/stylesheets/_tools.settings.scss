@@ -37,6 +37,7 @@ $palette: (
 	brand                      : #0c2f5d,
 	brand-complement           : #6EBE44,
 	brand-counter              : #887E73,
+	modal-background           : #151515,
 	warning                    : #FFD40C,
 	bad-news                   : #C60C0C,
 	good-news                  : brand-complement,
@@ -47,7 +48,7 @@ $palette: (
 // Base size measures
 // --------------------------------------------------------------------------
 
-$base-font-size-unit           : 21;
+$base-font-size-unit           : 19;
 $base-line-height-unit         : 1.45;
 $base-font-size                : $base-font-size-unit * 1px;
 $base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
@@ -100,22 +101,22 @@ $container-max-widths: (
 // Sizes
 // --------------------------------------------------------------------------
 
-$fontsize: (
+$fontsizes: (
 	Text--sm: (
 		xs            : rem(12),
 		sm            : rem(15),
 	),
 	Text: (
-		xs            : rem(18),
+		xs            : rem(17),
 		sm            : $base-font-size,
 	),
 	Headline--sm: (
-		xs            : rem(21),
+		xs            : rem(22),
 		sm            : rem(25)
 	),
 	Display: (
 		xs            : rem(39),
-		sm            : rem(45)
+		sm            : rem(41)
 	)
 );
 
@@ -167,66 +168,6 @@ $size: (
 		wide-picture      : rem(1240)
 	),
 
-	font: (
-		textSm: (
-			xs            : rem(12),
-			base          : rem(15)
-		),
-		textRg: (
-			xs            : rem(18),
-			base          : $base-font-size-unit * 1px // 22
-		),
-		headerSm: (
-			xs            : rem(21),
-			base          : rem(25)
-		),
-		display: (
-			xs            : rem(39),
-			base          : rem(45)
-		),
-
-
-		// These not used
-		// --------------------------------------------------------------------------
-
-		textXs: (
-			xs            : rem(11),
-			base          : rem(13)
-		),
-
-		textMd: (
-			xs            : rem(21),
-			base          : rem(25)
-		),
-		textLg: (
-			xs            : rem(17),
-			base          : rem(21)
-		),
-		headerRg: (
-			xs            : rem(18),
-			base          : rem(22)
-		),
-		headerMd: (
-			xs            : rem(21),
-			base          : rem(28)
-		),
-		headerLg: (
-			xs            : rem(21),
-			base          : rem(28)
-		),
-		headerXl: (
-			xs            : rem(36),
-			base          : rem(41)
-		),
-		close: (
-			xs            : rem(33),
-			base          : rem(66)
-		),
-		super: (
-			xs            : rem(50),
-			base          : rem(100)
-		),
-	),
 
 );
 

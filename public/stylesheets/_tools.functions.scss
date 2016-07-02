@@ -123,12 +123,9 @@ $config: (
 	@return map-get($container-max-widths, $width);
 }
 
-@function fs($increment: 'textRg', $response: 'base') {
-	@return map-fetch($fontsize, $increment, $response);
-}
-
-@function fontsize($increment: 'textRg', $response: 'base') {
-	@return map-fetch($size, font, $increment, $response);
+@function fontsize($increment: 'Text', $response: 'sm') {
+	// @return map-fetch($size, font, $increment, $response);
+	@return map-fetch($fontsizes, $increment, $response);
 }
 
 @function transition($property: 'duration', $response: 'short') {

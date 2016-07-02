@@ -26,6 +26,7 @@
 @import "base.image";
 @import "base.type";
 
+@import "object.display";
 @import "object.container";
 // @import "object.button";
 @import "object.icon";
@@ -33,10 +34,12 @@
 @import "object.list";
 @import "object.link";
 @import "object.aligner";
+@import "object.cursor";
 // @import "object.media";
-// @import "object.cursor";
 // @import "object.arrow";
 // @import "object.figure";
+@import "object.modal";
+@import "object.coverimage";
 
 @import "type.helpers";
 @import "type.text";
@@ -49,7 +52,6 @@
 
 @import "component.nav";
 @import "component.owl";
-@import "component.coverimage";
 // @import "component.imageblend";
 // @import "component.form";
 // @import "component.form.radiobutton";

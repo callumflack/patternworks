@@ -5,51 +5,36 @@
 // --------------------------------------------------------------------------
 
 
-
-
-
-// Post block
+// Post block.
+// When a post is also a link.
 // --------------------------------------------------------------------------
 
-a.Post {
+a.Post--inList {
 	@include complexLink();
+	border: 0;
+	display: block;
 
-	+ .Post {
-		margin-top: space(3.25);
+	+ .Post--inList {
+		// margin-top: space(3.25);
+		margin-top: $sectionSpacer / 2;
 	}
 
 	@include on-event() {
-		.CoverImage {
+		.o-coverImage,
+		.Post-image {
 			@include baseTransition();
-			background-blend-mode: multiply;
-			background-color: rgba( palette(brand), 0.4 );
-			// filter: grayscale(100%);
-			// opacity: 0.3;
-		}
-	}
-
-	@include when-inside(".post") {
-		@include on-event() {
-			.CoverImage {
-				opacity: 0.2;
-			}
+			opacity: 0.5;
 		}
 	}
 }
 
+
+
 .Post-image {
-	margin-top: space(0.3);
+	margin-bottom: space(1);
 
 	&--fullWidth {
 		margin-bottom: space(1);
-	}
-
-	&--dark .CoverImage {
-		opacity: 0.5;
-	}
-
-	.CoverImage {
-		@include baseTransition();
 	}
 }
 

@@ -12,8 +12,8 @@
 @mixin textSize(
 	$mixinSize: Text
 ) {
-	font-size: fs($mixinSize, xs);
-	@include media-breakpoint-up(sm) { font-size: fs($mixinSize, sm); }
+	font-size: fontsize($mixinSize, xs);
+	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
 }
 
 
@@ -69,9 +69,9 @@
 //
 // 		@each $response in map-values( map-get($fontsize, $increment) ) {
 //
-// 			@include media-breakpoint-up($response) { font-size: fs($increment, $response); }
-// 			// font-size: fs($increment, $response);
-// 			// @include media-breakpoint-up(md) { font-size: fs($increment, md); }
+// 			@include media-breakpoint-up($response) { font-size: fontsize($increment, $response); }
+// 			// font-size: fontsize($increment, $response);
+// 			// @include media-breakpoint-up(md) { font-size: fontsize($increment, md); }
 //
 // 		}
 // 	}

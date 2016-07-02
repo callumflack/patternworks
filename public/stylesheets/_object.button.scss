@@ -42,13 +42,13 @@
 	@include typeReset();
 	color: palette(white);
 	font-family: $font-text-medium;
-	font-size: fontsize(textSm, xs);
+	font-size: fontsize(Text--sm, xs);
 	letter-spacing: 0.05em;
 	line-height: size(button-height, base);
 	text-transform: uppercase;
 
 	@include respond-to(xs) {
-		font-size: fontsize(textSm, base);
+		font-size: fontsize(Text--sm, xs);
 	}
 
 	@include on-event() {
@@ -89,13 +89,13 @@
 	@include typeReset();
 	color: $mixinColor;
 	font-family: $font-text-medium;
-	font-size: fontsize(textXs, xs);
+	font-size: fontsize(Text--sm, xs);
 	letter-spacing: 0.05em;
 	line-height: size(button-height, concise);
 	text-transform: uppercase;
 
 	@include respond-to(xs) {
-		font-size: fontsize(textXs, base);
+		font-size: fontsize(Text--sm, base);
 	}
 
 	@include on-event() {

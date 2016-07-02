@@ -1,56 +1,23 @@
-main.Content(role='content')
-    if current.source === "index"
-        for article, slug in public.blog._data
-            if article.ispublished 
-                if article.isfeatured === true
-                    .Project-block.Project-block--lg
-                        .Project
-                            .FlexEmbed.Outset
-                                .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                                .FlexEmbed-content
-                                    a.CoverImage(href="../blog/#{ slug }", style="background-image: url(/img/hero-#{ slug }.jpg)")
-                            .Grid.large-Grid--1of3.Grid--gutters
-                                .Grid-cell
-                                    .Project-caption
-                                        .Project-data
-                                            time.Project-time= article.date
-                                        .Project-description
-                                            h4.Project-title #[a(href="../blog/#{ slug }")= article.title]
-                                            | .&nbsp;
-                                            #[= article.description]
-                                            a.Project-cta(href="../blog/#{ slug }") Read more
-
-                .Project-block.Project-block--sm.Grid.large-Grid--1of3.Grid--gutters
-                    if article.isfeatured !== true
-                        .Project.Grid-cell
-                            .FlexEmbed
-                                .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                                .FlexEmbed-content
-                                    a.CoverImage(href="../blog/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-                            .Project-caption
-                                .Project-data
-                                    time.Project-time= article.date
-                                .Project-description
-                                    h4.Project-title #[a(href="../blog/#{ slug }")= article.title]
-                                    | .&nbsp;
-                                    #[= article.description]
-                                    a.Project-cta(href="../blog/#{ slug }") Read more
-
-    else
-        for article, slug in public.blog._data
-            if article.hero === true
-                .FlexEmbed.Outset
-                    .FlexEmbed-ratio.FlexEmbed-ratio--2by1
-                    .FlexEmbed-content
-                        .CoverImage(style="background-image: url(/img/hero-#{ slug }.jpg)")
-                            
-        article.Article
-            .o-container
-                h1.Article-title= title
-                .Article-data
-                    time.Article-time= date
-
-                != yield
-                    
-                != partial("../_shared/article-footer")
-                //- != partial("../_shared/newsletter-signup")
+main.Content.Section(role='content')
+	.o-container
+		if current.source === "index"
+			for post, slug in public.blog._data
+				if post.ispublished 
+					a.Post--inList(href="/blog/#{ slug }")
+						figure.Post-image
+							.FlexEmbed
+								.FlexEmbed-ratio.FlexEmbed-ratio--16by9
+								.FlexEmbed-content
+									.o-coverImage(style="background-image: url('/images/blog-#{ slug }.jpg')")
+						.Column--text
+							h1.Display--halfSpace= post.title
+							p.Text--intro= post.description
+							p.Text--meta= post.date
+		else
+			.Column--text
+				h1.Display--halfSpace= title
+				p.Text--meta= date
+				!= yield
+						
+	//- != partial("../_shared/article-footer")
+	//- != partial("../_shared/newsletter-signup")

@@ -9,8 +9,8 @@ main.Content(role='content')
                             .FlexEmbed
                                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
                                 .FlexEmbed-content
-                                    a.CoverImage(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
-                                    //- .CoverImage(style="background-image: url(/img/thumb-lg-#{ slug }.jpg)")
+                                    a.o-coverImage(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+                                    //- .o-coverImage(style="background-image: url(/img/thumb-lg-#{ slug }.jpg)")
                             .o-container
                                 a.Project-caption(href="../work/#{ slug }")
                                     #[= article.description]
@@ -25,7 +25,7 @@ main.Content(role='content')
                 //-             .FlexEmbed
                 //-                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
                 //-                 .FlexEmbed-content
-                //-                     a.CoverImage(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+                //-                     a.o-coverImage(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
                 //-             a.Project-caption(href="../work/#{ slug }")
                 //-                 #[= article.description]
                 //-                 .Project-data

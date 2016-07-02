@@ -10,10 +10,12 @@
 
 .NavToggle {
 	// @include baseTransition;
+	content: "buggyfill";
 	display: inline;
 	position: fixed;
 	opacity: 1;
-	padding: space(3) 0;
+	// padding: space(3) 0;
+	padding-top: $sectionSpacer / 3;
 	transition:
 		// translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
 		opacity 500ms map-fetch($transition, type, fine);
@@ -27,8 +29,8 @@
 	}
 
 	// Color the hamburger icon
-	@include when-inside(".Home") { color: palette(white); }
-	@include when-inside(".Blog") { color: palette(white); }
+	@include when-inside(".index") { h1, p { color: palette(background); } }
+	// @include when-inside(".blog")  { color: palette(white); }
 }
 
 // Make the header nav fixed and animate down into view on scroll
@@ -51,18 +53,15 @@ $FixedNavHeight: rem(220);
 // --------------------------------------------------------------------------
 
 .Nav {
+	@include o-posFullScreen();
 	background-color: palette(text);
-	bottom: 0;
-	height: 100%;
-	left: 0;
-	position: fixed;
+	// height: 100%;
 	transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
-	width: 100%;
+	// width: 100%;
 	z-index: 2;
 	-webkit-tap-highlight-color: transparent;
 	// visibility: hidden;
 	// opacity: 0;
-
 
 	h1, p, li { color: palette(background) !important; }
 	.is-active { color: palette(medium) !important; }
