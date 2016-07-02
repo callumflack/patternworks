@@ -1,0 +1,23 @@
+main.Content.Section(role='content')
+	.o-container
+		if current.source === "index"
+			for post, slug in public.blog._data
+				if post.ispublished 
+					a.Post--inList(href="/blog/#{ slug }")
+						figure.Post-coverImage
+							.FlexEmbed
+								.FlexEmbed-ratio.FlexEmbed-ratio--16by9
+								.FlexEmbed-content
+									.o-coverImage(style="background-image: url('/images/blog-#{ slug }.jpg')")
+						.Column--text
+							h1.Display--halfSpace= post.title
+							p.Text--intro= post.description
+							p.Text--meta= post.date
+		else
+			.Column--text
+				h1.Display--halfSpace= title
+				p.Text--meta= date
+				!= yield
+						
+	//- != partial("../_shared/article-footer")
+	//- != partial("../_shared/newsletter-signup")

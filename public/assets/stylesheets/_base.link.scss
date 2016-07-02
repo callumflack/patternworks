@@ -1,0 +1,26 @@
+
+
+// --------------------------------------------------------------------------
+//   BASE: LINK
+// --------------------------------------------------------------------------
+
+
+a {
+	@include baseTransition();
+	border-bottom: 1px solid rgba( palette(text), 0.2 );
+	color: currentColor;
+	text-decoration: none;
+
+	@include on-event() {
+		@include baseTransition();
+		border-color: rgba( palette(text), 1 );
+		color: currentColor;
+	}
+}
+
+p a,
+li a {
+	@include on-event() {
+		// background-color: palette(brand);
+	}
+}

@@ -1,0 +1,52 @@
+
+
+// --------------------------------------------------------------------------
+//   BLOCK COMPONENT
+//   A grid that sticks to full screen sizes.
+// --------------------------------------------------------------------------
+
+
+@mixin block(
+	$blockBackgroundColor: palette(background)
+) {
+	background-color: $blockBackgroundColor;
+	content: "buggyfill";
+	height: 100vh;
+	width: 100vw;
+}
+
+.Block {
+	background-color: palette(background);
+	content: "buggyfill";
+	height: 95vh;
+	// width: 100vw;
+}
+
+.Block--half {
+	background-color: palette(background);
+	content: "buggyfill";
+	height: 50vh;
+	width: 50vw;
+}
+
+.Block--height1of2 {
+	background-color: palette(background);
+	content: "buggyfill";
+	height: 50vh;
+}
+
+.Block--height2of3 {
+	background-color: palette(background);
+	content: "buggyfill";
+	height: 66.666666666vh;
+}
+
+
+
+
+
+.Block-column {
+	content: "buggyfill";
+	max-width: container-width(md);
+
+}

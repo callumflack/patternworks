@@ -1,5 +1,5 @@
 header.Header(role="banner")
-	.Block.Block--height1of2
+	.Block
 		.Nav-wrapper
 			.o-aligner
 				.o-aligner-item
@@ -9,9 +9,8 @@ header.Header(role="banner")
 		.o-aligner
 			.o-aligner-item
 				.o-container
-					.Column--text
-						h1.Display Work
-						p 12,305 lines committed so far in 2016.
+					.Column--text.u-marginB3
+						h1.Display--su The Work headline is a phrase over two lines.
 		
 		
 main.Content(role="main")
@@ -28,4 +27,5 @@ main.Content(role="main")
 										.o-container
 											.Column--post
 												h1.Display= article.title
-												p= article.description
+												p.Text--meta= article.tags
+												//- p= article.description

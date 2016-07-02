@@ -1,80 +1,86 @@
+
+
+//- conditional classes w/ jade:
+//- .Nav-toggle(class=typeof current.path[0] == "index" ? undefined : "NavToggle--inverse")(data-modal-toggle='')
+
+
 //- necolas
 //- .Article-data
-    time.Article-timestamp(datetime='2015-05-19') May 19, 2015
+	time.Article-timestamp(datetime='2015-05-19') May 19, 2015
 
 footer.Footer(role='contentinfo')
-    .o-container
-        .HzLine
-        |
-        iframe#twitter-widget-0.twitter-follow-button.twitter-follow-button(scrolling='no', frameborder='0', allowtransparency='true', src='http://platform.twitter.com/widgets/follow_button.0b0ceee8fa9e1bde648efd58520a750f.en.html#_=1434175056209&dnt=false&id=twitter-widget-0&lang=en&screen_name=necolas&show_count=false&show_screen_name=true&size=l', title='Twitter Follow Button', data-twttr-rendered='true', style='position: static; visibility: visible; width: 141px; height: 28px;')
-        |
-        p.Footer-links
-          a(href='/about/') About
-          |       &middot;
-          |
-          a(href='//twitter.com/necolas') Twitter
-          |
-          a(href='//vine.co/necolas') Vine
-          |
-          a(href='//github.com/necolas') GitHub
-        |
-        small.Footer-legal Copyright &copy; Nicolas Gallagher.
+	.o-container
+		.HzLine
+		|
+		iframe#twitter-widget-0.twitter-follow-button.twitter-follow-button(scrolling='no', frameborder='0', allowtransparency='true', src='http://platform.twitter.com/widgets/follow_button.0b0ceee8fa9e1bde648efd58520a750f.en.html#_=1434175056209&dnt=false&id=twitter-widget-0&lang=en&screen_name=necolas&show_count=false&show_screen_name=true&size=l', title='Twitter Follow Button', data-twttr-rendered='true', style='position: static; visibility: visible; width: 141px; height: 28px;')
+		|
+		p.Footer-links
+		  a(href='/about/') About
+		  |       &middot;
+		  |
+		  a(href='//twitter.com/necolas') Twitter
+		  |
+		  a(href='//vine.co/necolas') Vine
+		  |
+		  a(href='//github.com/necolas') GitHub
+		|
+		small.Footer-legal Copyright &copy; Nicolas Gallagher.
 
-        //- responsive image
-        figure
-            picture
-                source(srcset='/projects/npr-music/nprmusic-thumb-800.jpg', media='(min-width: 1000px)')
-                source(srcset='\
-                /projects/npr-music/nprmusic-thumb-500.jpg,\
-                /projects/npr-music/nprmusic-thumb-800.jpg 2x', media='(min-width: 500px)')
-                img(alt='NPR Music', src='/projects/npr-music/nprmusic-thumb-800.jpg')
+		//- responsive image
+		figure
+			picture
+				source(srcset='/projects/npr-music/nprmusic-thumb-800.jpg', media='(min-width: 1000px)')
+				source(srcset='\
+				/projects/npr-music/nprmusic-thumb-500.jpg,\
+				/projects/npr-music/nprmusic-thumb-800.jpg 2x', media='(min-width: 500px)')
+				img(alt='NPR Music', src='/projects/npr-music/nprmusic-thumb-800.jpg')
 
-        img(src='cat_500px.jpg', 
-            srcset='cat_750px.jpg 1.5x, 
-                cat_1000px.jpg 2x', 
-            width='500px', 
-            alt='lolcat')
-        
-        img(sizes='(max-width: 30em) 100vw,\
-                (max-width: 50em) 50vw,\
-                calc(33vw - 100px)', 
-            srcset='swing-200.jpg 200w,\
-                swing-400.jpg 400w,\
-                swing-800.jpg 800w,\
-                swing-1600.jpg 1600w', 
-            src='swing-400.jpg', 
-            alt='Kettlebell Swing')
-
-
-            //- section.Section.o-coverImage(style="background-image: url(/img/section-blog.jpg)")
-            //-     .FlexEmbed-ratio.FlexEmbed-ratio--3by1
-            //-     .FlexEmbed-content
-            //-         .o-container
-            //-             h1 #[a(href="/blog") blog]
-            //-             for post, slug in public.blog._data
-            //-                 if post.ishome === true
-            //-                     p
-            //-                         a(href="/blog/#{ slug }")
-            //-                             time(datetime=post.date)= post.date
-            //-                             | &nbsp;— #[span=post.title]
+		img(src='cat_500px.jpg', 
+			srcset='cat_750px.jpg 1.5x, 
+				cat_1000px.jpg 2x', 
+			width='500px', 
+			alt='lolcat')
+		
+		img(sizes='(max-width: 30em) 100vw,\
+				(max-width: 50em) 50vw,\
+				calc(33vw - 100px)', 
+			srcset='swing-200.jpg 200w,\
+				swing-400.jpg 400w,\
+				swing-800.jpg 800w,\
+				swing-1600.jpg 1600w', 
+			src='swing-400.jpg', 
+			alt='Kettlebell Swing')
 
 
-    //- footer.Footer(role="contentinfo")
-    //-     .o-container
-    //-         if current.path[0] === "about" || (current.path[0] == "work" && current.source !== 'index')
-    //-             nav.Nav.u-paddingT0.u-marginBD2
-    //-                 != partial("nav")
-    //-                 
-    //-             p.Footer-meta.u-textCenter
-    //-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
-    //-                 | Copyright © Callum Flack
-    //- 
-    //-         else 
-    //-             .SocialLinks
-    //-                 a.twitter-follow-button(href='https://twitter.com/callumflack', data-show-count='false', data-size='large') Follow @callumflack
-    //-                     script.
-    //-                         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    //-             
-    //-             p.Footer-meta.u-textCenter
-    //-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
-    //-                 | Copyright © Callum Flack
+			//- section.Section.o-coverImage(style="background-image: url(/img/section-blog.jpg)")
+			//-     .FlexEmbed-ratio.FlexEmbed-ratio--3by1
+			//-     .FlexEmbed-content
+			//-         .o-container
+			//-             h1 #[a(href="/blog") blog]
+			//-             for post, slug in public.blog._data
+			//-                 if post.ishome === true
+			//-                     p
+			//-                         a(href="/blog/#{ slug }")
+			//-                             time(datetime=post.date)= post.date
+			//-                             | &nbsp;— #[span=post.title]
+
+
+	//- footer.Footer(role="contentinfo")
+	//-     .o-container
+	//-         if current.path[0] === "about" || (current.path[0] == "work" && current.source !== 'index')
+	//-             nav.Nav.u-paddingT0.u-marginBD2
+	//-                 != partial("nav")
+	//-                 
+	//-             p.Footer-meta.u-textCenter
+	//-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
+	//-                 | Copyright © Callum Flack
+	//- 
+	//-         else 
+	//-             .SocialLinks
+	//-                 a.twitter-follow-button(href='https://twitter.com/callumflack', data-show-count='false', data-size='large') Follow @callumflack
+	//-                     script.
+	//-                         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	//-             
+	//-             p.Footer-meta.u-textCenter
+	//-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
+	//-                 | Copyright © Callum Flack

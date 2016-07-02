@@ -1,0 +1,77 @@
+{
+	"kata-and-code": {
+		"title": "Kata and code.",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"date": "January 27, 2015",
+		"author": "callum-flack",
+		"category": "journal",
+		"tags": "Article",
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": true
+	},
+	"test": {
+		"title": "Designing for user needs first.",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"note": "How to design the right thing first.",
+		"date": "October 6, 2015",
+		"author": "callum-flack",
+		"category": "journal",
+		"tags": "Article",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	},
+	"phn": {
+		"title": "Primary Healthcare Network",
+		"description": "B2B iPad apps for Ward6.",
+		"date": "2016",
+		"author": "callum-flack",
+		"tags": "Design, code",
+		"indexstyle": "phn",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	},
+	"roundtable-records": {
+		"title": "Roundtable Records",
+		"description": "A record label for record collectors.",
+		"date": "2009–15",
+		"author": "callum-flack",
+		"tags": "Identity",
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": true
+	},
+	"bellflower": {
+		"title": "Bellflower",
+		"description": "A legible, mobile-first identity for a marketing blog.",
+		"date": "2015",
+		"author": "callum-flack",
+		"tags": "Identity, website",
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": true
+	},
+	"box+dice": {
+		"title": "Box+Dice Software",
+		"description": "Rebranding a Real Estate app start-up.",
+		"date": "2012",
+		"author": "callum-flack",
+		"tags": "Identity, website",
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": true
+	},
+	"ward6": {
+		"title": "Ward 6",
+		"description": "T-shaped all-rounder making brands and apps for Pharma.",
+		"description": "B2B iPad apps for Ward6.",
+		"date": "2015",
+		"author": "callum-flack",
+		"tags": "Design, code",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	}
+}

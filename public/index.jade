@@ -1,80 +1,41 @@
 header.Header(role="banner")
-	.owl-carousel
-		.Slide.Slide--phn
-			.FlexEmbed
-				.FlexEmbed-ratio.FlexEmbed-ratio--hero
-				.FlexEmbed-content
-					.Hero-wrapper
-						.Hero
-							img(src="images/hero-phn.png", alt="")
-					.Aligner
-						.Aligner-item
-							.o-container
-								.Column--text
-									h1.Display Mapping the quality of life in FNQ
-									p Primary Health Network
-									p.Text--meta Read case study
-		.Slide.Slide--test
-			.FlexEmbed
-				.FlexEmbed-ratio.FlexEmbed-ratio--hero
-				.FlexEmbed-content
-					.Hero-wrapper
-						.Hero
-							img(src="images/hero-phn.png", alt="")
-					.Aligner
-						.Aligner-item
-							.o-container
-								.Column--text
-									h1.Display This is another case study
-									p Primary Health Network
-									p.Text--meta Read case study
-		.Slide(style="background-color:aliceblue")
-			.FlexEmbed
-				.FlexEmbed-ratio.FlexEmbed-ratio--hero
-				.FlexEmbed-content
-					.Hero-wrapper
-						.Hero
-							img(src="images/hero-phn.png", alt="")
-					.Aligner
-						.Aligner-item
-							.o-container
-								.Column--text
-									h1.Display Cases of study
-									p Bub City
-									p.Text--meta Read case study
-main.Content(role="main")
-	section.Section
-		.o-container
-			.Column--text
-				h2.Display Your customers are now digital natives.
-				:markdown
-					We create websites and apps that make it really easy for your customers to do business with you. 
-
-					We plan, design and build user experiences that are fast, simple, useable and useful. We work closely with our clients to create for customers needs first. We iterate based on feedback to continually create better user experiences.
-
-					We use interaction design, graphic design, copywriting, and code to execute the stack of details required. 
-
-					Patternworks is owned and lead by Callum Flack, working from Cairns, Australia, working alongside a band of cohorts Australia-wide. [Learn more](/about)
-					
-	for article, slug in public.blog._data
-		if article.ishome === true
-			article.Post
-				.Post-hero.Post-hero--inverse
-					.FlexEmbed
-						.FlexEmbed-ratio.FlexEmbed-ratio--hero
-						.FlexEmbed-content
-							.u-posAbsoluteCenter.o-coverImage--dark(style="background-image: url('images/post-hero-#{slug}.jpg')")
-							.Aligner
-								.Aligner-item
-									.o-container
-										.Column--text
-											h1.Display= article.title
-											p= article.note
-											p.Text--meta= article.date
-				.Post-content
+	.Block
+		.Nav-wrapper
+			.o-aligner
+				.o-aligner-item
 					.o-container
 						.Column--text
-							:markdown
-								For the first time in memory, adults in the United States under age forty are now expected to be poorer than their parents. This is the kind of grim reality that in other times and places spurred young people to look abroad for opportunity. Indeed, it is similar to the factors that once pushed millions of people to emigrate from their home countries to make their home in America. Our nation of immigrants is, tautologically, a nation of emigrants.
-								<a href="#">Read</a>
-								
+							!= partial("/_shared/nav-toggle")
+		.o-aligner
+			.o-aligner-item
+				.o-container
+					.Column--text.u-marginB3
+						h1.Display--su An independent digital creative workshop in Cairns, Australia.
+						p We create websites and apps that fast, easy and delightful. #[a(href="/about") Learn more.]
+		
+		
+main.Content(role="main")
+	.Grid
+		for article, slug in public.posts._data
+			if article.ishome === true
+				if article.category === "journal"
+					.Grid-cell.Block--height2of3
+						a.Post.Post--inverse(href="/blog/#{slug}")
+							.Post-coverImage.o-coverImage--dark(style="background-image: url('assets/images/post-hero-#{slug}.jpg')")
+							.o-aligner
+								.o-aligner-item
+									.o-container
+										.Column--post
+											h1.Display= article.title
+											p= article.description
+											//- p.Text--meta= article.date
+				else
+					.Grid-cell.Block--height2of3
+						a.Post(class=typeof article.indexstyle === "true" ? undefined : "Post--#{article.indexstyle}", href="/work/#{slug}")
+							.Post-coverImage.o-containImage(style="background-image: url('assets/images/post-hero-#{slug}.png')")
+							.o-aligner
+								.o-aligner-item
+									.o-container
+										.Column--post
+											h1.Display= article.title
+											p= article.description

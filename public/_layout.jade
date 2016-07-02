@@ -9,12 +9,12 @@ html
 		else
 			if current.path[0] === "blog"
 				meta(name='description', content=site_description)
-		link(rel="stylesheet" href="/stylesheets/application.css")
-		link(rel="stylesheet", href="/stylesheets/owl.carousel.css")
+		link(rel="stylesheet" href="/assets/stylesheets/application.css")
+		link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.css")
 
 	body(class="#{ current.path[0] } NavSpace")
 		
-		!= partial("_shared/nav-toggle")
+		//- != partial("_shared/nav-bar")
 		
 		//- if current.path[0] !== "index"
 			//- != partial("_shared/header")
@@ -26,10 +26,14 @@ html
 			!= yield
 		
 		if current.path[0] === "work"
-			!= partial("/work/_work")
+			//- != partial("/work/_work")
+			!= partial("/posts/_work")
 		
 		if current.path[0] === "blog"
-			!= partial("/blog/_blog")
+			!= partial("/posts/_blog")
+		
+		if current.path[0] === "dataprint"
+			!= yield
 		
 		else if ["404"].indexOf(current.path[0]) !== -1
 			!= yield
@@ -38,9 +42,15 @@ html
 		!= partial("_shared/nav-modal")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-		script(src="/javascripts/lib.owl.carousel.min.js")
-		script(src="/javascripts/application.js")
-		//- script(src="/javascripts/component.flickity.js")
+		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
+		script(src="/assets/javascripts/application.js")
+		script(src="/node_modules/viewport-units-buggyfill/viewport-units-buggyfill.hacks.js")
+		script(src="/node_modules/viewport-units-buggyfill/viewport-units-buggyfill.js")
+		script(type='text/javascript').
+			window.viewportUnitsBuggyfill.init({
+				refreshDebounceWait: 50,
+				hacks: window.viewportUnitsBuggyfillHacks
+			});
 		script(type='text/javascript').
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', '#{ locals.analytics_account }']);

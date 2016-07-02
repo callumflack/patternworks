@@ -1,0 +1,101 @@
+
+
+// --------------------------------------------------------------------------
+//   HEADLINE TYPOGRAPHY
+// --------------------------------------------------------------------------
+
+
+// Common theme…
+
+@mixin headlineTemplate(
+	$mixinSize: Display,
+	$mixinColor: palette(text),
+	$mixinFont: $font-display,
+	$mixinLetterSpacing: 0,
+	$mixinLineHeight: 1.25,
+	$mixinMarginBottom: space(1.25)
+) {
+	// reset
+	// this may not be needed if we've styled the body
+	// so everything inherits it…
+	// @include typeReset();
+
+	// standards
+	color: $mixinColor;
+	font-family: $mixinFont;
+	letter-spacing: $mixinLetterSpacing;
+	line-height: $mixinLineHeight;
+	margin-bottom: $mixinMarginBottom;
+
+	// sizes
+	font-size: fontsize($mixinSize, xs);
+	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
+
+	// children
+	> li,
+	> li a,
+	> a {
+		border-bottom: 0;
+		color: currentColor;
+		font-family: inherit;
+		font-size: inherit;
+		margin: 0;
+	}
+}
+
+
+// Components by size…
+
+@mixin headlineSm() {
+	@include headlineTemplate(
+		$mixinSize: Headline--sm,
+		$mixinLetterSpacing: 0.015em,
+		$mixinLineHeight: 1,
+		$mixinMarginBottom: 0
+	);
+}
+
+@mixin headlineDisplay() {
+	@include headlineTemplate();
+
+	@include media-breakpoint-up(sm) {
+		width: 80%;
+	}
+}
+
+@mixin headlineDisplaySuper() {
+	@include headlineTemplate(
+		$mixinSize: Display--su
+	);
+}
+
+
+
+
+
+// Initiate mixins in classes.
+// Hierarchy idea: primary, secondary, tertiary, quaternary, quinary,
+// senary, septenary, octonary, nonary, denary and super.
+// --------------------------------------------------------------------------
+
+.Display            { @include headlineDisplay(); }
+.Display--noSpace   { @include headlineDisplay(); margin-bottom: 0; }
+.Display--halfSpace { @include headlineDisplay(); margin-bottom: space(0.5); }
+.Display--su        { @include headlineDisplaySuper(); }
+.Headline--sm       { @include headlineSm(); }
+
+
+// Initiate mixins in blocks.
+// --------------------------------------------------------------------------
+
+.Headline-block { > * { @include headlineDisplay(); } }
+
+.Headline-block--footer {
+	@include listClean();
+	margin-bottom: 0;
+
+	> * {
+		@include headlineDisplay();
+		margin-bottom: 0;
+	}
+}
