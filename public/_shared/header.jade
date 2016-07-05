@@ -1,11 +1,18 @@
-header.Header#top(role="banner")
-	.o-container
-		a(href="/") #[h1.u-marginBD1 Patternworks]
-		p.u-textMd.u-textEmRg.u-textCenter.u-paddingB.DivRule--bottom Plan, design and build for better user experiences.
-
-		//- if current.path[0] === "index"
-			a(href="/") #[h1.u-marginBD1= site_title]
-			p.u-textMd.u-textEmRg.u-textCenter.u-paddingB.DivRule--bottom= site_description
-		//- if current.path[0] !== "index"
-			//- a(href="/") #[h1 Say something else]
-			//- p.u-marginT2.u-sm-marginT4 This is also something else.
+header.Header(role="banner")
+	.Block
+		.Nav-wrapper
+			.o-aligner
+				.o-aligner-item
+					.o-container
+						.Column--text
+							!= partial("nav-toggle")
+		.o-aligner
+			.o-aligner-item
+				.o-container
+					.Block-text
+						if current.path[0] === "index"
+							h1.Display--su= public._data.index.headline
+							p We create websites and apps that fast, easy and delightful. #[a(href="/about") Learn more.]
+						if current.path[0] === "work"
+							h1.Display--su= public._data.work.headline
+						

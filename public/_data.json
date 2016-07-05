@@ -1,10 +1,15 @@
 {
 	"index": {
-		"tagline": "Creating digital brands that resonate.",
+		"headline": "An independent digital creative workshop in Cairns, Australia.",
+		"description": "Text",
+		"tagline": "Creating digital brands that resonate."
+	},
+	"work": {
+		"headline": "The Work headline is a phrase over two lines.",
 		"description": "Text"
 	},
-	"blog": {
-		"tagline": "Writing because I can't.",
+	"journal": {
+		"headline": "Writing because I can't.",
 		"description": "Text"
 	}
 }

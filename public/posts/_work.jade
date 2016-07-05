@@ -1,18 +1,5 @@
-header.Header(role="banner")
-	.Block
-		.Nav-wrapper
-			.o-aligner
-				.o-aligner-item
-					.o-container
-						.Column--text
-							!= partial("../_shared/nav-toggle")
-		.o-aligner
-			.o-aligner-item
-				.o-container
-					.Column--text.u-marginB3
-						h1.Display--su The Work headline is a phrase over two lines.
-		
-		
+!= partial("../_shared/header")
+
 main.Content(role="main")
 	.Grid
 		if current.source === "index"

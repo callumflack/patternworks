@@ -46,7 +46,20 @@
 
 
 .Block-column {
-	content: "buggyfill";
 	max-width: container-width(md);
 
+}
+
+
+// Text in a block.
+// --------------------------------------------------------------------------
+
+.Block-text {
+	content: "buggyfill";
+	// margin-bottom: space(3);
+	// margin-bottom: 7vh;
+	margin-bottom: $sectionSpacer / 3;
+	max-width: container-width(md);
+
+	// @include when-inside(".o-container--xl") { margin-left: calc( (1200-960) / 2 ); }
 }
