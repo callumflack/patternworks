@@ -1,0 +1,24 @@
+- var startup  = new Date("2015-07-01");
+- var thisWeek = new Date("(1387050870 * 1000)");
+- var weeks = Math.round((a-b)/ 604800000);
+
+footer.Footer(role="contentinfo")
+	!= partial("nav")
+
+	.o-aligner
+		.o-aligner-item
+			.Block--masthead
+				h1.Display--super We help companies discover, design and build great customer experiences.
+				p 
+					| Get in touch: #[a(href="mailto:#{ email_form }") email us] or call #[a(href="telephone:#{ phone }") #{ phone }].
+					//- br
+					//- | Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
+
+	.Nav.Nav--bottom(role="navigation")
+		.o-listInline.u-textRight
+			.Nav-item.Nav-item--left Est 2015. This is week 57.
+			//- .Nav-item.Nav-item--left Its Friday afternoon in Cairns.
+			//- .Nav-item.Nav-item--left Copyright &copy; #{new Date().getFullYear()} 
+			.Nav-item: a(href="#{ twitter }") Twitter
+			.Nav-item: a(href="#{ instagram }") Instagram
+			.Nav-item: a(href="#{ medium }") Medium

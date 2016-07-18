@@ -1,0 +1,244 @@
+
+
+// --------------------------------------------------------------------------
+//   LAYOUT: SECTIONS
+// --------------------------------------------------------------------------
+
+
+@mixin blockSpacer {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	padding: space(10) 0;
+	padding: calc(#{$blockSpacer}) 0;
+}
+
+@mixin betweenSpacer {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	margin: calc( (#{$blockSpacer} / 2.5) + (#{$paragraphSpacer} * 1.25) ) auto;
+}
+
+.Main {
+	// see component.nav
+}
+
+.Header {
+	// sweet!
+}
+
+.Content {
+	content: "buggyfill";
+	padding-bottom: calc(#{$blockSpacer});
+
+	&--top {
+		padding: calc(#{$blockSpacer}) 0;
+	}
+}
+
+
+
+// Block component.
+// Defaults to the hero image.
+// --------------------------------------------------------------------------
+
+.Block {
+	// content: "buggyfill";
+	// height: 100vh;
+	// width: 100vw;
+	// height: 75vh;
+	padding-left: 7.03125%;
+	padding-right: 7.03125%;
+
+	@include media-breakpoint-up(su) {
+		padding-left: 13.67188%;
+		padding-right: 13.67188%;
+	}
+}
+
+
+// Block vars
+
+.Block--neutral { background-color: palette(neutral); }
+.Block--black   { @include reverseTextBlock(); background-color: palette(black); }
+
+
+
+// Block heights
+// --------------------------------------------------------------------------
+
+.Block--half {
+	content: "buggyfill";
+	height: 50vh;
+	width: 50vw;
+}
+
+.Block--height1of2 {
+	content: "buggyfill";
+	height: 50vh;
+}
+
+.Block--height2of3 {
+	content: "buggyfill";
+	height: 66.666666666vh;
+}
+
+.Block--height3of4 {
+	content: "buggyfill";
+	height: 75vh;
+}
+
+.Block--height5of6 {
+	content: "buggyfill";
+	height: 83.3333333vh;
+}
+
+
+
+// Text blocks: widths & styles
+// Block--widthLg?
+// --------------------------------------------------------------------------
+
+.Block--masthead {
+	@include centerTextBlock();
+	margin: auto;
+	max-width: container-width(lg);
+
+	> p {
+		margin: auto;
+		max-width: container-width(md);
+	}
+}
+
+.Block--masthead-text {
+	@include textLg();
+	// @include headlineSm();
+	margin: 0 auto;
+	max-width: 820px;
+
+	em {
+		// @include headlineTemplate($mixinSize: Display--su);
+		@include headlineSm();
+		color: currentColor;
+	}
+}
+
+.Block--narrow {
+	margin: auto;
+	max-width: container-width(md);
+}
+
+
+
+// Block space betweens
+// --------------------------------------------------------------------------
+
+.Block--space {
+	@include blockSpacer();
+}
+
+.Content ~ .Block--space,
+.Content > .Block--space {
+	padding-bottom: 0;
+}
+
+.Block--between {
+	@include betweenSpacer();
+}
+
+.Block--betweenT {
+	@include betweenSpacer();
+	margin-bottom: 0;
+}
+
+
+
+// Block widths (and figures)
+// --------------------------------------------------------------------------
+
+.Block--figure {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	padding: calc(#{$blockSpacer} / 2) 0;
+}
+
+.Block--figureSm {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	margin: calc(#{$blockSpacer} / 4) auto;
+	max-width: container-width(sm);
+}
+
+.Block--figureLg {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	margin: calc(#{$blockSpacer} / 2.5) auto;
+	max-width: container-width(lg);
+
+	&Img {
+		background-color: palette(light);
+		height: 750px;
+		width: 100%;
+	}
+}
+
+$breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
+
+.Block--figureSu {
+	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	margin: calc(#{$blockSpacer} / 2.5) #{$breakContainerSuper};
+	max-width: 80vw;
+}
+
+
+
+
+
+
+
+
+
+
+.Block--video {
+	@include betweenSpacer();
+	margin-bottom: 0;
+	// max-width: container-width(lg);
+	max-width: 430px;
+	text-align: center;
+
+	video {
+	}
+}
+
+.FlexEmbed-ratio--iphone6 {
+	padding-bottom: 205.81395%;
+}
+
+.--iphone6 {
+	margin-top: 25.25%;
+	width: 87.2093%;
+}
+
+.phn .Main {
+	background-color: rgb(245,245,245);
+}
+
+
+
+// Scoped text within a block (for .md)
+// --------------------------------------------------------------------------
+
+.s-Block {
+	h1 {
+		@include headlineDisplaySuper();
+	}
+
+	h2 {
+		@include headlineSm();
+	}
+
+	h1,
+	h2 {
+		margin-bottom: space(1.25);
+		text-align: center;
+	}
+
+	p + h1,
+	p + h2 {
+		margin-top: space(3.75);
+	}
+}

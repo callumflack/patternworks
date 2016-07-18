@@ -5,41 +5,44 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		title= locals.title ? title + " | " + site_title : site_title
 		if current.path[0] === "index"
-			meta(name='description', content=site_description)
+			meta(name='description', content= site_description)
 		else
 			if current.path[0] === "blog"
-				meta(name='description', content=site_description)
+				meta(name='description', content= site_description)
 		link(rel="stylesheet" href="/assets/stylesheets/application.css")
-		link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.css")
+		//- link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.css")
 
-	body(class="#{ current.path[0] } NavSpace")
+	body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
 		
-		//- != partial("_shared/nav-bar")
 		
-		//- if current.path[0] !== "index"
-			//- != partial("_shared/header")
-
-		if current.path[0] === "index"
-			!= yield
 		
-		if current.path[0] === "about"
-			!= yield
-		
-		if current.path[0] === "work"
-			//- != partial("/work/_work")
-			!= partial("/posts/_work")
-		
-		if current.path[0] === "blog"
-			!= partial("/posts/_blog")
-		
-		if current.path[0] === "dataprint"
-			!= yield
-		
-		else if ["404"].indexOf(current.path[0]) !== -1
-			!= yield
-
 		!= partial("_shared/nav")
-		!= partial("_shared/nav-modal")
+		
+		main.Main(role="main")
+		
+			if current.path[0] === "index"
+				!= yield
+			
+			if current.path[0] === "about"
+				!= yield
+			
+			if current.path[0] === "work"
+				//- != partial("/posts/_work")
+				!= partial("/work/_decorator")
+			
+			if current.path[0] === "blog"
+				!= partial("/posts/_blog")
+			
+			if current.path[0] === "dataprint"
+				!= yield
+
+			else if ["404"].indexOf(current.path[0]) !== -1
+				!= yield
+
+		unless current.path[0] === "dataprint"
+			!= partial("_shared/footer")
+			
+			
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")

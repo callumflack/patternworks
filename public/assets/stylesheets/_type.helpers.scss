@@ -22,11 +22,20 @@
 @mixin reverseTextBlock {
 	h1,
 	p,
-	ul,
-	.Text--meta {
+	ul {
 		color: palette(light) !important;
 	}
 }
+
+@mixin centerTextBlock {
+	h1,
+	p,
+	ul {
+		text-align: center !important;
+	}
+}
+
+.Text-block--center { @include centerTextBlock(); }
 
 @mixin headerTextBlock {
 	h1 { margin-bottom: space(0.2); }

@@ -1,18 +1,17 @@
+//- header.Header.Header--animateIn(role="banner")
+//- 	.Block.Block--height3of4
+//- 		.o-aligner
+//- 			.o-aligner-item
+//- 				.o-container
+//- 					.Block--masthead
+//- 						for page, slug in public._data
+//- 							if current.path[0] === slug
+//- 								h1.Display--super= page.headline
+//- 								//- p= page.description
+//- 									a(href="/about") Learn more
 header.Header(role="banner")
-	.Block
-		.Nav-wrapper
-			.o-aligner
-				.o-aligner-item
-					.o-container
-						.Column--text
-							!= partial("nav-toggle")
-		.o-aligner
-			.o-aligner-item
-				.o-container
-					.Block-text
-						if current.path[0] === "index"
-							h1.Display--su= public._data.index.headline
-							p We create websites and apps that fast, easy and delightful. #[a(href="/about") Learn more.]
-						if current.path[0] === "work"
-							h1.Display--su= public._data.work.headline
-						
+	.Block--space.Header--animateIn
+		.Block--masthead
+			for page, slug in public._data
+				if current.path[0] === slug
+					h1.Display--super= page.headline

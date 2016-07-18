@@ -1,26 +1,32 @@
 {
 	"phn": {
+		"imageslug": "phn",
 		"title": "Primary Healthcare Network",
 		"description": "Surveying the quality of life in Far North Queensland",
+		"intro": " provides information and education for health providers in Northern Queensland. We helped them create a data map of people's well-being in the far North.",
 		"date": "2016",
 		"author": "callum-flack",
-		"category": "project",
-		"tags": "Design, code",
+		"category": "work",
+		"tags": ["Web app"],
 		"indexstyle": "phn",
 		"ispublished": true,
 		"isfeatured": false,
-		"ishome": true
+		"ishome": true,
+		"order": "one"
 	},
 	"ward6": {
+		"imageslug": "ward6",
 		"title": "Ward 6",
 		"description": "T-shaped all-rounder making brands and apps for Pharma.",
 		"description": "B2B iPad apps for Ward6",
 		"date": "2015",
 		"author": "callum-flack",
-		"category": "project",
-		"tags": "Design, code",
+		"category": "work",
+		"tags": ["Design", "Code"],
+		"indexstyle": "ward6",
 		"ispublished": true,
 		"isfeatured": false,
-		"ishome": true
+		"ishome": true,
+		"order": "two"
 	}
 }

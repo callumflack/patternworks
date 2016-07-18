@@ -1,0 +1,44 @@
+- var assetPath = "/assets/images/"
+
+mixin post(arg)
+	.Grid-cell.u-xs-size1of2.u-sm-size1of3
+		a.Post--inList(href="#")
+			.Post-aligner
+				figure.Post-image
+					img(src="#{assetPath}post-hero-#{arg}.jpg")
+				h1.Headline--sm PINK
+				.Post-meta
+					span.Post-tag Salmon
+
+!= partial("_shared/header")
+
+section.Content.Content--animateIn
+	.Grid.Grid--withGutterLg
+		//- for post, slug in public.work._data
+		//- 	if post.ishome === true
+		//- 		.Grid-cell.u-xs-size1of2.u-sm-size1of3
+		//- 			a.Post--inList(href="/#{post.category}/#{slug}")
+		//- 				.Post-aligner
+		//- 					figure.Post-image
+		//- 						img(src="#{assetPath}post-hero-#{slug}.jpg", alt="#{slug}")
+		//- 					h1.Headline--sm= post.title
+		//- 					.Post-meta
+		//- 						span.Post-tag= post.tags
+		//- for post, slug in public.blog._data
+		//- 	if post.ishome === true
+		//- 		.Grid-cell.u-xs-size1of2.u-sm-size1of3
+		//- 			a.Post--inList(href="/#{post.category}/#{slug}")
+		//- 				.Post-aligner
+		//- 					figure.Post-image
+		//- 						img(src="#{assetPath}post-hero-#{slug}.jpg", alt="#{slug}")
+		//- 					h1.Headline--sm= post.title
+		//- 					.Post-meta
+		//- 						span.Post-tag= post.tags
+
+
+		for post, slug in public.work._data
+			if _.includes(post.imageslug, 'phn')
+				+post("phn")
+		for post, slug in public.work._data
+			if _.includes(post.imageslug, 'ward6')
+				+post("ward6")

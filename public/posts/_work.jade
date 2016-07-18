@@ -1,18 +1,1 @@
-!= partial("../_shared/header")
-
-main.Content(role="main")
-	.Grid
-		if current.source === "index"
-			for article, slug in public.posts._data
-				if article.ispublished === true
-					if article.category === "project"
-						.Grid-cell.Block--height2of3
-							a.Post(class=typeof article.indexstyle === "true" ? undefined : "Post--#{article.indexstyle}", href="/work/#{slug}")
-								.Post-coverImage.o-containImage(style="background-image: url('/assets/images/post-hero-#{slug}.png')")
-								.o-aligner
-									.o-aligner-item
-										.o-container
-											.Column--post
-												h1.Display= article.title
-												p.Text--meta= article.tags
-												//- p= article.description
+!= partial("_layout")

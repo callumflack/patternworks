@@ -1,0 +1,33 @@
+- var assetPath = "/assets/images/"
+
+if current.source === "index"
+	//- != partial("../_shared/header")
+	section.Content.Content--top.Content--animateIn
+		.Grid.Grid--withGutterLg
+			for post, slug in public.posts._data
+				if post.ispublished === true
+					if post.category === current.path[0]
+						.Grid-cell.u-xs-size1of2.u-sm-size1of3
+							a.Post--inList(href="/#{post.category}/#{slug}")
+								.Post-aligner
+									figure.Post-image
+										img(src="#{assetPath}post-hero-#{slug}.jpg", alt="#{slug}")
+									h1.Headline--sm= post.title
+									.Post-meta
+										span.Post-tag= post.tags
+
+if current.source !== "index"
+	header.Header(role="banner")
+		.Block--space.Header--animateIn
+			.o-container
+				.Block--masthead
+					h1.Display--super= title
+		.Block--height5of6.Hero--animateIn
+			.o-container.o-container--super
+				figure.Post-hero(style="background-image: url('#{assetPath}about-hero.jpg')")
+
+	section.Content
+		section.Block--space
+			.o-container
+				.Block--narrow.s-Block
+					!= yield

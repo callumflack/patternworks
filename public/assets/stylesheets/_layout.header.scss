@@ -7,6 +7,7 @@
 
 .Header {
 	// @include headerTextBlock();
+	// @include headerIn();
 	position: relative;
 }
 
@@ -25,31 +26,31 @@
 // Slide
 // --------------------------------------------------------------------------
 
-.Slide {
-	&--phn  { @include reverseTextBlock(); background-color: palette(project-phn); }
-	&--test { @include reverseTextBlock(); background-color: salmon; }
-}
+// .Slide {
+// 	&--phn  { @include reverseTextBlock(); background-color: palette(project-phn); }
+// 	&--test { @include reverseTextBlock(); background-color: salmon; }
+// }
 
 
 
 // Quick Hero figure component
 // --------------------------------------------------------------------------
 
-.Hero-wrapper {
-	@include o-posFullScreen(absolute);
-	top: auto;
-}
-
-.Hero {
-	@include container( container-width(xl) );
-
-	&--right { text-align: right; }
-
-	img {
-		display: inline-block !important;
-		max-width: 600px;
-	}
-}
+// .Hero-wrapper {
+// 	@include o-posFullScreen(absolute);
+// 	top: auto;
+// }
+//
+// .Hero {
+// 	@include container( container-width(xl) );
+//
+// 	&--right { text-align: right; }
+//
+// 	img {
+// 		display: inline-block !important;
+// 		max-width: 600px;
+// 	}
+// }
 
 
 

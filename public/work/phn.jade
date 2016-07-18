@@ -1,0 +1,29 @@
+- var assetPath = "/assets/images/"
+
+.Block--narrow.Block--betweenT.s-Block
+	:markdown
+		Primary Healthcare Network North Queensland wanted to digitise a survey to rapidly and economically build a data map for their service areas. Our response was not to build a native app—which would have been expensive to maintain and difficult to find—rather a responsive web app that worked on any device.
+
+.Block--video
+	.FlexEmbed
+		.FlexEmbed-ratio.FlexEmbed-ratio--iphone6
+		.FlexEmbed-content
+			video.--iphone6(autoplay="", loop="")
+				source(src='#{assetPath}phn-video-1.mp4', type='video/mp4')
+				| Your browser does not support the video tag. Please upgrade your browser.
+			.o-posAbsoluteCenter.o-coverImage(style="background-image: url('#{assetPath}device-iphone6.png')")
+
+.Block--narrow.Block--betweenT.s-Block
+	:markdown
+		Close collaboration was essential: we had to understand the use cases for the survey, now and in the future, for PHN staff, PHN service providers and their patients. Our design stage was comprehensive and ensured common understanding and ownership.
+
+//- figure.Block--figureSu
+.Block.Block--between
+	figure
+		img(src="#{assetPath}phn-score.png", alt="")
+			
+.Block--narrow.s-Block
+	:markdown
+		We built the web app using Express and React to help us leverage available tech conducive to continued iteration. For example, we're now implementing offline capability so that an internet connection is not required to do surveys. This will prove valuable in remote regions where 3G connection is not always guaranteed.
+	:markdown
+		Our goal was to make a survey that would be immediately useful, and easily adaptable as PHN discovers use cases over time. We created an experience that was fast, simple and easy by reducing all actions to their simplest requirement. A patient can now fill in a survey in 90 seconds without trying.

@@ -1,0 +1,11 @@
+
+
+// --------------------------------------------------------------------------
+//   TITLE
+// --------------------------------------------------------------------------
+
+
+// .Header .Display--super       { @include when-inside(".index") { color: palette(page-home); } }
+.Header .Display--super       { @include when-inside(".about") { color: palette(page-about); } }
+
+.Header .Block--masthead-text { @include when-inside(".phn")   { color: palette(project-phn)!important; } }

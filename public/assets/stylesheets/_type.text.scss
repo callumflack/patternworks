@@ -54,6 +54,14 @@
 	);
 }
 
+@mixin textLg() {
+	@include textTemplate(
+		$mixinSize: Text--lg,
+		$mixinFont: $font-text-light,
+		$mixinLetterSpacing: -0.01em
+	);
+}
+
 
 // Initiate mixins in classes.
 // --------------------------------------------------------------------------
@@ -63,12 +71,13 @@
 .Text           { @include textRg(); }
 .Text--medium   { @include textRg(); color: palette(medium); }
 .Text--intro    { @include textRg(); color: palette(medium); margin-bottom: space(0.5); }
+.Text--lg       { @include textLg(); margin-bottom: 0; }
 
 
 // Initiate mixins in blocks.
 // --------------------------------------------------------------------------
 
-.Text-block     { > * { @include textRg(); } }
+.Text-block         { > * { @include textRg(); } }
 
 .Text-block--footer {
 	@include listClean();

@@ -8,78 +8,55 @@
 // Nav toggle (in header)
 // --------------------------------------------------------------------------
 
-$navBarHeight: $sectionSpacer / 2;
-
-.Nav-bar {
-	@include u-posFixed();
-	background-color: rgba( palette(background), 0.9 );
-	height: $navBarHeight;
-	// flex: 1 1 0%;
-	// flex-basis: 0%;
-	opacity: 1;
-	transition:
-		// translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
-		opacity 500ms map-fetch($transition, type, fine);
-	width: 100%;
-}
-
-// Make the header nav fixed and animate down into view on scroll
-// Req's: component.fixedheaderanimation.js
-// See: http://codepen.io/Craig-Watson/pen/zGbNRL
-
-.Nav-bar--transition {
-	opacity: 0;
-	transform: translateY( -#{$navBarHeight} );
-	transition:
-		// translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
-		opacity 500ms map-fetch($transition, type, fine);
-}
-
-
-
-
-.Nav-wrapper {
-	@include o-posFullScreen(absolute);
-	bottom: auto;
-	height: $navBarHeight;
-}
-
-.Nav-toggle {
-	// @include baseTransition;
-	// content: "buggyfill";
-	display: inline-block;
-	// position: fixed;
-	opacity: 1;
-
-	// transition:
-	// 	// translateY map-fetch($transition, duration, long) map-fetch($transition, type, base),
-	// 	opacity 500ms map-fetch($transition, type, fine);
-	// z-index: 9;
-
-	&--inverse {
-		h1, p { color: palette(background); }
-	}
-
-	h1 {
-		border-bottom: 1px solid palette(text);
-		padding-bottom: 9px;
-	}
-
-	@include media-breakpoint-up(sm) {
-	}
-
-	// Color the hamburger icon
-	// @include when-inside(".index") { h1, p { color: palette(background); } }
-	// @include when-inside(".blog")  { color: palette(white); }
-}
-
-
-
-
-// Nav (in footer)
-// --------------------------------------------------------------------------
+$navBarHeight: $blockSpacer / 2;
+$navBarCube  : $blockSpacer / 6;
 
 .Nav {
+	@include o-posFullScreen(absolute);
+	bottom: auto;
+	// height: $navBarHeight;
+	left: $navBarCube;
+	right: $navBarCube;
+	top: $navBarCube * 0.75;
+
+	&--bottom {
+		bottom: $navBarCube * 0.75;
+		top: auto;
+	}
+}
+
+.Nav-item {
+	// @include headlineSm();
+	@include textSm();
+	color: palette(text);
+	margin-bottom: 0;
+
+	&--left {
+		display: inline-block;
+		float: left;
+		transform: translateY(1px);
+	}
+
+	> a {
+		border-color: transparent;
+		padding-bottom: 7px;
+
+		&.is-active {
+			border-color: palette(text);
+			// color: palette(text);
+		}
+	}
+
+	&:not(:last-child) {
+		margin-right: space(1) !important;
+	}
+}
+
+
+// Footer nav
+// --------------------------------------------------------------------------
+
+.Footer {
 	@include o-posFullScreen();
 	background-color: palette(text);
 	// height: 100%;
@@ -90,38 +67,35 @@ $navBarHeight: $sectionSpacer / 2;
 	// visibility: hidden;
 	// opacity: 0;
 
-	h1, p, li  { color: palette(background) !important; }
-	h1         { border-color: palette(background) !important; }
-	.is-active { color: palette(medium) !important; }
+	.Nav-item  { color: palette(background) !important; }
+	.is-active { border-color: palette(background) !important; color: palette(background) !important; }
 }
 
 
-// Allow nav to fix as a footer
-// --------------------------------------------------------------------------
+// Allow space for the footer by extending the body
 
-.NavSpace {
+.FooterSpace {
 	content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
 	min-width: 100%;
 	min-height: 100%;
 	overflow-x: hidden;
 	padding-bottom: calc(100vh);
+	position: relative;
 	z-index: 1;
 }
 
 
-// Manage .Header and .Content layers to use with .Nav
+// Manage .Header and .Content layers to use with .Footer .Nav
 // --------------------------------------------------------------------------
 
+.Nav,
 .Nav-bar {
 	z-index: 4;
 }
 
-.Header,
-.Content {
+.Main {
+	background-color: palette(background);
+	overflow: hidden;
 	position: relative;
 	z-index: 3;
-}
-
-.Content {
-	background-color: palette(background);
 }

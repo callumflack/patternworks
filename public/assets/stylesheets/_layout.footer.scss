@@ -6,7 +6,7 @@
 
 
 .Footer {
-	@include sectionSpacer();
+	@include blockSpacer();
 	background-color: palette(text);
 
 	h1, p, li { color: palette(background) !important; }

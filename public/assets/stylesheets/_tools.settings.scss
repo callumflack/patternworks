@@ -20,7 +20,7 @@ $base-white                    : #FFF;
 
 $palette: (
 	black                      : $base-black,
-	text                       : #151515,
+	text                       : #222,
 	dark                       : tint($base-black, 15%),
 	ash                        : tint($base-black, 22%),
 	charcoal                   : tint($base-black, 39%),
@@ -30,7 +30,7 @@ $palette: (
 	light                      : tint($base-black, 94%),
 	faint                      : tint($base-black, 97%),
 	white                      : $base-white,
-	background                 : #fdfdfd,
+	background                 : #fdfdfd, // FBFBF9
 	neutral                    : #F3F2F1,
 	neutral-dark               : darken(#f0eeeb, 9%),
 	neutral-light              : lighten(#f0eeeb, 4%),
@@ -41,6 +41,8 @@ $palette: (
 	warning                    : #FFD40C,
 	bad-news                   : #C60C0C,
 	good-news                  : brand-complement,
+	page-home                  : #8b7412,
+	page-about                 : #6287bb,
 	project-phn                : #6ebe44
 );
 
@@ -49,13 +51,14 @@ $palette: (
 // --------------------------------------------------------------------------
 
 $base-font-size-unit           : 19;
-$base-line-height-unit         : 1.45;
+$base-line-height-unit         : 1.5;
 $base-font-size                : $base-font-size-unit * 1px;
 $base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
 $space-unit                    : rem($base-line-height);
 $space                         : $space-unit * 1;
 
-$sectionSpacer                 : 22.5vh;
+$blockSpacer                   : 22.5vh;
+$paragraphSpacer               : space(1.25);
 
 
 
@@ -93,9 +96,12 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xs: 460px,
 	sm: 576px,
-	md: 720px,
+	md: 780px,
+	ml: 840px,
 	lg: 960px,
-	xl: 1200px
+	xl: 1200px,
+	su: 1700px,
+	xx: 80vw
 ) !default;
 
 
@@ -111,17 +117,21 @@ $fontsizes: (
 		xs            : rem(17),
 		sm            : $base-font-size,
 	),
-	Headline--sm: (
+	Text--lg: (
 		xs            : rem(22),
-		sm            : rem(25)
+		sm            : rem(25),
+	),
+	Headline--sm: (
+		xs            : rem(25),
+		sm            : rem(28)
 	),
 	Display: (
 		xs            : rem(39),
 		sm            : rem(41)
 	),
 	Display--su: (
-		xs            : rem(41),
-		sm            : rem(47)
+		xs            : rem(36),
+		sm            : rem(42)
 	)
 );
 
@@ -223,7 +233,7 @@ $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New
 
 $fonts-path           : '/assets/fonts/';
 $font-sans-name       : 'AtlasGrotesk';
-$font-serif-name      : 'LarishNeue';
+$font-serif-name      : 'LarishNeue'; // Sabon-Roman
 $font-display-name    : $font-serif-name;
 
 // Create font-file variables
