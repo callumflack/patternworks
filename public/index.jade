@@ -2,11 +2,11 @@
 
 != partial("_shared/header")
 		
-section.Content.Content--animateIn
+section.Content--bottomPadding.Content--animateIn
 	.Grid.Grid--withGutterLg
 		for post, slug in public._data
 			if post.ishome === true
-				.Grid-cell.u-xs-size1of2.u-sm-size1of3
+				.Grid-cell.u-sm-size1of2.u-md-size1of3
 					a.Post--inList(href="/#{post.category}/#{slug}")
 						.Post-aligner
 							figure.Post-image

@@ -6,7 +6,7 @@
 //- 					.Block--masthead
 //- 						for page, slug in public._data
 //- 							if current.path[0] === slug
-//- 								h1.Display--super= page.headline
+//- 								h1.Display= page.headline
 //- 								//- p= page.description
 //- 									a(href="/about") Learn more
 header.Header(role="banner")
@@ -14,4 +14,4 @@ header.Header(role="banner")
 		.Block--masthead
 			for page, slug in public._data
 				if current.path[0] === slug
-					h1.Display--super= page.headline
+					h1.Display= page.headline

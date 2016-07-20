@@ -67,11 +67,44 @@
 // --------------------------------------------------------------------------
 
 .Text--sm       { @include textSm(); }
-.Text--meta     { @include textSm(); color: palette(medium); }
 .Text           { @include textRg(); }
 .Text--medium   { @include textRg(); color: palette(medium); }
 .Text--intro    { @include textRg(); color: palette(medium); margin-bottom: space(0.5); }
 .Text--lg       { @include textLg(); margin-bottom: 0; }
+
+.Text--meta {
+	@include textSm();
+	color: palette(medium) !important;
+	// text-align: center;
+
+	> a {
+		border-color: transparent !important;
+
+		@include on-event() {
+			border-color: palette(medium) !important;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		margin: auto;
+		// width: 70%;
+	}
+}
+
+.List--meta {
+	@include textSm();
+	@include listClean();
+	color: palette(medium);
+}
+
+.List--meta-title {
+	color: palette(text) !important;
+	margin: space(1.25) 0 space(0.625) !important;
+
+	&:first-child {
+		margin-top: 0 !important;
+	}
+}
 
 
 // Initiate mixins in blocks.

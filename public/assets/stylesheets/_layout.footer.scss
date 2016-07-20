@@ -9,5 +9,5 @@
 	@include blockSpacer();
 	background-color: palette(text);
 
-	h1, p, li { color: palette(background) !important; }
+	h1, p, li { color: palette(background); }
 }

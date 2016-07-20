@@ -20,7 +20,7 @@ $base-white                    : #FFF;
 
 $palette: (
 	black                      : $base-black,
-	text                       : #222,
+	text                       : #151515,
 	dark                       : tint($base-black, 15%),
 	ash                        : tint($base-black, 22%),
 	charcoal                   : tint($base-black, 39%),
@@ -43,7 +43,9 @@ $palette: (
 	good-news                  : brand-complement,
 	page-home                  : #8b7412,
 	page-about                 : #6287bb,
-	project-phn                : #6ebe44
+	project-bg                 : #F5F5F5,
+	project-phn                : #6ebe44,
+	hilite                     : #48e79a
 );
 
 
@@ -96,7 +98,7 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xs: 460px,
 	sm: 576px,
-	md: 780px,
+	md: 760px,
 	ml: 840px,
 	lg: 960px,
 	xl: 1200px,
@@ -110,28 +112,32 @@ $container-max-widths: (
 
 $fontsizes: (
 	Text--sm: (
-		xs            : rem(12),
-		sm            : rem(15),
+		xs            : 14px,
+		sm            : 17px,
 	),
 	Text: (
-		xs            : rem(17),
+		xs            : 16px,
 		sm            : $base-font-size,
 	),
 	Text--lg: (
-		xs            : rem(22),
-		sm            : rem(25),
+		xs            : 27px,
+		sm            : 34px,
 	),
 	Headline--sm: (
-		xs            : rem(25),
-		sm            : rem(28)
+		xs            : 25px,
+		sm            : 30px
+	),
+	Headline: (
+		xs            : 36px,
+		sm            : 42px
 	),
 	Display: (
-		xs            : rem(39),
-		sm            : rem(41)
+		xs            : 39px,
+		sm            : 42px
 	),
 	Display--su: (
-		xs            : rem(36),
-		sm            : rem(42)
+		xs            : 54px,
+		sm            : 60px
 	)
 );
 
@@ -141,6 +147,7 @@ $fontsizes: (
 
 
 
+// TODO: remove these by updating the mixins that reference them.
 
 $size: (
 
@@ -233,7 +240,7 @@ $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New
 
 $fonts-path           : '/assets/fonts/';
 $font-sans-name       : 'AtlasGrotesk';
-$font-serif-name      : 'LarishNeue'; // Sabon-Roman
+$font-serif-name      : 'NocturnoDisplay-Bold'; // AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
 $font-display-name    : $font-serif-name;
 
 // Create font-file variables

@@ -3,12 +3,12 @@
 
 if current.source === "index"
 	//- != partial("../_shared/header")
-	section.Content.Content--top.Content--animateIn
+	section.Content.Content--animateIn
 		.Grid.Grid--withGutterLg
 			for post, slug in public._data
 				if post.ispublished === true
 					if post.category === current.path[0]
-						.Grid-cell.u-xs-size1of2.u-sm-size1of3
+						.Grid-cell.u-sm-size1of2.u-md-size1of3
 							a.Post--inList(href="/#{post.category}/#{slug}")
 								.Post-aligner
 									figure.Post-image
@@ -21,7 +21,7 @@ else
 	header.Header(role="banner")
 		.Block--space.Header--animateIn
 			.Block--masthead
-				h1.Block--masthead-text
+				h1.Headline
 					em= title
 					span= intro
 		//- .Block--height5of6.Hero--animateIn
@@ -29,7 +29,14 @@ else
 		//- 		figure.Post-hero(style="background-image: url('#{assetPath}#{currentProject}-hero.jpg')")
 		.Block.Hero--animateIn
 			figure
-				img(src="#{assetPath}#{currentProject}-hero.jpg", alt="")
+				img(src="#{assetPath}#{currentProject}-hero-alt.png", alt="")
 
-	section.Content
+	section.Content--post
 		!= yield
+		
+	a.Block--halfSpace(href="/work/ward6")
+		.Block--masthead
+			h1.Headline
+				//- em: a(href="/work") ← All Work
+				//- em: a(href="/work/ward6") Ward 6 website →
+				| Ward 6 website →

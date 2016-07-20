@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------
 
 $navBarHeight: $blockSpacer / 2;
-$navBarCube  : $blockSpacer / 6;
+$navBarCube  : $blockSpacer / 7;
 
 .Nav {
 	@include o-posFullScreen(absolute);
@@ -17,11 +17,11 @@ $navBarCube  : $blockSpacer / 6;
 	// height: $navBarHeight;
 	left: $navBarCube;
 	right: $navBarCube;
-	top: $navBarCube * 0.75;
+	top: $navBarCube * 0.85;
 
 	&--bottom {
-		bottom: $navBarCube * 0.75;
-		top: auto;
+		bottom: $navBarCube * 0.85;
+		top: auto !important;
 	}
 }
 
@@ -67,8 +67,12 @@ $navBarCube  : $blockSpacer / 6;
 	// visibility: hidden;
 	// opacity: 0;
 
-	.Nav-item  { color: palette(background) !important; }
-	.is-active { border-color: palette(background) !important; color: palette(background) !important; }
+	$reverse: palette(base);
+
+	.Nav-item { color: $reverse !important; }
+	.Nav-item a { @include on-event() { border-color: $reverse !important; } }
+	.is-active { border-color: $reverse !important; color: $reverse !important; }
+	.Block--masthead a { border-color: $reverse; }
 }
 
 

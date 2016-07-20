@@ -12,7 +12,7 @@
 	@include when-inside(".o-container--xl") { margin-left: calc( (1200-960) / 2 ); }
 
 	h1 {
-		@include headlineDisplaySuper();
+		@include display();
 		margin-bottom: space(2);
 		text-align: center;
 	}

@@ -13,7 +13,7 @@
 	$mixinFont: $font-display,
 	$mixinLetterSpacing: 0,
 	$mixinLineHeight: 1.25,
-	$mixinMarginBottom: space(1.25)
+	$mixinMarginBottom: 0
 ) {
 	// reset
 	// this may not be needed if we've styled the body
@@ -25,7 +25,10 @@
 	font-family: $mixinFont;
 	letter-spacing: $mixinLetterSpacing;
 	line-height: $mixinLineHeight;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: $mixinMarginBottom;
+	text-align: center;
 
 	// sizes
 	font-size: fontsize($mixinSize, xs);
@@ -49,34 +52,26 @@
 @mixin headlineSm() {
 	@include headlineTemplate(
 		$mixinSize: Headline--sm,
-		$mixinLetterSpacing: 0,
-		// $mixinLineHeight: 1,
-		$mixinMarginBottom: 0
+		$mixinLetterSpacing: 0.018em
 	);
+	text-align: left;
 }
 
-@mixin headlineDisplay() {
-	@include headlineTemplate();
-
-	@include media-breakpoint-up(sm) {
-		width: 80%;
-	}
-}
-
-@mixin headlineDisplaySuper() {
+@mixin headline() {
 	@include headlineTemplate(
-		$mixinSize: Display--su
-		// $mixinFont: $text-bold
+		$mixinSize: Headline
+	);
+}
+
+@mixin display() {
+	@include headlineTemplate(
+		$mixinSize: Display--su,
+		$mixinLetterSpacing: -0.005em,
+		$mixinLineHeight: 1.1
 	);
 
-	@include media-breakpoint-up(sm) {
-		margin-left: auto;
-		margin-right: auto;
-		width: 80%;
-
-		@include when-inside(".Footer") {
-			width: 90%;
-		}
+	@include when-inside(".Footer") {
+		margin-bottom: space(1.25);
 	}
 }
 
@@ -89,24 +84,18 @@
 // senary, septenary, octonary, nonary, denary and super.
 // --------------------------------------------------------------------------
 
-.Display            { @include headlineDisplay(); }
-.Display--noSpace   { @include headlineDisplay(); margin-bottom: 0; }
-.Display--halfSpace { @include headlineDisplay(); margin-bottom: space(0.5); }
-.Display--super        { @include headlineDisplaySuper(); }
-.Headline--sm       { @include headlineSm(); }
+.Display      { @include display(); }
+.Headline     { @include headline(); }
+.Headline--sm { @include headlineSm(); }
+
+.Headline em {
+	font-family: inherit;
+	font-style: normal;
+	font-weight: normal;
+}
 
 
 // Initiate mixins in blocks.
 // --------------------------------------------------------------------------
 
-.Headline-block { > * { @include headlineDisplay(); } }
-
-.Headline-block--footer {
-	@include listClean();
-	margin-bottom: 0;
-
-	> * {
-		@include headlineDisplay();
-		margin-bottom: 0;
-	}
-}
+// .Headline-block { > * { @include headline(); } }
