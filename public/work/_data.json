@@ -1,5 +1,5 @@
 {
-	"phn": {
+	"primary-healthcare-network": {
 		"imageslug": "phn",
 		"title": "Primary Healthcare Network",
 		"description": "Surveying the quality of life in Far North Queensland",
@@ -18,11 +18,24 @@
 		"imageslug": "ward6",
 		"title": "Ward 6",
 		"description": "T-shaped all-rounder making brands and apps for Pharma.",
-		"description": "B2B iPad apps for Ward6",
+		"intro": " is a renowned healthcare branding agency. We helped build their online reputation.",
 		"date": "2015",
 		"author": "callum-flack",
 		"category": "work",
-		"tags": ["Design", "Code"],
+		"tags": ["Website"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
+	},
+	"oceanblue-living": {
+		"title": "OceanBlue Living",
+		"intro": " is a Cairns metalworks. We helped them build a community around their transformative architectural objects.",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Website"],
 		"indexstyle": "ward6",
 		"ispublished": true,
 		"isfeatured": false,

@@ -10,7 +10,9 @@ footer.Footer(role="contentinfo")
 			.Block--masthead
 				h1.Display We help companies discover, design and build great customer experiences.
 				p Get in touch: #[a(href="mailto:#{ email_form }") email us] or call #[a(href="telephone:#{ phone }") #{ phone }].
-				p.Text--meta Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
+				//- != partial("newsletter")
+				//- p.Text--meta Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
+				p.Text--meta You should also follow us on #[a(href="#{ twitter }") Twitter].
 
 	//- .Nav.Nav--bottom(role="navigation")
 		.o-listInline.u-textRight

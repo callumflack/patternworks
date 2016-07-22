@@ -52,7 +52,7 @@
 
 .Main {
 	// see component.nav
-	background-image: linear-gradient(to bottom, rgba( palette(brand), 0.05 ) 0%, rgba( palette(brand), 0.0 ) 25%);
+	// background-image: linear-gradient(to bottom, rgba( palette(brand), 0.05 ) 0%, rgba( palette(brand), 0.0 ) 25%);
 }
 
 .Header {
@@ -123,10 +123,21 @@
 // 	max-width: container-width(ml);
 // }
 
+
+
+// Column blocks: widths
+// --------------------------------------------------------------------------
+
 .Block--narrow {
 	@include textTuck();
 	margin: auto;
 	max-width: container-width(md);
+}
+
+.Block--mid {
+	@include textTuck();
+	margin: auto;
+	max-width: container-width(ll);
 }
 
 
@@ -220,8 +231,14 @@ $breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
 	}
 }
 
-.FlexEmbed-ratio--iphone6 {
-	padding-bottom: 205.81395%;
+.Frame {
+	border: 1px solid #d5d5d5;
+}
+
+.FlexEmbed-ratio {
+	&--iphone6 { padding-bottom: 205.81395%; }
+	&--ipadL   { padding-bottom: 75.21%; }
+	&--laptop  { padding-bottom: 70.25%; }
 }
 
 .--iphone6 {
@@ -229,6 +246,9 @@ $breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
 	width: 87.2093%;
 }
 
+.--ipadL {
+	width: 100%;
+}
 
 
 
@@ -286,7 +306,13 @@ $breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
 	}
 
 	p + h1,
-	p + h2 {
+	p + h2,
+	ul + h1,
+	ul + h2 {
 		margin-top: space(2.5);
+	}
+
+	ul {
+		// margin-top: space(-1.25);
 	}
 }

@@ -43,8 +43,18 @@
 // Headlines
 
 .Header .Headline {
-	@include when-inside(".phn") {
+	@include when-inside(".primary-healthcare-network") {
 		em { color: palette(project-phn); }
 		@include media-breakpoint-up(lg) { width: 85%; }
+	}
+
+	@include when-inside(".ward6") {
+		em { color: palette(project-ward6); }
+		@include media-breakpoint-up(lg) { width: 80%; }
+	}
+
+	@include when-inside(".oceanblue-living") {
+		em { color: palette(project-obl); }
+		@include media-breakpoint-up(lg) { width: 90%; }
 	}
 }

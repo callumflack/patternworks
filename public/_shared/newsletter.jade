@@ -1,15 +1,15 @@
-h3.Headline Receive new posts by email
-//- form(action='http://callumflackdesign.createsend.com/t/r/s/xjrurh/', method='post')
-//-     label(for="fieldEmail") Email
-//-     input#fieldEmail(name='cm-xjrurh-xjrurh', type='email', required='required' placeholder='Subscribe to Flack')
-//-     a.Button.Button--submit(type='submit', role='button') Stay in touch
+- var actionCode = "//patternworks.us13.list-manage.com/subscribe/post?u=027f0219cdd96399fb792993e&id=f1f20b580e"; 
+- var nameCode = "b_5262b8bb4d6d9d31c4d3b03f0_3dd454cbc2";
 
-form(style='border:1px solid #ccc;padding:3px;text-align:center;', action='https://tinyletter.com/patternworks', method='post', target='popupwindow', onsubmit="window.open('https://tinyletter.com/patternworks', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true")
-	p
-		label(for='tlemail') Enter your email address
-	  p
-		input#tlemail(type='text', style='width:140px', name='email')
-	  input(type='hidden', value='1', name='embed')
-	  input(type='submit', value='Subscribe')
-	  p
-		a(href='https://tinyletter.com', target='_blank') powered by TinyLetter
+#mc_embed_signup
+	form#mc-embedded-subscribe-form.validate(action='#{actionCode}', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+		#mc_embed_signup_scroll
+			.mc-field-group
+				.Form--capsule
+					.Form-group.u-xs-size8of12.u-marginBD2.u-xs-marginB0
+						label(for='mce-EMAIL') Add your email
+						input#mce-EMAIL.Form-control.required.email(type='email', value='', name='EMAIL', placeholder='', required='')
+						div(style='position: absolute; left: -5000px;')
+							input(type='text', name='#{nameCode}', tabindex='-1', value='')
+					.Form-group.u-xs-size4of12
+						input#mc-embedded-subscribe.Button.t-button.t-button--full.form-control(type='submit', value='Subscribe', name='subscribe')

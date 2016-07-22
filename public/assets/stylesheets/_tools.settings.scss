@@ -45,6 +45,8 @@ $palette: (
 	page-about                 : #6287bb,
 	project-bg                 : #F5F5F5,
 	project-phn                : #6ebe44,
+	project-ward6              : #029C75,
+	project-obl                : #1159c0,
 	hilite                     : #48e79a
 );
 
@@ -52,15 +54,15 @@ $palette: (
 // Base size measures
 // --------------------------------------------------------------------------
 
-$base-font-size-unit           : 19;
-$base-line-height-unit         : 1.5;
+$base-font-size-unit           : 18;
+$base-line-height-unit         : 1.6;
 $base-font-size                : $base-font-size-unit * 1px;
 $base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
 $space-unit                    : rem($base-line-height);
 $space                         : $space-unit * 1;
 
-$blockSpacer                   : 22.5vh;
-$paragraphSpacer               : space(1.25);
+$blockSpacer                   : 21vh;
+$paragraphSpacer               : space(0.75);
 
 
 
@@ -98,9 +100,10 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xs: 460px,
 	sm: 576px,
-	md: 740px,
+	md: 720px,
 	ml: 840px,
 	lg: 960px,
+	ll: 1140px,
 	xl: 1200px,
 	su: 1700px,
 	xx: 80vw
