@@ -52,7 +52,8 @@
 @mixin headlineSm() {
 	@include headlineTemplate(
 		$mixinSize: Headline--sm,
-		$mixinLetterSpacing: 0.018em
+		$mixinFont: $serif-lg, // TEST
+		$mixinLetterSpacing: 0.012em
 	);
 	text-align: left;
 }

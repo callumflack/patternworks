@@ -11,7 +11,7 @@
 	$mixinSize: Text,
 	$mixinColor: palette(text),
 	$mixinFont: $font-text-regular,
-	$mixinLetterSpacing: -0.01em,
+	$mixinLetterSpacing: 0.01em,
 	$mixinLineHeight: $base-line-height-unit
 ) {
 	// reset
@@ -45,13 +45,15 @@
 @mixin textRg() {
 	@include textTemplate();
 	// @include typeSize();
+	letter-spacing: 0.007em;
 }
 
 @mixin textSm() {
 	@include textTemplate(
 		$mixinSize: Text--sm,
-		$mixinLetterSpacing: 0.01em
+		$mixinLetterSpacing: 0.02em
 	);
+	letter-spacing: 0.02em;
 }
 
 @mixin textLg() {

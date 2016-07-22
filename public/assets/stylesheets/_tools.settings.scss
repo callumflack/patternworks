@@ -98,7 +98,7 @@ $grid-breakpoints: (
 $container-max-widths: (
 	xs: 460px,
 	sm: 576px,
-	md: 760px,
+	md: 740px,
 	ml: 840px,
 	lg: 960px,
 	xl: 1200px,
@@ -112,8 +112,8 @@ $container-max-widths: (
 
 $fontsizes: (
 	Text--sm: (
-		xs            : 14px,
-		sm            : 17px,
+		xs            : 13px,
+		sm            : 16px,
 	),
 	Text: (
 		xs            : 16px,
@@ -125,7 +125,7 @@ $fontsizes: (
 	),
 	Headline--sm: (
 		xs            : 25px,
-		sm            : 30px
+		sm            : 29px
 	),
 	Headline: (
 		xs            : 36px,
@@ -234,14 +234,14 @@ $z-index: (
 // $sans: 'Source Sans Pro';
 // $font: join($sans, $font-sans-stack);
 
-$font-sans-stack      : -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Droid Sans", "Fira Sans", "Oxygen", "Cantarell", "Open Sans", "Ubuntu", sans-serif;
+$font-sans-stack      : -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", "Droid Sans", "Segoe UI", "Fira Sans", "Ubuntu", sans-serif;
 $font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
 $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
 
 $fonts-path           : '/assets/fonts/';
 $font-sans-name       : 'AtlasGrotesk';
-$font-serif-name      : 'NocturnoDisplay-Bold'; // AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
-$font-display-name    : $font-serif-name;
+$font-serif-name      : 'Nocturno';
+$font-display-name    : 'NocturnoDisplay-Bold'; // AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
 
 // Create font-file variables
 
@@ -262,6 +262,12 @@ $text-bold-italic     : #{$font-sans-name}-BoldItalic;
 
 $display              : #{$font-display-name};
 
+$serif-sm : #{$font-serif-name}-Regular;
+$serif-lg : #{$font-serif-name}-Book;
+@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
+@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
+
+
 // Make all font files available
 // Mixin options: $font-family, $file-path, $weight, $style, $formats
 // Ps. This below prints an unwanted space between the path var and the font var:
@@ -279,6 +285,7 @@ $display              : #{$font-display-name};
 
 @include font-face($display, '#{$fonts-path}#{$display}' );
 
+
 // Apply font-file variables to a font-stack
 // Only use these variables in our classes.
 
@@ -286,8 +293,10 @@ $main-font-stack: $font-sans-stack;
 
 $font-text-thin       : join($text-thin, $main-font-stack);
 $font-text-light      : join($text-light, $main-font-stack);
-$font-text-book       : join($text-book, $main-font-stack);
-$font-text-regular    : join($text-regular, $main-font-stack);
+// $font-text-book       : join($text-book, $main-font-stack);
+// $font-text-regular    : join($text-regular, $main-font-stack);
+$font-text-book       : join($serif-lg, $main-font-stack);
+$font-text-regular    : join($serif-sm, $main-font-stack);
 $font-text-regular-i  : join($text-regular-italic, $main-font-stack);
 $font-text-medium     : join($text-medium, $main-font-stack);
 $font-text-medium-i   : join($text-medium-italic, $main-font-stack);
