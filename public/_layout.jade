@@ -14,8 +14,11 @@ html
 
 	body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
 
+		//- one script for all analytics
 		!= partial("_shared/tagmanager")
 		
+
+
 
 
 		!= partial("_shared/nav")
@@ -46,6 +49,8 @@ html
 			
 			
 
+
+
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
 		//- script(src="/assets/javascripts/jquery.colorscroll.min.js")
@@ -59,4 +64,3 @@ html
 				refreshDebounceWait: 50,
 				hacks: window.viewportUnitsBuggyfillHacks
 			});
-		!= partial("_shared/analytics")
