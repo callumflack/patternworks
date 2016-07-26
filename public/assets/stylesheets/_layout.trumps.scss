@@ -45,6 +45,7 @@
 .Header .Headline {
 	@include when-inside(".primary-healthcare-network") {
 		em { color: palette(project-phn); }
+		@include media-breakpoint-up(xs) { width: 90%; }
 		@include media-breakpoint-up(lg) { width: 85%; }
 	}
 
@@ -57,4 +58,11 @@
 		em { color: palette(project-obl); }
 		@include media-breakpoint-up(lg) { width: 90%; }
 	}
+}
+
+
+// Footer
+
+.Footer .Block--masthead p {
+	@include media-breakpoint-down(sm) { width: 72%; }
 }

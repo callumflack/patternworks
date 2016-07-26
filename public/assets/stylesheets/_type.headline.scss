@@ -33,6 +33,7 @@
 	// sizes
 	font-size: fontsize($mixinSize, xs);
 	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
+	@include media-breakpoint-up(lg) { font-size: fontsize($mixinSize, lg); }
 
 	// children
 	> li,
@@ -66,7 +67,6 @@
 
 @mixin display() {
 	@include headlineTemplate(
-		$mixinSize: Display--su,
 		$mixinLetterSpacing: -0.005em,
 		$mixinLineHeight: 1.1
 	);

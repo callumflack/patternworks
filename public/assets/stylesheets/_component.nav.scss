@@ -14,6 +14,7 @@ $navBarCube  : $blockSpacer / 7;
 .Nav {
 	@include o-posFullScreen(absolute);
 	bottom: auto;
+	content: " buggyfill ";
 	// height: $navBarHeight;
 	left: $navBarCube;
 	right: $navBarCube;

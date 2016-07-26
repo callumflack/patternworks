@@ -128,19 +128,18 @@ $fontsizes: (
 	),
 	Headline--sm: (
 		xs            : 25px,
-		sm            : 29px
+		sm            : 25px,
+		lg            : 29px
 	),
 	Headline: (
-		xs            : 36px,
-		sm            : 42px
+		xs            : 30px,
+		sm            : 36px,
+		lg            : 42px
 	),
 	Display: (
-		xs            : 39px,
-		sm            : 42px
-	),
-	Display--su: (
-		xs            : 54px,
-		sm            : 60px
+		xs            : 40px,
+		sm            : 54px,
+		lg            : 60px
 	)
 );
 
