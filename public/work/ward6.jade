@@ -8,7 +8,7 @@
 	.FlexEmbed.Frame
 		.FlexEmbed-ratio.FlexEmbed-ratio--laptop
 		.FlexEmbed-content
-			video.--ipadL(autoplay="", loop="")
+			video.Video--ipadL(autoplay="", loop="")
 				source(src='#{assetPath}ward6-video-case.mp4', type='video/mp4')
 				| Your browser does not support the video tag. Please upgrade your browser.
 
@@ -17,16 +17,18 @@
 		We moved the website from Wordpress to a static site environment to increase security and performance, and enhance developer productivity. We chose Siteleaf as a CMS to sync with. This workflow greatly improves iteration and deployment speed.
 
 .Block.Block--between
-	img(src="#{assetPath}ward6-mobile.jpg", alt="")
+	picture
+		source(media='(min-width: 465px)', srcset='images/kitten-medium.png')
+		img(src="#{assetPath}ward6-mobile.jpg", alt="Ward 6 website on mobile")
 
 .Block--narrow.s-Block
 	:markdown
-		With a small team of collaborators, we were able to implement a vision of the website of the future: responsive, performant, static yet content managed, easily updated and adapted. This workflow allowed Ward6 to focus on simply and repeatably presenting the essence of their stories.
+		With a small team of collaborators, we were able to implement a vision of the website of the future: responsive, performant, static yet content managed, easily updated and adapted. This workflow allowed Ward6 to focus on simply and repeatably presenting their stories.
 	
 		[Visit the site.](http://www.ward6.asia)
 		
 	.Block--between
-		.Grid
+		.Grid.Grid--withGutter
 			.Grid-cell.u-size1of2.u-sm-size1of3
 				ul.List--meta
 					li.List--meta-title Plan 

@@ -24,7 +24,9 @@ else
 					em= title
 					span= intro
 		.Block.Hero--animateIn
-			figure
+			picture
+				source(media='(max-width: 544px)', srcset="#{assetPath}#{currentProject}-hero-xs.jpg")
+				source(media='(max-width: 768px)', srcset="#{assetPath}#{currentProject}-hero-sm.jpg")
 				img(src="#{assetPath}#{currentProject}-hero.jpg", alt="")
 
 	section.Content--post

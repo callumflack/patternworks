@@ -71,7 +71,16 @@ footer.Footer(role='contentinfo')
 		|
 		small.Footer-legal Copyright &copy; Nicolas Gallagher.
 
-		//- responsive image
+
+		//- responsive images
+		
+		picture
+			source(media='(min-width: 650px)', srcset='images/kitten-large.png')
+			source(media='(min-width: 465px)', srcset='images/kitten-medium.png')
+			// img tag for browsers that do not support picture element
+			img(src='images/kitten-small.png', alt='a cute kitten')
+
+
 		figure
 			picture
 				source(srcset='/projects/npr-music/nprmusic-thumb-800.jpg', media='(min-width: 1000px)')

@@ -241,9 +241,10 @@ $font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
 $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
 
 $fonts-path           : '/assets/fonts/';
+
 $font-sans-name       : 'AtlasGrotesk';
 $font-serif-name      : 'Nocturno';
-$font-display-name    : 'NocturnoDisplay-Bold'; // AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
+$font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
 
 // Create font-file variables
 
@@ -262,14 +263,6 @@ $text-medium-italic   : #{$font-sans-name}-MediumItalic;
 $text-semi-italic     : #{$font-sans-name}-SemiboldItalic;
 $text-bold-italic     : #{$font-sans-name}-BoldItalic;
 
-$display              : #{$font-display-name};
-
-$serif-sm : #{$font-serif-name}-Regular;
-$serif-lg : #{$font-serif-name}-Book;
-@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
-@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
-
-
 // Make all font files available
 // Mixin options: $font-family, $file-path, $weight, $style, $formats
 // Ps. This below prints an unwanted space between the path var and the font var:
@@ -285,9 +278,6 @@ $serif-lg : #{$font-serif-name}-Book;
 @include font-face($text-black,   '#{$fonts-path}#{$text-black}' );
 @include font-face($text-regular-italic, '#{$fonts-path}#{$text-regular-italic}' );
 
-@include font-face($display, '#{$fonts-path}#{$display}' );
-
-
 // Apply font-file variables to a font-stack
 // Only use these variables in our classes.
 
@@ -295,10 +285,8 @@ $main-font-stack: $font-sans-stack;
 
 $font-text-thin       : join($text-thin, $main-font-stack);
 $font-text-light      : join($text-light, $main-font-stack);
-// $font-text-book       : join($text-book, $main-font-stack);
-// $font-text-regular    : join($text-regular, $main-font-stack);
-$font-text-book       : join($serif-lg, $main-font-stack);
-$font-text-regular    : join($serif-sm, $main-font-stack);
+//$font-text-book       : join($text-book, $main-font-stack);
+//$font-text-regular    : join($text-regular, $main-font-stack);
 $font-text-regular-i  : join($text-regular-italic, $main-font-stack);
 $font-text-medium     : join($text-medium, $main-font-stack);
 $font-text-medium-i   : join($text-medium-italic, $main-font-stack);
@@ -307,17 +295,35 @@ $font-text-bold-i     : join($text-bold-italic, $main-font-stack);
 $font-text-xbold      : join($text-xbold, $main-font-stack);
 $font-text-black      : join($text-black, $main-font-stack);
 $font-text-regular-i  : join($text-regular-italic, $main-font-stack);
-// $font-display         : join($display, $font-display-stack);
-$font-display         : join($display, $font-serif-stack);
+//$font-display         : join($display, $font-display-stack);
 
 // if using @fontface via a cloud service, eg. Google fonts.
 
-$font-weight: (
-	'thin'      : 100,
-	'light'     : 200,
-	'book'      : 400,
-	'regular'   : 500,
-	'medium'    : 600,
-	'bold'      : 700,
-	'black'     : 900
-);
+//$font-weight: (
+//	'thin'      : 100,
+//	'light'     : 200,
+//	'book'      : 400,
+//	'regular'   : 500,
+//	'medium'    : 600,
+//	'bold'      : 700,
+//	'black'     : 900
+//);
+
+
+
+
+// For this project…
+
+$display: 'display';
+$serif-sm: 'regular';
+$serif-lg: 'book';
+
+@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
+@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
+@include font-face($display, '#{$fonts-path}#{$display}' );
+
+$main-font-stack: $font-serif-stack;
+
+$font-text-book: join($serif-lg, $main-font-stack);
+$font-text-regular: join($serif-sm, $main-font-stack);
+$font-display: join($display, $main-font-stack);
