@@ -97,6 +97,14 @@
 	@include textSm();
 	@include listClean();
 	color: palette(medium);
+	margin-bottom: space(1.25);
+
+	// https://css-tricks.com/injecting-line-break/
+	//@include media-breakpoint-down(sm) {
+	//	span {
+	//		display: table;
+	//	}
+	//}
 }
 
 .List--meta-title {

@@ -237,16 +237,16 @@ $breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
 
 .FlexEmbed-ratio {
 	&--iphone6 { padding-bottom: 205.81395%; }
-	&Video--ipadL   { padding-bottom: 75.21%; }
+	&--ipadL   { padding-bottom: 74.75%; } // 75.21
 	&--laptop  { padding-bottom: 70.25%; }
 }
 
-.--iphone6 {
+.Screen--iphone6 {
 	margin-top: 25.25%;
 	width: 87.2093%;
 }
 
-.Video--ipadL {
+.Screen {
 	width: 100%;
 }
 

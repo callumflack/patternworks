@@ -1,4 +1,5 @@
 - var assetPath = "/assets/images/"
+- var currentProject = current.path[1]
 
 .Block--narrow.Block--betweenT.s-Block
 	:markdown
@@ -8,7 +9,7 @@
 	.FlexEmbed.Frame
 		.FlexEmbed-ratio.FlexEmbed-ratio--laptop
 		.FlexEmbed-content
-			video.Video--ipadL(autoplay="", loop="")
+			video.Screen(autoplay="", loop="")
 				source(src='#{assetPath}ward6-video-case.mp4', type='video/mp4')
 				| Your browser does not support the video tag. Please upgrade your browser.
 
@@ -18,7 +19,8 @@
 
 .Block.Block--between
 	picture
-		source(media='(min-width: 465px)', srcset='images/kitten-medium.png')
+		source(media='(max-width: 544px)', srcset="#{assetPath}#{currentProject}-mobile-xs.jpg")
+		source(media='(max-width: 768px)', srcset="#{assetPath}#{currentProject}-mobile-sm.jpg")
 		img(src="#{assetPath}ward6-mobile.jpg", alt="Ward 6 website on mobile")
 
 .Block--narrow.s-Block
@@ -29,7 +31,7 @@
 		
 	.Block--between
 		.Grid.Grid--withGutter
-			.Grid-cell.u-size1of2.u-sm-size1of3
+			.Grid-cell.u-sm-size1of3
 				ul.List--meta
 					li.List--meta-title Plan 
 					li Digital strategy
@@ -39,12 +41,12 @@
 					li Visual design 
 					li.List--meta-title Build
 					li Frontend development
-			.Grid-cell.u-size1of2.u-sm-size2of3
+			.Grid-cell.u-sm-size2of3
 				ul.List--meta
 					li.List--meta-title Ward6 collaborators
-					li Jason Armstrong, Project management
-					li Andres Hernandez, Frontend
-					li Richard Price, Art director
+					li Jason Armstrong, #[span Project management]
+					li Andres Hernandez, #[span Frontend development]
+					li Richard Price, #[span Art director]
 
 a.Block--halfSpace(href="/work/oceanblue-living")
 	.Block--masthead
