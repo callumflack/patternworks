@@ -37,7 +37,7 @@ a.Post--inList {
 		.Post-image,
 		.Post-coverImage {
 			@include baseTransition();
-			animation: postZoom 80s infinite;
+			//animation: postZoom 80s infinite;
 			opacity: 0.5;
 		}
 	}
