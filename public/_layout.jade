@@ -1,23 +1,12 @@
 doctype
 html
 	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		title= locals.title ? title + " | " + site_title : site_title
-		if current.path[0] === "index"
-			meta(name='description', content= site_description)
-		else
-			if current.path[0] === "blog"
-				meta(name='description', content= site_description)
-		link(rel="stylesheet" href="/assets/stylesheets/application.css")
-		//- link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.css")
+		!= partial("_shared/head")
 
 	body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
 
 		//- one script for all analytics
 		!= partial("_shared/tagmanager")
-		
-
 
 
 
