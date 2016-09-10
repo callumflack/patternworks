@@ -1,8 +1,7 @@
 - var assetPath = "/assets/images/";
 
 .Block--narrow.Block--betweenT.s-Block
-	:markdown
-		OceanBlue Living were stuck with a website they couldn't update themselves, and they badly needed to talk to their audience. After workshopping their needs and their users requirements, we repositioned their business, redesigned the site to better inform users and biult an estimator to filter and prioritise their client referrals.
+	p OceanBlue Living were stuck with a website they couldn't update themselves, and they badly needed to talk to their audience. After workshopping their needs and their users requirements, we repositioned their business, redesigned the site to better inform users and built an estimator to filter and prioritise their client referrals (this feature is will be added to the site soon).
 
 .Block--mid.Block--between
 	.FlexEmbed.Frame
@@ -13,26 +12,26 @@
 				| Your browser does not support the video tag. Please upgrade your browser.
 
 .Block--narrow.Block--betweenT.s-Block
-	:markdown
-		Their metalworks are rugged and beautiful. We hired J-Create Photography to ensure this beauty was showcased, and designed the website experience around immersive photography: full width images incorporated with type, and sliders are widely used. 
+	p Their metalworks are rugged and beautiful. We hired #[a(href="http://j-create.com.au/") J-Create Photography] to ensure this beauty was showcased, and designed the website experience around immersive photography: full width images and sliders are used to show the variety of works. 
 
 .Block--mid.Block--between
-	//- img(src="#{assetPath}oceanblue-living-photography.png", alt="")
 	img(src="#{assetPath}oceanblue-living-photography.jpg", alt="")
 
 .Block--narrow.s-Block
-	:markdown
-		The visual design system uses clear and simple typography, with hand-drawn icons that match the 'craftsmanship' archetype central to their brand repositioning.
+	p The visual design system uses clear and simple typography, with hand-drawn icons that match the 'craftsmanship' archetype central to their brand repositioning.
 
 .Block--mid.Block--between
-	img(src="#{assetPath}oceanblue-living-visual-system.png", alt="")
+	picture
+		source(media='(max-width: 768px)', srcset="#{assetPath}oceanblue-living-visual-system-xs.png")
+		img(src="#{assetPath}oceanblue-living-visual-system.png", alt="OceanBlue Living graphic icon system")
 
 .Block--narrow.s-Block
-	:markdown
-		The heart of the website will be the blog, a place we hope people will dream up their perfect home and office space, and create a community around OceanBlue's works. We're currently completing production, so this is just a sneak peek. 
+	p The heart of the website will be the blog, a place we hope people will dream up their perfect home and office space, and create a community around OceanBlue's works.
 
-		Website launching soon.
+	blockquote "Patternworks showed us a digital brand vision that we thought was out of reach. More than that, they've made it a reality—the project execution has been just plain fun to be part of. We're very happy with the results. It's very quickly raised our awareness two-fold." — LeaAnne Cassaniti, OceanBlue Living
 
+	p: a(href="http://www.oceanblueliving.com.au/") Visit the site.
+	
 	.Block--between
 		.Grid
 			.Grid-cell.u-sm-size1of3
@@ -51,7 +50,7 @@
 					li Frontend development
 					li Content management integration
 					li.List--meta-title Collaborators
-					li: a(href="http://j-create.com.au/") J-Create, Photography
+					li: a(href="http://j-create.com.au/") J-Create, photography
 
 a.Block--halfSpace(href="/work/primary-healthcare-network")
 	.Block--masthead
