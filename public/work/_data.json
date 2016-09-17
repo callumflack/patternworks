@@ -41,5 +41,19 @@
 		"isfeatured": false,
 		"ishome": true,
 		"order": "two"
+	},
+	"ward6-ipad-apps": {
+		"imageslug": "ward6",
+		"title": "Ward 6 ipad apps",
+		"intro": " explain complex Pharmaceutical benefits with simple and engaging digital stories.",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Website"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
 	}
 }

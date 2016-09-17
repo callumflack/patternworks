@@ -58,6 +58,11 @@
 		em { color: palette(project-obl); }
 		@include media-breakpoint-up(lg) { width: 90%; }
 	}
+
+	@include when-inside(".ward6-ipad-apps") {
+		em { color: palette(project-ward6-ipad-apps); }
+		@include media-breakpoint-up(lg) { width: 80%; }
+	}
 }
 
 
