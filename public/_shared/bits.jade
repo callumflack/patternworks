@@ -1,80 +1,236 @@
+
+
+//- We help companies discover and build their digital business potential.
+//- We help companies discover, design and build for digital business.
+//- We help companies discover, design and build great customer experiences.
+//- We help companies design products for mobile and beyond 
+
+//- Est 2005. This is week 579.
+
+
+//- .Block--height5of6.Hero--animateIn
+//- 	.o-container.o-container--super
+//- 		figure.Post-hero(style="background-image: url('#{assetPath}#{currentProject}-hero.jpg')")
+
+
+
+
+a.Post(class=typeof article.indexstyle === "true" ? undefined : "Post--#{article.indexstyle}", href="/work/#{slug}")
+	.Post-coverImage.o-containImage(style="background-image: url('assets/images/post-hero-#{slug}.png')")
+//- conditional classes w/ jade:
+//- .Nav-toggle(class=typeof current.path[0] == "index" ? undefined : "NavToggle--inverse")(data-modal-toggle='')
+
+
+main.Content(role="main")
+	.Grid
+		for article, slug in public.posts._data
+			if article.ishome === true
+				if article.category === "journal"
+					.Grid-cell.Block--height2of3
+						a.Post.Post--inverse(href="/blog/#{slug}")
+							.Post-coverImage.o-coverImage--dark(style="background-image: url('assets/images/post-hero-#{slug}.jpg')")
+							.o-aligner
+								.o-aligner-item
+									.o-container
+										.Column--post
+											h1.Display= article.title
+											p= article.description
+											//- p.Text--meta= article.date
+				else
+					.Grid-cell.Block--height2of3
+						a.Post(class=typeof article.indexstyle === "true" ? undefined : "Post--#{article.indexstyle}", href="/work/#{slug}")
+							.Post-coverImage.o-containImage(style="background-image: url('assets/images/post-hero-#{slug}.png')")
+							.o-aligner
+								.o-aligner-item
+									.o-container
+										.Column--post
+											h1.Display= article.title
+											p= article.description
+											
+											
+
 //- necolas
 //- .Article-data
-    time.Article-timestamp(datetime='2015-05-19') May 19, 2015
+	time.Article-timestamp(datetime='2015-05-19') May 19, 2015
 
 footer.Footer(role='contentinfo')
-    .Container
-        .HzLine
-        |
-        iframe#twitter-widget-0.twitter-follow-button.twitter-follow-button(scrolling='no', frameborder='0', allowtransparency='true', src='http://platform.twitter.com/widgets/follow_button.0b0ceee8fa9e1bde648efd58520a750f.en.html#_=1434175056209&dnt=false&id=twitter-widget-0&lang=en&screen_name=necolas&show_count=false&show_screen_name=true&size=l', title='Twitter Follow Button', data-twttr-rendered='true', style='position: static; visibility: visible; width: 141px; height: 28px;')
-        |
-        p.Footer-links
-          a(href='/about/') About
-          |       &middot;
-          |
-          a(href='//twitter.com/necolas') Twitter
-          |
-          a(href='//vine.co/necolas') Vine
-          |
-          a(href='//github.com/necolas') GitHub
-        |
-        small.Footer-legal Copyright &copy; Nicolas Gallagher.
-
-        //- responsive image
-        figure
-            picture
-                source(srcset='/projects/npr-music/nprmusic-thumb-800.jpg', media='(min-width: 1000px)')
-                source(srcset='\
-                /projects/npr-music/nprmusic-thumb-500.jpg,\
-                /projects/npr-music/nprmusic-thumb-800.jpg 2x', media='(min-width: 500px)')
-                img(alt='NPR Music', src='/projects/npr-music/nprmusic-thumb-800.jpg')
-
-        img(src='cat_500px.jpg', 
-            srcset='cat_750px.jpg 1.5x, 
-                cat_1000px.jpg 2x', 
-            width='500px', 
-            alt='lolcat')
-        
-        img(sizes='(max-width: 30em) 100vw,\
-                (max-width: 50em) 50vw,\
-                calc(33vw - 100px)', 
-            srcset='swing-200.jpg 200w,\
-                swing-400.jpg 400w,\
-                swing-800.jpg 800w,\
-                swing-1600.jpg 1600w', 
-            src='swing-400.jpg', 
-            alt='Kettlebell Swing')
+	.o-container
+		.HzLine
+		|
+		iframe#twitter-widget-0.twitter-follow-button.twitter-follow-button(scrolling='no', frameborder='0', allowtransparency='true', src='http://platform.twitter.com/widgets/follow_button.0b0ceee8fa9e1bde648efd58520a750f.en.html#_=1434175056209&dnt=false&id=twitter-widget-0&lang=en&screen_name=necolas&show_count=false&show_screen_name=true&size=l', title='Twitter Follow Button', data-twttr-rendered='true', style='position: static; visibility: visible; width: 141px; height: 28px;')
+		|
+		p.Footer-links
+		  a(href='/about/') About
+		  |       &middot;
+		  |
+		  a(href='//twitter.com/necolas') Twitter
+		  |
+		  a(href='//vine.co/necolas') Vine
+		  |
+		  a(href='//github.com/necolas') GitHub
+		|
+		small.Footer-legal Copyright &copy; Nicolas Gallagher.
 
 
-            //- section.Section.CoverImage(style="background-image: url(/img/section-blog.jpg)")
-            //-     .FlexEmbed-ratio.FlexEmbed-ratio--3by1
-            //-     .FlexEmbed-content
-            //-         .Container
-            //-             h1 #[a(href="/blog") blog]
-            //-             for post, slug in public.blog._data
-            //-                 if post.ishome === true
-            //-                     p
-            //-                         a(href="/blog/#{ slug }")
-            //-                             time(datetime=post.date)= post.date
-            //-                             | &nbsp;— #[span=post.title]
+		//- responsive images
+		
+		picture
+			source(media='(min-width: 650px)', srcset='images/kitten-large.png')
+			source(media='(min-width: 465px)', srcset='images/kitten-medium.png')
+			// img tag for browsers that do not support picture element
+			img(src='images/kitten-small.png', alt='a cute kitten')
 
 
-    //- footer.Footer(role="contentinfo")
-    //-     .Container
-    //-         if current.path[0] === "about" || (current.path[0] == "work" && current.source !== 'index')
-    //-             nav.Nav.u-paddingT0.u-marginBD2
-    //-                 != partial("nav")
-    //-                 
-    //-             p.Footer-meta.u-textCenter
-    //-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
-    //-                 | Copyright © Callum Flack
-    //- 
-    //-         else 
-    //-             .SocialLinks
-    //-                 a.twitter-follow-button(href='https://twitter.com/callumflack', data-show-count='false', data-size='large') Follow @callumflack
-    //-                     script.
-    //-                         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    //-             
-    //-             p.Footer-meta.u-textCenter
-    //-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
-    //-                 | Copyright © Callum Flack
+		figure
+			picture
+				source(srcset='/projects/npr-music/nprmusic-thumb-800.jpg', media='(min-width: 1000px)')
+				source(srcset='\
+				/projects/npr-music/nprmusic-thumb-500.jpg,\
+				/projects/npr-music/nprmusic-thumb-800.jpg 2x', media='(min-width: 500px)')
+				img(alt='NPR Music', src='/projects/npr-music/nprmusic-thumb-800.jpg')
+
+		img(src='cat_500px.jpg', 
+			srcset='cat_750px.jpg 1.5x, 
+				cat_1000px.jpg 2x', 
+			width='500px', 
+			alt='lolcat')
+		
+		img(sizes='(max-width: 30em) 100vw,\
+				(max-width: 50em) 50vw,\
+				calc(33vw - 100px)', 
+			srcset='swing-200.jpg 200w,\
+				swing-400.jpg 400w,\
+				swing-800.jpg 800w,\
+				swing-1600.jpg 1600w', 
+			src='swing-400.jpg', 
+			alt='Kettlebell Swing')
+
+
+			//- section.Block--space.o-coverImage(style="background-image: url(/img/section-blog.jpg)")
+			//-     .FlexEmbed-ratio.FlexEmbed-ratio--3by1
+			//-     .FlexEmbed-content
+			//-         .o-container
+			//-             h1 #[a(href="/blog") blog]
+			//-             for post, slug in public.blog._data
+			//-                 if post.ishome === true
+			//-                     p
+			//-                         a(href="/blog/#{ slug }")
+			//-                             time(datetime=post.date)= post.date
+			//-                             | &nbsp;— #[span=post.title]
+
+
+	//- footer.Footer(role="contentinfo")
+	//-     .o-container
+	//-         if current.path[0] === "about" || (current.path[0] == "work" && current.source !== 'index')
+	//-             nav.Nav.u-paddingT0.u-marginBD2
+	//-                 != partial("nav")
+	//-                 
+	//-             p.Footer-meta.u-textCenter
+	//-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
+	//-                 | Copyright © Callum Flack
+	//- 
+	//-         else 
+	//-             .SocialLinks
+	//-                 a.twitter-follow-button(href='https://twitter.com/callumflack', data-show-count='false', data-size='large') Follow @callumflack
+	//-                     script.
+	//-                         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	//-             
+	//-             p.Footer-meta.u-textCenter
+	//-                 | 4 Neeve Close, Edge Hill 4870 Cairns, Australia #[br]
+	//-                 | Copyright © Callum Flack
+
+x
+	
+	
+	.Hero
+		.Gallery
+			.Gallery-cell.o-coverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+			.Gallery-cell.o-coverImage(style="background-image: url(/img/slide-patternworks.jpg)")
+
+		.Hero-layer
+			.o-container
+				a(href="/") #[h1= site_title]
+				p
+					span= site_description
+					| Learn more #[a(href="#.Content") about us]. Get in touch by #[a(href="mailto:hi@patternworks.com.au?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email].
+				
+				//- .Caption
+				//-     button.button.button--previous ←
+				//-     p.Caption-line &nbsp;
+				//-     button.button.button--next →
+
+	main.Content(role="main")
+		section.Block--space
+
+			//- nav.Nav.Nav--masthead(role="navigation")
+			//-     ul
+			//-         li #[a(class="#{ current.path[0] == 'index' ? 'is-active' : '' }" href="/") #[span Recently#[span.Nav-pointer ↓]]]
+			//-         li #[a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") #[span Work]]
+			//-         li #[a(class="#{ current.path[0] == 'approach' ? 'is-active' : '' }" href="/about") #[span About]]
+			//-         li #[a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") Contact#[span.Nav-pointer →]]
+
+
+			//- This is, somehow, to spit out both work & blog on the home page
+			//- h2 a(href="#{ post.url ? post.url : '/blog/' + slug }")= title
+
+			if current.source === "index"
+				for article, slug in public.work._data
+					if article.ispublished && article.ishome === true
+						if article.isfeatured === true
+							.Project-block.Project-block--lg
+								.Project
+									.FlexEmbed
+										.FlexEmbed-ratio.FlexEmbed-ratio--2by1
+										.FlexEmbed-content
+											a.o-coverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+									.o-container
+										a.Project-caption(href="../work/#{ slug }")
+											#[= article.description]
+											.Project-data
+												time.Project-time= article.date
+												span.Project-separator &nbsp;•&nbsp;
+												span= article.tags
+
+
+						//- .Project-block.Project-block--sm.Grid.Grid--1of2.large-Grid--1of3.Grid--gutters
+						//-     if article.isfeatured !== true
+						//-         .Project.Grid-cell
+						//-             .FlexEmbed
+						//-                 .FlexEmbed-ratio.FlexEmbed-ratio--2by1
+						//-                 .FlexEmbed-content
+						//-                     a.o-coverImage.Project-pictureInteraction(href="../work/#{ slug }", style="background-image: url(/img/thumb-#{ slug }.jpg)")
+						//-             .Project-caption
+						//-                 .Project-data
+						//-                     time.Project-time= article.date
+						//-                     span.Project-separator &nbsp;•&nbsp;
+						//-                     span= article.tags
+						//-                 .Project-description
+						//-                     h4.Project-title #[a(href="../work/#{ slug }")= article.title]
+						//-                     | .&nbsp;
+						//-                     #[= article.description]
+
+
+
+
+						//- p Patternworks is the independent digital creative studio of Callum Flack and collaborators, located in Cairns, Australia. We plan, design & build for the web.
+						//- 
+						//- h3 Our works are outcome focussed
+						//- p Patternworks offers a wholistic approach to creating or updating digital businesses that is measurably successful and always looks good. We do this by understanding your business goals and your user's needs, planning for specific outcomes and executing detail upon detail. We believe great digital user experiences will win you more customers than any form of advertising. 
+						//- 
+						//- h3 About Callum
+						//- p I have fifteen years experience in creative problem-solving: taking complex concepts and making them into simple, understandable and actionable stories. Whether through graphics, typography, copywriting, interaction or technology—the work is done in whatever mode will resonate. 
+						//- 
+						//- p I live with my wife and young family in the tropics of Cairns, far northern Australia, where I dehumidify my record collection weekly.
+						//- 
+						//- h3 Experienced
+						//- p 
+						//- 	| Since starting in 2000, I've worked in design studios 
+						//- 	| (#[a(href="http://www.saatchi-design.co.uk/sagatiba") Saatchi & Saatchi Design, London]), 
+						//- 	| inhouse startup teams (#[a(href="http://www.boxdice.com.au/") Box+Dice, Melbourne] and 
+						//- 	| #[a(href="http://www.welend.hk/") WeLend, Hong Kong]), 
+						//- 	| and advertising (#[a(href="hhttp://www.gpyr.com.au/") GPYR, Brisbane] and #[a(href="http://www.ward6.com.au/") Ward 6, Sydney]). 
+						//- 	| I've also co-run a record label (#[a(href="http://www.thee-roundtable.com/") Roundtable Records]). 
+						//- 	| Lots of people have said nice things about working with me. You can read a few of them on #[a(href="https://au.linkedin.com/in/callumflack") LinkedIn].
+						//- 
+						//- h3 If I was already a designer, why code?
+						//- p By being able to build what I plan and design, I deeply understand how brand, usability and technical domains work together. This helps me to think in systems instead of web pages, to turn blind spots into opportunity and to stack up the small details that make big differences when creating great user experiences.

@@ -1,0 +1,330 @@
+
+
+// --------------------------------------------------------------------------
+//   VARIABLE SETTINGS
+// --------------------------------------------------------------------------
+
+
+// Namespace for themeing & testing
+// Apply, thus: .#{$namespace}textarea
+// --------------------------------------------------------------------------
+
+$namespace             : '';
+
+
+// Colours
+// --------------------------------------------------------------------------
+
+$base-black                    : #000;
+$base-white                    : #FFF;
+
+$palette: (
+	black                      : $base-black,
+	text                       : #151515,
+	dark                       : tint($base-black, 15%),
+	ash                        : tint($base-black, 22%),
+	charcoal                   : tint($base-black, 39%),
+	medium                     : tint($base-black, 50%),
+	muted                      : tint($base-black, 70%),
+	base                       : tint($base-black, 86%),
+	light                      : tint($base-black, 94%),
+	faint                      : tint($base-black, 97%),
+	white                      : $base-white,
+	background                 : #fdfdfd, // FBFBF9
+	neutral                    : #F3F2F1,
+	neutral-dark               : darken(#f0eeeb, 9%),
+	neutral-light              : lighten(#f0eeeb, 4%),
+	brand                      : #0c2f5d,
+	brand-complement           : #6EBE44,
+	brand-counter              : #887E73,
+	modal-background           : #151515,
+	warning                    : #FFD40C,
+	bad-news                   : #C60C0C,
+	good-news                  : brand-complement,
+	page-home                  : #8b7412,
+	page-about                 : #6287bb,
+	project-bg                 : #F5F5F5,
+	project-phn                : #6ebe44,
+	project-ward6              : #029C75,
+	project-ward6-ipad-apps    : #d2124d,
+	project-obl                : #1159c0,
+	hilite                     : #48e79a
+);
+
+
+// Base size measures
+// --------------------------------------------------------------------------
+
+$base-font-size-unit           : 18;
+$base-line-height-unit         : 1.6;
+$base-font-size                : $base-font-size-unit * 1px;
+$base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
+$space-unit                    : rem($base-line-height);
+$space                         : $space-unit * 1;
+
+$blockSpacer                   : 21vh;
+$paragraphSpacer               : space(0.75);
+
+
+
+// Widths (based on BS4)
+// --------------------------------------------------------------------------
+
+// Removed the BS4 ascending mixin:
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");),
+
+// BS4 defaults:
+// $container-max-widths: (
+// 	sm: 576px,
+// 	md: 720px,
+// 	lg: 940px,
+// 	xl: 1140px
+// ) !default;
+
+// $grid-breakpoints: (
+// 	xs: 0,
+// 	sm: 544px,
+// 	md: 768px,
+// 	lg: 992px,
+// 	xl: 1200px,
+// ) !default;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 544px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	su: 1700px
+) !default;
+
+$container-max-widths: (
+	xs: 460px,
+	sm: 576px,
+	md: 720px,
+	ml: 840px,
+	lg: 960px,
+	ll: 1140px,
+	xl: 1200px,
+	su: 1700px,
+	xx: 80vw
+) !default;
+
+
+// Sizes
+// --------------------------------------------------------------------------
+
+$fontsizes: (
+	Text--sm: (
+		xs            : 13px,
+		sm            : 16px,
+	),
+	Text: (
+		xs            : 16px,
+		sm            : $base-font-size,
+	),
+	Text--lg: (
+		xs            : 27px,
+		sm            : 34px,
+	),
+	Headline--sm: (
+		xs            : 25px,
+		sm            : 25px,
+		lg            : 29px
+	),
+	Headline: (
+		xs            : 30px,
+		sm            : 36px,
+		lg            : 42px
+	),
+	Display: (
+		xs            : 40px,
+		sm            : 54px,
+		lg            : 60px
+	)
+);
+
+
+
+
+
+
+
+// TODO: remove these by updating the mixins that reference them.
+
+$size: (
+
+	border-radius: (
+		small             : 3px,
+		base              : 4px,
+		large             : 6px
+	),
+
+	button-height: (
+		concise           : 36px,
+		base              : 44px,
+		large             : 48px
+	),
+
+	list-inset: (
+		margin            : space(1.5),
+		padding           : 0
+	),
+
+	breakpoint: (
+		'max-xs'          : ( max-width:  600px ),
+		'max-sm'          : ( max-width:  767px ),
+		'ip6'             : ( min-width:  374px ),
+		'xs'              : ( min-width:  600px ),
+		'sm'              : ( min-width:  767px ),
+		'md'              : ( min-width: 1025px ),
+		'lg'              : ( min-width: 1200px ),
+		'xl'              : ( min-width: 1700px ),
+		'xxl'             : ( min-width: 1920px )
+	),
+
+	container: (
+		modal-form        : rem(740),
+		modal-form-sm     : 80%,
+		default           : rem(660),
+		small             : rem(345),
+		text-column       : rem(1040),
+		picture           : rem(1170),
+		wide-picture      : rem(1240)
+	),
+
+
+);
+
+
+// Transitions maps
+// --------------------------------------------------------------------------
+
+$transition: (
+	duration: (
+		fast         : 50ms,
+		short        : 150ms,
+		long         : 500ms
+	),
+	type: (
+		thisalso     : cubic-bezier(0.19, 1, 0.22, 1),
+		cubic-static : cubic-bezier(0, -0.1, 1, -0.1),
+		cubic-state  : cubic-bezier(0, 1.1, 1, 1.1),
+		base         : ease-out,
+		fine         : ease-in-out
+	)
+);
+
+
+// Z-indexes map
+// --------------------------------------------------------------------------
+
+$z-index: (
+	'modal'     : 8001,
+	'overlay'   : 8000,
+	'dropdown'  : 7000,
+	'second'    : 2000,
+	'first'     : 1000,
+	'default'   : 1,
+	'below'     : -1,
+);
+
+
+// Fonts
+// --------------------------------------------------------------------------
+
+// LEGACY: easy google-fonts implementation
+// $sans: 'Source Sans Pro';
+// $font: join($sans, $font-sans-stack);
+
+$font-sans-stack      : -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", "Droid Sans", "Segoe UI", "Fira Sans", "Ubuntu", sans-serif;
+$font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
+$font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
+
+$fonts-path           : '/assets/fonts/';
+
+$font-sans-name       : 'AtlasGrotesk';
+$font-serif-name      : 'Nocturno';
+$font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
+
+// Create font-file variables
+
+$text-thin            : #{$font-sans-name}-Thin;
+$text-light           : #{$font-sans-name}-Light;
+$text-book            : #{$font-sans-name}-Regular;
+$text-regular         : #{$font-sans-name}-Regular;
+$text-medium          : #{$font-sans-name}-Medium;
+$text-semi            : #{$font-sans-name}-Semibold;
+$text-bold            : #{$font-sans-name}-Bold;
+$text-xbold           : #{$font-sans-name}-Extrabold;
+$text-black           : #{$font-sans-name}-Black;
+
+$text-regular-italic  : #{$font-sans-name}-RegularItalic;
+$text-medium-italic   : #{$font-sans-name}-MediumItalic;
+$text-semi-italic     : #{$font-sans-name}-SemiboldItalic;
+$text-bold-italic     : #{$font-sans-name}-BoldItalic;
+
+// Make all font files available
+// Mixin options: $font-family, $file-path, $weight, $style, $formats
+// Ps. This below prints an unwanted space between the path var and the font var:
+// @include font-face($text-thin, join($fonts-path,$text-thin) );
+
+@include font-face($text-thin,    '#{$fonts-path}#{$text-thin}' );
+@include font-face($text-light,   '#{$fonts-path}#{$text-light}' );
+@include font-face($text-book,    '#{$fonts-path}#{$text-book}' );
+@include font-face($text-regular, '#{$fonts-path}#{$text-regular}' );
+@include font-face($text-medium,  '#{$fonts-path}#{$text-medium}' );
+@include font-face($text-bold,    '#{$fonts-path}#{$text-bold}' );
+@include font-face($text-xbold,   '#{$fonts-path}#{$text-xbold}' );
+@include font-face($text-black,   '#{$fonts-path}#{$text-black}' );
+@include font-face($text-regular-italic, '#{$fonts-path}#{$text-regular-italic}' );
+
+// Apply font-file variables to a font-stack
+// Only use these variables in our classes.
+
+$main-font-stack: $font-sans-stack;
+
+$font-text-thin       : join($text-thin, $main-font-stack);
+$font-text-light      : join($text-light, $main-font-stack);
+//$font-text-book       : join($text-book, $main-font-stack);
+//$font-text-regular    : join($text-regular, $main-font-stack);
+$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
+$font-text-medium     : join($text-medium, $main-font-stack);
+$font-text-medium-i   : join($text-medium-italic, $main-font-stack);
+$font-text-bold       : join($text-bold, $main-font-stack);
+$font-text-bold-i     : join($text-bold-italic, $main-font-stack);
+$font-text-xbold      : join($text-xbold, $main-font-stack);
+$font-text-black      : join($text-black, $main-font-stack);
+$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
+//$font-display         : join($display, $font-display-stack);
+
+// if using @fontface via a cloud service, eg. Google fonts.
+
+//$font-weight: (
+//	'thin'      : 100,
+//	'light'     : 200,
+//	'book'      : 400,
+//	'regular'   : 500,
+//	'medium'    : 600,
+//	'bold'      : 700,
+//	'black'     : 900
+//);
+
+
+
+
+// For this project…
+
+$display: 'display';
+$serif-sm: 'regular';
+$serif-lg: 'book';
+
+@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
+@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
+@include font-face($display, '#{$fonts-path}#{$display}' );
+
+$main-font-stack: $font-serif-stack;
+
+$font-text-book: join($serif-lg, $main-font-stack);
+$font-text-regular: join($serif-sm, $main-font-stack);
+$font-display: join($display, $main-font-stack);

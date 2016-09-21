@@ -1,0 +1,203 @@
+
+
+// --------------------------------------------------------------------------
+//   TEXT TYPOGRAPHY
+// --------------------------------------------------------------------------
+
+
+// Common theme…
+
+@mixin textTemplate(
+	$mixinSize: Text,
+	$mixinColor: palette(text),
+	$mixinFont: $font-text-regular,
+	$mixinLetterSpacing: 0.01em,
+	$mixinLineHeight: $base-line-height-unit
+) {
+	// reset
+	// this may not be needed if we've styled the body
+	// so everything inherits it…
+	// @include typeReset();
+
+	// standards
+	color: $mixinColor;
+	font-family: $mixinFont;
+	line-height: $mixinLineHeight;
+
+	// sizes
+	font-size: fontsize($mixinSize, xs);
+	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
+
+	// children
+	> li,
+	> li a,
+	> a {
+		color: currentColor;
+		font-family: inherit;
+		font-size: inherit;
+		margin: 0;
+	}
+}
+
+
+// Components by size…
+
+@mixin textRg() {
+	@include textTemplate();
+	// @include typeSize();
+	letter-spacing: 0.007em;
+}
+
+@mixin textSm() {
+	@include textTemplate(
+		$mixinSize: Text--sm,
+		$mixinLetterSpacing: 0.02em
+	);
+	letter-spacing: 0.02em;
+}
+
+@mixin textLg() {
+	@include textTemplate(
+		$mixinSize: Text--lg,
+		$mixinFont: $font-text-light,
+		$mixinLetterSpacing: -0.01em
+	);
+}
+
+
+// Initiate mixins in classes.
+// --------------------------------------------------------------------------
+
+.Text--sm       { @include textSm(); }
+.Text           { @include textRg(); }
+.Text--medium   { @include textRg(); color: palette(medium); }
+.Text--intro    { @include textRg(); color: palette(medium); margin-bottom: space(0.5); }
+.Text--lg       { @include textLg(); margin-bottom: 0; }
+
+.Text--meta {
+	@include textSm();
+	color: palette(medium) !important;
+	// text-align: center;
+
+	> a {
+		border-color: transparent !important;
+
+		@include on-event() {
+			border-color: palette(medium) !important;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		margin: auto;
+		// width: 70%;
+	}
+}
+
+.List--meta {
+	@include textSm();
+	@include listClean();
+	color: palette(medium);
+	margin-bottom: space(1.25);
+
+	// https://css-tricks.com/injecting-line-break/
+	//@include media-breakpoint-down(sm) {
+	//	span {
+	//		display: table;
+	//	}
+	//}
+}
+
+.List--meta-title {
+	color: palette(text) !important;
+	margin: space(1.25) 0 space(0.625) !important;
+
+	&:first-child {
+		margin-top: 0 !important;
+	}
+}
+
+
+// Initiate mixins in blocks.
+// --------------------------------------------------------------------------
+
+.Text-block         { > * { @include textRg(); } }
+
+.Text-block--footer {
+	@include listClean();
+	margin: 0;
+
+	&::before {
+		background-color: rgba( palette(background), 0.2);
+		content: " ";
+		display: block;
+		height: 1px;
+		margin: space(1) 0 space(1.15);
+		width: 2.5%;
+	}
+
+	> * {
+		@include textRg();
+		margin-bottom: 0;
+	}
+}
+
+
+// HTML elements
+// --------------------------------------------------------------------------
+
+// h1, h2, h3, h4, h5, h6,
+// blockquote, figure
+// li
+ul, ol, dl,
+p, address,
+table, time,
+fieldset, figcaption,
+pre, a {
+	@include textRg();
+}
+
+em,
+.u-textEm {
+	@include typeReset();
+	font-family: $font-text-bold-i;
+}
+
+b,
+strong,
+.u-textBold {
+	@include typeReset();
+	font-family: $font-text-bold;
+}
+
+blockquote,
+.Blockquote {
+	@include textRg();
+    border-left: 1px solid rgba( palette(text), 0.2 );
+    color: palette(medium);
+    padding-left: space(1);
+}
+
+// .Lede {
+// 	@include textRg();
+// 	color: color(text, brand) !important;
+// 	font-family: $font-text-regular;
+// 	font-size: map-fetch($size, font, headerRg, xs);
+// 	line-height: 1.45;
+// 	// margin-bottom: space(1);
+//
+// 	@include media-breakpoint-up(sm) {
+// 		font-family: $font-text-bold;
+// 		font-size: map-fetch($size, font, headerRg, base);
+// 		line-height: $base-line-height-unit;
+// 	}
+// }
+
+
+// Component: list cell of fixed width, like a tabbed info element
+// --------------------------------------------------------------------------
+
+.ListItemTag {
+	@include textSm();
+	display: inline-block;
+	width: space(0.75);
+}

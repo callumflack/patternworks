@@ -1,44 +1,59 @@
 {
-    "roundtable-records": {
-        "title": "Roundtable Records",
-        "date": "2009–15",
-        "author": "callum-flack",
-        "description": "A record label for record collectors.",
-        "tags": "Identity",
-        "ispublished": true,
-        "isfeatured": true,
-        "ishome": true
-    },
-    "bellflower": {
-        "title": "Bellflower Chinese Medicine",
-        "title": "Bellflower",
-        "date": "2015",
-        "author": "callum-flack",
-        "description": "A legible, mobile-first identity for a marketing blog.",
-        "tags": "Identity, website",
-        "ispublished": true,
-        "isfeatured": true,
-        "ishome": true
-    },
-    "box+dice": {
-        "title": "Box+Dice Software",
-        "date": "2012",
-        "author": "callum-flack",
-        "description": "Rebranding a Real Estate app start-up.",
-        "tags": "Identity, website",
-        "ispublished": true,
-        "isfeatured": true,
-        "ishome": true
-    },
-    "ward6": {
-        "title": "Ward 6",
-        "date": "2015",
-        "author": "callum-flack",
-        "description": "T-shaped all-rounder making brands and apps for Pharma.",
-        "description": "B2B iPad apps for Ward6.",
-        "tags": "Design, code",
-        "ispublished": true,
-        "isfeatured": false,
-        "ishome": true
-    }
+	"primary-healthcare-network": {
+		"imageslug": "phn",
+		"title": "Primary Healthcare Network",
+		"description": "Surveying the quality of life in Far North Queensland",
+		"intro": " identifies community health issues. We helped PHN collect data to understand patient well-being in North Queensland.",
+		"date": "2016",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Web app"],
+		"indexstyle": "phn",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "one"
+	},
+	"ward6": {
+		"imageslug": "ward6",
+		"title": "Ward 6",
+		"description": "T-shaped all-rounder making brands and apps for Pharma.",
+		"intro": " is a renowned healthcare branding agency. We helped build their online reputation.",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Website"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
+	},
+	"oceanblue-living": {
+		"title": "OceanBlue Living",
+		"intro": " is a Cairns metalworks. We helped them build a community around their transformative architectural objects.",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Website"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
+	},
+	"ward6-ipad-apps": {
+		"imageslug": "ward6",
+		"title": "Ward 6 iPad apps",
+		"intro": " explain complex Pharmaceutical benefits with simple and engaging digital stories.",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["App"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
+	}
 }

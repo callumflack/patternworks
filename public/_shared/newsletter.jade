@@ -1,0 +1,15 @@
+- var actionCode = "//patternworks.us13.list-manage.com/subscribe/post?u=027f0219cdd96399fb792993e&id=f1f20b580e"; 
+- var nameCode = "b_5262b8bb4d6d9d31c4d3b03f0_3dd454cbc2";
+
+#mc_embed_signup
+	form#mc-embedded-subscribe-form.validate(action='#{actionCode}', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+		#mc_embed_signup_scroll
+			.mc-field-group
+				.Form--capsule
+					.Form-group.u-xs-size8of12.u-marginBD2.u-xs-marginB0
+						label(for='mce-EMAIL') Add your email
+						input#mce-EMAIL.Form-control.required.email(type='email', value='', name='EMAIL', placeholder='', required='')
+						div(style='position: absolute; left: -5000px;')
+							input(type='text', name='#{nameCode}', tabindex='-1', value='')
+					.Form-group.u-xs-size4of12
+						input#mc-embedded-subscribe.Button.t-button.t-button--full.form-control(type='submit', value='Subscribe', name='subscribe')

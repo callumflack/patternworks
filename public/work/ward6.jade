@@ -1,0 +1,53 @@
+- var assetPath = "/assets/images/"
+- var currentProject = current.path[1]
+
+.Block--narrow.Block--betweenT.s-Block
+	:markdown
+		With offices in Sydney and Singapore, Ward6 is recognised as Asia Pacific's leading independent health communications agency. We helped transfer this reputation online with a mobile-first website that was clear, legible and easy to peruse.
+
+.Block--mid.Block--between
+	.FlexEmbed.Frame
+		.FlexEmbed-ratio.FlexEmbed-ratio--laptop
+		.FlexEmbed-content
+			video.Screen(autoplay="", loop="")
+				source(src='#{assetPath}ward6-video-case.mp4', type='video/mp4')
+				| Your browser does not support the video tag. Please upgrade your browser.
+
+.Block--narrow.s-Block
+	:markdown
+		We moved the website from Wordpress to a static site environment to increase security and performance, and enhance developer productivity. We chose Siteleaf as a CMS to sync with. This workflow greatly improves iteration and deployment speed.
+
+.Block.Block--between
+	picture
+		source(media='(max-width: 544px)', srcset="#{assetPath}#{currentProject}-mobile-xs.jpg")
+		source(media='(max-width: 768px)', srcset="#{assetPath}#{currentProject}-mobile-sm.jpg")
+		img(src="#{assetPath}ward6-mobile.jpg", alt="Ward 6 website on mobile")
+
+.Block--narrow.s-Block
+	:markdown
+		With a small team of collaborators, we were able to implement a vision of the website of the future: responsive, performant, static yet content managed, easily updated and adapted. This workflow allowed Ward6 to focus on simply and repeatably presenting their stories.
+	
+		[Visit the site.](http://www.ward6.asia)
+		
+	.Block--between
+		.Grid.Grid--withGutter
+			.Grid-cell.u-sm-size1of3
+				ul.List--meta
+					li.List--meta-title Plan 
+					li Digital strategy
+					li System design
+					li.List--meta-title Design
+					li User experience design
+					li Visual design 
+					li.List--meta-title Build
+					li Frontend development
+			.Grid-cell.u-sm-size2of3
+				ul.List--meta
+					li.List--meta-title Ward6 collaborators
+					li Jason Armstrong, #[span Project management]
+					li Andres Hernandez, #[span Frontend development]
+					li Richard Price, #[span Art director]
+
+a.Block--halfSpace(href="/work/oceanblue-living")
+	.Block--masthead
+		h1.Headline OceanBlue Living →

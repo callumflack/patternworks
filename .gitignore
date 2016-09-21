@@ -1,4 +1,4 @@
-node_modules
+public/node_modules
 npm-debug.log
 www
 
@@ -6,3 +6,4 @@ www
 TODO.md
 public/fontsIgnore
 public/img/-imgIgnore
+public/assets/images/_production

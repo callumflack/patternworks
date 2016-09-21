@@ -1,2 +1,17 @@
-header.Header#top(role="banner")
-    h1 #[a(href="/")= site_title]
+//- header.Header.Header--animateIn(role="banner")
+//- 	.Block.Block--height3of4
+//- 		.o-aligner
+//- 			.o-aligner-item
+//- 				.o-container
+//- 					.Block--masthead
+//- 						for page, slug in public._data
+//- 							if current.path[0] === slug
+//- 								h1.Display= page.headline
+//- 								//- p= page.description
+//- 									a(href="/about") Learn more
+header.Header(role="banner")
+	.Block--space.Header--animateIn
+		.Block--masthead
+			for page, slug in public._data
+				if current.path[0] === slug
+					h1.Display= page.headline

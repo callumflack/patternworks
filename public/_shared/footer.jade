@@ -1,12 +1,24 @@
+- var startup  = new Date("2015-07-01");
+- var thisWeek = new Date("(1387050870 * 1000)");
+- var weeks = Math.round((a-b)/ 604800000);
+
 footer.Footer(role="contentinfo")
-    .Container
-        p
-            //- | Patternworks. Considered experiences for every screen.#[br]
-            //- | Got a need, a problem, an idea? Get in touch by #[a(href="mailto:callumflack@gmail.com?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email], #[a(href="https://twitter.com/callumflack") twitter] or call #[a(href="tel:+610-408-767-540") +61(0) 408 767 540].
-            | Got a need, a problem, an idea? Get in touch by #[a(href="mailto:hi@patternworks.com.au?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI have a need / a problem / a new idea / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed form here?%0D%0A%0D%0AKind regards, Your Name") email] or call #[a(href="tel:+610-408-767-540") +61(0) 408 767 540].
-        
-        //- != partial("nav-footer")
-        
-        p 
-            //- | Whitfield, Cairns, Australia#[br]
-            | © 2015 Patternworks
+	!= partial("nav")
+
+	.o-aligner
+		.o-aligner-item
+			.Block--masthead
+				h1.Display We help interesting people discover, design and build interesting things.
+				p Get in touch: #[a(href="mailto:#{ email_form }") email us] or call #[a(href="telephone:#{ phone }") #{ phone }].
+				//- != partial("newsletter")
+				//- p.Text--meta Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
+				p.Text--meta You should also follow us on #[a(href="#{ twitter }") Twitter].
+
+	//- .Nav.Nav--bottom(role="navigation")
+		.o-listInline.u-textRight
+			.Nav-item.Nav-item--left Est 2015. This is week 57.
+			//- .Nav-item.Nav-item--left Its Friday afternoon in Cairns.
+			//- .Nav-item.Nav-item--left Copyright &copy; #{new Date().getFullYear()} 
+			.Nav-item: a(href="#{ twitter }") Twitter
+			.Nav-item: a(href="#{ instagram }") Instagram
+			.Nav-item: a(href="#{ medium }") Medium

@@ -1,48 +1,55 @@
 doctype
 html
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
-        title= locals.title ? title + " | " + site_title : site_title
-        if current.path[0] === "index"
-            meta(name='description', content=site_description)
-        else
-            if current.path[0] === "blog"
-                meta(name='description', content=site_description)
-        meta(name="google-site-verification" content="ifWumnWk5DISF1SS1MIj5MTsGLpBrixB0KJP4OH-MKo")
-        link(rel="stylesheet" href="/css/styles.css")
-        //- link(rel="stylesheet", href="/css/zoom.css")
-        link(rel="stylesheet", href="/css/flickity.css")
+	head
+		!= partial("_shared/head")
 
-    body(class="#{ current.path[0] }")
-        
-        if current.path[0] !== "index"
-            != partial("_shared/header")
+	body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
 
-        if current.path[0] === "index"
-            != yield
-        
-        if current.path[0] === "about"
-            != yield
-        
-        if current.path[0] === "work"
-            != partial("/work/_work")
-        
-        else if ["404"].indexOf(current.path[0]) !== -1
-            != yield
+		//- one script for all analytics
+		!= partial("_shared/tagmanager")
 
-        != partial("_shared/footer")
 
-        script(src="/js/jquery.js")
-        script(src="/js/jquery.arbitrary-anchor.js")
-        script(src="/js/flickity.pkgd.min.js")
-        script(src="/js/application.js")
-        script(type='text/javascript').
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '#{ locals.analytics_account }']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+
+		!= partial("_shared/nav")
+		
+		main.Main(role="main")
+		
+			if current.path[0] === "index"
+				!= yield
+			
+			if current.path[0] === "about"
+				!= yield
+			
+			if current.path[0] === "work"
+				//- != partial("/posts/_work")
+				!= partial("/work/_decorator")
+			
+			if current.path[0] === "blog"
+				!= partial("/posts/_blog")
+			
+			if current.path[0] === "dataprint"
+				!= yield
+
+			else if ["404"].indexOf(current.path[0]) !== -1
+				!= yield
+
+		unless current.path[0] === "dataprint"
+			!= partial("_shared/footer")
+			
+			
+
+
+
+		//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
+		//- script(src="/assets/javascripts/jquery.colorscroll.min.js")
+		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
+		//- script(src="/assets/javascripts/lib.flickity.min.js")
+		//- script(src="/assets/javascripts/application.js")
+		//- script(src="/assets/javascripts/viewport-units-buggyfill.hacks.js")
+		//- script(src="/assets/javascripts/viewport-units-buggyfill.js")
+		//- script(type='text/javascript').
+			//- window.viewportUnitsBuggyfill.init({
+			//- 	refreshDebounceWait: 50,
+			//- 	hacks: window.viewportUnitsBuggyfillHacks
+			//- });

@@ -1,0 +1,77 @@
+- var assetPath = "/assets/images/";
+
+.Block--narrow.Block--betweenT.s-Block
+	:markdown
+		Primary Healthcare Network North Queensland wanted to digitise the World Health Organisation's Quality of Life survey to rapidly and economically build a map of patient well-being in their service areas. We built a cut-through responsive web app that worked on any device.
+
+.Block--video
+	.FlexEmbed
+		.FlexEmbed-ratio.FlexEmbed-ratio--iphone6
+		.FlexEmbed-content
+			video.Screen--iphone6(autoplay="", loop="")
+				source(src='#{assetPath}primary-healthcare-network-video-m.mp4', type='video/mp4')
+				| Your browser does not support the video tag. Please upgrade your browser.
+			.o-posAbsoluteCenter.o-coverImage(style="background-image: url('#{assetPath}device-iphone6-alt.png')")
+
+.Block--narrow.Block--betweenT.s-Block
+	:markdown
+		Close collaboration was essential: we had to understand the use cases for the survey—now and in the future—for PHN staff, PHN service providers and their patients. Our design stage was comprehensive, ensuring common understanding so that development time was not wasted making the wrong thing.
+
+.Block--narrow.Block--between
+	.FlexEmbed.Frame
+		.FlexEmbed-ratio.FlexEmbed-ratio--ipadL
+		.FlexEmbed-content
+			video.Screen(autoplay="", loop="")
+				source(src='#{assetPath}primary-healthcare-network-video.mp4', type='video/mp4')
+				| Your browser does not support the video tag. Please upgrade your browser.
+
+.Block--narrow.s-Block
+	:markdown
+		We built the web app using Express and React to build in a modular fashion enabling continued iteration. For example, we're now implementing offline capability so that, when cached, an internet connection is not required to do surveys.
+
+.Block.Block--between
+	img(src="#{assetPath}primary-healthcare-network-score.png", alt="")
+	//- .owl-carousel.js-owl
+	//- .gallery
+		.gallery-cell
+			img(src="#{assetPath}primary-healthcare-network-score.png", alt="")
+		.gallery-cell
+			img(src="#{assetPath}primary-healthcare-network-scoreShare.png", alt="")
+		.gallery-cell
+			img(src="#{assetPath}primary-healthcare-network-scoreShare.png", alt="")
+	
+.Block--narrow.s-Block
+	:markdown
+		All data collected is anonymous. At completion, users are presented with a score that rates their quality of life. Users can share this score by email or SMS.
+			
+	.Block--between
+		img(src="#{assetPath}primary-healthcare-network-guide.png", alt="")
+		.Text--meta.u-marginT We also provided guides and screencasts to show staff how it to implement surveys.
+
+.Block--narrow.s-Block
+	:markdown
+		Our goal was to make a survey that would be immediately useful, and easily adaptable as PHN discovers further use cases over time. We created an experience that patient and staff find fast, simple and easy so that PHN can understand their effectiveness. 
+		
+		[Contact us for a test account.](https://qolsurvey.primaryhealth.com.au/)
+	
+	.Block--between
+		.Grid
+			.Grid-cell.u-sm-size1of3
+				ul.List--meta
+					li.List--meta-title Plan 
+					li Digital strategy
+					li System design
+					li.List--meta-title Design
+					li User experience design
+					li Visual design 
+			.Grid-cell.u-sm-size1of3
+				ul.List--meta
+					li.List--meta-title Build
+					li Frontend development
+					li Backend development
+					li.List--meta-title Launch
+					li Product education
+
+a.Block--halfSpace(href="/work/ward6")
+	.Block--masthead
+		h1.Headline Ward 6 →

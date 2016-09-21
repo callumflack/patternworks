@@ -1,0 +1,50 @@
+{
+	"phn": {
+		"title": "Primary Healthcare Network",
+		"description": "Surveying the quality of life in Far North Queensland",
+		"date": "2016",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Web app"],
+		"indexstyle": "phn",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	},
+	"kata-and-code": {
+		"title": "Kata and code",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"date": "January 27, 2015",
+		"author": "callum-flack",
+		"category": "blog",
+		"tags": ["Article"],
+		"ispublished": true,
+		"isfeatured": true,
+		"ishome": true
+	},
+	"test": {
+		"title": "Designing for user needs first",
+		"description": "A large number of the people I treat in the clinic suffer from poor sleep. It is a serious problem that can significantly impact on our stress levels, energy levels and quality of life. Many people are missing out on the rest and rejuvenation… ",
+		"note": "How to design the right thing first.",
+		"date": "October 6, 2015",
+		"author": "callum-flack",
+		"category": "blog",
+		"tags": ["Article"],
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	},
+	"ward6": {
+		"title": "Ward 6",
+		"description": "T-shaped all-rounder making brands and apps for Pharma.",
+		"description": "B2B iPad apps for Ward6",
+		"date": "2015",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Design", "Code"],
+		"indexstyle": "ward6",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true
+	}
+}
