@@ -1,2 +1,2 @@
 # Patternworks
-An MVP website for my digitla design company. Built using Harpjs.
+An MVP website for my digital design company. Built using [Harpjs](https://harpjs.com/).
