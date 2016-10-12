@@ -28,6 +28,10 @@
 	font-size: fontsize($mixinSize, xs);
 	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
 
+    // theme
+    // use opentype's tabular lining.
+    font-feature-settings: 'tnum';
+
 	// children
 	> li,
 	> li a,
