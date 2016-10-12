@@ -13,6 +13,7 @@ if current.source === "index"
 									figure.Post-image
 										img(src="#{assetPath}thumb-#{slug}.jpg", alt="#{slug}")
 									h1.Headline--sm= post.title
+									p.Post-excerpt= post.excerpt
 									.Post-meta
 										span.Post-tag= post.tags
 

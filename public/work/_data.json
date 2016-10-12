@@ -4,6 +4,7 @@
 		"title": "Primary Healthcare Network",
 		"description": "Surveying the quality of life in Far North Queensland",
 		"intro": " identifies community health issues. We helped PHN collect data to understand patient well-being in North Queensland.",
+		"excerpt": "Collecting data to understand patient well-being in North Queensland.",
 		"date": "2016",
 		"author": "callum-flack",
 		"category": "work",
@@ -19,6 +20,7 @@
 		"title": "Ward 6",
 		"description": "T-shaped all-rounder making brands and apps for Pharma.",
 		"intro": " is a renowned healthcare branding agency. We helped build their online reputation.",
+		"excerpt": "Building on online reputation for a healthcare branding agency.",
 		"date": "2015",
 		"author": "callum-flack",
 		"category": "work",
@@ -31,7 +33,8 @@
 	},
 	"oceanblue-living": {
 		"title": "OceanBlue Living",
-		"intro": " is a Cairns metalworks. We helped them build a community around their transformative architectural objects.",
+		"intro": " is a Cairns metalworks. We helped them create a community around their transformative architectural objects.",
+		"excerpt": "Creating a community around architectural metalworks.",
 		"date": "2015",
 		"author": "callum-flack",
 		"category": "work",
@@ -42,10 +45,11 @@
 		"ishome": true,
 		"order": "two"
 	},
-	"ward6-ipad-apps": {
+	"pharmaceutical-edetailers": {
 		"imageslug": "ward6",
-		"title": "Ward 6 iPad apps",
+		"title": "Pharmaceutical eDetailers",
 		"intro": " explain complex Pharmaceutical benefits with simple and engaging digital stories.",
+		"excerpt": "Explaining complex Pharmaceutical benefits with simple and engaging digital stories.",
 		"date": "2015",
 		"author": "callum-flack",
 		"category": "work",
