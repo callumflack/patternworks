@@ -49,9 +49,14 @@ $navBarCube  : $blockSpacer / 7;
 	}
 
 	&:not(:last-child) {
-		margin-right: space(1) !important;
+		margin-right: space(0.75) !important;
+
+        @include media-breakpoint-up(sm) {
+            margin-right: space(1) !important;
+        }
 	}
 }
+
 
 
 // Footer nav

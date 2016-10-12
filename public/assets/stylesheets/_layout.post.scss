@@ -51,6 +51,14 @@ a.Post--inList {
 	margin-top: space(0.25);
 }
 
+.Post-excerpt {
+	margin-bottom: 0;
+	margin-top: space(0.25);
+
+    //@include media-breakpoint-up(sa) { width: 90%; }
+    @include media-breakpoint-up(su) { width: 65%; }
+}
+
 .Post-tag {
 	@include textSm();
 	color: palette(muted);
