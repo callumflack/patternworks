@@ -1,3 +1,3 @@
-## How we work
+## How I work
 
-By defining goals first. Then we build, share, test, watch, listen, prod and iterate to get results. We're multi-disciplinary mob: design is our core, and we regard our engineering ability as an extension of design—we build everything ourselves with a comprehensive knowledge of web technologies. And we create for users first. Because they're the ones who make your business. 
+By defining goals first. Then I build, share, test, watch, listen, prod and iterate to get results. I'm multi-disciplinary: design is my core capability, and I regard my coding ability as an extension of design—I build everything myself with a comprehensive knowledge of web technologies, collaborating with trusted cohorts for specific skillsets. I create for people first. Because they're the ones who make your business.
