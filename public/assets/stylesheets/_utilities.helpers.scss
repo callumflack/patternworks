@@ -41,6 +41,8 @@
 // --------------------------------------------------------------------------
 .u-hide             { display: none; }
 
+.u-sm-hide { @include media-breakpoint-down(sm) { display: none !important; } }
+
 
 // Custom flex components
 // --------------------------------------------------------------------------
