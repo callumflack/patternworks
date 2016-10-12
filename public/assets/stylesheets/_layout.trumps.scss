@@ -36,7 +36,7 @@
 }
 
 .Footer .Display {
-	@include media-breakpoint-up(lg) { width: 84%; }
+	@include media-breakpoint-up(lg) { width: 80%; }
 }
 
 
@@ -56,10 +56,10 @@
 
 	@include when-inside(".oceanblue-living") {
 		em { color: palette(project-obl); }
-		@include media-breakpoint-up(lg) { width: 90%; }
+		@include media-breakpoint-up(lg) { width: 92%; }
 	}
 
-	@include when-inside(".ward6-ipad-apps") {
+	@include when-inside(".pharmaceutical-edetailers") {
 		em { color: palette(project-ward6-ipad-apps); }
 		@include media-breakpoint-up(lg) { width: 80%; }
 	}
