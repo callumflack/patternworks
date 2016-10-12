@@ -59,7 +59,7 @@ $base-font-size-unit           : 18;
 $base-line-height-unit         : 1.6;
 $base-font-size                : $base-font-size-unit * 1px;
 $base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
-$space-unit                    : rem($base-line-height);
+$space-unit                    : $base-line-height;
 $space                         : $space-unit * 1;
 
 $blockSpacer                   : 21vh;
@@ -106,6 +106,7 @@ $container-max-widths: (
 	lg: 960px,
 	ll: 1140px,
 	xl: 1200px,
+	st: 1500px,
 	su: 1700px,
 	xx: 80vw
 ) !default;
