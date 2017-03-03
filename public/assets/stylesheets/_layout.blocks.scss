@@ -18,32 +18,35 @@
 	margin: calc( (#{$blockSpacer} / 2) + (#{$paragraphSpacer} * 1.25) ) auto;
 }
 
+$windowGutter: 7.03125%;
+$windowGutterLg: 13.67188%;
+
 @mixin heroTuck {
 	@include media-breakpoint-up(md) {
-		padding-left: 7.03125%;
-		padding-right: 7.03125%;
+		padding-left: $windowGutter;
+		padding-right: $windowGutter;
 	}
 
 	@include media-breakpoint-up(su) {
-		padding-left: 13.67188%;
-		padding-right: 13.67188%;
+		padding-left: $windowGutterLg;
+		padding-right: $windowGutterLg;
 	}
 }
 
 @mixin insetTuck {
-	padding-left: 7.03125%;
-	padding-right: 7.03125%;
+	padding-left: $windowGutter;
+	padding-right: $windowGutter;
 
 	@include media-breakpoint-up(su) {
-		padding-left: 13.67188%;
-		padding-right: 13.67188%;
+		padding-left: $windowGutterLg;
+		padding-right: $windowGutterLg;
 	}
 }
 
 @mixin textTuck {
 	@include media-breakpoint-down(md) {
-		padding-left: 7.03125%;
-		padding-right: 7.03125%;
+		padding-left: $windowGutter;
+		padding-right: $windowGutter;
 	}
 }
 

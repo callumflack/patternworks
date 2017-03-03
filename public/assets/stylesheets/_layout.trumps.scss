@@ -61,7 +61,7 @@
 
 	@include when-inside(".thesubstation") {
 		em { color: palette(project-thesubstation); }
-		//@include media-breakpoint-up(lg) { width: 85%; }
+		@include media-breakpoint-up(lg) { width: 85%; }
 	}
 }
 
