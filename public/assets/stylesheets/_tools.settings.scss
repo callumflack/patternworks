@@ -31,7 +31,7 @@ $palette: (
 	faint                      : tint($base-black, 97%),
 	white                      : $base-white,
 	background                 : #fdfdfd, // FBFBF9
-	neutral                    : #F3F2F1,
+	neutral                    : #f5f5f5,
 	neutral-dark               : darken(#f0eeeb, 9%),
 	neutral-light              : lighten(#f0eeeb, 4%),
 	brand                      : #0c2f5d,
@@ -48,6 +48,7 @@ $palette: (
 	project-ward6              : #029C75,
 	project-ward6-ipad-apps    : #d2124d,
 	project-obl                : #1159c0,
+	project-thesubstation      : #bfa657, //#8657bf, //#AB8C40, //#383d78,
 	hilite                     : #48e79a
 );
 
@@ -55,15 +56,17 @@ $palette: (
 // Base size measures
 // --------------------------------------------------------------------------
 
-$base-font-size-unit           : 18;
+$base-font-size-unit           : 19;
 $base-line-height-unit         : 1.6;
 $base-font-size                : $base-font-size-unit * 1px;
 $base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 30.45
 $space-unit                    : $base-line-height;
 $space                         : $space-unit * 1;
 
-$blockSpacer                   : 21vh;
 $paragraphSpacer               : space(0.75);
+$blockSpacer                   : 24vh;
+$gutterSpace                   : 24vw / 4;
+
 
 
 
@@ -117,8 +120,8 @@ $container-max-widths: (
 
 $fontsizes: (
 	Text--sm: (
-		xs            : 13px,
-		sm            : 16px,
+		xs            : 12px,
+		sm            : 13px,
 	),
 	Text: (
 		xs            : 16px,
@@ -136,7 +139,7 @@ $fontsizes: (
 	Headline: (
 		xs            : 30px,
 		sm            : 36px,
-		lg            : 42px
+		lg            : 20px
 	),
 	Display: (
 		xs            : 40px,
@@ -243,8 +246,10 @@ $font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
 $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
 
 $fonts-path           : '/assets/fonts/';
+$test-fonts-path      : '/assets/fonts2/';
 
-$font-sans-name       : 'AtlasGrotesk';
+//$font-sans-name       : 'AtlasGrotesk';
+$font-sans-name       : 'MarrSans-';
 $font-serif-name      : 'Nocturno';
 $font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
 
@@ -279,6 +284,7 @@ $text-bold-italic     : #{$font-sans-name}-BoldItalic;
 @include font-face($text-xbold,   '#{$fonts-path}#{$text-xbold}' );
 @include font-face($text-black,   '#{$fonts-path}#{$text-black}' );
 @include font-face($text-regular-italic, '#{$fonts-path}#{$text-regular-italic}' );
+
 
 // Apply font-file variables to a font-stack
 // Only use these variables in our classes.
@@ -316,16 +322,47 @@ $font-text-regular-i  : join($text-regular-italic, $main-font-stack);
 
 // For this project…
 
+$main-font-stack: $font-serif-stack;
+
 $display: 'display';
 $serif-sm: 'regular';
-$serif-lg: 'book';
+//$serif-lg: 'book';
+$serif-lg: $display;
 
 @include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
 @include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
 @include font-face($display, '#{$fonts-path}#{$display}' );
 
-$main-font-stack: $font-serif-stack;
+//$test-sans: 'URWGeometric-Medium';
+//$test-sans: 'theinhardt-reg';
+//$test-sans: 'Larsseit-Light';
+//$test-sans: 'MarkOT-Regular';
+//$test-sans: 'AtlasGrotesk-Regular';
+//$test-sans: 'LabGrotesque-Regular';
+//$test-display: 'MFredRounded-Regular';
+//$test-display: 'LabGrotesque-Medium';
+//$test-display: 'Stanley-Poster';
+//$test-sans: 'MarrSans-Regular';
+//$test-sans-md: 'MarrSans-Medium';
+//$test-display: 'MarrSans-Light';
+$test-sans-md: 'StyreneA-Regular-Reduced';
+$test-sans: 'StyreneA-Regular-Reduced';
+$test-sans-nav: 'StyreneA-Medium-Reduced';
 
-$font-text-book: join($serif-lg, $main-font-stack);
-$font-text-regular: join($serif-sm, $main-font-stack);
-$font-display: join($display, $main-font-stack);
+//$test-sans: 'FranklinGothic-Book';
+//$test-sans-md: 'FranklinGothic-Demi';
+//$test-display: 'FranklinGothic-ExtraCond';
+//$test-display: 'GrotzecCond-Bold';
+$test-display: 'StyreneA-Regular-Reduced';
+
+@include font-face($test-sans, '#{$test-fonts-path}#{$test-sans}' );
+@include font-face($test-sans-md, '#{$test-fonts-path}#{$test-sans-md}' );
+@include font-face($test-display, '#{$test-fonts-path}#{$test-display}' );
+@include font-face($test-sans-nav, '#{$test-fonts-path}#{$test-sans-nav}' );
+
+//$font-text-book:    join($serif-lg, $main-font-stack);
+$font-text-book:    join($display, $main-font-stack);
+//$font-text-regular: join($serif-sm, $main-font-stack);
+$font-text-regular: join($test-sans, $main-font-stack);
+$serif-lg:          join($test-sans-md, $main-font-stack);
+$font-display:      join($test-display, $main-font-stack);

@@ -1,0 +1,15 @@
+//- .o-modal(tabindex='-1', role='dialog', aria-labelledby='nav', data-modal)
+nav.o-modal(tabindex='-1', role='navigation', aria-labelledby='navigation', data-modal)
+	//- .o-modal-dialog(role='document')
+	//- nav.o-posFullScreen(role="navigation")
+		
+	.c-nav-logoWrapper
+		.c-nav-logo Patternworks
+
+	.c-nav.o-aligner
+		.o-aligner-item.o-aligner-item--bottom
+			.c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/") Home
+			.c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
+			.c-nav-item: a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
+			.c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/about") About
+			.c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/contact") Contact

@@ -1,0 +1,189 @@
+.Header {
+    //background-color: palette(project-thesubstation);
+    //height: 100vh;
+    min-height: calc(100vh - 60px); 
+    max-height: calc((100vh - 370px)/1.5);
+    //position: fixed;
+    width: 100%;
+
+    //padding-top: calc( #{$blockSpacer} / 7 * 0.85 );
+    
+    .Block--space {
+    	//background-image: linear-gradient(to bottom, rgba( palette(white), 1 ) 70%, rgba( palette(white), 0 ) 100%);
+        //padding: 30vh 0;
+    }
+    
+    .Headline,
+    .Headline em {
+        //color: palette(text) !important;
+        //font-family: $test-sans-md;
+        //font-size: 23px;
+        //letter-spacing: -0.01em;
+        //line-height: $base-line-height-unit;
+        
+        font-family: $test-display;
+        //font-size: 66px;
+        //line-height: 0.9;
+        //text-transform: uppercase;
+    
+        // styrene
+        //color: palette(white)!important;
+        color: palette(project-thesubstation);
+        color: palette(text);
+        font-size: 44px;
+        //margin-left: initial;
+        letter-spacing: -0.005em;
+        line-height: 1.2;
+    	//text-align: center;
+        width: 85%;
+    }
+    
+    .Headline em {
+        //border: 1px solid rgba( white, 1 );
+        //color: palette(text)!important;
+    }
+    
+    //.Block--space {
+    //    padding: 0 0 space(2) 0;
+    //    width: 100%;
+    //}
+    
+    .Block--masthead {
+        //max-width: container-width(md);
+    }
+}
+
+.work .Nav-item a {
+    //color: palette(white);
+    //font-family: $test-sans-lg;
+}
+
+.Nav-item a {
+    //font-family: $test-display;
+    //text-transform: uppercase;
+}
+
+.Content {
+    background-color: palette(background);
+    position: relative;
+}
+
+.Content--post {
+    //margin-top: 100vh;
+    //margin-top: calc(100vh - 60px); 
+    //max-height: calc((100vh - 370px)/1.5);
+}
+
+$navSpace: space(2.5);
+
+.c-nav-triggerWrapper,
+.c-nav-logoWrapper {
+    position: fixed;
+    left: $navSpace;
+    right: $navSpace;
+    text-align: left;
+    top: $navSpace;
+    //width: 100%;
+    z-index: 99;
+}
+
+.c-nav-trigger,
+.c-nav-logo {
+	@include textSm();
+    background-color: palette(text);
+    border: 1px solid palette(white);
+    border-color: transparent;
+    color: palette(white);
+    cursor: pointer;
+    display: inline-block;
+    font-family: $test-sans-nav;
+    letter-spacing: 0.06em;
+    //padding: space(0.41) space(0.6) space(0.35);
+    padding: 10.5px 18px 8px;
+    //text-transform: uppercase;
+
+    &:before {
+        content: '\2630';
+        //font-size: 112%;
+        margin-right: 5px;
+    }
+    
+    //@include when-inside(".o-modal") {
+    //    background-color: palette(white);
+    //    //border-color: currentColor;
+    //    color: palette(text);
+    //}
+}
+
+.c-nav {
+    //align-content: flex-end;
+    //display: flex;
+    height: 100%;
+    //flex-direction: column;
+    //padding: space(0.75) space(1);
+    padding: $navSpace;
+    
+    > * {
+        //flex-shrink: 1;
+    }
+}
+
+.c-nav-itemsWrapper {
+    
+}
+
+.c-nav-item {
+    //@include textSm();
+	//@include headlineSm();
+    @include display();
+	color: palette(white);
+	margin: 0;
+    
+	> span,
+	> a {
+		border-color: transparent;
+        //display: block;
+        font-family: $test-display;
+        margin-bottom: space(1.5);
+        //padding: 14px 20px 12px;
+        padding-bottom: 7px;
+
+		&.is-active {
+			border-color: palette(text);
+			// color: palette(text);
+		}
+	}
+}
+
+
+//Nav-item {
+//
+//    //padding: 13px 0 12px;
+//    //padding-top: 13px;
+//
+//	//&--left {
+//	//	float: left;
+//	//	transform: translateY(1px);
+//	//}
+//	
+//    &--logo {
+//		//border: 1px solid currentColor;
+//        //padding: 3px 7px;
+//    	
+//        //float: left;
+//    	//display: inline-block;
+//        
+//        border: 0 !important;
+//        margin-right: auto !important;
+//	}
+//
+//
+//	&:not(:last-child) {
+//		//margin-right: space(0.75);
+//        //border-right: 1px solid palette(text);
+//
+//        //@include media-breakpoint-up(sm) {
+//        //    margin-right: space(1);
+//        //}
+//	}
+//}

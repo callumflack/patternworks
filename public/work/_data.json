@@ -59,5 +59,20 @@
 		"isfeatured": false,
 		"ishome": true,
 		"order": "two"
+	},
+	"thesubstation": {
+		"imageslug": "thesubstation",
+		"title": "The Substation",
+		"intro": " is a large-scale arts venue in Melbourne, Australia. We evolved their branding and wrested back control of their digital presence.",
+		"excerpt": "Enhancing the digital brand and website platform for one of Melbourne’s newest arts venues.",
+		"date": "2016",
+		"author": "callum-flack",
+		"category": "work",
+		"tags": ["Website"],
+		"indexstyle": "thesubstation",
+		"ispublished": true,
+		"isfeatured": false,
+		"ishome": true,
+		"order": "two"
 	}
 }

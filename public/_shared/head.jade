@@ -10,8 +10,6 @@ else if current.path[0] === "blog"
 	meta(name='description', content= site_description)
 meta(name='keywords', content=site_keywords)
 meta(name='author', content=site_author)
-meta(name='handheldfriendly', content='true')
-meta(name='mobileoptimized', content='320')
 if current.path[0] === "about"
 	link(rel='canonical', href=site_url + '/' + current.path[0])
 else if current.path[0] === "work"
@@ -32,4 +30,4 @@ meta(name='theme-color', content='#000000')
 
 //- assets
 link(rel="stylesheet" href="/assets/stylesheets/application.css")
-//- link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.css")
+//- link(rel="stylesheet", href="/assets/stylesheets/owl.carousel.min.css")

@@ -3,7 +3,10 @@
 - var weeks = Math.round((a-b)/ 604800000);
 
 footer.Footer(role="contentinfo")
-	!= partial("nav")
+	
+	.c-nav-triggerWrapper
+		a.c-nav-trigger(href="/") Patternworks
+
 
 	.o-aligner
 		.o-aligner-item

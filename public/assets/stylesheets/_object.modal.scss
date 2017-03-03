@@ -2,6 +2,7 @@
 
 // --------------------------------------------------------------------------
 //   MODAL OBJECT
+//   Reqs: '_object.positions.scss'
 // --------------------------------------------------------------------------
 
 
@@ -44,19 +45,18 @@
 // Modal dialog object with theme
 
 @mixin t-modalDialog() {
-	transform: translateY(10px);
+	//transform: translateY(10px);
+    @include container();
 	transition: all map-fetch($transition, duration, fast) map-fetch($transition, type, base);
 }
 
 .o-modal-dialog {
 	@include t-modalDialog();
-	margin: space(1) auto;
-	opacity: 0;
+	//margin: space(1) auto;
 	position: relative;
-	width: size(container, default);
 
 	@include media-breakpoint-up(sm) {
 		margin: space(2) auto;
-		width: size(container, default);
+		width: container-width(md);
 	}
 }

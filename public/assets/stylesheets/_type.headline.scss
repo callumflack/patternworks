@@ -28,7 +28,10 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: $mixinMarginBottom;
-	text-align: center;
+	text-align: left;
+	
+	// if using MFRED…
+	//text-transform: uppercase;
 
 	// sizes
 	font-size: fontsize($mixinSize, xs);
@@ -52,11 +55,11 @@
 
 @mixin headlineSm() {
 	@include headlineTemplate(
-		$mixinSize: Headline--sm,
-		$mixinFont: $serif-lg, // TEST
+		//$mixinSize: Headline--sm,
+		$mixinSize: Text,
+		$mixinFont: $test-sans-md, // TEST
 		$mixinLetterSpacing: 0.012em
 	);
-	text-align: left;
 }
 
 @mixin headline() {

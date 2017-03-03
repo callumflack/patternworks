@@ -5,26 +5,21 @@
 // --------------------------------------------------------------------------
 
 
-// .Header .Display       { @include when-inside(".index") { color: palette(page-home); } }
-// .Header .Display       { @include when-inside(".about") { color: palette(page-about); } }
+// Body
 
-// .Main       { @include when-inside(".about") { background-color: #f7f4df; } }
-// .Main       { @include when-inside(".phn") { background-color: palette(project-bg); } }
+.Main {
+    @include when-inside(".thesubstation") {
+        //background-color: palette(neutral);
+        position: relative;
+    }
+}
 
-
-// .Header .Block--masthead-text { @include when-inside(".phn")   { color: palette(project-phn)!important; } }
-
-
-// @mixin widths(
-// 	width: $mixinWidthSm
-// ) {
-// 	@include media-breakpoint-up(sm) { width: $mixinWidthSm; }
-// 	@include media-breakpoint-up(lg) { width: $mixinWidthLg; }
-// }
-
-
-
-
+.Content--post {
+    //@include when-inside(".thesubstation") {
+    //    background-color: palette(background);
+    //    position: relative;
+    //}
+}
 
 // Displays
 
@@ -62,6 +57,11 @@
 	@include when-inside(".pharmaceutical-edetailers") {
 		em { color: palette(project-ward6-ipad-apps); }
 		@include media-breakpoint-up(lg) { width: 80%; }
+	}
+
+	@include when-inside(".thesubstation") {
+		em { color: palette(project-thesubstation); }
+		//@include media-breakpoint-up(lg) { width: 85%; }
 	}
 }
 

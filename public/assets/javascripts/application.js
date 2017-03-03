@@ -173,7 +173,8 @@ $(document).ready(function() {
 
 	$(document).ready( function() {
 
-		var owl = $('.js-owl');
+		// var owl = $('.js-owl');
+		var owl = $('.owl-carousel');
 
 		owl.owlCarousel({
 			animateOut: 'fadeOut',
@@ -195,27 +196,34 @@ $(document).ready(function() {
 	// @url: http://codepen.io/desandro/pen/dPdVNM
 	// --------------------------------------------------------------------------
 
-	$(document).ready( function() {
-
-		var $gallery = $('.gallery').flickity({
-			arrowShape: {
-				x0: 10,
-				x1: 60, y1: 50,
-				x2: 63, y2: 50,
-				x3: 13
-			},
-			pageDots: false,
-			wrapAround: true,
-			autoPlay: 5000,
-			lazyLoad: true,
-			pauseAutoPlayOnHover: false,
-			prevNextButtons: false,
-			imagesLoaded: true
-		});
-
-	});
+	// $(document).ready( function() {
+	// 
+	// 	var $gallery = $('.gallery').flickity({
+	// 		arrowShape: {
+	// 			x0: 10,
+	// 			x1: 60, y1: 50,
+	// 			x2: 63, y2: 50,
+	// 			x3: 13
+	// 		},
+	// 		pageDots: false,
+	// 		wrapAround: true,
+	// 		autoPlay: 5000,
+	// 		lazyLoad: true,
+	// 		pauseAutoPlayOnHover: false,
+	// 		prevNextButtons: false,
+	// 		imagesLoaded: true
+	// 	});
+	// 
+	// });
+    
+    
+    
+    
 
 
 
 
 });
+
+
+

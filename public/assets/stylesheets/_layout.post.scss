@@ -52,6 +52,7 @@ a.Post--inList {
 }
 
 .Post-excerpt {
+	@include textSm();
 	margin-bottom: 0;
 	margin-top: space(0.25);
 

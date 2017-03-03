@@ -6,14 +6,16 @@
 
 
 @mixin blockSpacer {
-	content: 'viewport-units-buggyfill; padding: calc(22.5vh) 0;';
+	//content: 'viewport-units-buggyfill; padding: calc(22.5vh) 0;';
 	// padding: space(10) 0;
 	padding: calc( #{$blockSpacer}  + (#{$paragraphSpacer} * 1.25) ) 0;
 }
 
 @mixin betweenSpacer {
-	content: 'viewport-units-buggyfill; margin: calc(9vh + 35.625px) auto;';
+	//content: 'viewport-units-buggyfill; margin: calc(9vh + 35.625px) auto;';
 	margin: calc( (#{$blockSpacer} / 2.5) + (#{$paragraphSpacer} * 1.25) ) auto;
+	margin: calc( (#{$blockSpacer} / 2.25) + (#{$paragraphSpacer} * 1.25) ) auto;
+	margin: calc( (#{$blockSpacer} / 2) + (#{$paragraphSpacer} * 1.25) ) auto;
 }
 
 @mixin heroTuck {
@@ -56,7 +58,7 @@
 }
 
 .Header {
-	// sweet!
+	//height: 80vh;
 }
 
 .Content {
@@ -68,7 +70,7 @@
 	}
 
 	&--post {
-		content: "";
+		//content: "";
 		padding: 0;
 	}
 }
@@ -102,7 +104,8 @@
 .Block--masthead {
 	@include textTuck();
 	margin: auto;
-	max-width: container-width(lg);
+	//max-width: container-width(lg);
+	max-width: container-width(ll);
 
 	> p {
 		margin: 0 auto space(0.4);
@@ -128,6 +131,14 @@
 // Column blocks: widths
 // --------------------------------------------------------------------------
 
+.Block--hero {
+	//margin: 0 $blockSpacer / 7;
+    
+    img {
+        width: 100%;
+    }
+}
+
 .Block--narrow {
 	@include textTuck();
 	margin: auto;
@@ -148,7 +159,7 @@
 .Block--space {
 	@include blockSpacer();
 	display: block;
-	padding: calc(#{$blockSpacer} * 1.5) 0;
+	padding: calc(#{$blockSpacer} * 1.25) 0;
 }
 
 // .Content ~ .Block--space,
@@ -237,6 +248,7 @@ $breakContainerSuper: calc( ( #{ container-width(md) } - 80vw) * 0.5 );
 
 .FlexEmbed-ratio {
 	&--iphone6 { padding-bottom: 205.81395%; }
+	&--ipad    { padding-bottom: 126.953125%; } // 1024 x 1300 not 1366
 	&--ipadL   { padding-bottom: 74.75%; } // 75.21
 	&--laptop  { padding-bottom: 69.25%; }
 }

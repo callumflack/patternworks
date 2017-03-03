@@ -1,0 +1,12 @@
+.Grid.Grid--withGutterLg
+    for post, slug in public.work._data
+        if post.ishome === true
+            .Grid-cell.u-sm-size1of2.u-xl-size1of3
+                a.Post--inList(href="/#{post.category}/#{slug}")
+                    .Post-aligner
+                        figure.Post-image
+                            img(src="/assets/images/thumb-#{slug}.jpg", alt="#{slug}")
+                        h1.Headline--sm= post.title
+                        p.Post-excerpt= post.excerpt
+                        .Post-meta
+                            span.Post-tag= post.tags

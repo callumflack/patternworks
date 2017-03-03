@@ -12,13 +12,23 @@ $navBarHeight: $blockSpacer / 2;
 $navBarCube  : $blockSpacer / 7;
 
 .Nav {
-	@include o-posFullScreen(absolute);
+	//@include o-posFullScreen(absolute);
+    //content: " buggyfill ";
+    // height: $navBarHeight;
+    //left: $navBarCube;
+    //right: $navBarCube;
+    //top: $navBarCube * 0.85;
+
+    //background-color: rgba( palette(text), 0.96 );
+    background-color: rgba( palette(background), 0.96 );
+    //border-bottom: 1px solid palette(text);
 	bottom: auto;
-	content: " buggyfill ";
-	// height: $navBarHeight;
-	left: $navBarCube;
-	right: $navBarCube;
-	top: $navBarCube * 0.85;
+	//padding: 8px;
+	//padding: 0 space(0.75);
+    position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
 
 	&--bottom {
 		bottom: $navBarCube * 0.85;
@@ -32,15 +42,32 @@ $navBarCube  : $blockSpacer / 7;
 	color: palette(text);
 	margin-bottom: 0;
 
-	&--left {
-		display: inline-block;
-		float: left;
-		transform: translateY(1px);
+    //padding: 13px 0 12px;
+    //padding-top: 13px;
+
+	//&--left {
+	//	float: left;
+	//	transform: translateY(1px);
+	//}
+	
+    &--logo {
+		//border: 1px solid currentColor;
+        //padding: 3px 7px;
+    	
+        //float: left;
+    	//display: inline-block;
+        
+        border: 0 !important;
+        margin-right: auto !important;
 	}
 
 	> a {
 		border-color: transparent;
-		padding-bottom: 7px;
+		//padding-bottom: 7px;
+        
+        display: block;
+        font-family: $test-sans-nav !important;
+        padding: 14px 20px 12px;
 
 		&.is-active {
 			border-color: palette(text);
@@ -49,11 +76,12 @@ $navBarCube  : $blockSpacer / 7;
 	}
 
 	&:not(:last-child) {
-		margin-right: space(0.75) !important;
+		//margin-right: space(0.75);
+        //border-right: 1px solid palette(text);
 
-        @include media-breakpoint-up(sm) {
-            margin-right: space(1) !important;
-        }
+        //@include media-breakpoint-up(sm) {
+        //    margin-right: space(1);
+        //}
 	}
 }
 
