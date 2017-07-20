@@ -19,37 +19,37 @@ $base-black                    : #000;
 $base-white                    : #FFF;
 
 $palette: (
-	black                      : $base-black,
-	text                       : #151515,
-	dark                       : tint($base-black, 15%),
-	ash                        : tint($base-black, 22%),
-	charcoal                   : tint($base-black, 39%),
-	medium                     : tint($base-black, 50%),
-	muted                      : tint($base-black, 70%),
-	base                       : tint($base-black, 86%),
-	light                      : tint($base-black, 94%),
-	faint                      : tint($base-black, 97%),
-	white                      : $base-white,
-	background                 : #fdfdfd, // FBFBF9
-	neutral                    : #f5f5f5,
-	neutral-dark               : darken(#f0eeeb, 9%),
-	neutral-light              : lighten(#f0eeeb, 4%),
-	brand                      : #0c2f5d,
-	brand-complement           : #6EBE44,
-	brand-counter              : #887E73,
-	modal-background           : #151515,
-	warning                    : #FFD40C,
-	bad-news                   : #C60C0C,
-	good-news                  : brand-complement,
-	page-home                  : #8b7412,
-	page-about                 : #6287bb,
-	project-bg                 : #F5F5F5,
-	project-phn                : #6ebe44,
-	project-ward6              : #029C75,
-	project-ward6-ipad-apps    : #d2124d,
-	project-obl                : #1159c0,
-	project-thesubstation      : #bfa657, //#8657bf, //#AB8C40, //#383d78,
-	hilite                     : #48e79a
+    black                      : $base-black,
+    text                       : #151515,
+    dark                       : tint($base-black, 15%),
+    ash                        : tint($base-black, 22%),
+    charcoal                   : tint($base-black, 39%),
+    medium                     : tint($base-black, 50%),
+    muted                      : tint($base-black, 70%),
+    base                       : tint($base-black, 86%),
+    light                      : tint($base-black, 94%),
+    faint                      : tint($base-black, 97%),
+    white                      : $base-white,
+    background                 : #fdfdfd, // FBFBF9
+    neutral                    : #f5f5f5,
+    neutral-dark               : darken(#f0eeeb, 9%),
+    neutral-light              : lighten(#f0eeeb, 4%),
+    brand                      : #0c2f5d,
+    brand-complement           : #6EBE44,
+    brand-counter              : #887E73,
+    modal-background           : #151515,
+    warning                    : #FFD40C,
+    bad-news                   : #C60C0C,
+    good-news                  : brand-complement,
+    page-home                  : #8b7412,
+    page-about                 : #6287bb,
+    project-bg                 : #F5F5F5,
+    project-phn                : #6ebe44,
+    project-ward6              : #029C75,
+    project-ward6-ipad-apps    : #d2124d,
+    project-obl                : #1159c0,
+    project-thesubstation      : #bfa657, //#8657bf, //#AB8C40, //#383d78,
+    hilite                     : #48e79a
 );
 
 
@@ -93,25 +93,25 @@ $gutterSpace                   : 24vw / 4;
 // ) !default;
 
 $grid-breakpoints: (
-	xs: 0,
-	sm: 544px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	su: 1700px
+    xs: 0,
+    sm: 544px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    su: 1700px
 ) !default;
 
 $container-max-widths: (
-	xs: 460px,
-	sm: 576px,
-	md: 720px,
-	ml: 840px,
-	lg: 960px,
-	ll: 1040px,
-	xl: 1200px,
-	st: 1500px,
-	su: 1700px,
-	xx: 80vw
+    xs: 460px,
+    sm: 576px,
+    md: 720px,
+    ml: 840px,
+    lg: 960px,
+    ll: 1040px,
+    xl: 1200px,
+    st: 1500px,
+    su: 1700px,
+    xx: 80vw
 ) !default;
 
 
@@ -119,33 +119,33 @@ $container-max-widths: (
 // --------------------------------------------------------------------------
 
 $fontsizes: (
-	Text--sm: (
-		xs            : 12px,
-		sm            : 13px,
-	),
-	Text: (
-		xs            : 16px,
-		sm            : $base-font-size,
-	),
-	Text--lg: (
-		xs            : 27px,
-		sm            : 34px,
-	),
-	Headline--sm: (
-		xs            : 25px,
-		sm            : 25px,
-		lg            : 29px
-	),
-	Headline: (
-		xs            : 30px,
-		sm            : 36px,
-		lg            : 20px
-	),
-	Display: (
-		xs            : 40px,
-		sm            : 54px,
-		lg            : 60px
-	)
+    Text--sm: (
+        xs            : 12px,
+        sm            : 13px,
+    ),
+    Text: (
+        xs            : 16px,
+        sm            : $base-font-size,
+    ),
+    Text--lg: (
+        xs            : 27px,
+        sm            : 34px,
+    ),
+    Headline--sm: (
+        xs            : 25px,
+        sm            : 25px,
+        lg            : 29px
+    ),
+    Headline: (
+        xs            : 30px,
+        sm            : 38px,
+        lg            : 44px
+    ),
+    Display: (
+        xs            : 40px,
+        sm            : 54px,
+        lg            : 60px
+    )
 );
 
 
@@ -158,44 +158,44 @@ $fontsizes: (
 
 $size: (
 
-	border-radius: (
-		small             : 3px,
-		base              : 4px,
-		large             : 6px
-	),
+    border-radius: (
+        small             : 3px,
+        base              : 4px,
+        large             : 6px
+    ),
 
-	button-height: (
-		concise           : 36px,
-		base              : 44px,
-		large             : 48px
-	),
+    button-height: (
+        concise           : 36px,
+        base              : 44px,
+        large             : 48px
+    ),
 
-	list-inset: (
-		margin            : space(1.5),
-		padding           : 0
-	),
+    list-inset: (
+        margin            : space(1.5),
+        padding           : 0
+    ),
 
-	breakpoint: (
-		'max-xs'          : ( max-width:  600px ),
-		'max-sm'          : ( max-width:  767px ),
-		'ip6'             : ( min-width:  374px ),
-		'xs'              : ( min-width:  600px ),
-		'sm'              : ( min-width:  767px ),
-		'md'              : ( min-width: 1025px ),
-		'lg'              : ( min-width: 1200px ),
-		'xl'              : ( min-width: 1700px ),
-		'xxl'             : ( min-width: 1920px )
-	),
+    breakpoint: (
+        'max-xs'          : ( max-width:  600px ),
+        'max-sm'          : ( max-width:  767px ),
+        'ip6'             : ( min-width:  374px ),
+        'xs'              : ( min-width:  600px ),
+        'sm'              : ( min-width:  767px ),
+        'md'              : ( min-width: 1025px ),
+        'lg'              : ( min-width: 1200px ),
+        'xl'              : ( min-width: 1700px ),
+        'xxl'             : ( min-width: 1920px )
+    ),
 
-	container: (
-		modal-form        : rem(740),
-		modal-form-sm     : 80%,
-		default           : rem(660),
-		small             : rem(345),
-		text-column       : rem(1040),
-		picture           : rem(1170),
-		wide-picture      : rem(1240)
-	),
+    container: (
+        modal-form        : rem(740),
+        modal-form-sm     : 80%,
+        default           : rem(660),
+        small             : rem(345),
+        text-column       : rem(1040),
+        picture           : rem(1170),
+        wide-picture      : rem(1240)
+    ),
 
 
 );
@@ -205,18 +205,18 @@ $size: (
 // --------------------------------------------------------------------------
 
 $transition: (
-	duration: (
-		fast         : 50ms,
-		short        : 150ms,
-		long         : 500ms
-	),
-	type: (
-		thisalso     : cubic-bezier(0.19, 1, 0.22, 1),
-		cubic-static : cubic-bezier(0, -0.1, 1, -0.1),
-		cubic-state  : cubic-bezier(0, 1.1, 1, 1.1),
-		base         : ease-out,
-		fine         : ease-in-out
-	)
+    duration: (
+        fast         : 50ms,
+        short        : 150ms,
+        long         : 500ms
+    ),
+    type: (
+        thisalso     : cubic-bezier(0.19, 1, 0.22, 1),
+        cubic-static : cubic-bezier(0, -0.1, 1, -0.1),
+        cubic-state  : cubic-bezier(0, 1.1, 1, 1.1),
+        base         : ease-out,
+        fine         : ease-in-out
+    )
 );
 
 
@@ -224,13 +224,14 @@ $transition: (
 // --------------------------------------------------------------------------
 
 $z-index: (
-	'modal'     : 8001,
-	'overlay'   : 8000,
-	'dropdown'  : 7000,
-	'second'    : 2000,
-	'first'     : 1000,
-	'default'   : 1,
-	'below'     : -1,
+    'above-modal' : 8002,
+    'modal'       : 8001,
+    'overlay'     : 8000,
+    'dropdown'    : 7000,
+    'second'      : 2000,
+    'first'       : 1000,
+    'default'     : 1,
+    'below'       : -1,
 );
 
 
@@ -241,17 +242,34 @@ $z-index: (
 // $sans: 'Source Sans Pro';
 // $font: join($sans, $font-sans-stack);
 
-$font-sans-stack      : -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", "Droid Sans", "Segoe UI", "Fira Sans", "Ubuntu", sans-serif;
+$font-sans-stack      : 'San Francisco', -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', Roboto, 'Helvetica Neue', Helvetica, 'Droid Sans', Arial, sans-serif;
 $font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
 $font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
 
 $fonts-path           : '/assets/fonts/';
-$test-fonts-path      : '/assets/fonts2/';
 
+// fonts tested…
 //$font-sans-name       : 'AtlasGrotesk';
-$font-sans-name       : 'MarrSans-';
-$font-serif-name      : 'Nocturno';
-$font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
+//$font-sans-name       : 'MarrSans-'; // NICENICE
+//$test-sans: 'URWGeometric-Medium';
+//$test-sans: 'theinhardt-reg';
+//$test-sans: 'Larsseit-Light';
+//$test-sans: 'MarkOT-Regular';
+//$test-sans: 'AtlasGrotesk-Regular';
+//$test-sans: 'LabGrotesque-Regular';
+//$test-display: 'MFredRounded-Regular';
+//$test-display: 'LabGrotesque-Medium';
+//$test-display: 'Stanley-Poster';
+//$test-sans: 'MarrSans-Regular';
+//$test-sans-md: 'MarrSans-Medium';
+//$test-display: 'MarrSans-Light';
+//$test-sans: 'FranklinGothic-Book';
+//$test-sans-md: 'FranklinGothic-Demi';
+//$test-display: 'FranklinGothic-ExtraCond';
+//$test-display: 'GrotzecCond-Bold';
+//$font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
+
+$font-sans-name: 'StyreneA';
 
 // Create font-file variables
 
@@ -269,6 +287,7 @@ $text-regular-italic  : #{$font-sans-name}-RegularItalic;
 $text-medium-italic   : #{$font-sans-name}-MediumItalic;
 $text-semi-italic     : #{$font-sans-name}-SemiboldItalic;
 $text-bold-italic     : #{$font-sans-name}-BoldItalic;
+
 
 // Make all font files available
 // Mixin options: $font-family, $file-path, $weight, $style, $formats
@@ -291,19 +310,30 @@ $text-bold-italic     : #{$font-sans-name}-BoldItalic;
 
 $main-font-stack: $font-sans-stack;
 
-$font-text-thin       : join($text-thin, $main-font-stack);
-$font-text-light      : join($text-light, $main-font-stack);
-//$font-text-book       : join($text-book, $main-font-stack);
-//$font-text-regular    : join($text-regular, $main-font-stack);
-$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
+$font-text-regular    : join($text-regular, $main-font-stack);
 $font-text-medium     : join($text-medium, $main-font-stack);
-$font-text-medium-i   : join($text-medium-italic, $main-font-stack);
-$font-text-bold       : join($text-bold, $main-font-stack);
-$font-text-bold-i     : join($text-bold-italic, $main-font-stack);
-$font-text-xbold      : join($text-xbold, $main-font-stack);
-$font-text-black      : join($text-black, $main-font-stack);
-$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
-//$font-display         : join($display, $font-display-stack);
+$font-display         : join($text-regular, $main-font-stack);
+
+//$font-text-thin       : join($text-thin, $main-font-stack);
+//$font-text-light      : join($text-light, $main-font-stack);
+//$font-text-book       : join($text-book, $main-font-stack);
+//$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
+//$font-text-medium-i   : join($text-medium-italic, $main-font-stack);
+//$font-text-bold       : join($text-bold, $main-font-stack);
+//$font-text-bold-i     : join($text-bold-italic, $main-font-stack);
+//$font-text-xbold      : join($text-xbold, $main-font-stack);
+//$font-text-black      : join($text-black, $main-font-stack);
+
+//avoid errors where used in legacy…
+$font-text-thin       : $font-text-regular;
+$font-text-light      : $font-text-regular;
+$font-text-book       : $font-text-regular;
+$font-text-regular-i  : $font-text-regular;
+$font-text-medium-i   : $font-text-regular;
+$font-text-bold       : $font-text-regular;
+$font-text-bold-i     : $font-text-regular;
+$font-text-xbold      : $font-text-regular;
+$font-text-black      : $font-text-regular;
 
 // if using @fontface via a cloud service, eg. Google fonts.
 
@@ -320,49 +350,19 @@ $font-text-regular-i  : join($text-regular-italic, $main-font-stack);
 
 
 
-// For this project…
+// Nocturno…
 
-$main-font-stack: $font-serif-stack;
-
-$display: 'display';
-$serif-sm: 'regular';
-//$serif-lg: 'book';
-$serif-lg: $display;
-
-@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
-@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
-@include font-face($display, '#{$fonts-path}#{$display}' );
-
-//$test-sans: 'URWGeometric-Medium';
-//$test-sans: 'theinhardt-reg';
-//$test-sans: 'Larsseit-Light';
-//$test-sans: 'MarkOT-Regular';
-//$test-sans: 'AtlasGrotesk-Regular';
-//$test-sans: 'LabGrotesque-Regular';
-//$test-display: 'MFredRounded-Regular';
-//$test-display: 'LabGrotesque-Medium';
-//$test-display: 'Stanley-Poster';
-//$test-sans: 'MarrSans-Regular';
-//$test-sans-md: 'MarrSans-Medium';
-//$test-display: 'MarrSans-Light';
-$test-sans-md: 'StyreneA-Regular-Reduced';
-$test-sans: 'StyreneA-Regular-Reduced';
-$test-sans-nav: 'StyreneA-Medium-Reduced';
-
-//$test-sans: 'FranklinGothic-Book';
-//$test-sans-md: 'FranklinGothic-Demi';
-//$test-display: 'FranklinGothic-ExtraCond';
-//$test-display: 'GrotzecCond-Bold';
-$test-display: 'StyreneA-Regular-Reduced';
-
-@include font-face($test-sans, '#{$test-fonts-path}#{$test-sans}' );
-@include font-face($test-sans-md, '#{$test-fonts-path}#{$test-sans-md}' );
-@include font-face($test-display, '#{$test-fonts-path}#{$test-display}' );
-@include font-face($test-sans-nav, '#{$test-fonts-path}#{$test-sans-nav}' );
-
+//$main-font-stack: $font-serif-stack;
+//
+//$display: 'display';
+//$serif-sm: 'regular';
+////$serif-lg: 'book';
+//$serif-lg: $display;
+//
+//@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
+//@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
+//@include font-face($display, '#{$fonts-path}#{$display}' );
+//
 //$font-text-book:    join($serif-lg, $main-font-stack);
-$font-text-book:    join($display, $main-font-stack);
+//$font-text-book:    join($display, $main-font-stack);
 //$font-text-regular: join($serif-sm, $main-font-stack);
-$font-text-regular: join($test-sans, $main-font-stack);
-$serif-lg:          join($test-sans-md, $main-font-stack);
-$font-display:      join($test-display, $main-font-stack);

@@ -1,0 +1,22 @@
+picture
+    // full image
+    source(
+        media='(min-width: 600px)', 
+        srcset='
+            http://res.cloudinary.com/eeeps/image/upload/f_auto,q_70,w_150/ronny.jpg 150w,
+            http://res.cloudinary.com/eeeps/image/upload/f_auto,q_70,w_400/ronny.jpg 400w',
+        sizes='calc(8em + 1vw)')
+    
+    // zoomed + square-cropped thumb for small screens
+    img(
+        srcset='
+            http://res.cloudinary.com/eeeps/image/upload/c_thumb,g_face,ar_1:1,z_0.25,w_180/f_auto,q_70,w_90/ronny.jpg 90w,
+            http://res.cloudinary.com/eeeps/image/upload/c_thumb,g_face,ar_1:1,z_0.25,w_180/f_auto,q_70,w_180/ronny.jpg 180w', 
+        sizes='calc(4em + 3vw)', 
+        src='http://res.cloudinary.com/eeeps/image/upload/c_thumb,g_face,ar_1:1,z_0.25,w_180/f_auto,q_70,w_90/ronny.jpg',
+        alt='President Obama speaking to Ronny Jackson')
+
+
+    //- #{cloudinaryFetch}w_3300,h_1000,c_fill,g_center,f_auto#{cloudinaryImage}v1485410885/libaw0bk1vhlwdt6stln.jpg
+    //- #{cloudinaryImage}c_fill,g_center,f_auto,ar_16:9,w_2100#{imageName}
+    //- #{cloudinaryImage}c_fill,g_center,f_auto,w_2100#{imageName}

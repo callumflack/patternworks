@@ -24,16 +24,17 @@ else
                 h1.Headline
                     em= title
                     span= intro
+        
         //- .Block--hero.Hero--animateIn
         //- .Block.Hero--animateIn
-        //- 	picture
-        //- 		source(media='(max-width: 544px)', srcset="#{assetPath}#{currentProject}-hero-xs.jpg")
-        //- 		source(media='(max-width: 768px)', srcset="#{assetPath}#{currentProject}-hero-sm.jpg")
-        //- 		img(src="#{assetPath}#{currentProject}-hero.jpg", alt="")
+        //-     picture
+        //-         source(media='(max-width: 544px)', srcset="#{assetPath}#{currentProject}-hero-xs.jpg")
+        //-         source(media='(max-width: 768px)', srcset="#{assetPath}#{currentProject}-hero-sm.jpg")
+        //-         img(src="#{assetPath}#{currentProject}-hero.jpg", alt="")
 
     section.Content.Content--post
         .Block--hero.Hero--animateIn
-            img(src="#{assetPath}#{currentProject}-hero.jpg", alt="")
+            img(src="#{assetPath}#{currentProject}-hero.png", alt="")
         != yield
         
     //- section.Content--bottomPadding.Content--animateIn

@@ -79,7 +79,7 @@ $navSpaceMobile: space(1);
 //$navSpace: $windowGutterLg;
 //$navSpaceMobile: $windowGutter;
 
-.c-nav-triggerWrapper,
+.c-nav-toggleWrapper,
 .c-nav-logoWrapper {
     position: fixed;
     left: $navSpaceMobile;
@@ -96,13 +96,13 @@ $navSpaceMobile: space(1);
     }
 }
 
-.c-nav-trigger,
+.c-nav-toggle,
 .c-nav-logo {
 	@include textSm();
-    background-color: palette(text);
-    border: 1px solid palette(white);
-    border-color: transparent;
-    color: palette(white);
+    background-color: palette(white);
+    border: 1px solid palette(text);
+    //border-color: transparent;
+    color: palette(text);
     cursor: pointer;
     display: inline-block;
     font-family: $test-sans-nav;

@@ -6,8 +6,32 @@
 
 
 .Footer {
-	@include blockSpacer();
+	@include o-posFullScreen();
 	background-color: palette(text);
+	transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    
+    // height: 100%;
+	// width: 100%;
+	// visibility: hidden;
+	// opacity: 0;
 
-	h1, p, li { color: palette(background); }
+	//$reverse: palette(base);
+	//.Nav-item { color: $reverse !important; }
+	//.Nav-item a { @include on-event() { border-color: $reverse !important; } }
+	//.is-active { border-color: $reverse !important; color: $reverse !important; }
+	//.Block--masthead a { border-color: $reverse; }
+}
+
+
+// Allow space for the footer by extending the body
+body.FooterSpace {
+	//content: 'viewport-units-buggyfill; padding-bottom: calc(100vh);';
+	min-width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+	padding-bottom: calc(100vh);
+	position: relative;
+	//z-index: 1;
 }

@@ -6,5 +6,47 @@
 
 
 body {
-    border-top: rem(6) solid palette(brand);
+    //border-top: rem(6) solid palette(brand);
+}
+
+
+
+// Primary structural elements
+// --------------------------------------------------------------------------
+
+.Main {
+	// background-image: linear-gradient(to bottom, rgba( palette(brand), 0.05 ) 0%, rgba( palette(brand), 0.0 ) 25%);
+    background-color: palette(background);
+    display: block;
+    opacity: 1;
+    overflow: hidden;
+    outline: 1px solid transparent;
+    //padding-bottom: 90px;
+    position: relative;
+    transform: translate3d(0, 0, 0) translateY(0px);
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 3;
+}
+
+.Header {
+	min-height: calc(100vh - 60px); 
+    max-height: calc((100vh - 370px)/1.5);
+    //position: fixed;
+    width: 100%;
+}
+
+.Content {
+	@include blockSpacer();
+    background-color: palette(background);
+    position: relative;
+
+	&--bottomPadding {
+		@include blockSpacer();
+		padding-top: 0 !important;
+	}
+
+	&--post {
+		//content: "";
+		padding: 0;
+	}
 }

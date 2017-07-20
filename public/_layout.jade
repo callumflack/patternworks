@@ -1,67 +1,68 @@
 doctype
 html
-	head
-		!= partial("_shared/head")
+    head
+        != partial("_shared/head")
 
-	body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
+    body(class="#{current.path[0]} #{current.path[1]} FooterSpace")
 
-		//- one script for all analytics
-		!= partial("_shared/tagmanager")
+        //- one script for all analytics
+        != partial("_shared/tagmanager")
+
+        //- nav trigger
+        != partial("_shared/nav-button")
+        
+        main.Main(role="main")
+        
+            if current.path[0] === "index"
+                != yield
+            
+            if current.path[0] === "about"
+                != yield
+            
+            if current.path[0] === "work"
+                //- != partial("/posts/_work")
+                != partial("/work/_decorator")
+            
+            if current.path[0] === "blog"
+                != partial("/posts/_blog")
+            
+            if current.path[0] === "dataprint"
+                != yield
+
+            else if ["404"].indexOf(current.path[0]) !== -1
+                != yield
+
+        unless current.path[0] === "dataprint"
+            != partial("_shared/footer")
+        
+        nav.o-modal.with-clickaway(tabindex='-1', role='navigation', aria-labelledby='navigation', data-modal)
+            != partial("_shared/nav")
 
 
 
-		!= partial("_shared/nav-button")
-		
-		main.Main(role="main")
-		
-			if current.path[0] === "index"
-				!= yield
-			
-			if current.path[0] === "about"
-				!= yield
-			
-			if current.path[0] === "work"
-				//- != partial("/posts/_work")
-				!= partial("/work/_decorator")
-			
-			if current.path[0] === "blog"
-				!= partial("/posts/_blog")
-			
-			if current.path[0] === "dataprint"
-				!= yield
-
-			else if ["404"].indexOf(current.path[0]) !== -1
-				!= yield
-
-		unless current.path[0] === "dataprint"
-			!= partial("_shared/footer")
-			
-		!= partial("_shared/nav-fixed")
-
-
-
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-		//- script(src="/assets/javascripts/owl.carousel.min.js")
-		//- script(src="/assets/javascripts/application.js")
-		
-		script(src="/assets/javascripts/component.modal.js")
-		
-		//- <script src="/assets/javascripts/jquery.event.move.js" type="text/javascript"></script>
-		//- <script src="/assets/javascripts/jquery.twentytwenty.js" type="text/javascript"></script>
-		//- <link rel="stylesheet" href="/assets/stylesheets/twentytwenty.css" type="text/css" media="screen" />
-		//- script(type='text/javascript').
-		//- 	$(window).load(function(){
-		//- 		$("#container1").twentytwenty();
-		//- 	});
-		
-		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
-		//- script(src="/assets/javascripts/jquery.colorscroll.min.js")
-		//- script(src="/assets/javascripts/lib.owl.carousel.min.js")
-		//- script(src="/assets/javascripts/lib.flickity.min.js")
-		//- script(src="/assets/javascripts/viewport-units-buggyfill.hacks.js")
-		//- script(src="/assets/javascripts/viewport-units-buggyfill.js")
-		//- script(type='text/javascript').
-			//- window.viewportUnitsBuggyfill.init({
-			//- 	refreshDebounceWait: 50,
-			//- 	hacks: window.viewportUnitsBuggyfillHacks
-			//- });
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+        //- script(src="/assets/javascripts/owl.carousel.min.js")
+        //- script(src="/assets/javascripts/application.js")
+        
+        script(src="/assets/javascripts/component.modal.js")
+        script(src="/assets/javascripts/component.navToggleReverseOut.js")
+        
+        //- <script src="/assets/javascripts/jquery.event.move.js" type="text/javascript"></script>
+        //- <script src="/assets/javascripts/jquery.twentytwenty.js" type="text/javascript"></script>
+        //- <link rel="stylesheet" href="/assets/stylesheets/twentytwenty.css" type="text/css" media="screen" />
+        //- script(type='text/javascript').
+        //-     $(window).load(function(){
+        //-         $("#container1").twentytwenty();
+        //-     });
+        
+        //- script(src="/assets/javascripts/lib.owl.carousel.min.js")
+        //- script(src="/assets/javascripts/jquery.colorscroll.min.js")
+        //- script(src="/assets/javascripts/lib.owl.carousel.min.js")
+        //- script(src="/assets/javascripts/lib.flickity.min.js")
+        //- script(src="/assets/javascripts/viewport-units-buggyfill.hacks.js")
+        //- script(src="/assets/javascripts/viewport-units-buggyfill.js")
+        //- script(type='text/javascript').
+            //- window.viewportUnitsBuggyfill.init({
+            //-     refreshDebounceWait: 50,
+            //-     hacks: window.viewportUnitsBuggyfillHacks
+            //- });

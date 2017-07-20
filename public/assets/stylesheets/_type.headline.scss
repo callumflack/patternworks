@@ -8,75 +8,71 @@
 // Common theme…
 
 @mixin headlineTemplate(
-	$mixinSize: Display,
-	$mixinColor: palette(text),
-	$mixinFont: $font-display,
-	$mixinLetterSpacing: 0,
-	$mixinLineHeight: 1.25,
-	$mixinMarginBottom: 0
+    $mixinSize: Display,
+    $mixinColor: palette(text),
+    $mixinFont: $font-display,
+    $mixinLetterSpacing: 0,
+    $mixinLineHeight: 1.3,
+    $mixinMarginBottom: 0
 ) {
-	// reset
-	// this may not be needed if we've styled the body
-	// so everything inherits it…
-	// @include typeReset();
+    // reset
+    // this may not be needed if we've styled the body
+    // so everything inherits it…
+    // @include typeReset();
 
-	// standards
-	color: $mixinColor;
-	font-family: $mixinFont;
-	letter-spacing: $mixinLetterSpacing;
-	line-height: $mixinLineHeight;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: $mixinMarginBottom;
-	text-align: left;
-	
-	// if using MFRED…
-	//text-transform: uppercase;
+    // standards
+    color: $mixinColor;
+    font-family: $mixinFont;
+    letter-spacing: $mixinLetterSpacing;
+    line-height: $mixinLineHeight;
+    margin-bottom: $mixinMarginBottom;
+    text-align: left;
+    
+    // if using MFRED…
+    //text-transform: uppercase;
 
-	// sizes
-	font-size: fontsize($mixinSize, xs);
-	@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
-	@include media-breakpoint-up(lg) { font-size: fontsize($mixinSize, lg); }
+    // sizes
+    font-size: fontsize($mixinSize, xs);
+    @include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
+    @include media-breakpoint-up(lg) { font-size: fontsize($mixinSize, lg); }
 
-	// children
-	> li,
-	> li a,
-	> a {
-		border-bottom: 0;
-		color: currentColor;
-		font-family: inherit;
-		font-size: inherit;
-		margin: 0;
-	}
+    // children
+    > li,
+    > li a,
+    > a {
+        border-bottom: 0;
+        color: currentColor;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+    }
 }
+
 
 
 // Components by size…
 
 @mixin headlineSm() {
-	@include headlineTemplate(
-		//$mixinSize: Headline--sm,
-		$mixinSize: Text,
-		$mixinFont: $test-sans-md, // TEST
-		$mixinLetterSpacing: 0.012em
-	);
+    @include headlineTemplate(
+        //$mixinSize: Headline--sm,
+        $mixinSize: Text,
+        $mixinFont: $font-text-medium,
+        $mixinLetterSpacing: 0.012em
+    );
 }
 
 @mixin headline() {
-	@include headlineTemplate(
-		$mixinSize: Headline
-	);
+    @include headlineTemplate(
+        $mixinSize: Headline,
+        $mixinLetterSpacing: -0.005em
+    );
 }
 
 @mixin display() {
-	@include headlineTemplate(
-		$mixinLetterSpacing: -0.005em,
-		$mixinLineHeight: 1.1
-	);
-
-	@include when-inside(".Footer") {
-		margin-bottom: space(1.25);
-	}
+    @include headlineTemplate(
+        $mixinLetterSpacing: -0.015em,
+        $mixinLineHeight: 1.25
+    );
 }
 
 
@@ -93,9 +89,9 @@
 .Headline--sm { @include headlineSm(); }
 
 .Headline em {
-	font-family: inherit;
-	font-style: normal;
-	font-weight: normal;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
 }
 
 

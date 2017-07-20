@@ -1,0 +1,78 @@
+
+
+// --------------------------------------------------------------------------
+//   NAV LAYOUT
+// --------------------------------------------------------------------------
+
+
+$navSpace: space(2.5);
+$navSpaceMobile: space(1);
+//$navSpace: $windowGutterLg;
+//$navSpaceMobile: $windowGutter;
+
+.c-nav-toggleWrapper,
+.c-nav-logoWrapper {
+    position: fixed;
+    left: $navSpaceMobile;
+    right: $navSpaceMobile;
+    text-align: left;
+    top: $navSpaceMobile;
+    //width: 100%;
+    z-index: map-fetch($z-index, 'first');
+    
+    @include media-breakpoint-up(lg) {
+        left: $navSpace;
+        right: $navSpace;
+        top: $navSpace;
+    }
+    
+    @include when-inside(".Footer") {
+        z-index: map-fetch($z-index, 'second');
+    }
+}
+
+.c-nav-toggle,
+.c-nav-logo {
+    @include textSm();
+    background-color: palette(white);
+    border: 1px solid palette(text);
+    //border-color: transparent;
+    color: palette(text);
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-text-medium;
+    letter-spacing: 0.06em;
+    padding: 10.5px 18px 8px;
+
+    &:before {
+        content: '\2630';
+        margin-right: 5px;
+    }
+}
+
+.c-nav {
+    height: 100%;
+    padding: $navSpace;
+    
+    @include when-inside(".with-clickaway") {
+        cursor: pointer;
+        cursor: url("/assets/images/cursor.svg"), auto;
+    }
+}
+
+.c-nav-item {
+    @include display();
+    color: palette(white);
+    margin: 0;
+    
+    > a {
+        border-color: transparent;
+        font-family: $font-display;
+        //margin-bottom: space(1.5);
+        padding-bottom: 7px;
+
+        &.is-active {
+            border-color: palette(white);
+        }
+    }
+}

@@ -34,11 +34,15 @@
 	opacity: 1;
 	// overflow: hidden;
 	z-index: map-fetch($z-index, 'modal');
-
+    
 	@include media-breakpoint-up(xs) {
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
+    
+    &--zIndexOne {
+    	z-index: map-fetch($z-index, 'default');
+    }
 }
 
 

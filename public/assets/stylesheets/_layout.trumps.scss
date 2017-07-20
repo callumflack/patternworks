@@ -1,25 +1,9 @@
 
 
 // --------------------------------------------------------------------------
-//   TITLE
+//   PROJECT TRUMPS
 // --------------------------------------------------------------------------
 
-
-// Body
-
-.Main {
-    @include when-inside(".thesubstation") {
-        //background-color: palette(neutral);
-        position: relative;
-    }
-}
-
-.Content--post {
-    //@include when-inside(".thesubstation") {
-    //    background-color: palette(background);
-    //    position: relative;
-    //}
-}
 
 // Displays
 
@@ -28,10 +12,6 @@
 		// @include media-breakpoint-up(sm) { width: $mixinWidthSm; }
 		@include media-breakpoint-up(lg) { width: 95%; }
 	}
-}
-
-.Footer .Display {
-	@include media-breakpoint-up(lg) { width: 80%; }
 }
 
 
@@ -66,8 +46,10 @@
 }
 
 
-// Footer
+// Hero images
 
-.Footer .Block--masthead p {
-	@include media-breakpoint-down(sm) { width: 72%; }
+.Block--hero {
+    @include when-inside(".primary-healthcare-network") { background-color: rgba( palette(project-phn), 0.1 ); }
+	@include when-inside(".oceanblue-living")           { background-color: rgba( palette(project-obl), 0.1 ); }
+	@include when-inside(".thesubstation")              { background-color: rgba( palette(project-thesubstation), 0.25 ); }
 }

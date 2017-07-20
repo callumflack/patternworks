@@ -1,34 +1,40 @@
-- var startup  = new Date("2015-07-01");
-- var thisWeek = new Date("(1387050870 * 1000)");
-- var weeks = Math.round((a-b)/ 604800000);
-
 footer.Footer(role="contentinfo")
-	
-	//- .c-nav-triggerWrapper
-	//- 	a.c-nav-trigger(href="/") Patternworks
-	
-	nav.c-nav.o-aligner
-		.o-aligner-item.o-aligner-item--bottom
-			.c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/") Home
-			.c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
-			.c-nav-item: a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
-			.c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/about") About
-			.c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/contact") Contact
+    nav.o-modal.is-active.is-active--zIndexOne(tabindex='-1', role='navigation', aria-labelledby='navigation')
+        != partial("nav")
+    
+    //- p(style="color: white") This is the nav
 
-	//- .o-aligner
-	//- 	.o-aligner-item
-	//- 		.Block--masthead
-	//- 			h1.Display Helping discover, design and build better brands and services, online.
-	//- 			p Get in touch: #[a(href="mailto:#{ email_form }") email us] or call #[a(href="telephone:#{ phone }") #{ phone }].
-	//- 			//- != partial("newsletter")
-	//- 			//- p.Text--meta Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
-	//- 			p.Text--meta #[a(href="#{ twitter }") You should follow us on Twitter].
 
-	//- .Nav.Nav--bottom(role="navigation")
-	//- 	.o-listInline.u-textRight
-	//- 		.Nav-item.Nav-item--left Est 2015. This is week 57.
-	//- 		//- .Nav-item.Nav-item--left Its Friday afternoon in Cairns.
-	//- 		//- .Nav-item.Nav-item--left Copyright &copy; #{new Date().getFullYear()} 
-	//- 		.Nav-item: a(href="#{ twitter }") Twitter
-	//- 		.Nav-item: a(href="#{ instagram }") Instagram
-	//- 		.Nav-item: a(href="#{ medium }") Medium
+
+
+
+
+    
+    //- .c-nav-toggleWrapper
+    //-     a.c-nav-toggle(href="/") Patternworks
+    
+    //- nav.c-nav.o-aligner
+    //-     .o-aligner-item.o-aligner-item--bottom
+    //-         .c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/") Home
+    //-         .c-nav-item: a(class="#{ current.path[0] == 'work' ? 'is-active' : '' }" href="/work") Work
+    //-         .c-nav-item: a(class="#{ current.path[0] == 'blog' ? 'is-active' : '' }" href="/blog") Blog
+    //-         .c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/about") About
+    //-         .c-nav-item: a(class="#{ current.path[0] == 'about' ? 'is-active' : '' }" href="/contact") Contact
+
+    //- .o-aligner
+    //-     .o-aligner-item
+    //-         .Block--masthead
+    //-             h1.Display Helping discover, design and build better brands and services, online.
+    //-             p Get in touch: #[a(href="mailto:#{ email_form }") email us] or call #[a(href="telephone:#{ phone }") #{ phone }].
+    //-             //- != partial("newsletter")
+    //-             //- p.Text--meta Follow us on #[a(href="#{ twitter }") Twitter], #[a(href="#{ instagram }") Instagram] or #[a(href="#{ medium }") Medium].
+    //-             p.Text--meta #[a(href="#{ twitter }") You should follow us on Twitter].
+
+    //- .Nav.Nav--bottom(role="navigation")
+    //-     .o-listInline.u-textRight
+    //-         .Nav-item.Nav-item--left Est 2015. This is week 57.
+    //-         //- .Nav-item.Nav-item--left Its Friday afternoon in Cairns.
+    //-         //- .Nav-item.Nav-item--left Copyright &copy; #{new Date().getFullYear()} 
+    //-         .Nav-item: a(href="#{ twitter }") Twitter
+    //-         .Nav-item: a(href="#{ instagram }") Instagram
+    //-         .Nav-item: a(href="#{ medium }") Medium
