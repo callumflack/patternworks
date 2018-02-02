@@ -6,9 +6,11 @@
 
 
 // Using font-face? Use this with it.
+// The typeSize mixin is pretty universal.
 // --------------------------------------------------------------------------
 
 @mixin typeReset() {
+    font-stretch: normal;
     font-style: normal;
     font-weight: normal;
 }
@@ -179,6 +181,7 @@
 
 @mixin fontSmooth() {
     backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -192,7 +195,7 @@
 }
 
 @mixin smoothTransition() {
-    @include forceBlockLevel();
+    //@include forceBlockLevel();
     @include hardwareAccel();
     /* @include improveAntiAlias(); */
     @include fontSmooth();

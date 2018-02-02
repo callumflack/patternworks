@@ -1,0 +1,19 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "suitcss": "^3.0.0",
+    "viewport-units-buggyfill": "^0.6.0"
+  },
+  "devDependencies": {
+    "suitcss-preprocessor": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "suitcss index.css build/build.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

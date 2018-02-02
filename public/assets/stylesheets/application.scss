@@ -5,42 +5,69 @@
 // --------------------------------------------------------------------------
 
 
-@import "vendor.normalize";
-@import "vendor.suitcss.base";
+@charset "utf-8";
 
+// TOOLS
+//@import "tools/tools.functions";
+//@import "tools/tools.mixins";
+//@import "tools/tools.settings";
+//@import "tools/tools.mixins.breakpoints";
 @import "tools.functions";
-@import "tools.mixins";
+@import "tools/tools.mixins";
 @import "tools.settings";
+@import "tools.settings.fonts";
 @import "tools.mixins.breakpoints";
 
-@import "vendor.suitcss.u-position";
-@import "vendor.suitcss.u-size";
-@import "vendor.suitcss.u-flexbox";
-@import "vendor.suitcss.u-text";
-@import "vendor.suitcss.c-button";
-@import "vendor.suitcss.c-flexembed";
-@import "vendor.suitcss.c-grid";
-@import "vendor.suitcss.u-trumps";
+// BASE
+@import "base/base.page";
+@import "base/base.link";
+@import "base/base.image";
+@import "base/base.type";
 
-@import "base.page";
-@import "base.link";
-@import "base.image";
-@import "base.type";
+// TYPE OBJECTS & COMPONENTS
+@import "type/type.list";
+//@import "type/type.text";
+@import "type/type.link";
+//@import "type/type.headline";
+//@import "type/type.helpers";
+//@import "components/type.scope";
 
-@import "object.position";
-@import "object.container";
-@import "object.button";
-@import "object.icon";
-@import "object.rule";
-@import "object.list";
-@import "object.link";
-@import "object.aligner";
-@import "object.cursor";
+// OBJECTS
+@import "objects/object.position";
+@import "objects/object.container";
+@import "objects/object.grid";
+@import "objects/object.button";
+@import "objects/object.cursor";
+@import "objects/object.aligner";
+@import "objects/object.rule";
+@import "objects/object.icon";
+@import "objects/object.media";
+@import "objects/object.arrow";
+@import "objects/object.figure";
+@import "objects/object.modal";
+@import "objects/object.imageblend";
+@import "objects/object.coverimage";
+@import "objects/object.fitimage";
+@import "objects/object.screenreader";
+
+
+
+//@import "object.position";
+//@import "object.container";
+//@import "object.button";
+//@import "object.icon";
+//@import "object.rule";
+//@import "object.list";
+//@import "object.link";
+//@import "object.aligner";
+//@import "object.cursor";
+
 //@import "object.media";
 //@import "object.arrow";
-@import "object.figure";
-@import "object.modal";
-@import "object.coverimage";
+
+//@import "object.figure";
+//@import "object.modal";
+//@import "object.coverimage";
 
 @import "type.text";
 @import "type.headline";
@@ -76,5 +103,3 @@
 
 @import "utilities.spacers.v2";
 @import "utilities.helpers";
-
-//@import "test";

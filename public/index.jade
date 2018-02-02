@@ -1,6 +1,19 @@
 - var assetPath = "/assets/images/"
 
-!= partial("_shared/header")
-		
+
+header.Header(role="banner")
+    .Header--animateIn
+        .Block--masthead
+            h1.Display Your brand is an interface
+            
+            :markdown
+                Patternworks designs and develops digital products for interesting people and interesting brands in Australia, Europe and the USA.
+                
+                As the speed of business and the exchange of ideas continues to increase, how does your customer interface keep pace? We believe the answer is go deep, retain focus and interwtingle between design and development.
+                
+                Wyatt Arent, AUM founder and Google web engineer, says working with us is both brutal and charming: 
+                
+                > “Routinely entrusted with digital product innovation for companies like Apple, Google, Nike, and Facebook, which rarely approach outside firms.” 
+
 section.Content--bottomPadding.Content--animateIn
-	!= partial("_shared/work-grid")
+    != partial("_shared/work-grid")

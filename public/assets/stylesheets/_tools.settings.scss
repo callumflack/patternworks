@@ -29,8 +29,21 @@ $palette: (
     base                       : tint($base-black, 86%),
     light                      : tint($base-black, 94%),
     faint                      : tint($base-black, 97%),
+    
+    black-85                   : tint($base-black, 15%),
+    black-80                   : tint($base-black, 20%),
+    black-60                   : tint($base-black, 40%),
+    black-50                   : tint($base-black, 50%),
+    black-40                   : tint($base-black, 60%),
+    black-30                   : tint($base-black, 70%),
+    black-25                   : tint($base-black, 75%),
+    black-20                   : tint($base-black, 80%),
+    black-10                   : tint($base-black, 90%),
+    black-5                    : tint($base-black, 96%),
+    black-3                    : tint($base-black, 98%),
+    
     white                      : $base-white,
-    background                 : #fdfdfd, // FBFBF9
+    background                 : #fdfdfd,
     neutral                    : #f5f5f5,
     neutral-dark               : darken(#f0eeeb, 9%),
     neutral-light              : lighten(#f0eeeb, 4%),
@@ -64,8 +77,15 @@ $space-unit                    : $base-line-height;
 $space                         : $space-unit * 1;
 
 $paragraphSpacer               : space(0.75);
+$paragraphSpace                : space(0.75);
 $blockSpacer                   : 24vh;
 $gutterSpace                   : 24vw / 4;
+$windowSpace                   : 7.03125%;
+$windowSpaceLg                 : 13.67188%;
+
+$cardRadius                    : 6px;
+$buttonRadius                  : 4px;
+$labelRadius                   : 3px;
 
 
 
@@ -201,6 +221,28 @@ $size: (
 );
 
 
+// Other sizes (from master scss)
+// --------------------------------------------------------------------------
+
+$border-radius: (
+    small             : 3px,
+    base              : 4px,
+    large             : 6px
+);
+
+$button-height: (
+    concise           : 36px,
+    base              : 44px,
+    baseWithBorder    : 46px,
+    lg                : 55px
+);
+
+$list-inset: (
+    margin            : space(0.75),
+    padding           : 0
+);
+
+
 // Transitions maps
 // --------------------------------------------------------------------------
 
@@ -233,136 +275,3 @@ $z-index: (
     'default'     : 1,
     'below'       : -1,
 );
-
-
-// Fonts
-// --------------------------------------------------------------------------
-
-// LEGACY: easy google-fonts implementation
-// $sans: 'Source Sans Pro';
-// $font: join($sans, $font-sans-stack);
-
-$font-sans-stack      : 'San Francisco', -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', Roboto, 'Helvetica Neue', Helvetica, 'Droid Sans', Arial, sans-serif;
-$font-serif-stack     : Georgia, "Times New Roman", "Times", serif;
-$font-mono-stack      : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
-
-$fonts-path           : '/assets/fonts/';
-
-// fonts tested…
-//$font-sans-name       : 'AtlasGrotesk';
-//$font-sans-name       : 'MarrSans-'; // NICENICE
-//$test-sans: 'URWGeometric-Medium';
-//$test-sans: 'theinhardt-reg';
-//$test-sans: 'Larsseit-Light';
-//$test-sans: 'MarkOT-Regular';
-//$test-sans: 'AtlasGrotesk-Regular';
-//$test-sans: 'LabGrotesque-Regular';
-//$test-display: 'MFredRounded-Regular';
-//$test-display: 'LabGrotesque-Medium';
-//$test-display: 'Stanley-Poster';
-//$test-sans: 'MarrSans-Regular';
-//$test-sans-md: 'MarrSans-Medium';
-//$test-display: 'MarrSans-Light';
-//$test-sans: 'FranklinGothic-Book';
-//$test-sans-md: 'FranklinGothic-Demi';
-//$test-display: 'FranklinGothic-ExtraCond';
-//$test-display: 'GrotzecCond-Bold';
-//$font-display-name    : 'display'; // NocturnoDisplay-Bold AntiqueOlive-Bold GrotesqueMT-Condensed Gothic-Thirteen LarishNeue
-
-$font-sans-name: 'StyreneA';
-
-// Create font-file variables
-
-$text-thin            : #{$font-sans-name}-Thin;
-$text-light           : #{$font-sans-name}-Light;
-$text-book            : #{$font-sans-name}-Regular;
-$text-regular         : #{$font-sans-name}-Regular;
-$text-medium          : #{$font-sans-name}-Medium;
-$text-semi            : #{$font-sans-name}-Semibold;
-$text-bold            : #{$font-sans-name}-Bold;
-$text-xbold           : #{$font-sans-name}-Extrabold;
-$text-black           : #{$font-sans-name}-Black;
-
-$text-regular-italic  : #{$font-sans-name}-RegularItalic;
-$text-medium-italic   : #{$font-sans-name}-MediumItalic;
-$text-semi-italic     : #{$font-sans-name}-SemiboldItalic;
-$text-bold-italic     : #{$font-sans-name}-BoldItalic;
-
-
-// Make all font files available
-// Mixin options: $font-family, $file-path, $weight, $style, $formats
-// Ps. This below prints an unwanted space between the path var and the font var:
-// @include font-face($text-thin, join($fonts-path,$text-thin) );
-
-@include font-face($text-thin,    '#{$fonts-path}#{$text-thin}' );
-@include font-face($text-light,   '#{$fonts-path}#{$text-light}' );
-@include font-face($text-book,    '#{$fonts-path}#{$text-book}' );
-@include font-face($text-regular, '#{$fonts-path}#{$text-regular}' );
-@include font-face($text-medium,  '#{$fonts-path}#{$text-medium}' );
-@include font-face($text-bold,    '#{$fonts-path}#{$text-bold}' );
-@include font-face($text-xbold,   '#{$fonts-path}#{$text-xbold}' );
-@include font-face($text-black,   '#{$fonts-path}#{$text-black}' );
-@include font-face($text-regular-italic, '#{$fonts-path}#{$text-regular-italic}' );
-
-
-// Apply font-file variables to a font-stack
-// Only use these variables in our classes.
-
-$main-font-stack: $font-sans-stack;
-
-$font-text-regular    : join($text-regular, $main-font-stack);
-$font-text-medium     : join($text-medium, $main-font-stack);
-$font-display         : join($text-regular, $main-font-stack);
-
-//$font-text-thin       : join($text-thin, $main-font-stack);
-//$font-text-light      : join($text-light, $main-font-stack);
-//$font-text-book       : join($text-book, $main-font-stack);
-//$font-text-regular-i  : join($text-regular-italic, $main-font-stack);
-//$font-text-medium-i   : join($text-medium-italic, $main-font-stack);
-//$font-text-bold       : join($text-bold, $main-font-stack);
-//$font-text-bold-i     : join($text-bold-italic, $main-font-stack);
-//$font-text-xbold      : join($text-xbold, $main-font-stack);
-//$font-text-black      : join($text-black, $main-font-stack);
-
-//avoid errors where used in legacy…
-$font-text-thin       : $font-text-regular;
-$font-text-light      : $font-text-regular;
-$font-text-book       : $font-text-regular;
-$font-text-regular-i  : $font-text-regular;
-$font-text-medium-i   : $font-text-regular;
-$font-text-bold       : $font-text-regular;
-$font-text-bold-i     : $font-text-regular;
-$font-text-xbold      : $font-text-regular;
-$font-text-black      : $font-text-regular;
-
-// if using @fontface via a cloud service, eg. Google fonts.
-
-//$font-weight: (
-//	'thin'      : 100,
-//	'light'     : 200,
-//	'book'      : 400,
-//	'regular'   : 500,
-//	'medium'    : 600,
-//	'bold'      : 700,
-//	'black'     : 900
-//);
-
-
-
-
-// Nocturno…
-
-//$main-font-stack: $font-serif-stack;
-//
-//$display: 'display';
-//$serif-sm: 'regular';
-////$serif-lg: 'book';
-//$serif-lg: $display;
-//
-//@include font-face($serif-sm, '#{$fonts-path}#{$serif-sm}' );
-//@include font-face($serif-lg, '#{$fonts-path}#{$serif-lg}' );
-//@include font-face($display, '#{$fonts-path}#{$display}' );
-//
-//$font-text-book:    join($serif-lg, $main-font-stack);
-//$font-text-book:    join($display, $main-font-stack);
-//$font-text-regular: join($serif-sm, $main-font-stack);

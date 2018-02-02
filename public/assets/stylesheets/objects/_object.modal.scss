@@ -1,0 +1,68 @@
+
+
+// --------------------------------------------------------------------------
+//   MODAL OBJECT
+//   Reqs: '_object.positions.scss'
+// --------------------------------------------------------------------------
+
+
+// Modal object with theme
+
+@mixin t-modal {
+    transform: scale(0);
+    transition: z-index 0s ease 500ms, opacity 500ms ease;
+}
+
+@mixin t-modalActive {
+    transform: scale(1);
+    transition: z-index 0s ease, opacity 250ms ease;
+}
+
+.o-modal {
+    @include o-posFullScreen();
+    @include t-modal();
+    background-color: palette(modal-background);
+    margin: initial;
+    opacity: 0;
+    outline: 0;
+    overflow-x: hidden;
+    width: 100vw;
+    z-index: map-fetch($z-index, 'below');
+    
+    &.is-active {
+        @include t-modalActive();
+        opacity: 1;
+        // overflow: hidden;
+        z-index: map-fetch($z-index, 'modal');
+
+        @include media-breakpoint-up(xs) {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+}
+
+
+// Modal dialog object with theme
+
+@mixin t-modalDialog() {
+    opacity: 0;
+    transform: translateY(-20px);
+    //transition: all map-fetch($transition, duration, fast) map-fetch($transition, type, base);
+    transition: all 500ms ease-in-out;
+}
+
+@mixin t-modalDialogActive() {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 300ms ease-in-out;
+}
+
+.o-modal-dialog {
+    @include t-modalDialog();
+    position: relative;
+
+    @include when-inside(".o-modal.is-active") {
+        @include t-modalDialogActive();
+    }
+}

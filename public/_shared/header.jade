@@ -10,8 +10,8 @@
 //- 								//- p= page.description
 //- 									a(href="/about") Learn more
 header.Header(role="banner")
-	.Block--space.Header--animateIn
-		.Block--masthead
-			for page, slug in public._data
-				if current.path[0] === slug
-					h1.Display= page.headline
+    .Block--space.Header--animateIn
+        .Block--masthead
+            for page, slug in public._data
+                if current.path[0] === slug
+                    h1.Display= page.headline
